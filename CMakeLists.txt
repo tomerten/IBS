@@ -40,6 +40,12 @@ if(PYTHON_EXECUTABLE)
     if(NOT PYTHON_LIBRARY_DIR_RESULT MATCHES 0)
         message(SEND_ERROR "Failed to determine PYTHON_LIBRARY")
     endif()
+    execute_process(
+        COMMAND "${PYTHON_EXECUTABLE}" -c "import site; print(site.getsitepackages()[0])"
+        OUTPUT_VARIABLE _site_packages
+        OUTPUT_STRIP_TRAILING_WHITESPACE
+        ERROR_QUIET
+    )
 else()
     message(FATAL_ERROR "python executable not found.")
 endif()
@@ -76,5 +82,6 @@ target_link_libraries(${PROJECT_NAME}  PUBLIC)
 message("PYTHON_LIBRARY_DIR : ${PYTHON_LIBRARY_DIR}")
 install(TARGETS ${PROJECT_NAME} 
     COMPONENT python
-    LIBRARY DESTINATION "${PYTHON_LIBRARY_DIR}"
+    #LIBRARY DESTINATION "${PYTHON_LIBRARY_DIR}"
+    LIBRARY DESTINATION "${_site_packages}"
 )
