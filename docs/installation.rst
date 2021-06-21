@@ -175,3 +175,86 @@ Now we are prepared to build and run the tests.
     $ cmake ..
     $ cd ../bin 
     4 ./test_cpp
+
+
+Python wrapper
+==============
+
+For the ``Python`` wrapper we rely on  ``pybind11``. There are several
+methods to this package (e.g. using conda install) but here we decided to
+add it in third party folder using ``git submodules``. Therefor
+to get it one needs to run:
+
+.. code-block:: console
+
+    $ git init 
+    $ git add .
+    $ git commit -am "initial commit"
+    $ git submodule add https://github.com/pybind/pybind11.git third_party/pybind11-2.6.2
+    $ git add .
+
+Note that the order of commits and immediately after adding the submodule doing 
+a new commit is important to not get errors. 
+
+Wrapping the code
+-----------------
+
+In order to wrap the ``C++`` code we need to add some extra code into the `Python` directory.
+
+.. code-block:: console
+
+    $ touch python/pytwiss.cpp
+
+The content of this file is given by:
+
+.. include:: ../python/pytwiss.cpp
+    :literal:
+
+creating the ``Python`` function wrappers around the ``C++`` functions.
+As before we use ``CMake`` to build and install the code. Due to the fact we use 
+a third party library and we need also `Python` the `CMakeLists.txt` is more complicated (for more info and a tutorial on how
+to use this with ``CMake`` see `Cmake tutorial c++ <https://www.youtube.com/watch?v=ED-WUk440qc>`_.).
+
+Using the method describe above to include ``pybind11`` one needs 
+to make sure ``pybind11`` can be found by ``CMake`` which can be accomplished by adding
+the following:
+
+.. code-block:: cmake 
+
+    SET(MY_PYBIND ${CMAKE_CURRENT_SOURCE_DIR}/third_party/pybind11-2.5.0)
+    add_subdirectory(${MY_PYBIND})
+
+As we rely on ``Python`` their will also be extra code to set the appropriate 
+directories for installing the wrapper function and making them available from
+within python.
+
+.. code-block:: cmake
+
+    # find python
+    find_program(
+        PYTHON_EXECUTABLE
+        NAMES python
+    )
+    message("Python Executable ${PYTHON_EXECUTABLE}")
+    # if python found 
+    # get the PYTHON_LIBRARY_DIR to allow to install files
+    if(PYTHON_EXECUTABLE)
+        message("Python used: ${PYTHON_EXECUTABLE}")
+        execute_process(
+            COMMAND "${PYTHON_EXECUTABLE}" -c
+            "from distutils import sysconfig;print(sysconfig.get_config_var('LIBDIR'))"
+                OUTPUT_VARIABLE PYTHON_LIBRARY_DIR
+                RESULT_VARIABLE PYTHON_LIBRARY_DIR_RESULT
+                ERROR_QUIET)    
+        string(STRIP ${PYTHON_LIBRARY_DIR} PYTHON_LIBRARY_DIR)
+        if(NOT PYTHON_LIBRARY_DIR_RESULT MATCHES 0)
+            message(SEND_ERROR "Failed to determine PYTHON_LIBRARY")
+        endif()
+    else()
+        message(FATAL_ERROR "python executable not found.")
+    endif()
+
+The full ``CMakeLists.txt`` is given below:
+
+.. include:: ../CMakeLists.txt
+    :literal:
