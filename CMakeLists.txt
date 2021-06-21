@@ -46,7 +46,7 @@ endif()
 
 # adding pybind11
 # git submodule add https://github.com/pybind/pybind11.git third_party/pybind11-2.5.0
-SET(MY_PYBIND ${CMAKE_CURRENT_SOURCE_DIR}/third_party/pybind11-2.5.0)
+SET(MY_PYBIND ${CMAKE_CURRENT_SOURCE_DIR}/third_party/pybind11-2.6.2)
 add_subdirectory(${MY_PYBIND})
 
 
