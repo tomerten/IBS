@@ -1,10 +1,9 @@
-===
-ibs
-===
+===========================
+IBS - Intra Beam Scattering
+===========================
 
 
-
-<Enter a one-sentence description of this project here.>
+C++ Library for IBS with Python wrapper.
 
 
 * Free software: MIT license
@@ -14,4 +13,4 @@ ibs
 Features
 --------
 
-* TODO
+* Twiss module

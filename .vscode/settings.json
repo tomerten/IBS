@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "/home/mti/anaconda3/envs/ibslibenv/bin/python",
+    "restructuredtext.confPath": "${workspaceFolder}/docs"
+}
