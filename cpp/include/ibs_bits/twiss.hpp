@@ -13,6 +13,11 @@
 
 using namespace std;
 
+#ifndef TWISS_H
+#define TWISS_H
+
 map<string, double> GetTwissHeader(string filename);
 vector<vector<double>> GetTable(string filename, vector<string> columns);
 map<string, vector<double>> GetTwissTableAsMap(string filename);
+
+#endif
