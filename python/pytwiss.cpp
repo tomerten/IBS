@@ -3,6 +3,7 @@
 #include "../cpp/include/ibs_bits/twiss.hpp"
 //#include "../third_party/pybind11-2.6.2/include/pybind11/pybind11.h"
 //#include "../third_party/pybind11-2.6.2/include/pybind11/stl.h"
+#include <pybind11/numpy.h>
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 
@@ -34,4 +35,11 @@ PYBIND11_MODULE(IBSLib, m) {
   m.def("beta_relativistic_from_gamma", &BetaRelativisticFromGamma,
         "Beta relativistic.");
   m.def("rds", &rds, "Nagaitsev paper rds function");
+  m.def("rf_voltage_in_ev",
+        [](double phi, double c, std::vector<double> h, std::vector<double> v) {
+          return EffectiveRFVoltageInElectronVolt(phi, c, h.size(), h.data(),
+                                                  v.data());
+        });
+  //&EffectiveRFVoltageInElectronVolt,
+  // "Get effective RF voltage times charge from single or multi RF system.");
 }

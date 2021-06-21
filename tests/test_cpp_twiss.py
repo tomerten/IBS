@@ -5,8 +5,13 @@
 Tests for C++ module twiss.
 """
 
+import os
+
 import IBSLib as ibslib
 import pandas as pd
+
+THIS_DIR = os.path.dirname(os.path.abspath(__file__))
+my_twiss_file = os.path.join(THIS_DIR, "b2_design_lattice_1996.twiss")
 
 
 def test_GetTwissHeader():
@@ -50,7 +55,7 @@ def test_GetTwissHeader():
         "YCOMAX": 0.0,
         "YCORMS": 0.0,
     }
-    actual = ibslib.GetTwissHeader("b2_design_lattice_1996.twiss")
+    actual = ibslib.GetTwissHeader(my_twiss_file)
 
     assert expected == actual
 
