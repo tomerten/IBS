@@ -50,7 +50,7 @@ Once you have a copy of the source, you can install it with:
 .. _Github repo: https://github.com/tomerten/ibs
 .. _tarball: https://github.com/tomerten/ibs/tarball/master
 
-================================
+
 Detailed info about Installation
 ================================
 
@@ -60,7 +60,7 @@ This IBS Library can be used as a independent ``C++`` Library and as ``Python`` 
 Both are generated using ``CMake``.
 
 The C++ Library
-===============
+---------------
 
 We start by setting up the directory structure for the ``C++`` Library.
 
@@ -108,3 +108,48 @@ Below we show the content of this file for convenience and later reference.
 
 .. include:: ../cpp/CMakeLists.txt 
     :literal:
+
+
+We also need to have the main header file find all the actual libraries.
+
+.. include:: ../cpp/include/ibs
+    :literal:
+
+Building the C++ Library
+------------------------
+
+.. code-block:: console
+
+    $ cd cpp
+    $ mkdir build
+    $ cd build
+    $ cmake ..
+    $ make
+    $ make install
+
+
+For generating an ``XCode`` project ``IBSLib.xcodeproject`` in the build director:
+
+.. code-block:: console
+
+    $ cd cpp/build
+    $ cmake .. -GXcode
+
+Testing the C++ Library
+-----------------------
+
+.. note:: The tests are not actual proper unit tests, but rather a place
+    where some test code can be place to test the library functions.
+
+We again start by creating the directory and adding files to them:
+
+.. code-block:: console
+
+    $ cd cpp 
+    $ mkdir tests
+    $ cd tests
+    $ touch CMakeLists.txt
+    $ mkdir src
+    $ cd src
+    $ touch test_cpp.cpp
+
