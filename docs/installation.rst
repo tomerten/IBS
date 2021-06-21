@@ -153,3 +153,25 @@ We again start by creating the directory and adding files to them:
     $ cd src
     $ touch test_cpp.cpp
 
+The specific content for the a quick test of the Twiss library is shown below.
+
+.. include:: ../cpp/tests/src/test_cpp.cpp
+    :literal:
+
+
+The content of the corresponding ``CMakeLists.txt`` file:
+
+
+.. include:: ../cpp/tests/CMakeLists.txt
+    :literal:
+
+Now we are prepared to build and run the tests.
+
+.. code-block:: console
+
+    $ cd cpp/tests
+    $ mkdir build
+    $ cd build
+    $ cmake ..
+    $ cd ../bin 
+    4 ./test_cpp
