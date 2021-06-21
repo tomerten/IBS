@@ -19,7 +19,11 @@ set(PROJECT_INCLUDE_DIR "include/ibs_bits")
 # Source files
 set(SOURCE_FILES
     ${PROJECT_INCLUDE_DIR}/twiss.hpp
+    ${PROJECT_INCLUDE_DIR}/RadiationDamping.hpp
+    ${PROJECT_INCLUDE_DIR}/NumericFunctions.hpp
     ${PROJECT_SOURCE_DIR}/twiss.cpp
+    ${PROJECT_SOURCE_DIR}/RadiationDamping.cpp
+    ${PROJECT_SOURCE_DIR}/NumericFunctions.cpp
 )
 
 

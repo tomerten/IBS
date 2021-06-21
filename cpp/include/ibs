@@ -2,5 +2,7 @@
 #define IBS_LIBRARY_H
 
 #include "ibs_bits/twiss.hpp"
+#include "ibs_bits/NumericFunctions.hpp"
+#include "ibs_bits/RadiationDamping.hpp"
 
 #endif

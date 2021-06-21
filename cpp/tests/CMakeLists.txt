@@ -16,5 +16,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/../bin)
 find_library(IBSLIB_LIB IBSLib HINTS /usr/local/lib/)
 
 add_executable(test_cpp src/test_cpp.cpp)
+add_executable(test_radiation_damping_cpp src/DemoRadDamping.cpp)
 
 target_link_libraries(test_cpp PUBLIC ${IBSLIB_LIB})
+target_link_libraries(test_radiation_damping_cpp PUBLIC ${IBSLIB_LIB})
