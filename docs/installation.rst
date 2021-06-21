@@ -49,3 +49,62 @@ Once you have a copy of the source, you can install it with:
 
 .. _Github repo: https://github.com/tomerten/ibs
 .. _tarball: https://github.com/tomerten/ibs/tarball/master
+
+================================
+Detailed info about Installation
+================================
+
+The generation of this package is based on `cmake_cpp_pybind11_tutorial <https://github.com/smrfeld/cmake_cpp_pybind11_tutorial>`_.
+
+This IBS Library can be used as a independent ``C++`` Library and as ``Python`` Library.
+Both are generated using ``CMake``.
+
+The C++ Library
+===============
+
+We start by setting up the directory structure for the ``C++`` Library.
+
+
+.. code-block:: console
+
+    $ mkdir cpp 
+    $ cd cpp
+    $ mkdir include
+    $ mkdir src 
+    $ cd include 
+    $ mkdir ibs_bits 
+
+
+As a next step we add some code, the content of the first file will be explained later.
+
+
+.. code-block:: console
+
+    $ touch ibs 
+    $ cd ibs_bits
+    $ touch twiss.hpp
+    $ cd ../../src 
+    $ touch twiss.cpp 
+    
+
+We now add a `CMakeLists.txt` file.
+
+.. code-block:: console
+
+    $ cd ..
+    $ touch CMakeLists.txt 
+
+The final directory structure should look like:
+
+.. code-block:: console
+
+    cpp/CMakeLists.txt
+    cpp/include/ibs
+    cpp/include/ibs_bits/twiss.hpp
+    cpp/src/twiss.cpp
+
+The `CMakeLists.txt` file in the ``cpp`` folder will allow to build and install the independent ``C++`` Library.
+Below we show the content of this file for convenience and later reference.
+
+.. include:: ../cpp/CMakeLists.txt 
+    :literal:
