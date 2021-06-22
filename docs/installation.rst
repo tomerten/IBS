@@ -197,11 +197,17 @@ to get it one needs to run:
 .. note:: Note that the order of commits and immediately after adding the submodule doing 
     a new commit is important to not get errors. 
 
+As git submodules are not updated automatically we need to add some extra code to the 
+``CMakeLists.txt`` file:
+
+.. literalinclude:: ../CMakeLists.txt
+    :lines: 22-42
 
 Wrapping the code
 -----------------
 
-In order to wrap the ``C++`` code we need to add some extra code into the `Python` directory.
+In order to wrap the ``C++`` code we need to add the following
+ extra code into the `Python` directory.
 
 .. code-block:: console
 

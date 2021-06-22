@@ -58,3 +58,42 @@ def test_cpp_twclogtailcut():
     expected = np.array([2.31189787e01, 9.38213087e-09])
     # are not exaclty due to rounding in printing out -> allclose
     assert np.allclose(clog, expected)
+
+
+def test_cpp_coulomblog():
+    pnumber = 1e10
+    ex = 5e-9
+    ey = 1e-10
+    twissheader = ibslib.GetTwissHeader(my_twiss_file)
+    sige = 1e-4
+    sigt = 0.005
+    r0 = 2.8179403262e-15
+    printout = True
+    clog = np.empty(2)
+
+    ibslib.coulomblog(pnumber, ex, ey, twissheader, sige, sigt, r0, printout, clog)
+
+    expected = np.array([1.82946109e01, 5.65863916e-01])
+    assert np.allclose(clog, expected)
+
+
+def test_cpp_coulomblogtail():
+    pnumber = 1e10
+    ex = 5e-9
+    ey = 1e-10
+    twissheader = ibslib.GetTwissHeader(my_twiss_file)
+    sige = 1e-4
+    sigt = 0.005
+    tauradx = 0.005
+    taurady = 0.008
+    taurads = 0.010
+    r0 = 2.8179403262e-15
+    printout = True
+    clog = np.empty(2)
+
+    ibslib.coulomblogtail(
+        pnumber, ex, ey, twissheader, sige, sigt, tauradx, taurady, taurads, r0, printout, clog
+    )
+
+    expected = np.array([1.00249891e01, 3.10079269e-01])
+    assert np.allclose(clog, expected)

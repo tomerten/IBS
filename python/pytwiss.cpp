@@ -1,7 +1,8 @@
-#include "../cpp/include/ibs_bits/CoulombLogFunctions.hpp"
-#include "../cpp/include/ibs_bits/NumericFunctions.hpp"
-#include "../cpp/include/ibs_bits/RadiationDamping.hpp"
-#include "../cpp/include/ibs_bits/twiss.hpp"
+//#include "../cpp/include/ibs_bits/CoulombLogFunctions.hpp"
+//#include "../cpp/include/ibs_bits/NumericFunctions.hpp"
+//#include "../cpp/include/ibs_bits/RadiationDamping.hpp"
+//#include "../cpp/include/ibs_bits/twiss.hpp"
+#include <ibs>
 #include <pybind11/numpy.h>
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
@@ -133,4 +134,31 @@ PYBIND11_MODULE(IBSLib, m) {
           ptr_clog[1] = clog[1];
         },
         "Calculate the Coulomb Log with Tailcut.");
+  m.def("coulomblog",
+        [](double pnumber, double ex, double ey,
+           map<string, double> &twissheader, double sige, double sigt,
+           double r0, bool printout, py::array_t<double> npclog) {
+          double clog[2];
+          CoulombLog(pnumber, ex, ey, twissheader, sige, sigt, r0, printout,
+                     clog);
+          auto buf_clog = npclog.request();
+          double *ptr_clog = static_cast<double *>(buf_clog.ptr);
+          ptr_clog[0] = clog[0];
+          ptr_clog[1] = clog[1];
+        },
+        "Calculate the Coulomb Log using ring average.");
+  m.def("coulomblogtail",
+        [](double pnumber, double ex, double ey,
+           map<string, double> &twissheader, double sige, double sigt,
+           double tauradx, double taurady, double taurads, double r0,
+           bool printout, py::array_t<double> npclog) {
+          double clog[2];
+          TailCutCoulombLog(pnumber, ex, ey, twissheader, sige, sigt, tauradx,
+                            taurady, taurads, r0, printout, clog);
+          auto buf_clog = npclog.request();
+          double *ptr_clog = static_cast<double *>(buf_clog.ptr);
+          ptr_clog[0] = clog[0];
+          ptr_clog[1] = clog[1];
+        },
+        "Calculate the Coulomb Log with tailcut using ring average.");
 }
