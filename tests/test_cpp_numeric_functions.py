@@ -5,6 +5,8 @@
 Tests for C++ module twiss.
 """
 
+import os
+
 import IBSLib as ibslib
 import numpy as np
 import pandas as pd
@@ -98,7 +100,59 @@ hvphip = [
 
 
 @pytest.mark.parametrize("voltages, harmonics, phi, expected", hvphip)
-def test_cpp_rfvoltages(voltages, harmonics, phi, expected):
+def test_cpp_rfvoltages_prime(voltages, harmonics, phi, expected):
     actual = ibslib.rf_voltage_in_ev_prime(phi, -1.0, harmonics, voltages)
     assert actual - expected < 1.0e-6
     print(actual)
+
+
+def test_cpp_rf_voltage_in_ev_with_rad_losses():
+    actual = ibslib.rf_voltage_in_ev_with_rad_losses(180.0, 179e3, -1.0, [1.0], [1.0])
+    print(actual)
+    expected = 1.0000000000219211
+    assert actual - expected < 1.0e-9
+
+
+THIS_DIR = os.path.dirname(os.path.abspath(__file__))
+my_twiss_file = os.path.join(THIS_DIR, "b2_design_lattice_1996.twiss")
+
+
+def test_cpp_updateTwiss():
+    twiss = ibslib.GetTwissTable(my_twiss_file)
+    tw = ibslib.updateTwiss(twiss)
+
+    print(twiss.keys())
+    print(tw.keys())
+
+    assert sorted(list(twiss.keys())) == sorted(
+        ["ALFX", "ALFY", "ANGLE", "BETX", "BETY", "DPX", "DPY", "DX", "DY", "K1L", "K1SL", "L"]
+    )
+    assert sorted(list(tw.keys())) == sorted(
+        [
+            "ALFX",
+            "ALFY",
+            "ANGLE",
+            "BETX",
+            "BETY",
+            "DPX",
+            "DPY",
+            "DX",
+            "DY",
+            "I1",
+            "I2",
+            "I3",
+            "I4x",
+            "I4y",
+            "I5x",
+            "I5y",
+            "K1L",
+            "K1SL",
+            "L",
+            "gammax",
+            "gammay",
+            "hx",
+            "hy",
+            "k",
+            "rho",
+        ]
+    )

@@ -193,8 +193,10 @@ to get it one needs to run:
     $ git submodule add https://github.com/pybind/pybind11.git third_party/pybind11-2.6.2
     $ git add .
 
-Note that the order of commits and immediately after adding the submodule doing 
-a new commit is important to not get errors. 
+
+.. note:: Note that the order of commits and immediately after adding the submodule doing 
+    a new commit is important to not get errors. 
+
 
 Wrapping the code
 -----------------
@@ -250,6 +252,12 @@ within python.
         if(NOT PYTHON_LIBRARY_DIR_RESULT MATCHES 0)
             message(SEND_ERROR "Failed to determine PYTHON_LIBRARY")
         endif()
+        execute_process(
+            COMMAND "${PYTHON_EXECUTABLE}" -c "import site; print(site.getsitepackages()[0])"
+            OUTPUT_VARIABLE _site_packages
+            OUTPUT_STRIP_TRAILING_WHITESPACE
+            ERROR_QUIET
+        )
     else()
         message(FATAL_ERROR "python executable not found.")
     endif()
@@ -259,4 +267,3 @@ The full ``CMakeLists.txt`` is given below:
 .. include:: ../CMakeLists.txt
     :literal:
 
-    
