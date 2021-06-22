@@ -89,3 +89,16 @@ def test_cpp_rfvoltages(voltages, harmonics, phi, expected):
     actual = ibslib.rf_voltage_in_ev(phi, -1.0, harmonics, voltages)
     assert actual - expected < 1.0e-6
     print(actual)
+
+
+hvphip = [
+    ([1.0], [1.0], 90, -6.123233995e-17),
+    ([1.0, 17.6, 20.0], [400.0, 1200.0, 1400.0], 90, 30.742135),
+]
+
+
+@pytest.mark.parametrize("voltages, harmonics, phi, expected", hvphip)
+def test_cpp_rfvoltages(voltages, harmonics, phi, expected):
+    actual = ibslib.rf_voltage_in_ev_prime(phi, -1.0, harmonics, voltages)
+    assert actual - expected < 1.0e-6
+    print(actual)

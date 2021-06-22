@@ -1,8 +1,6 @@
 #include "../cpp/include/ibs_bits/NumericFunctions.hpp"
 #include "../cpp/include/ibs_bits/RadiationDamping.hpp"
 #include "../cpp/include/ibs_bits/twiss.hpp"
-//#include "../third_party/pybind11-2.6.2/include/pybind11/pybind11.h"
-//#include "../third_party/pybind11-2.6.2/include/pybind11/stl.h"
 #include <pybind11/numpy.h>
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
@@ -40,6 +38,40 @@ PYBIND11_MODULE(IBSLib, m) {
           return EffectiveRFVoltageInElectronVolt(phi, c, h.size(), h.data(),
                                                   v.data());
         });
-  //&EffectiveRFVoltageInElectronVolt,
-  // "Get effective RF voltage times charge from single or multi RF system.");
+  m.def("rf_voltage_in_ev_prime",
+        [](double phi, double c, std::vector<double> h, std::vector<double> v) {
+          return EffectiveRFVoltageInElectronVoltPrime(phi, c, h.size(),
+                                                       h.data(), v.data());
+        });
+  m.def("rf_voltage_in_ev_wiht_rad_loasses",
+        [](double phi, double U0, double c, std::vector<double> h,
+           std::vector<double> v) {
+          return VeffRFeVRadlosses(phi, c, U0, h.size(), h.data(), v.data());
+        });
+  m.def("get_synchronuous_phase",
+        [](double target, double init_phi, double U0, double c,
+           std::vector<double> h, std::vector<double> v, double e) {
+          return SynchronuousPhase(target, init_phi, c, U0, h.size(), h.data(),
+                                   v.data(), e);
+        });
+  m.def("rf_voltage_with_potential_well_distortion",
+        [](double target, double U0, double c, std::vector<double> h,
+           std::vector<double> v, double L, double N, double sigs, double pc) {
+          return VeffRFeVPotentialWellDistortion(
+              target, U0, c, h.size(), h.data(), v.data(), L, N, sigs, pc);
+        });
+  m.def("rf_voltage_with_potential_well_distortion_prime",
+        [](double target, double U0, double c, std::vector<double> h,
+           std::vector<double> v, double L, double N, double sigs, double pc) {
+          return VeffRFeVPotentialWellDistortionPrime(
+              target, U0, c, h.size(), h.data(), v.data(), L, N, sigs, pc);
+        });
+  m.def("get_synchronuous_phase__with_potential_well_distortion",
+        [](double target, double init_phi, double U0, double c,
+           std::vector<double> h, std::vector<double> v, double L, double N,
+           double sigs, double pc, double e) {
+          return VeffRFeVPotentialWellDistortionPrime(
+              target, init_phi, U0, c, h.size(), h.data(), v.data(), L, N, sigs,
+              pc, e);
+        });
 }
