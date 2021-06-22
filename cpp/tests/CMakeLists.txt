@@ -18,7 +18,10 @@ find_library(IBSLIB_LIB IBSLib HINTS /usr/local/lib/)
 add_executable(test_cpp src/test_cpp.cpp)
 add_executable(test_radiation_damping_cpp src/DemoRadDamping.cpp)
 add_executable(test_coulomblog_functions_cpp src/DemoCoulombLog.cpp)
+add_executable(test_integrators_cpp src/DemoIntegrators.cpp)
+
 
 target_link_libraries(test_cpp PUBLIC ${IBSLIB_LIB})
 target_link_libraries(test_radiation_damping_cpp PUBLIC ${IBSLIB_LIB})
 target_link_libraries(test_coulomblog_functions_cpp PUBLIC ${IBSLIB_LIB})
+target_link_libraries(test_integrators_cpp PUBLIC ${IBSLIB_LIB})

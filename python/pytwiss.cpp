@@ -3,6 +3,7 @@
 //#include "../cpp/include/ibs_bits/RadiationDamping.hpp"
 //#include "../cpp/include/ibs_bits/twiss.hpp"
 #include <ibs>
+#include <pybind11/functional.h>
 #include <pybind11/numpy.h>
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
@@ -161,4 +162,46 @@ PYBIND11_MODULE(IBSLib, m) {
           ptr_clog[1] = clog[1];
         },
         "Calculate the Coulomb Log with tailcut using ring average.");
+  m.def("integrator_simpson_decade",
+        [](double a, double b, double c, double cl, double cx, double cy,
+           double cprime, double cyy, double tl1, double tl2, double tx1,
+           double tx2, double ty1, double ty2, py::array_t<double> tau) {
+          double alpha[3];
+          SimpsonDecade(a, b, c, cl, cx, cy, cprime, cyy, tl1, tl2, tx1, tx2,
+                        ty1, ty2, alpha);
+          auto buf_tau = tau.request();
+          double *ptr_tau = static_cast<double *>(buf_tau.ptr);
+          ptr_tau[0] = alpha[0];
+          ptr_tau[1] = alpha[1];
+          ptr_tau[2] = alpha[2];
+        },
+        "Simpson integrator with decade splitting.");
+  m.def("integrator_twsint",
+        [](double pnumber, double ex, double ey, double sigs, double sige,
+           double gammas, double betax, double betay, double alx, double aly,
+           double dx, double dpx, double dy, double dpy,
+           py::array_t<double> tau) {
+          double alpha[3];
+          twsint(pnumber, ex, ey, sigs, sige, gammas, betax, betay, alx, aly,
+                 dx, dpx, dy, dpy, alpha);
+          auto buf_tau = tau.request();
+          double *ptr_tau = static_cast<double *>(buf_tau.ptr);
+          ptr_tau[0] = alpha[0];
+          ptr_tau[1] = alpha[1];
+          ptr_tau[2] = alpha[2];
+        },
+        "MADX Simpson Decade with scaling integrator");
+  m.def("integrand", &IBSIntegralIntegrand, "IBS integral integrand ");
+  m.def("integrator_simpson", &simpson, ""); /*
+          [](const std::function<double(double, double, double, double, double,
+                                        double)> &ibsintegrand,
+             double ax, double bx, double a, double b, double c, double al,
+             double bl,
+             int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
+          }, "Standard Simpson integrator");*/
+  m.def("integrator_simpson_var_integrand", []() {}, "");
+  m.def("integral_bjorken_mtingwa", []() {}, "");
+  m.def("integral_conte_martini", []() {}, "");
+  m.def("integral_madx", []() {}, "");
+  m.def("integra_twsint", []() {}, "");
 }

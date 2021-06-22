@@ -23,11 +23,14 @@ set(SOURCE_FILES
     ${PROJECT_INCLUDE_DIR}/NumericFunctions.hpp
     ${PROJECT_INCLUDE_DIR}/CoulombLogFunctions.hpp
     ${PROJECT_SOURCE_DIR}/twiss.cpp
+    ${PROJECT_SOURCE_DIR}/Integrators.cpp
     ${PROJECT_SOURCE_DIR}/RadiationDamping.cpp
     ${PROJECT_SOURCE_DIR}/NumericFunctions.cpp
     ${PROJECT_SOURCE_DIR}/CoulombLogFunctions.cpp
+    ${PROJECT_SOURCE_DIR}/Integrators.cpp
 )
 
+#file (GLOB SOURCE_FILES "${PROJECT_INCLUDE_DIR}/*.hpp" "${PROJECT_SOURCE_DIR}/*.cpp")
 
 # Set up such that XCode organizes the files correctly
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCE_FILES})
