@@ -6,5 +6,7 @@
 #include "ibs_bits/RadiationDamping.hpp"
 #include "ibs_bits/CoulombLogFunctions.hpp"
 #include "ibs_bits/Integrators.hpp"
+#include "ibs_bits/Models.hpp"
+#include "ibs_bits/OrdDiffEq.hpp"
 
 #endif
