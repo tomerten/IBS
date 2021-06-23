@@ -22,14 +22,14 @@ void blue() { printf("\033[1;34m"); }
 void cyan() { printf("\033[1;36m"); }
 void reset() { printf("\033[0m"); }
 
-void WriteToFile(string filename, vector<double> &ex, vector<double> &ey,
-                 vector<double> &sigs) {
+void WriteToFile(string filename, vector<double> &t, vector<double> &ex,
+                 vector<double> &ey, vector<double> &sigs) {
   ofstream csvfile(filename);
   if (csvfile.is_open()) {
-    int num_of_rows = min({ex.size(), ey.size(), sigs.size()});
-    csvfile << "ex,ey,sigs" << endl;
+    int num_of_rows = min({t.size(), ex.size(), ey.size(), sigs.size()});
+    csvfile << "t,ex,ey,sigs" << endl;
     for (int i = 0; i < num_of_rows; i++) {
-      csvfile << ex[i] << "," << ey[i] << "," << sigs[i] << endl;
+      csvfile << t[i] << "," << ex[i] << "," << ey[i] << "," << sigs[i] << endl;
     }
   } else {
     cout << "File could not be opened";
@@ -39,8 +39,8 @@ void WriteToFile(string filename, vector<double> &ex, vector<double> &ey,
 
 void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
          int nrf, double harmon[], double voltages[], double dt, int maxsteps,
-         vector<double> &ex, vector<double> &ey, vector<double> &sigs,
-         vector<double> sige, int model, double pnumber) {
+         vector<double> &t, vector<double> &ex, vector<double> &ey,
+         vector<double> &sigs, vector<double> sige, int model, double pnumber) {
 
   // Radiation integrals
   double gamma = twiss["GAMMA"];
@@ -219,6 +219,13 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   ================================================================================
   */
   do {
+    // update timestep
+    ddt = min(tauradx, taurady);
+    ddt = min(ddt, taurads);
+    ddt = min(ddt, 1.0 / ibs[0]);
+    ddt = min(ddt, 1.0 / ibs[1]);
+    ddt = min(ddt, 1.0 / ibs[2]);
+
     // ibs growth rates update
     switch (model) {
     case 1:
@@ -228,84 +235,84 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
       aey = ibs[2];
       break;
     case 2:
-      ibs = PiwinskiLattice(pnumber, ex[0], ey[0], sigs[0], sige[0], twiss,
+      ibs = PiwinskiLattice(pnumber, ex[i], ey[i], sigs[i], sige[i], twiss,
                             twissdata, r0);
       aes = ibs[0];
       aex = ibs[1];
       aey = ibs[2];
       break;
     case 3:
-      ibs = PiwinskiLatticeModified(pnumber, ex[0], ey[0], sigs[0], sige[0],
+      ibs = PiwinskiLatticeModified(pnumber, ex[i], ey[i], sigs[i], sige[i],
                                     twiss, twissdata, r0);
       aes = ibs[0];
       aex = ibs[1];
       aey = ibs[2];
       break;
     case 4:
-      ibs = Nagaitsev(pnumber, ex[0], ey[0], sigs[0], sige[0], twiss, twissdata,
+      ibs = Nagaitsev(pnumber, ex[i], ey[i], sigs[i], sige[i], twiss, twissdata,
                       r0);
       aes = ibs[0];
       aex = ibs[1];
       aey = ibs[2];
       break;
     case 5:
-      ibs = Nagaitsevtailcut(pnumber, ex[0], ey[0], sigs[0], sige[0], twiss,
+      ibs = Nagaitsevtailcut(pnumber, ex[i], ey[i], sigs[i], sige[i], twiss,
                              twissdata, r0, aatom);
       aes = ibs[0];
       aex = ibs[1];
       aey = ibs[2];
       break;
     case 6:
-      ibs = ibsmadx(pnumber, ex[0], ey[0], sigs[0], sige[0], twiss, twissdata,
+      ibs = ibsmadx(pnumber, ex[i], ey[i], sigs[i], sige[i], twiss, twissdata,
                     r0, false);
       aes = ibs[0];
       aex = ibs[1];
       aey = ibs[2];
       break;
     case 7:
-      ibs = ibsmadxtailcut(pnumber, ex[0], ey[0], sigs[0], sige[0], twiss,
+      ibs = ibsmadxtailcut(pnumber, ex[i], ey[i], sigs[i], sige[i], twiss,
                            twissdata, r0, aatom);
       aes = ibs[0];
       aex = ibs[1];
       aey = ibs[2];
       break;
     case 8:
-      ibs = BjorkenMtingwa2(pnumber, ex[0], ey[0], sigs[0], sige[0], twiss,
+      ibs = BjorkenMtingwa2(pnumber, ex[i], ey[i], sigs[i], sige[i], twiss,
                             twissdata, r0);
       aes = ibs[0];
       aex = ibs[1];
       aey = ibs[2];
       break;
     case 9:
-      ibs = BjorkenMtingwa(pnumber, ex[0], ey[0], sigs[0], sige[0], twiss,
+      ibs = BjorkenMtingwa(pnumber, ex[i], ey[i], sigs[i], sige[i], twiss,
                            twissdata, r0);
       aes = ibs[0];
       aex = ibs[1];
       aey = ibs[2];
       break;
     case 10:
-      ibs = BjorkenMtingwatailcut(pnumber, ex[0], ey[0], sigs[0], sige[0],
+      ibs = BjorkenMtingwatailcut(pnumber, ex[i], ey[i], sigs[i], sige[i],
                                   twiss, twissdata, r0, aatom);
       aes = ibs[0];
       aex = ibs[1];
       aey = ibs[2];
       break;
     case 11:
-      ibs = ConteMartini(pnumber, ex[0], ey[0], sigs[0], sige[0], twiss,
+      ibs = ConteMartini(pnumber, ex[i], ey[i], sigs[i], sige[i], twiss,
                          twissdata, r0);
       aes = ibs[0];
       aex = ibs[1];
       aey = ibs[2];
       break;
     case 12:
-      ibs = ConteMartinitailcut(pnumber, ex[0], ey[0], sigs[0], sige[0], twiss,
+      ibs = ConteMartinitailcut(pnumber, ex[i], ey[i], sigs[i], sige[i], twiss,
                                 twissdata, r0, aatom);
       aes = ibs[0];
       aex = ibs[1];
       aey = ibs[2];
       break;
     case 13:
-      ibs = MadxIBS(pnumber, ex[0], ey[0], sigs[0], sige[0], twiss, twissdata,
+      ibs = MadxIBS(pnumber, ex[i], ey[i], sigs[i], sige[i], twiss, twissdata,
                     r0);
       aes = ibs[0];
       aex = ibs[1];
@@ -334,17 +341,18 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
     printf("aex : %10.6f\n", aex);
     printf("aey : %10.6f\n\n", aey);
     */
-    ex.push_back(extemp[i - 1] * exp(2 * dt * (-1 / tauradx + aex)) +
-                 equi[3] * (1 - exp(-2 * dt * i / tauradx)));
-    extemp.push_back(extemp[i - 1] * exp(2 * dt * (-1 / tauradx + aex)));
+    t.push_back(t[i - 1] + ddt);
+    ex.push_back(extemp[i - 1] * exp(2 * ddt * (-1 / tauradx + aex)) +
+                 equi[3] * (1 - exp(-2 * ddt * i / tauradx)));
+    extemp.push_back(extemp[i - 1] * exp(2 * ddt * (-1 / tauradx + aex)));
 
-    ey.push_back(eytemp[i - 1] * exp(2 * dt * (-1 / taurady + aey)) +
-                 equi[4] * (1 - exp(-2 * dt * i / taurady)));
-    eytemp.push_back(eytemp[i - 1] * exp(2 * dt * (-1 / taurady + aey)));
+    ey.push_back(eytemp[i - 1] * exp(2 * ddt * (-1 / taurady + aey)) +
+                 equi[4] * (1 - exp(-2 * ddt * i / taurady)));
+    eytemp.push_back(eytemp[i - 1] * exp(2 * ddt * (-1 / taurady + aey)));
 
-    sige2.push_back(sige2temp[i - 1] * exp(2 * dt * (-1 / taurads + aes)) +
-                    equi[5] * (1 - exp(-2 * i * dt / taurads)));
-    sige2temp.push_back(sige2temp[i - 1] * exp(2 * dt * (-1 / taurads + aes)));
+    sige2.push_back(sige2temp[i - 1] * exp(2 * ddt * (-1 / taurads + aes)) +
+                    equi[5] * (1 - exp(-2 * i * ddt / taurads)));
+    sige2temp.push_back(sige2temp[i - 1] * exp(2 * ddt * (-1 / taurads + aes)));
 
     sige.push_back(sqrt(sige2[i]));
     sigs.push_back(sigsfromsige(sige[i], gamma, gammatr, omegas));
@@ -367,13 +375,16 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
     printf("sigsdiff : %12.6e\n", fabs((sigs[i] - sigs[i - 1]) / sigs[i - 1]));
     reset();
     */
-  } while (i < maxsteps &&
-           (fabs((ex[i] - ex[i - 1]) / ex[i - 1]) > 1e-3 ||
-            fabs((ey[i] - ey[i - 1]) / ey[i - 1]) > 1e-3 ||
-            fabs((sigs[i] - sigs[i - 1]) / sigs[i - 1]) > 1e-3));
+  } while (i < ms && (fabs((ex[i] - ex[i - 1]) / ex[i - 1]) > 1e-5 ||
+                      fabs((ey[i] - ey[i - 1]) / ey[i - 1]) > 1e-5 ||
+                      fabs((sigs[i] - sigs[i - 1]) / sigs[i - 1]) > 1e-5));
   blue();
   printf("%-20s : %12.6e\n", "Final ex", ex[ex.size() - 1]);
   printf("%-20s : %12.6e\n", "Final ey", ey[ey.size() - 1]);
   printf("%-20s : %12.6e\n", "Final sigs", sigs[sigs.size() - 1]);
+
+  printf("%-20s : %12.6e\n", "Final tau_ibs_x", 1.0 / ibs[1]);
+  printf("%-20s : %12.6e\n", "Final tau_ibs_y", 1.0 / ibs[2]);
+  printf("%-20s : %12.6e\n", "Final tau_ibs_s", 1.0 / ibs[0]);
   reset();
 }
