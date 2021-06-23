@@ -202,7 +202,7 @@ double IBSIntegralIntegrand(double lambda, double ax, double bx, double a,
 /*
 ================================================================================
 ================================================================================
-iSTANDARD SIMPSON INTEGRATION METHOD
+STANDARD SIMPSON INTEGRATION METHOD
 
 NOTE:
 -----
@@ -325,16 +325,22 @@ STANDARD SIMPSON INTEGRAL FOR BJORKEN-MTINGWA INTEGRAND.
 ================================================================================
 ================================================================================
 */
-void intSimpson(double BjorkenMtingwaIntegrand(double, double, double, double,
-                                               double, double),
-                double ax, double bx, double ay, double by, double as,
-                double bs, double a, double b, double c, double *integral) {
+void intSimpson(
+    const std::function<double(double, double, double, double, double, double)>
+        &BjorkenMtingwaIntegrand,
+    double ax, double bx, double ay, double by, double as, double bs, double a,
+    double b, double c, double *integral) {
   double al[31], bl[30], aloop, bloop;
 
   int maxdec = 30, ns = 50;
   double test = 1.0e-7;
   bool flag = 0;
   // double integral[3] = {0.0,0.0,0.0};
+
+  // init integral
+  integral[0] = 0.0;
+  integral[1] = 0.0;
+  integral[2] = 0.0;
 
   al[0] = 0.0;
   for (int iloop = 0; iloop < maxdec; iloop++) {

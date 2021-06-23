@@ -192,16 +192,71 @@ PYBIND11_MODULE(IBSLib, m) {
         },
         "MADX Simpson Decade with scaling integrator");
   m.def("integrand", &IBSIntegralIntegrand, "IBS integral integrand ");
-  m.def("integrator_simpson", &simpson, ""); /*
-          [](const std::function<double(double, double, double, double, double,
-                                        double)> &ibsintegrand,
-             double ax, double bx, double a, double b, double c, double al,
-             double bl,
-             int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
-          }, "Standard Simpson integrator");*/
-  m.def("integrator_simpson_var_integrand", []() {}, "");
-  m.def("integral_bjorken_mtingwa", []() {}, "");
-  m.def("integral_conte_martini", []() {}, "");
-  m.def("integral_madx", []() {}, "");
-  m.def("integra_twsint", []() {}, "");
+  m.def("integrator_simpson", &simpson,
+        "standard simpson integration on variable integrand (function)"); /*
+[](const std::function<double(double, double, double, double, double,
+        double)> &ibsintegrand,
+double ax, double bx, double a, double b, double c, double al,
+double bl,
+int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
+}, "Standard Simpson integrator");*/
+  m.def("integrator_simpson_bjorken_mtingwa",
+        [](const std::function<double(double, double, double, double, double,
+                                      double)> &ibsintegrand,
+           double ax, double bx, double ay, double by, double as, double bs,
+           double a, double b, double ci, py::array_t<double> tau) {
+          double alpha[3];
+          intSimpson(ibsintegrand, ax, bx, ay, by, as, bs, a, b, ci, alpha);
+          auto buf_tau = tau.request();
+          double *ptr_tau = static_cast<double *>(buf_tau.ptr);
+          ptr_tau[0] = alpha[0];
+          ptr_tau[1] = alpha[1];
+          ptr_tau[2] = alpha[2];
+        },
+        "Standard Simpson integral on Bjorken-Mtingwa integrand.");
+  m.def("integral_bjorken_mtingwa",
+        [](double pnumber, double ex, double ey, double sigs, double sige,
+           double gammas, double betx, double bety, double alx, double aly,
+           double dx, double dpx, double dy, double dpy,
+           py::array_t<double> tau) {
+          double alpha[3];
+          BjorkenMtingwaInt(pnumber, ex, ey, sigs, sige, gammas, betx, bety,
+                            alx, aly, dx, dpx, dy, dpy, alpha);
+          auto buf_tau = tau.request();
+          double *ptr_tau = static_cast<double *>(buf_tau.ptr);
+          ptr_tau[0] = alpha[0];
+          ptr_tau[1] = alpha[1];
+          ptr_tau[2] = alpha[2];
+        },
+        "Bjorken-Mtingwa integral calculated using Simpson Decade");
+  m.def("integral_conte_martini",
+        [](double pnumber, double ex, double ey, double sigs, double sige,
+           double gammas, double betx, double bety, double alx, double aly,
+           double dx, double dpx, double dy, double dpy,
+           py::array_t<double> tau) {
+          double alpha[3];
+          ConteMartiniInt(pnumber, ex, ey, sigs, sige, gammas, betx, bety, alx,
+                          aly, dx, dpx, dy, dpy, alpha);
+          auto buf_tau = tau.request();
+          double *ptr_tau = static_cast<double *>(buf_tau.ptr);
+          ptr_tau[0] = alpha[0];
+          ptr_tau[1] = alpha[1];
+          ptr_tau[2] = alpha[2];
+        },
+        "Conte-Martini integral calculated using Simpson Decade");
+  m.def("integral_zimmerman",
+        [](double pnumber, double ex, double ey, double sigs, double sige,
+           double gammas, double betx, double bety, double alx, double aly,
+           double dx, double dpx, double dy, double dpy,
+           py::array_t<double> tau) {
+          double alpha[3];
+          MadxInt(pnumber, ex, ey, sigs, sige, gammas, betx, bety, alx, aly, dx,
+                  dpx, dy, dpy, alpha);
+          auto buf_tau = tau.request();
+          double *ptr_tau = static_cast<double *>(buf_tau.ptr);
+          ptr_tau[0] = alpha[0];
+          ptr_tau[1] = alpha[1];
+          ptr_tau[2] = alpha[2];
+        },
+        "Zimmerman integral calculated using Simpson Decade");
 }

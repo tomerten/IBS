@@ -6,7 +6,6 @@ cd ..
 cd tests/build
 cmake ..
 make
-../bin/test_integrators
 cd ../../../build
 cmake ..
 make

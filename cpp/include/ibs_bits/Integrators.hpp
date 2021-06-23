@@ -15,8 +15,8 @@ double simpson(const std::function<double(double, double, double, double,
                double ax, double bx, double a, double b, double c, double al,
                double bl, int n);
 
-void intSimpson(double ibsintegrand(double, double, double, double, double,
-                                    double),
+void intSimpson(const std::function<double(double, double, double, double,
+                                           double, double)> &ibsintegrand,
                 double ax, double bx, double ay, double by, double as,
                 double bs, double a, double b, double ci, double *integral);
 

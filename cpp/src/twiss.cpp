@@ -34,7 +34,7 @@ map<string, double> GetTwissHeader(string filename) {
   getline(file, line);
   // check if file is open
   if (file.is_open()) {
-    printf("File is open. Reading Twiss header.\n");
+    // printf("File is open. Reading Twiss header.\n");
     // read lines until eof
     int counter = 0;
     string key;
@@ -54,7 +54,7 @@ map<string, double> GetTwissHeader(string filename) {
     }
   }
   file.close();
-  printf("File is closed. Done reading Twiss header.\n");
+  // printf("File is closed. Done reading Twiss header.\n");
   return out;
 }
 
