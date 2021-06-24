@@ -332,8 +332,8 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
               sige, model, pnumber);
           map<string, vector<double>> res;
           res["ex"] = ex;
-          res["ey"] = ex;
-          res["sigs"] = ex;
+          res["ey"] = ey;
+          res["sigs"] = sigs;
           return res;
         },
         "");

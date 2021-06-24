@@ -126,11 +126,14 @@ def test_cpp_integrator_twsint():
         twissheader, twisstable, harmon, voltages, t, exa, eya, sigsa, sigea, 1, 1e10
     )
 
-    print(exa)
     print(res)
     exfinal = 5.908329e-09
+    eyfinal = 2.617289e-13
+    sigsfinal = 3.054559e-03
+    assert abs((res["ex"][-1] - exfinal) / exfinal) < 1e-6
+    assert abs((res["ey"][-1] - eyfinal) / eyfinal) < 1e-6
+    assert abs((res["sigs"][-1] - sigsfinal) / sigsfinal) < 1e-6
 
-    # assert abs((exa[-1] - exfinal) / exfinal) < 1e-6
     # print("*** simpson-twsint ***")
     # print(tau)
     # expected = [1.66573660e01, 1.88711448e03, 1.27508746e-02]
