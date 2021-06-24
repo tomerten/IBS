@@ -8,6 +8,7 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 
+// PYBIND11_MAKE_OPAQUE(std::vector<double>);
 namespace py = pybind11;
 
 PYBIND11_MODULE(IBSLib, m) {
@@ -15,6 +16,69 @@ PYBIND11_MODULE(IBSLib, m) {
   m.def("GetTwissHeader", &GetTwissHeader,
         "Get the twiss header as a dictionary.");
   m.def("GetTwissTable", &GetTwissTableAsMap, "Get the twiss data table.");
+  m.def("RadiationDampingApprox",
+        [](double latticeLength, double gamma, double gammaTransition,
+           double dipoleBendingRadius, double betax, double betay,
+           py::array_t<double> out) {
+          double *radint;
+          radint = RadiationDampingApprox(latticeLength, gamma, gammaTransition,
+                                          dipoleBendingRadius, betax, betay);
+          auto buf_out = out.request();
+          double *ptr_out = static_cast<double *>(buf_out.ptr);
+          ptr_out[0] = radint[0];
+          ptr_out[1] = radint[1];
+          ptr_out[2] = radint[2];
+          ptr_out[3] = radint[3];
+          ptr_out[4] = radint[4];
+          ptr_out[5] = radint[5];
+          ptr_out[6] = radint[6];
+        },
+        "Approx radiation damping");
+  m.def("RadiationDampingLattice",
+        [](map<string, vector<double>> &table, py::array_t<double> out) {
+          double *radint;
+          radint = RadiationDampingLattice(table);
+
+          auto buf_out = out.request();
+          double *ptr_out = static_cast<double *>(buf_out.ptr);
+          ptr_out[0] = radint[0];
+          ptr_out[1] = radint[1];
+          ptr_out[2] = radint[2];
+          ptr_out[3] = radint[3];
+          ptr_out[4] = radint[4];
+          ptr_out[5] = radint[5];
+          ptr_out[6] = radint[6];
+        },
+        "Radiation damping weighted per element.");
+  m.def(
+      "get_rad_damp_equi",
+      [](map<string, double> &twissheadermap, py::array_t<double> radint,
+         double aatom, double qs, py::array_t<double> out) {
+        double *equi;
+        double r[7];
+        auto buf = radint.request();
+        double *ptr = static_cast<double *>(buf.ptr);
+        for (int i = 0; i < 7; i++) {
+          r[i] = ptr[i];
+        }
+        equi =
+            RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers(
+                twissheadermap, r, aatom, qs);
+        auto buf_out = out.request();
+        double *ptr_out = static_cast<double *>(buf_out.ptr);
+        ptr_out[0] = equi[0];
+        ptr_out[1] = equi[1];
+        ptr_out[2] = equi[2];
+        ptr_out[3] = equi[3];
+        ptr_out[4] = equi[4];
+        ptr_out[5] = equi[5];
+        ptr_out[6] = equi[6];
+        ptr_out[7] = equi[7];
+        ptr_out[8] = equi[8];
+      },
+      "Get radiation damping equilibs.");
+  m.def("get_energy_loss_per_turn", &RadiationLossesPerTurn,
+        "Get the energy loss per turn.");
   m.attr("clight") = py::float_(clight);
   m.attr("hbarGeV") = py::float_(hbar);
   m.attr("electron_mass") = py::float_(emass);
@@ -259,4 +323,18 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_tau[2] = alpha[2];
         },
         "Zimmerman integral calculated using Simpson Decade");
+  m.def("runODE",
+        [](map<string, double> &twiss, map<string, vector<double>> &twissdata,
+           vector<double> h, vector<double> v, vector<double> &t,
+           vector<double> &ex, vector<double> &ey, vector<double> &sigs,
+           vector<double> sige, int model, double pnumber) {
+          ODE(twiss, twissdata, h.size(), h.data(), v.data(), t, ex, ey, sigs,
+              sige, model, pnumber);
+          map<string, vector<double>> res;
+          res["ex"] = ex;
+          res["ey"] = ex;
+          res["sigs"] = ex;
+          return res;
+        },
+        "");
 }

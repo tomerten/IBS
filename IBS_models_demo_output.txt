@@ -1,0 +1,15 @@
+Model              t_ibs_sige2  	t_ibs_x_emit 	t_ibs_y_emit 
+===================================================================
+Piwinski smooth    -nan		-nan	-nan
+Piwinski Lattice   -nan		-nan	-nan
+Piwinski Lat Mod   -nan		-nan	-nan
+Nagiatsev          -nan		-nan	-nan
+Nagiatsev Tailcut  -nan		-nan	-nan
+Madx               -nan		-nan	-nan
+Madx Tailcut       -nan		-nan	-nan
+Bjorken-Mtingwa  S -nan		-nan	-nan
+Bjorken-Mtingwa SD -nan		-nan	-nan
+Bjorken-Mtingwa TC -nan		-nan	-nan
+Conte-Martini      -nan		-nan	-nan
+Conte-Martini TC   -nan		-nan	-nan
+Madx SD            -nan		-nan	-nan

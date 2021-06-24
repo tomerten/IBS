@@ -38,9 +38,9 @@ void WriteToFile(string filename, vector<double> &t, vector<double> &ex,
 }
 
 void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
-         int nrf, double harmon[], double voltages[], double dt, int maxsteps,
-         vector<double> &t, vector<double> &ex, vector<double> &ey,
-         vector<double> &sigs, vector<double> sige, int model, double pnumber) {
+         int nrf, double harmon[], double voltages[], vector<double> &t,
+         vector<double> &ex, vector<double> &ey, vector<double> &sigs,
+         vector<double> sige, int model, double pnumber) {
 
   // Radiation integrals
   double gamma = twiss["GAMMA"];
@@ -61,8 +61,12 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   double neta = eta(gamma, gammatr);
   double epsilon = 1.0e-6;
 
+  printf("ex0 %12.6e\n", twissdata["BETX"][0]);
+
   double *radint;
   radint = RadiationDampingLattice(twissdata);
+
+  printf("radint : %12.6e\n", radint[0]);
   // printradint(radint);
 
   // Longitudinal Parameters
@@ -131,6 +135,10 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   // initial ibs growth rates
   switch (model) {
   case 1:
+    printf("%12.6e\n", ex[0]);
+    printf("%12.6e\n", ey[0]);
+    printf("%12.6e\n", sigs[0]);
+    printf("%12.6e\n", sige[0]);
     ibs = PiwinskiSmooth(pnumber, ex[0], ey[0], sigs[0], sige[0], twiss, r0);
     break;
   case 2:
@@ -183,13 +191,6 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
     break;
   }
 
-  printf("Taux : %12.6e\n", tauradx);
-  printf("Tauy : %12.6e\n", taurady);
-  printf("Taus : %12.6e\n", taurads);
-  printf("Tauxi : %12.6e\n", 1.0 / ibs[0]);
-  printf("Tausi : %12.6e\n", 1.0 / ibs[1]);
-  printf("Tauyi : %12.6e\n", 1.0 / ibs[2]);
-
   double taum = max(tauradx, taurady);
   taum = max(taum, taurads);
   taum = max(taum, 1.0 / ibs[0]);
@@ -210,7 +211,6 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   printf("Max tau : %12.6e\n", taum);
   printf("dt      : %12.6e\n", ddt);
   printf("Max step: %i\n", ms);
-
   reset();
 
   /*

@@ -159,7 +159,7 @@ map<string, vector<double>> GetTwissTableAsMap(string filename) {
   ifstream file(filename);
 
   if (file.is_open()) {
-    printf("File is open\n");
+    // printf("File is open\n");
 
     vector<double> row;
     int rowcounter = 0;
