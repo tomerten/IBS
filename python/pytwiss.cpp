@@ -331,6 +331,23 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ODE(twiss, twissdata, h.size(), h.data(), v.data(), t, ex, ey, sigs,
               sige, model, pnumber);
           map<string, vector<double>> res;
+          res["t"] = t;
+          res["ex"] = ex;
+          res["ey"] = ey;
+          res["sigs"] = sigs;
+          return res;
+        },
+        "");
+  m.def("runODE",
+        [](map<string, double> &twiss, map<string, vector<double>> &twissdata,
+           vector<double> h, vector<double> v, vector<double> &t,
+           vector<double> &ex, vector<double> &ey, vector<double> &sigs,
+           vector<double> sige, int model, double pnumber, int nsteps,
+           double stepsize) {
+          ODE(twiss, twissdata, h.size(), h.data(), v.data(), t, ex, ey, sigs,
+              sige, model, pnumber, nsteps, stepsize);
+          map<string, vector<double>> res;
+          res["t"] = t;
           res["ex"] = ex;
           res["ey"] = ey;
           res["sigs"] = sigs;

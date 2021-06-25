@@ -8,6 +8,7 @@ Welcome to ibs's documentation!
 
    readme
    installation
+   apps
    api
    authors
    history

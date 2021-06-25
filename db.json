@@ -1,0 +1,40 @@
+{
+  "runode": {
+    "options": {
+      "verbosity": 1,
+      "project_path": "/home/mti/github-tomerten/ibs",
+      "default_project_path": true,
+      "clear_log": false,
+      "template_parameters": {
+        "project_name": "ibs",
+        "package_name": "ibs",
+        "full_name": "Tom Mertens",
+        "email": "your.email@whatev.er",
+        "github_username": "tomerten",
+        "version": "0.0.0",
+        "github_repo": "{{ cookiecutter.project_name }}",
+        "default_branch": "master",
+        "python_version": "3.7",
+        "sphinx_html_theme": "sphinx_rtd_theme",
+        "open_source_license": "MIT license",
+        "py": "py",
+        "project_short_description": "<Enter a one-sentence description of this project here.>",
+        "app_name": "runode",
+        "cli_app_name": "cli_runode"
+      },
+      "add_name": "runode",
+      "app": true,
+      "group": false,
+      "py": false,
+      "package": false,
+      "f90": false,
+      "cpp": false,
+      "templates": "app-simple",
+      "overwrite": false,
+      "backup": false
+    },
+    "APPS.rst": ".. click:: ibs.cli_runode:main\n   :prog: runode\n   :show-nested:\n\n",
+    "pyproject.toml": "runode = \"refactoring_dev:cli_runode.main\"\n",
+    "ibs/__init__.py": "import ibs.cli_runode\n"
+  }
+}

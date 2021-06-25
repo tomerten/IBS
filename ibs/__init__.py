@@ -7,10 +7,11 @@ Package ibs
 Top-level package for ibs.
 """
 
+import ibs.cli_runode
 __version__ = "0.0.0"
 
 
-def hello(who='world'):
+def hello(who="world"):
     """'Hello world' method.
 
     :param str who: whom to say hello to
@@ -19,4 +20,5 @@ def hello(who='world'):
     result = "Hello " + who
     return result
 
-# Your code here...
+
+import IBSLib as ibslib

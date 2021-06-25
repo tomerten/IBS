@@ -93,26 +93,14 @@ def test_cpp_get_energy_loss_per_turn():
     assert loss - 170261.9087271691 < 1e-6
 
 
-def test_cpp_integrator_twsint():
+def test_cpp_ode1():
     twissheader = ibslib.GetTwissHeader(my_twiss_file)
     twisstable = ibslib.GetTwissTable(my_twiss_file)
     twisstable = ibslib.updateTwiss(twisstable)
-    tau = np.zeros(3)
     pnumber = 1e10
     ex = 5e-9
     ey = 1e-10
     sigs = 0.005
-    sige = 7e-4
-    gammas = twissheader["GAMMA"]
-    len = twissheader["LENGTH"]
-    bxavg = len / (2.0 * ibslib.pi * twissheader["Q1"])
-    byavg = len / (2.0 * ibslib.pi * twissheader["Q2"])
-    alx = 1
-    aly = 2
-    dx = 1
-    dpx = 0.1
-    dy = 0
-    dpy = 0
 
     t = [0.0]
     exa = [ex]
@@ -123,7 +111,7 @@ def test_cpp_integrator_twsint():
     voltages = [-4.0 * 375e3]
 
     res = ibslib.runODE(
-        twissheader, twisstable, harmon, voltages, t, exa, eya, sigsa, sigea, 1, 1e10
+        twissheader, twisstable, harmon, voltages, t, exa, eya, sigsa, sigea, 1, pnumber
     )
 
     print(res)
@@ -134,7 +122,32 @@ def test_cpp_integrator_twsint():
     assert abs((res["ey"][-1] - eyfinal) / eyfinal) < 1e-6
     assert abs((res["sigs"][-1] - sigsfinal) / sigsfinal) < 1e-6
 
-    # print("*** simpson-twsint ***")
-    # print(tau)
-    # expected = [1.66573660e01, 1.88711448e03, 1.27508746e-02]
-    # assert np.allclose(tau, expected)
+
+def test_cpp_ode2():
+    twissheader = ibslib.GetTwissHeader(my_twiss_file)
+    twisstable = ibslib.GetTwissTable(my_twiss_file)
+    twisstable = ibslib.updateTwiss(twisstable)
+    pnumber = 1e10
+    ex = 5e-9
+    ey = 1e-10
+    sigs = 0.005
+
+    t = [0.0]
+    exa = [ex]
+    eya = [ey]
+    sigsa = [sigs]
+    sigea = []
+    harmon = [400.0]
+    voltages = [-4.0 * 375e3]
+
+    res = ibslib.runODE(
+        twissheader, twisstable, harmon, voltages, t, exa, eya, sigsa, sigea, 1, pnumber, 10, 0.005
+    )
+
+    print(res)
+    exfinal = 5.908329e-09
+    eyfinal = 2.617127e-13
+    sigsfinal = 3.054559e-03
+    assert abs((res["ex"][-1] - exfinal) / exfinal) < 1e-6
+    assert abs((res["ey"][-1] - eyfinal) / eyfinal) < 1e-6
+    assert abs((res["sigs"][-1] - sigsfinal) / sigsfinal) < 1e-6
