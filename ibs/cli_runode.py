@@ -93,7 +93,7 @@ def run_single(sim_input: dict, sim_type: str) -> dict:
         )
         return res
     else:
-        return ibslib.runODE(
+        res = ibslib.runODE(
             twissheader,
             twisstable,
             sim_input["harmon"],
@@ -108,6 +108,7 @@ def run_single(sim_input: dict, sim_type: str) -> dict:
             sim_input["nsteps"],
             sim_input["stepsize"],
         )
+        return res
 
 
 def run_all(sim_input: dict, sim_type: str) -> dict:
@@ -132,6 +133,10 @@ def plot(df: pd.DataFrame, sim_input: dict) -> None:
         ax2.set_title(r"$\epsilon_y$")
         ax3.set_title(r"$\sigma_s$")
 
+        ax1.grid()
+        ax2.grid()
+        ax3.grid()
+
         for m, g in df.groupby("model"):
             ax1.plot(g.t, g.ex, lw=1)
             ax2.plot(g.t, g.ey, lw=1)
@@ -154,19 +159,33 @@ def plot(df: pd.DataFrame, sim_input: dict) -> None:
         # ax2.yaxis.set_minor_formatter(FormatStrFormatter("%.1f"))
         plt.savefig(sim_input["plotfile"], bbox_inches="tight")
     else:
+        print("plotting")
         fig = plt.figure(constrained_layout=True)
+        gs = fig.add_gridspec(ncols=2, nrows=2)
 
         ax1 = fig.add_subplot(gs[0, 0])
         ax2 = fig.add_subplot(gs[0, 1])
-        ax3 = fig.add_subplot(gs[0, 2])
+        ax3 = fig.add_subplot(gs[1, :])
 
-        ax1.set_title(r"$\varepsilon_x$")
-        ax2.set_title(r"$\varepsilon_y$")
+        ax1.grid()
+        ax2.grid()
+        ax3.grid()
+
+        ax1.set_title(r"$\epsilon_x$")
+        ax2.set_title(r"$\epsilon_y$")
         ax3.set_title(r"$\sigma_s$")
 
-        ax1.plot(df.t, df.ex)
-        ax2.plot(df.t, df.ey)
-        ax3.plot(df.t, df.sigs)
+        ax1.plot(df.t, df.ex, lw=1)
+        ax2.plot(df.t, df.ey, lw=1)
+        ax3.plot(df.t, df.sigs, lw=1)
+
+        ax1.set_yscale("log")
+        ax2.set_yscale("log")
+
+        ax1.set_xlabel("t[s]")
+        ax2.set_xlabel("t[s]")
+        ax3.set_xlabel("t[s]")
+
         plt.savefig(sim_input["plotfile"])
 
 
@@ -177,7 +196,7 @@ def main(infile):
     sim_type = check_sim_input(sim_input)
 
     model = sim_input["model"]
-
+    print(model)
     if model == 0:
         result = run_all(sim_input, sim_type)
         frames = []
@@ -193,8 +212,11 @@ def main(infile):
 
         plot(df, sim_input)
     else:
+        print("in single")
         result = run_single(sim_input, sim_type)
         df = pd.DataFrame.from_dict(result, orient="columns")
+        df.to_csv(sim_input["outfile"], index=False)
+        print(df)
         plot(df, sim_input)
 
 

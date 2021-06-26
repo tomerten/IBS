@@ -22,6 +22,10 @@ void blue() { printf("\033[1;34m"); }
 void cyan() { printf("\033[1;36m"); }
 void reset() { printf("\033[0m"); }
 
+void printline(string key, double value, string units) {
+  printf("%-20s : %20.6e (%s)\n", key, value, units);
+}
+
 void WriteToFile(string filename, vector<double> &t, vector<double> &ex,
                  vector<double> &ey, vector<double> &sigs) {
   ofstream csvfile(filename);
@@ -41,8 +45,12 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
          int nrf, double harmon[], double voltages[], vector<double> &t,
          vector<double> &ex, vector<double> &ey, vector<double> &sigs,
          vector<double> sige, int model, double pnumber) {
+  double threshold = 1e-4;
 
   // Radiation integrals
+  double twiss_rad[6];
+  double *radint;
+
   double gamma = twiss["GAMMA"];
   double pc = twiss["PC"];
   double gammatr = twiss["GAMMATR"];
@@ -50,7 +58,6 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   double charge = twiss["CHARGE"];
   double q1 = twiss["Q1"];
   double len = twiss["LENGTH"];
-  double twiss_rad[6];
 
   double aatom = emass / pmass;
   double betar = BetaRelativisticFromGamma(gamma);
@@ -61,13 +68,8 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   double neta = eta(gamma, gammatr);
   double epsilon = 1.0e-6;
 
-  printf("ex0 %12.6e\n", twissdata["BETX"][0]);
-
-  double *radint;
+  // get radiation integrals
   radint = RadiationDampingLattice(twissdata);
-
-  printf("radint : %12.6e\n", radint[0]);
-  // printradint(radint);
 
   // Longitudinal Parameters
   double U0 = RadiationLossesPerTurn(twiss, radint[1], aatom);
@@ -82,11 +84,12 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
       RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers(
           twiss, radint, aatom, qs);
 
-  double tauradx, taurady, taurads;
+  double tauradx, taurady, taurads, sigeoe2;
   tauradx = equi[0];
   taurady = equi[1];
   taurads = equi[2];
-  double sigeoe2 = equi[5];
+  sigeoe2 = equi[5];
+  double sige0 = sigefromsigs(omega, equi[6], qs, gamma, gammatr);
 
   cyan();
   printf("Radiation Damping Times\n");
@@ -105,16 +108,15 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   printf("%-20s : %20.6e (%s)\n", "eta", eta(gamma, gammatr), "");
   printf("%-20s : %20.6e (%s)\n", "Sigs", sigs[0], "");
   printf("%-20s : %20.6e (%s)\n", "Sigsinf", equi[6], "");
-
-  double sige0 = sigefromsigs(omega, equi[6], qs, gamma, gammatr);
   printf("%-20s : %20.6e (%s)\n", "Sige0", sige0, "");
+
   sige0 = SigeFromRFAndSigs(equi[6], U0, charge, nrf, harmon, voltages, gamma,
                             gammatr, pc, len, phis, false);
+
+  // check value
   printf("%-20s : %20.6e (%s)\n", "Sige0 - check", sige0, "");
   reset();
 
-  sige0 = SigeFromRFAndSigs(sigs[0], U0, charge, nrf, harmon, voltages, gamma,
-                            gammatr, pc, len, phis, false);
   // write first sige and sige2
   vector<double> sige2;
   sige.push_back(sige0);
@@ -122,6 +124,7 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
 
   // loop variable
   int i = 0;
+
   // ibs growth rates
   double *ibs;
   double aes, aex, aey;
@@ -135,10 +138,6 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   // initial ibs growth rates
   switch (model) {
   case 1:
-    printf("%12.6e\n", ex[0]);
-    printf("%12.6e\n", ey[0]);
-    printf("%12.6e\n", sigs[0]);
-    printf("%12.6e\n", sige[0]);
     ibs = PiwinskiSmooth(pnumber, ex[0], ey[0], sigs[0], sige[0], twiss, r0);
     break;
   case 2:
@@ -375,9 +374,9 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
     printf("sigsdiff : %12.6e\n", fabs((sigs[i] - sigs[i - 1]) / sigs[i - 1]));
     reset();
     */
-  } while (i < ms && (fabs((ex[i] - ex[i - 1]) / ex[i - 1]) > 1e-5 ||
-                      fabs((ey[i] - ey[i - 1]) / ey[i - 1]) > 1e-5 ||
-                      fabs((sigs[i] - sigs[i - 1]) / sigs[i - 1]) > 1e-5));
+  } while (i < ms && (fabs((ex[i] - ex[i - 1]) / ex[i - 1]) > threshold ||
+                      fabs((ey[i] - ey[i - 1]) / ey[i - 1]) > threshold ||
+                      fabs((sigs[i] - sigs[i - 1]) / sigs[i - 1]) > threshold));
   blue();
   printf("%-20s : %12.6e\n", "Final ex", ex[ex.size() - 1]);
   printf("%-20s : %12.6e\n", "Final ey", ey[ey.size() - 1]);
