@@ -190,6 +190,7 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
     break;
   }
 
+  // get max tau limited to max 1.0 sec
   double taum = max(tauradx, taurady);
   taum = max(taum, taurads);
   taum = max(taum, 1.0 / ibs[0]);
@@ -197,19 +198,22 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   taum = max(taum, 1.0 / ibs[2]);
   taum = min(taum, 1.0);
 
+  // get min to auto derive stepsize
   double ddt = min(tauradx, taurady);
   ddt = min(ddt, taurads);
   ddt = min(ddt, 1.0 / ibs[0]);
   ddt = min(ddt, 1.0 / ibs[1]);
   ddt = min(ddt, 1.0 / ibs[2]);
 
+  // define max numer of steps
   int ms = (int)(10 * taum / ddt);
 
   printouts(ibs);
+
   red();
-  printf("Max tau : %12.6e\n", taum);
+  printf("\nMax tau : %12.6e\n", taum);
   printf("dt      : %12.6e\n", ddt);
-  printf("Max step: %i\n", ms);
+  printf("Max step: %i\n\n", ms);
   reset();
 
   /*
@@ -318,37 +322,24 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
       aey = ibs[2];
       break;
     }
-    /*
-    // DEBUG
 
-    cyan();
-    printf("Previous Values \n");
-    printf("================\n");
-
-    printf("ex   : %12.6e\n", ex[i]);
-    printf("ey   : %12.6e\n", ey[i]);
-    printf("sigs : %12.6e\n\n", sigs[i]);
-    reset();
-    */
+    // update loop variable
     i++;
-    /*
-    // DEBUG
-    printf("IBS amplitude growth rates\n");
-    printf("==========================\n");
-    printf("step : %10i\n", i);
-    printf("aes : %10.6f\n", aes);
-    printf("aex : %10.6f\n", aex);
-    printf("aey : %10.6f\n\n", aey);
-    */
+
+    // add ddt to previous time stamp
     t.push_back(t[i - 1] + ddt);
+
+    // horizontal emittance
     ex.push_back(extemp[i - 1] * exp(2 * ddt * (-1 / tauradx + aex)) +
                  equi[3] * (1 - exp(-2 * ddt * i / tauradx)));
     extemp.push_back(extemp[i - 1] * exp(2 * ddt * (-1 / tauradx + aex)));
 
+    // vertical emittance
     ey.push_back(eytemp[i - 1] * exp(2 * ddt * (-1 / taurady + aey)) +
                  equi[4] * (1 - exp(-2 * ddt * i / taurady)));
     eytemp.push_back(eytemp[i - 1] * exp(2 * ddt * (-1 / taurady + aey)));
 
+    // bunch length
     sige2.push_back(sige2temp[i - 1] * exp(2 * ddt * (-1 / taurads + aes)) +
                     equi[5] * (1 - exp(-2 * i * ddt / taurads)));
     sige2temp.push_back(sige2temp[i - 1] * exp(2 * ddt * (-1 / taurads + aes)));
@@ -356,27 +347,12 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
     sige.push_back(sqrt(sige2[i]));
     sigs.push_back(sigsfromsige(sige[i], gamma, gammatr, omegas));
 
-    /*
-    // DEBUG
-    printf("--------------------\n");
-    printf("step : %10i\n", i);
-    cyan();
-    printf("ex   : %12.6e\n", ex[i]);
-    printf("ey   : %12.6e\n", ey[i]);
-    printf("sigs : %12.6e\n", sigs[i]);
-    green();
-    printf("exdiff abs  : %12.6e\n", (ex[i] - ex[i - 1]));
-    printf("eydiff abs  : %12.6e\n", (ey[i] - ey[i - 1]));
-    printf("sigsdiff abs: %12.6e\n", (sigs[i] - sigs[i - 1]));
-    yellow();
-    printf("exdiff   : %12.6e\n", fabs((ex[i] - ex[i - 1]) / ex[i - 1]));
-    printf("eydiff   : %12.6e\n", fabs((ey[i] - ey[i - 1]) / ey[i - 1]));
-    printf("sigsdiff : %12.6e\n", fabs((sigs[i] - sigs[i - 1]) / sigs[i - 1]));
-    reset();
-    */
+    // while condition
   } while (i < ms && (fabs((ex[i] - ex[i - 1]) / ex[i - 1]) > threshold ||
                       fabs((ey[i] - ey[i - 1]) / ey[i - 1]) > threshold ||
                       fabs((sigs[i] - sigs[i - 1]) / sigs[i - 1]) > threshold));
+
+  // print final values
   blue();
   printf("%-20s : %12.6e\n", "Final ex", ex[ex.size() - 1]);
   printf("%-20s : %12.6e\n", "Final ey", ey[ey.size() - 1]);
