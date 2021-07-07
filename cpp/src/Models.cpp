@@ -59,7 +59,7 @@ IBS MODEL PIWINSKI SMOOTH LATTICE APPROXIMATION USING RING AVERAGES
     - 08/06/2021 : initial cpp version (Tom)
 
   REF:
-    - HANDBOOK FOR ACCELERATOR PHYSICISTS AND ENGINEERS P.126
+    -  HANDBOOK FOR ACCELERATOR PHYSICISTS AND ENGINEERS P.126..
 ================================================================================
   Arguments:
   ----------

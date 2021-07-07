@@ -25,7 +25,7 @@ _MODEL_MAP = {
     9: "Bjorken-Mtingwa Simpson Decade",
     10: "Bjorken-Mtingwa Simpson Decade Tailcut",
     11: "Conte-Martini Simpson Decade",
-    12: "Conte-MArtini Simpson Decade Tailcut",
+    12: "Conte-Martini Simpson Decade Tailcut",
     13: "Zimmerman Simpson Decade",
 }
 

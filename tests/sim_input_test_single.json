@@ -9,7 +9,7 @@
     "ex": 7.5e-9,
     "ey": 1e-10,
     "sigs": 0.005,
-    "model": 1,
+    "model": 8,
     "pnumber": 1e10,
     "outfile": "sim_test_single.csv",
     "plotfile": "sim_test_single.png"

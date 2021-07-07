@@ -15,6 +15,8 @@ import pytest
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 my_twiss_file = os.path.join(THIS_DIR, "b2_design_lattice_1996.twiss")
 
+ode_threshold = 1e-4
+
 
 def test_cpp_RadiationDampingApprox():
     twissheader = ibslib.GetTwissHeader(my_twiss_file)
@@ -118,9 +120,9 @@ def test_cpp_ode1():
     exfinal = 5.908329e-09
     eyfinal = 2.617289e-13
     sigsfinal = 3.054559e-03
-    assert abs((res["ex"][-1] - exfinal) / exfinal) < 1e-6
-    assert abs((res["ey"][-1] - eyfinal) / eyfinal) < 1e-6
-    assert abs((res["sigs"][-1] - sigsfinal) / sigsfinal) < 1e-6
+    assert abs((res["ex"][-1] - exfinal) / exfinal) < ode_threshold
+    assert abs((res["ey"][-1] - eyfinal) / eyfinal) < ode_threshold
+    assert abs((res["sigs"][-1] - sigsfinal) / sigsfinal) < ode_threshold
 
 
 def test_cpp_ode2():
@@ -148,6 +150,6 @@ def test_cpp_ode2():
     exfinal = 5.908329e-09
     eyfinal = 2.617127e-13
     sigsfinal = 3.054559e-03
-    assert abs((res["ex"][-1] - exfinal) / exfinal) < 1e-6
-    assert abs((res["ey"][-1] - eyfinal) / eyfinal) < 1e-6
-    assert abs((res["sigs"][-1] - sigsfinal) / sigsfinal) < 1e-6
+    assert abs((res["ex"][-1] - exfinal) / exfinal) < ode_threshold
+    assert abs((res["ey"][-1] - eyfinal) / eyfinal) < ode_threshold
+    assert abs((res["sigs"][-1] - sigsfinal) / sigsfinal) < ode_threshold
