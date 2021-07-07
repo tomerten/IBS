@@ -1,3 +1,5 @@
+mkdir -p cpp/build
+mkdir -p cpp/build/tests
 cd cpp/build
 cmake ..
 make
