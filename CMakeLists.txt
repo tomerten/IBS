@@ -22,7 +22,7 @@ project(IBSLib VERSION 0.2.0)
 
 # DOWNLOAD THE GIT SUBMODULES (PYBIND11 HERE)
 find_package(Git QUIET)
-if(GIT_FOUND AND EXISTS "${PROJCET_SOURCE_DIR}/.git")
+if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
 # update as needed
     option(GIT_SUBMODULE "Check submodules during build" ON)
     if(GIT_SUBMODULE)
