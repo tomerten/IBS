@@ -5,8 +5,8 @@ from setuptools_cpp import CMakeExtension, ExtensionBuilder, Pybind11Extension
 ext_modules = [
     # CMakeExtension(f"clibibscpp", sourcedir="cpp/"),
     # CMakeExtension(f"clibibstests", sourcedir="cpp/tests"),
-    CMakeExtension(f"clibibsmain", sourcedir="."),
-    Pybind11Extension("ibslib_pb.ext1", ["python/pytwiss.cpp"]),
+    CMakeExtension(f"IBSLib", sourcedir="."),
+    Pybind11Extension("ibslib_pb", ["python/pytwiss.cpp"]),
 ]
 
 
