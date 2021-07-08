@@ -11,6 +11,8 @@
     "sigs": 0.005,
     "model": 8,
     "pnumber": 1e10,
+    "coupling": 0,
+    "threshold": 1e-4,
     "outfile": "sim_test_single.csv",
     "plotfile": "sim_test_single.png"
 }

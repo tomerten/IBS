@@ -23,7 +23,7 @@ void cyan() { printf("\033[1;36m"); }
 void reset() { printf("\033[0m"); }
 
 void printline(string key, double value, string units) {
-  printf("%-20s : %20.6e (%s)\n", key, value, units);
+  printf("%-20s : %20.6e (%s)\n", key.c_str(), value, units.c_str());
 }
 
 void WriteToFile(string filename, vector<double> &t, vector<double> &ex,
@@ -44,9 +44,19 @@ void WriteToFile(string filename, vector<double> &t, vector<double> &ex,
 void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
          int nrf, double harmon[], double voltages[], vector<double> &t,
          vector<double> &ex, vector<double> &ey, vector<double> &sigs,
-         vector<double> sige, int model, double pnumber) {
-  double threshold = 1e-4;
+         vector<double> sige, int model, double pnumber, int couplingpercentage,
+         double threshold) {
 
+  // sanitize limit settings
+  if (threshold > 1 || threshold < 1.0e-6) {
+    threshold = 1e-4;
+  }
+
+  if (couplingpercentage > 100 || couplingpercentage < 0) {
+    couplingpercentage = 0;
+  }
+
+  double coupling = (double)couplingpercentage / 100.0;
   // Radiation integrals
   double twiss_rad[6];
   double *radint;
@@ -322,6 +332,14 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
       aey = ibs[2];
       break;
     }
+    // update transverse growth rates with coupling
+    double tmpx = aex;
+    aex =
+        (2.0 * aex * aey) / ((2.0 - coupling) * aey +
+                             coupling * aex); // full coupling -> (tx + ty) / 2
+    aey =
+        (2.0 * aex * aey) / ((2.0 - coupling) * tmpx +
+                             coupling * aey); // full coupling -> (tx + ty) / 2
 
     // update loop variable
     i++;
@@ -368,7 +386,13 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
          int nrf, double harmon[], double voltages[], vector<double> &t,
          vector<double> &ex, vector<double> &ey, vector<double> &sigs,
          vector<double> sige, int model, double pnumber, int nsteps,
-         double stepsize) {
+         double stepsize, int couplingpercentage) {
+  // sanitize limit settings
+  if (couplingpercentage > 100 || couplingpercentage < 0) {
+    couplingpercentage = 0;
+  }
+
+  double coupling = (double)couplingpercentage / 100.0;
 
   // Radiation integrals
   double gamma = twiss["GAMMA"];
@@ -613,7 +637,17 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
       break;
     }
 
+    // update transverse growth rates with coupling
+    double tmpx = aex;
+    aex =
+        (2.0 * aex * aey) / ((2.0 - coupling) * aey +
+                             coupling * aex); // full coupling -> (tx + ty) / 2
+    aey =
+        (2.0 * aex * aey) / ((2.0 - coupling) * tmpx +
+                             coupling * aey); // full coupling -> (tx + ty) / 2
+
     i++;
+
     t.push_back(t[i - 1] + stepsize);
     ex.push_back(extemp[i - 1] * exp(2 * stepsize * (-1 / tauradx + aex)) +
                  equi[3] * (1 - exp(-2 * stepsize * i / tauradx)));

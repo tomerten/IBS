@@ -327,9 +327,10 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
         [](map<string, double> &twiss, map<string, vector<double>> &twissdata,
            vector<double> h, vector<double> v, vector<double> &t,
            vector<double> &ex, vector<double> &ey, vector<double> &sigs,
-           vector<double> sige, int model, double pnumber) {
+           vector<double> sige, int model, double pnumber,
+           int couplingpercentage, double threshold) {
           ODE(twiss, twissdata, h.size(), h.data(), v.data(), t, ex, ey, sigs,
-              sige, model, pnumber);
+              sige, model, pnumber, couplingpercentage, threshold);
           map<string, vector<double>> res;
           res["t"] = t;
           res["ex"] = ex;
@@ -343,9 +344,9 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
            vector<double> h, vector<double> v, vector<double> &t,
            vector<double> &ex, vector<double> &ey, vector<double> &sigs,
            vector<double> sige, int model, double pnumber, int nsteps,
-           double stepsize) {
+           double stepsize, int couplingpercentage) {
           ODE(twiss, twissdata, h.size(), h.data(), v.data(), t, ex, ey, sigs,
-              sige, model, pnumber, nsteps, stepsize);
+              sige, model, pnumber, nsteps, stepsize, couplingpercentage);
           map<string, vector<double>> res;
           res["t"] = t;
           res["ex"] = ex;

@@ -111,9 +111,67 @@ def test_cpp_ode1():
     sigea = []
     harmon = [400.0]
     voltages = [-4.0 * 375e3]
+    coupling = 0
+    threshold = 1e-4
 
     res = ibslib.runODE(
-        twissheader, twisstable, harmon, voltages, t, exa, eya, sigsa, sigea, 1, pnumber
+        twissheader,
+        twisstable,
+        harmon,
+        voltages,
+        t,
+        exa,
+        eya,
+        sigsa,
+        sigea,
+        1,
+        pnumber,
+        coupling,
+        threshold,
+    )
+
+    print(res)
+    exfinal = 5.908329e-09
+    eyfinal = 2.617289e-13
+    sigsfinal = 3.054559e-03
+    assert abs((res["ex"][-1] - exfinal) / exfinal) < ode_threshold
+    assert abs((res["ey"][-1] - eyfinal) / eyfinal) < ode_threshold
+    assert abs((res["sigs"][-1] - sigsfinal) / sigsfinal) < ode_threshold
+
+
+def test_cpp_ode1_coupling():
+    twissheader = ibslib.GetTwissHeader(my_twiss_file)
+    twisstable = ibslib.GetTwissTable(my_twiss_file)
+    twisstable = ibslib.updateTwiss(twisstable)
+    pnumber = 1e10
+    ex = 5e-9
+    ey = 1e-10
+    sigs = 0.005
+
+    t = [0.0]
+    exa = [ex]
+    eya = [ey]
+    sigsa = [sigs]
+    sigea = []
+    harmon = [400.0]
+    voltages = [-4.0 * 375e3]
+    coupling = 100
+    threshold = 1e-4
+
+    res = ibslib.runODE(
+        twissheader,
+        twisstable,
+        harmon,
+        voltages,
+        t,
+        exa,
+        eya,
+        sigsa,
+        sigea,
+        1,
+        pnumber,
+        coupling,
+        threshold,
     )
 
     print(res)
@@ -141,9 +199,23 @@ def test_cpp_ode2():
     sigea = []
     harmon = [400.0]
     voltages = [-4.0 * 375e3]
+    coupling = 0
 
     res = ibslib.runODE(
-        twissheader, twisstable, harmon, voltages, t, exa, eya, sigsa, sigea, 1, pnumber, 10, 0.005
+        twissheader,
+        twisstable,
+        harmon,
+        voltages,
+        t,
+        exa,
+        eya,
+        sigsa,
+        sigea,
+        1,
+        pnumber,
+        10,
+        0.005,
+        coupling,
     )
 
     print(res)
@@ -153,3 +225,17 @@ def test_cpp_ode2():
     assert abs((res["ex"][-1] - exfinal) / exfinal) < ode_threshold
     assert abs((res["ey"][-1] - eyfinal) / eyfinal) < ode_threshold
     assert abs((res["sigs"][-1] - sigsfinal) / sigsfinal) < ode_threshold
+
+
+# ==============================================================================
+# The code below is for debugging a particular test in eclipse/pydev.
+# (otherwise all tests are normally run with pytest)
+# Make sure that you run this code with the project directory as CWD, and
+# that the source directory is on the path
+# ==============================================================================
+if __name__ == "__main__":
+    the_test_you_want_to_debug = test_cpp_ode1_coupling
+
+    print("__main__ running", the_test_you_want_to_debug)
+    the_test_you_want_to_debug()
+    print("-*# finished #*-")
