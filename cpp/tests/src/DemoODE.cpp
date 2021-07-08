@@ -131,8 +131,9 @@ int main() {
   eya.push_back(1e-9);
   sigsa.push_back(5e-3);
 
+  double threshold = 1e-3;
   ODE(twissheadermap, twisstablemap, 1, harmon, voltages, t, exa, eya, sigsa,
-      sigea, 1, pnumber, 0, 1e-4);
+      sigea, 1, pnumber, 0, threshold);
   WriteToFile("ODE_test_output_piwinski_smooth.csv", t, exa, eya, sigsa);
 
   t.clear();
@@ -145,7 +146,7 @@ int main() {
   sigsa.push_back(5e-3);
 
   ODE(twissheadermap, twisstablemap, 1, harmon, voltages, t, exa, eya, sigsa,
-      sigea, 2, pnumber, 0, 1e-4);
+      sigea, 2, pnumber, 0, threshold);
   WriteToFile("ODE_test_output_piwinski_lattice.csv", t, exa, eya, sigsa);
 
   t.clear();
@@ -158,7 +159,7 @@ int main() {
   sigsa.push_back(5e-3);
 
   ODE(twissheadermap, twisstablemap, 1, harmon, voltages, t, exa, eya, sigsa,
-      sigea, 3, pnumber, 0, 1e-4);
+      sigea, 3, pnumber, 0, threshold);
   WriteToFile("ODE_test_output_piwinski_latticemodified.csv", t, exa, eya,
               sigsa);
 
@@ -172,7 +173,7 @@ int main() {
   sigsa.push_back(5e-3);
 
   ODE(twissheadermap, twisstablemap, 1, harmon, voltages, t, exa, eya, sigsa,
-      sigea, 4, pnumber, 0, 1e-4);
+      sigea, 4, pnumber, 0, threshold);
   WriteToFile("ODE_test_output_nagaitsev.csv", t, exa, eya, sigsa);
 
   t.clear();
@@ -185,7 +186,7 @@ int main() {
   sigsa.push_back(5e-3);
 
   ODE(twissheadermap, twisstablemap, 1, harmon, voltages, t, exa, eya, sigsa,
-      sigea, 5, pnumber, 0, 1e-4);
+      sigea, 5, pnumber, 0, threshold);
   WriteToFile("ODE_test_output_nagaitsevtailcut.csv", t, exa, eya, sigsa);
 
   t.clear();
@@ -198,7 +199,7 @@ int main() {
   sigsa.push_back(5e-3);
 
   ODE(twissheadermap, twisstablemap, 1, harmon, voltages, t, exa, eya, sigsa,
-      sigea, 6, pnumber, 0, 1e-4);
+      sigea, 6, pnumber, 0, threshold);
   WriteToFile("ODE_test_output_madx.csv", t, exa, eya, sigsa);
 
   t.clear();
@@ -211,7 +212,7 @@ int main() {
   sigsa.push_back(5e-3);
 
   ODE(twissheadermap, twisstablemap, 1, harmon, voltages, t, exa, eya, sigsa,
-      sigea, 7, pnumber, 0, 1e-4);
+      sigea, 7, pnumber, 0, threshold);
   WriteToFile("ODE_test_output_madxtailcut.csv", t, exa, eya, sigsa);
 
   t.clear();
@@ -224,7 +225,7 @@ int main() {
   sigsa.push_back(5e-3);
 
   ODE(twissheadermap, twisstablemap, 1, harmon, voltages, t, exa, eya, sigsa,
-      sigea, 8, pnumber, 0, 1e-4);
+      sigea, 8, pnumber, 0, threshold);
   WriteToFile("ODE_test_output_bjorken_mtingwa2.csv", t, exa, eya, sigsa);
 
   t.clear();
@@ -237,7 +238,7 @@ int main() {
   sigsa.push_back(5e-3);
 
   ODE(twissheadermap, twisstablemap, 1, harmon, voltages, t, exa, eya, sigsa,
-      sigea, 9, pnumber, 0, 1e-4);
+      sigea, 9, pnumber, 0, threshold);
   WriteToFile("ODE_test_output_bjorken_mtingwa.csv", t, exa, eya, sigsa);
 
   t.clear();
@@ -250,7 +251,7 @@ int main() {
   sigsa.push_back(5e-3);
 
   ODE(twissheadermap, twisstablemap, 1, harmon, voltages, t, exa, eya, sigsa,
-      sigea, 10, pnumber, 0, 1e-4);
+      sigea, 10, pnumber, 0, threshold);
   WriteToFile("ODE_test_output_bjorken_mtingwatailcut.csv", t, exa, eya, sigsa);
 
   t.clear();
@@ -263,7 +264,7 @@ int main() {
   sigsa.push_back(5e-3);
 
   ODE(twissheadermap, twisstablemap, 1, harmon, voltages, t, exa, eya, sigsa,
-      sigea, 11, pnumber, 0, 1e-4);
+      sigea, 11, pnumber, 0, threshold);
   WriteToFile("ODE_test_output_conte_martini.csv", t, exa, eya, sigsa);
 
   t.clear();
@@ -276,7 +277,7 @@ int main() {
   sigsa.push_back(5e-3);
 
   ODE(twissheadermap, twisstablemap, 1, harmon, voltages, t, exa, eya, sigsa,
-      sigea, 12, pnumber, 0, 1e-4);
+      sigea, 12, pnumber, 0, threshold);
   WriteToFile("ODE_test_output_conte_martini_tailcut.csv", t, exa, eya, sigsa);
 
   t.clear();
@@ -289,7 +290,7 @@ int main() {
   sigsa.push_back(5e-3);
 
   ODE(twissheadermap, twisstablemap, 1, harmon, voltages, t, exa, eya, sigsa,
-      sigea, 13, pnumber, 0, 1e-4);
+      sigea, 13, pnumber, 0, threshold);
   WriteToFile("ODE_test_output_madxibs.csv", t, exa, eya, sigsa);
 
   return 0;

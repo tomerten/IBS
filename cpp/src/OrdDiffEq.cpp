@@ -48,7 +48,7 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
          double threshold) {
 
   // sanitize limit settings
-  if (threshold > 1 || threshold < 1.0e-6) {
+  if (threshold > 1.0 || threshold < 1.0e-6) {
     threshold = 1e-4;
   }
 
