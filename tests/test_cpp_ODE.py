@@ -175,8 +175,8 @@ def test_cpp_ode1_coupling():
     )
 
     print(res)
-    exfinal = 5.908329e-09
-    eyfinal = 2.617289e-13
+    exfinal = 5.908263e-09
+    eyfinal = 9.417909e-14
     sigsfinal = 3.054559e-03
     assert abs((res["ex"][-1] - exfinal) / exfinal) < ode_threshold
     assert abs((res["ey"][-1] - eyfinal) / eyfinal) < ode_threshold
