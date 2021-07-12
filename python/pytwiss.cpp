@@ -118,7 +118,7 @@ PYBIND11_MODULE(IBSLib, m) {
   m.def("get_synchronuous_phase",
         [](double target, double init_phi, double U0, double c,
            std::vector<double> h, std::vector<double> v, double e) {
-          return SynchronuousPhase(target, init_phi, c, U0, h.size(), h.data(),
+          return SynchronuousPhase(target, init_phi, U0, c, h.size(), h.data(),
                                    v.data(), e);
         });
   m.def("rf_voltage_with_potential_well_distortion",
@@ -168,6 +168,23 @@ PYBIND11_MODULE(IBSLib, m) {
         },
         "Extend Twiss Table with rad int, CS gamma, curly H and rho.");
   m.def("printTwissColumn", &printTwissMap, "Print Twiss column");
+  m.def("dee_to_dpp", &dee_to_dpp, "DE/E to DP/P");
+  m.def("dpp_to_dee", &dpp_to_dee, "DP/P to DE/E");
+  m.def("piwinski_lattice",
+        [](double pnumber, double ex, double ey, double sigs, double dponp,
+           map<string, double> &header, map<string, vector<double>> &table,
+           double r0, py::array_t<double> out) {
+          double *ibs;
+          ibs =
+              PiwinskiLattice(pnumber, ex, ey, sigs, dponp, header, table, r0);
+
+          auto buf_out = out.request();
+          double *ptr_out = static_cast<double *>(buf_out.ptr);
+          ptr_out[0] = ibs[0];
+          ptr_out[1] = ibs[1];
+          ptr_out[2] = ibs[2];
+        },
+        "piwinski_lattice");
   m.def("twclog",
         [](double pnumber, double bx, double by, double dx, double dy,
            double ex, double ey, double r0, double gamma, double charge,
@@ -347,6 +364,23 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
            double stepsize, int couplingpercentage) {
           ODE(twiss, twissdata, h.size(), h.data(), v.data(), t, ex, ey, sigs,
               sige, model, pnumber, nsteps, stepsize, couplingpercentage);
+          map<string, vector<double>> res;
+          res["t"] = t;
+          res["ex"] = ex;
+          res["ey"] = ey;
+          res["sigs"] = sigs;
+          return res;
+        },
+        "");
+  m.def("runODEBMAD",
+        [](map<string, double> &twiss, map<string, vector<double>> &twissdata,
+           vector<double> h, vector<double> v, vector<double> &t,
+           vector<double> &ex, vector<double> &ey, vector<double> &sigs,
+           vector<double> sige, int model, double pnumber, int nsteps,
+           double stepsize, int couplingpercentage) {
+          ODE_BMAD(twiss, twissdata, h.size(), h.data(), v.data(), t, ex, ey,
+                   sigs, sige, model, pnumber, nsteps, stepsize,
+                   couplingpercentage);
           map<string, vector<double>> res;
           res["t"] = t;
           res["ex"] = ex;
