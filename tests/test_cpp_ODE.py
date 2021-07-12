@@ -155,7 +155,7 @@ def test_cpp_ode1_coupling():
     sigea = []
     harmon = [400.0]
     voltages = [-4.0 * 375e3]
-    coupling = 100
+    coupling = 1
     threshold = 1e-4
 
     res = ibslib.runODE(
@@ -227,6 +227,50 @@ def test_cpp_ode2():
     assert abs((res["sigs"][-1] - sigsfinal) / sigsfinal) < ode_threshold
 
 
+def test_cpp_ode_bmad_coupling():
+    twissheader = ibslib.GetTwissHeader(my_twiss_file)
+    twisstable = ibslib.GetTwissTable(my_twiss_file)
+    twisstable = ibslib.updateTwiss(twisstable)
+    pnumber = 1e10
+    ex = 5e-9
+    ey = 1e-10
+    sigs = 0.005
+
+    t = [0.0]
+    exa = [ex]
+    eya = [ey]
+    sigsa = [sigs]
+    sigea = []
+    harmon = [400.0]
+    voltages = [-4.0 * 375e3]
+    coupling = 100
+
+    res = ibslib.runODEBMAD(
+        twissheader,
+        twisstable,
+        harmon,
+        voltages,
+        t,
+        exa,
+        eya,
+        sigsa,
+        sigea,
+        1,
+        pnumber,
+        100,
+        0.1,
+        coupling,
+    )
+
+    print(res)
+    exfinal = 5.908329e-09
+    eyfinal = 2.617127e-13
+    sigsfinal = 3.054559e-03
+    assert abs((res["ex"][-1] - exfinal) / exfinal) < ode_threshold
+    assert abs((res["ey"][-1] - eyfinal) / eyfinal) < ode_threshold
+    assert abs((res["sigs"][-1] - sigsfinal) / sigsfinal) < ode_threshold
+
+
 # ==============================================================================
 # The code below is for debugging a particular test in eclipse/pydev.
 # (otherwise all tests are normally run with pytest)
@@ -234,7 +278,7 @@ def test_cpp_ode2():
 # that the source directory is on the path
 # ==============================================================================
 if __name__ == "__main__":
-    the_test_you_want_to_debug = test_cpp_ode1_coupling
+    the_test_you_want_to_debug = test_cpp_ode_bmad_coupling
 
     print("__main__ running", the_test_you_want_to_debug)
     the_test_you_want_to_debug()

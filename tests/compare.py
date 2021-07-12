@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-"""Command line interface runode (no sub-commands)."""
-
 import sys
 from json import load
 from posixpath import abspath
@@ -95,7 +92,7 @@ def run_single(sim_input: dict, sim_type: str) -> dict:
         )
         return res
     else:
-        res = ibslib.runODE(
+        res = ibslib.runODEBMAD(
             twissheader,
             twisstable,
             sim_input["harmon"],
@@ -123,78 +120,7 @@ def run_all(sim_input: dict, sim_type: str) -> dict:
     return result
 
 
-def plot(df: pd.DataFrame, sim_input: dict) -> None:
-    if sim_input["model"] == 0:
-        fig = plt.figure(constrained_layout=True)
-        gs = fig.add_gridspec(ncols=2, nrows=2)
-
-        ax1 = fig.add_subplot(gs[0, 0])
-        ax2 = fig.add_subplot(gs[0, 1])
-        ax3 = fig.add_subplot(gs[1, :])
-
-        ax1.set_title(r"$\epsilon_x$")
-        ax2.set_title(r"$\epsilon_y$")
-        ax3.set_title(r"$\sigma_s$")
-
-        ax1.grid()
-        ax2.grid()
-        ax3.grid()
-
-        for m, g in df.groupby("model"):
-            ax1.plot(g.t, g.ex, lw=1)
-            ax2.plot(g.t, g.ey, lw=1)
-            ax3.plot(g.t, g.sigs, lw=1)
-
-            ax1.set_yscale("log")
-            ax2.set_yscale("log")
-
-            ax1.set_xlabel("t[s]")
-            ax2.set_xlabel("t[s]")
-            ax3.set_xlabel("t[s]")
-        fig.legend(
-            list(_MODEL_MAP.values())[1:],
-            loc="upper center",
-            bbox_to_anchor=(0.5, 1.25),
-            ncol=2,
-            prop={"size": 8},
-        )
-        # plt.tick_params(axis="y", which="minor")
-        # ax2.yaxis.set_minor_formatter(FormatStrFormatter("%.1f"))
-        plt.savefig(sim_input["plotfile"], bbox_inches="tight")
-    else:
-        print("plotting")
-        fig = plt.figure(constrained_layout=True)
-        gs = fig.add_gridspec(ncols=2, nrows=2)
-
-        ax1 = fig.add_subplot(gs[0, 0])
-        ax2 = fig.add_subplot(gs[0, 1])
-        ax3 = fig.add_subplot(gs[1, :])
-
-        ax1.grid()
-        ax2.grid()
-        ax3.grid()
-
-        ax1.set_title(r"$\epsilon_x$")
-        ax2.set_title(r"$\epsilon_y$")
-        ax3.set_title(r"$\sigma_s$")
-
-        ax1.plot(df.t, df.ex, lw=1)
-        ax2.plot(df.t, df.ey, lw=1)
-        ax3.plot(df.t, df.sigs, lw=1)
-
-        ax1.set_yscale("log")
-        ax2.set_yscale("log")
-
-        ax1.set_xlabel("t[s]")
-        ax2.set_xlabel("t[s]")
-        ax3.set_xlabel("t[s]")
-
-        plt.savefig(sim_input["plotfile"])
-
-
-@click.command()
-@click.argument("infile")
-def main(infile):
+def main(infile="sim_input_test_single.json"):
     sim_input = read_sim_input(infile)
     sim_type = check_sim_input(sim_input)
 
@@ -213,14 +139,22 @@ def main(infile):
         print(df)
         df.to_csv(sim_input["outfile"], index=False)
 
-        plot(df, sim_input)
+        # plot(df, sim_input)
     else:
         print("in single")
         result = run_single(sim_input, sim_type)
         df = pd.DataFrame.from_dict(result, orient="columns")
         df.to_csv(sim_input["outfile"], index=False)
-        print(df)
-        plot(df, sim_input)
+
+        sim_input["coupling"] = 100
+        sim_input["nsteps"] = 30
+        sim_input["stepsize"] = 0.2
+        sim_type = "man"
+        result = run_single(sim_input, sim_type)
+        df = pd.DataFrame.from_dict(result, orient="columns")
+        df.to_csv(sim_input["outfile"] + "2", index=False)
+
+        # plot(df, sim_input)
 
 
 if __name__ == "__main__":

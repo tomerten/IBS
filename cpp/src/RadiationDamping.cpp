@@ -272,11 +272,16 @@ double *RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers(
   double cq = 55.0 / (32.0 * sqrt(3.0)) * (hbar * c) / mass;
 
   double sigE0E2 = cq * gamma * gamma * i3 / (2.0 * i2 + i4x + i4y);
+  // ! = deltaE/E_0 see wiedemann p. 302,
+  // and Wolski: E/(p0*c) - 1/beta0 = (E - E0)/(p0*c) = \Delta E/E0*beta0 with
+  // E0 = p0*c/beta0 therefore:
+  double betar = BetaRelativisticFromGamma(gamma);
+  double dpop = dee_to_dpp(sqrt(sigE0E2), betar);
   // I1 calculated from twiss madx is to inaccurate
   // TODO: add option to get it from twiss header
   // double alfap = i1 / len;
   // double sigs = clight * alfap * sqrt(sigE0E2) / omegas;
-  double sigs = sqrt(sigE0E2) * len * eta(gamma, gammatr) / (2 * pi * qs);
+  double sigs = dpop * len * eta(gamma, gammatr) / (2 * pi * qs);
   double exinf = cq * gamma * gamma * i5x / (jx * i2);
   double eyinf = cq * gamma * gamma * i5y / (jy * i2);
 

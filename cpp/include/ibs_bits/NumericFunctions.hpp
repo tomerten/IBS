@@ -90,4 +90,8 @@ double SigeFromRFAndSigs(double sigs, double U0, double charge, int nrf,
 void updateTwiss(map<string, vector<double>> &table);
 
 void printTwissMap(string key, map<string, vector<double>> &table);
+
+double dee_to_dpp(double dee, double beta0);
+double dpp_to_dee(double dpp, double beta0);
+
 #endif
