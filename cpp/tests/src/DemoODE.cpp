@@ -124,7 +124,7 @@ int main() {
   vector<double> sigea;
 
   int maxsteps = 2;
-  double timestep = 1.0e-3;
+  double timestep = 1.0e-2;
 
   t.push_back(0.0);
   exa.push_back(7.5e-9);
@@ -132,7 +132,7 @@ int main() {
   sigsa.push_back(5e-3);
 
   double threshold = 1e-3;
-  string method = "der";
+  string method = "rlx";
 
   ODE(twissheadermap, twisstablemap, 1, harmon, voltages, t, exa, eya, sigsa,
       sigea, 1, pnumber, 0, threshold, method);

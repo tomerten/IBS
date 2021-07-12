@@ -211,6 +211,7 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   taurads = equi[2];
   sigeoe2 = equi[5];
 
+  double ey0_coupled = max(coupling * equi[3], equi[4]);
   double sige0 = sigefromsigs(omega, equi[6], qs, gamma, gammatr);
 
   cyan();
@@ -329,7 +330,7 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   ddt = min(ddt, 1.0 / ibs[2]);
 
   // reduce the step still a bit
-  ddt /= 2.0;
+  // ddt /= 2.0;
 
   // define max numer of steps
   int ms = (int)(10 * taum / ddt);
@@ -351,14 +352,28 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   MAIN LOOP
   ================================================================================
   */
+  // progressbar
+  int barWidth = 70;
   do {
+    std::cout << "[";
+    int progress = (double)i / ms * barWidth;
+    for (int j = 0; j < barWidth; ++j) {
+      if (j < progress)
+        std::cout << "=";
+      else if (j == progress)
+        std::cout << ">";
+      else
+        std::cout << " ";
+    }
+    std::cout << "]" << int((double)i / ms * 100) << " %\r";
+    std::cout.flush();
     // update timestep
     ddt = min(tauradx, taurady);
     ddt = min(ddt, taurads);
     ddt = min(ddt, 1.0 / ibs[0]);
     ddt = min(ddt, 1.0 / ibs[1]);
     ddt = min(ddt, 1.0 / ibs[2]);
-    ddt /= 2.0;
+    // ddt /= 2.0;
 
     // ibs growth rates update
     switch (model) {
@@ -455,7 +470,9 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
     }
 
     i++;
+
     if (method == "rlx") {
+      ddt *= 2.;
       double ratio_x = tauradx * aex;
       double ratio_y = taurady * aey;
       double ratio_s = taurads * aes;
@@ -468,7 +485,7 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
       ex.push_back(ex[i - 1] + ddt * (xfactor * equi[3] - ex[i - 1]));
       ey.push_back(ey[i - 1] +
                    ddt * (((1.0 - coupling) * yfactor + coupling * xfactor) *
-                              (coupling * equi[3]) -
+                              ey0_coupled -
                           ey[i - 1]));
       sige.push_back(sige[i - 1] +
                      ddt * (sfactor * sqrt(equi[5]) - sige[i - 1]));
@@ -478,7 +495,7 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
       double dxdt =
           -(ex[i - 1] - equi[3]) * 2. / tauradx + ex[i - 1] * 2.0 * aex;
       double dydt =
-          -(ey[i - 1] - equi[4]) * 2. / taurady + ey[i - 1] * 2.0 * aey;
+          -(ey[i - 1] - ey0_coupled) * 2. / taurady + ey[i - 1] * 2.0 * aey;
       double dedt =
           -(sige[i - 1] - sqrt(equi[5])) / taurads + sige[i - 1] * aes;
 
@@ -535,6 +552,8 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   } while (i < ms && (fabs((ex[i] - ex[i - 1]) / ex[i - 1]) > threshold ||
                       fabs((ey[i] - ey[i - 1]) / ey[i - 1]) > threshold ||
                       fabs((sigs[i] - sigs[i - 1]) / sigs[i - 1]) > threshold));
+  // end progressbar
+  std::cout << std::endl;
 
   // print final values
   blue();
