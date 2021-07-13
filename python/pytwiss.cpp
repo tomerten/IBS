@@ -246,6 +246,7 @@ PYBIND11_MODULE(IBSLib, m) {
           ptr_clog[1] = clog[1];
         },
         "Calculate the Coulomb Log.");
+
   m.def("twclogtail",
         [](double pnumber, double l, double bx, double by, double dx,
            double dpx, double dy, double dpy, double ax, double ay,
@@ -263,6 +264,7 @@ PYBIND11_MODULE(IBSLib, m) {
           ptr_clog[1] = clog[1];
         },
         "Calculate the Coulomb Log with Tailcut.");
+
   m.def("coulomblog",
         [](double pnumber, double ex, double ey,
            map<string, double> &twissheader, double sige, double sigt,
@@ -276,6 +278,7 @@ PYBIND11_MODULE(IBSLib, m) {
           ptr_clog[1] = clog[1];
         },
         "Calculate the Coulomb Log using ring average.");
+
   m.def("coulomblogtail",
         [](double pnumber, double ex, double ey,
            map<string, double> &twissheader, double sige, double sigt,
@@ -290,21 +293,11 @@ PYBIND11_MODULE(IBSLib, m) {
           ptr_clog[1] = clog[1];
         },
         "Calculate the Coulomb Log with tailcut using ring average.");
-  m.def("piwinski_lattice",
-        [](double pnumber, double ex, double ey, double sigs, double dponp,
-           map<string, double> &header, map<string, vector<double>> &table,
-           double r0, py::array_t<double> out) {
-          double *ibs;
-          ibs =
-              PiwinskiLattice(pnumber, ex, ey, sigs, dponp, header, table, r0);
-
-          auto buf_out = out.request();
-          double *ptr_out = static_cast<double *>(buf_out.ptr);
-          ptr_out[0] = ibs[0];
-          ptr_out[1] = ibs[1];
-          ptr_out[2] = ibs[2];
-        },
-        "piwinski_lattice");
+  /*
+================================================================================
+                    INTEGRATORS
+================================================================================
+*/
   m.def("integrator_simpson_decade",
         [](double a, double b, double c, double cl, double cx, double cy,
            double cprime, double cyy, double tl1, double tl2, double tx1,
@@ -402,6 +395,41 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_tau[2] = alpha[2];
         },
         "Zimmerman integral calculated using Simpson Decade");
+  /*
+================================================================================
+                 IBS MODELS
+================================================================================
+*/
+  m.def("PiwinskiSmooth",
+        [](double pnumber, double ex, double ey, double sigs, double dponp,
+           map<string, double> &header, double r0, py::array_t<double> out) {
+          double *ibs;
+          ibs = PiwinskiSmooth(pnumber, ex, ey, sigs, dponp, header, r0);
+
+          auto buf_out = out.request();
+          double *ptr_out = static_cast<double *>(buf_out.ptr);
+          ptr_out[0] = ibs[0];
+          ptr_out[1] = ibs[1];
+          ptr_out[2] = ibs[2];
+        },
+        "Piwinski smooth");
+
+  m.def("PiwinskiLattice",
+        [](double pnumber, double ex, double ey, double sigs, double dponp,
+           map<string, double> &header, map<string, vector<double>> &table,
+           double r0, py::array_t<double> out) {
+          double *ibs;
+          ibs =
+              PiwinskiLattice(pnumber, ex, ey, sigs, dponp, header, table, r0);
+
+          auto buf_out = out.request();
+          double *ptr_out = static_cast<double *>(buf_out.ptr);
+          ptr_out[0] = ibs[0];
+          ptr_out[1] = ibs[1];
+          ptr_out[2] = ibs[2];
+        },
+        "Piwinski Lattice");
+
   m.def("runODE",
         [](map<string, double> &twiss, map<string, vector<double>> &twissdata,
            vector<double> h, vector<double> v, vector<double> &t,
