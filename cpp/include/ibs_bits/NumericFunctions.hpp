@@ -5,7 +5,11 @@
 #include <string>
 #include <vector>
 using namespace std;
-
+/*
+================================================================================
+CONSTANTS
+================================================================================
+*/
 const double clight = 299792458.0;
 const double hbar = 6.582119569e-25; // Reduced Planck Constant in GeV !!!!
 const double emass = 0.51099895000e-3;
@@ -20,29 +24,36 @@ const double euler = 0.577215664901533;
 // Classical radius [m]
 const double erad = 2.8179403262e-15;
 
-// proton radius
+// Classical proton radius [m]
 const double prad = erad * emass / pmass;
 
+/*
+================================================================================
+BASIC FUNCTIONS
+================================================================================
+*/
+// add ratiation integrals per element to twisstable
+void updateTwiss(map<string, vector<double>> &table);
+
+void printTwissMap(string key, map<string, vector<double>> &table);
+
+double BetaRelativisticFromGamma(double gamma);
+double eta(double gamma, double gammatr);
+double ParticleRadius(double charge, double aatom);
+
+double dee_to_dpp(double dee, double beta0);
+double dpp_to_dee(double dpp, double beta0);
+
+/*
+================================================================================
+LONGITUDINAL / RF FUNCTIONS
+================================================================================
+*/
 double sigefromsigs(double omega0, double sigs, double qs, double gamma,
                     double gammatr);
 
 double sigsfromsige(double sige, double gamma, double gammatr, double omegas);
 
-double eta(double gamma, double gammatr);
-
-double fmohl(double a, double b, double q, int n);
-
-double ParticleRadius(double charge, double aatom);
-
-double BetaRelativisticFromGamma(double gamma);
-
-double rds(double x, double y, double z);
-
-/*
-================================================================================
-RF
-================================================================================
-*/
 double EffectiveRFVoltageInElectronVolt(double phi, double charge, int nrf,
                                         double harmon[], double voltages[]);
 
@@ -87,11 +98,7 @@ double SigeFromRFAndSigs(double sigs, double U0, double charge, int nrf,
                          double gammatr, double pc, double circ, double phis,
                          bool printout);
 
-void updateTwiss(map<string, vector<double>> &table);
-
-void printTwissMap(string key, map<string, vector<double>> &table);
-
-double dee_to_dpp(double dee, double beta0);
-double dpp_to_dee(double dpp, double beta0);
+double fmohl(double a, double b, double q, int n);
+double rds(double x, double y, double z);
 
 #endif

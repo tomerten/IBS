@@ -132,7 +132,7 @@ int main() {
   sigsa.push_back(5e-3);
 
   double threshold = 1e-3;
-  string method = "rlx";
+  string method = "der";
 
   ODE(twissheadermap, twisstablemap, 1, harmon, voltages, t, exa, eya, sigsa,
       sigea, 1, pnumber, 0, threshold, method);

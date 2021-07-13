@@ -13,9 +13,46 @@ namespace py = pybind11;
 
 PYBIND11_MODULE(IBSLib, m) {
   m.doc() = "IBS library";
+  /*
+================================================================================
+                                    TWISS
+================================================================================
+  */
   m.def("GetTwissHeader", &GetTwissHeader,
         "Get the twiss header as a dictionary.");
+
   m.def("GetTwissTable", &GetTwissTableAsMap, "Get the twiss data table.");
+
+  m.def("updateTwiss",
+        [](map<string, vector<double>> &table) {
+          updateTwiss(table);
+          return table;
+        },
+        "Extend Twiss Table with rad int, CS gamma, curly H and rho.");
+
+  m.def("printTwissColumn", &printTwissMap, "Print Twiss column");
+  /*
+================================================================================
+                                    CONSTANTS
+================================================================================
+  */
+  m.attr("clight") = py::float_(clight);
+  m.attr("hbarGeV") = py::float_(hbar);
+  m.attr("electron_mass") = py::float_(emass);
+  m.attr("proton_mass") = py::float_(pmass);
+  m.attr("neutron_mass") = py::float_(nmass);
+  m.attr("mu_mass") = py::float_(mumass);
+  m.attr("atomic_mass_unit") = py::float_(atomicmassunit);
+  m.attr("pi") = py::float_(pi);
+  m.attr("electric_charge") = py::float_(ec);
+  m.attr("euler") = py::float_(euler);
+  m.attr("electron_radius") = py::float_(erad);
+  m.attr("proton_radius") = py::float_(prad);
+  /*
+================================================================================
+                             RADIATION DAMPING
+================================================================================
+ */
   m.def("RadiationDampingApprox",
         [](double latticeLength, double gamma, double gammaTransition,
            double dipoleBendingRadius, double betax, double betay,
@@ -23,8 +60,10 @@ PYBIND11_MODULE(IBSLib, m) {
           double *radint;
           radint = RadiationDampingApprox(latticeLength, gamma, gammaTransition,
                                           dipoleBendingRadius, betax, betay);
+          // convert double pointer to numpy array
           auto buf_out = out.request();
           double *ptr_out = static_cast<double *>(buf_out.ptr);
+
           ptr_out[0] = radint[0];
           ptr_out[1] = radint[1];
           ptr_out[2] = radint[2];
@@ -33,7 +72,8 @@ PYBIND11_MODULE(IBSLib, m) {
           ptr_out[5] = radint[5];
           ptr_out[6] = radint[6];
         },
-        "Approx radiation damping");
+        "Radiation Damping using Ring averages.");
+
   m.def("RadiationDampingLattice",
         [](map<string, vector<double>> &table, py::array_t<double> out) {
           double *radint;
@@ -50,8 +90,9 @@ PYBIND11_MODULE(IBSLib, m) {
           ptr_out[6] = radint[6];
         },
         "Radiation damping weighted per element.");
+
   m.def(
-      "get_rad_damp_equi",
+      "RadiationDampingEquilibria",
       [](map<string, double> &twissheadermap, py::array_t<double> radint,
          double aatom, double qs, py::array_t<double> out) {
         double *equi;
@@ -77,62 +118,75 @@ PYBIND11_MODULE(IBSLib, m) {
         ptr_out[8] = equi[8];
       },
       "Get radiation damping equilibs.");
+
   m.def("get_energy_loss_per_turn", &RadiationLossesPerTurn,
         "Get the energy loss per turn.");
-  m.attr("clight") = py::float_(clight);
-  m.attr("hbarGeV") = py::float_(hbar);
-  m.attr("electron_mass") = py::float_(emass);
-  m.attr("proton_mass") = py::float_(pmass);
-  m.attr("neutron_mass") = py::float_(nmass);
-  m.attr("mu_mass") = py::float_(mumass);
-  m.attr("atomic_mass_unit") = py::float_(atomicmassunit);
-  m.attr("pi") = py::float_(pi);
-  m.attr("electric_charge") = py::float_(ec);
-  m.attr("euler") = py::float_(euler);
-  m.attr("electron_radius") = py::float_(erad);
-  m.attr("proton_radius") = py::float_(prad);
-  m.def("sige_from_sigs", &sigefromsigs, "Energy spread from bunch length.");
-  m.def("sigs_from_sige", &sigsfromsige, "Bunch length from energy spread.");
-  m.def("eta", &eta, "Slip factor");
-  m.def("fmohl", &fmohl, "Fmohl function");
-  m.def("particle_radius", &ParticleRadius,
-        "Particle radius from charge and atomic mass.");
+
+  /*
+ ================================================================================
+                              NUMERIC FUNCTIONS
+ ================================================================================
+  */
   m.def("beta_relativistic_from_gamma", &BetaRelativisticFromGamma,
         "Beta relativistic.");
-  m.def("rds", &rds, "Nagaitsev paper rds function");
+
+  m.def("eta", &eta, "Slip factor");
+
+  m.def("particle_radius", &ParticleRadius,
+        "Particle radius from charge and atomic mass.");
+
+  m.def("dee_to_dpp", &dee_to_dpp, "DE/E to DP/P");
+
+  m.def("dpp_to_dee", &dpp_to_dee, "DP/P to DE/E");
+
+  /*
+ ================================================================================
+                              LONGITUDINAL / RF
+ ================================================================================
+  */
+  m.def("sige_from_sigs", &sigefromsigs, "Energy spread from bunch length.");
+
+  m.def("sigs_from_sige", &sigsfromsige, "Bunch length from energy spread.");
+
   m.def("rf_voltage_in_ev",
         [](double phi, double c, std::vector<double> h, std::vector<double> v) {
           return EffectiveRFVoltageInElectronVolt(phi, c, h.size(), h.data(),
                                                   v.data());
         });
+
   m.def("rf_voltage_in_ev_prime",
         [](double phi, double c, std::vector<double> h, std::vector<double> v) {
           return EffectiveRFVoltageInElectronVoltPrime(phi, c, h.size(),
                                                        h.data(), v.data());
         });
+
   m.def("rf_voltage_in_ev_with_rad_losses",
         [](double phi, double U0, double c, std::vector<double> h,
            std::vector<double> v) {
           return VeffRFeVRadlosses(phi, c, U0, h.size(), h.data(), v.data());
         });
+
   m.def("get_synchronuous_phase",
         [](double target, double init_phi, double U0, double c,
            std::vector<double> h, std::vector<double> v, double e) {
           return SynchronuousPhase(target, init_phi, U0, c, h.size(), h.data(),
                                    v.data(), e);
         });
+
   m.def("rf_voltage_with_potential_well_distortion",
         [](double target, double U0, double c, std::vector<double> h,
            std::vector<double> v, double L, double N, double sigs, double pc) {
           return VeffRFeVPotentialWellDistortion(
               target, U0, c, h.size(), h.data(), v.data(), L, N, sigs, pc);
         });
+
   m.def("rf_voltage_with_potential_well_distortion_prime",
         [](double target, double U0, double c, std::vector<double> h,
            std::vector<double> v, double L, double N, double sigs, double pc) {
           return VeffRFeVPotentialWellDistortionPrime(
               target, U0, c, h.size(), h.data(), v.data(), L, N, sigs, pc);
         });
+
   m.def("get_synchronuous_phase_with_potential_well_distortion",
         [](double target, double init_phi, double U0, double c,
            std::vector<double> h, std::vector<double> v, double L, double N,
@@ -141,6 +195,7 @@ PYBIND11_MODULE(IBSLib, m) {
                                           h.data(), v.data(), L, N, sigs, pc,
                                           e);
         });
+
   m.def("get_synchrotron_tune",
         [](double omega0, double U0, double c, std::vector<double> h,
            std::vector<double> v, double phis, double eta, double pc) {
@@ -154,6 +209,7 @@ PYBIND11_MODULE(IBSLib, m) {
           return SynchrotronTunePWD(omega0, U0, c, h.size(), h.data(), v.data(),
                                     L, N, sigs, phis, eta, pc);
         });
+
   m.def("sige_form_sigs_using_rf",
         [](double sigs, double U0, double c, std::vector<double> h,
            std::vector<double> v, double gamma, double gammatr, double pc,
@@ -161,30 +217,21 @@ PYBIND11_MODULE(IBSLib, m) {
           return SigeFromRFAndSigs(sigs, U0, c, h.size(), h.data(), v.data(),
                                    gamma, gammatr, pc, circ, phis, printout);
         });
-  m.def("updateTwiss",
-        [](map<string, vector<double>> &table) {
-          updateTwiss(table);
-          return table;
-        },
-        "Extend Twiss Table with rad int, CS gamma, curly H and rho.");
-  m.def("printTwissColumn", &printTwissMap, "Print Twiss column");
-  m.def("dee_to_dpp", &dee_to_dpp, "DE/E to DP/P");
-  m.def("dpp_to_dee", &dpp_to_dee, "DP/P to DE/E");
-  m.def("piwinski_lattice",
-        [](double pnumber, double ex, double ey, double sigs, double dponp,
-           map<string, double> &header, map<string, vector<double>> &table,
-           double r0, py::array_t<double> out) {
-          double *ibs;
-          ibs =
-              PiwinskiLattice(pnumber, ex, ey, sigs, dponp, header, table, r0);
 
-          auto buf_out = out.request();
-          double *ptr_out = static_cast<double *>(buf_out.ptr);
-          ptr_out[0] = ibs[0];
-          ptr_out[1] = ibs[1];
-          ptr_out[2] = ibs[2];
-        },
-        "piwinski_lattice");
+  /*
+================================================================================
+                       IBS NUMERIC FUNCTIONS
+================================================================================
+*/
+  m.def("fmohl", &fmohl, "Fmohl function");
+
+  m.def("rds", &rds, "Nagaitsev paper rds function");
+
+  /*
+================================================================================
+                       COULOMB LOG
+================================================================================
+*/
   m.def("twclog",
         [](double pnumber, double bx, double by, double dx, double dy,
            double ex, double ey, double r0, double gamma, double charge,
@@ -243,6 +290,21 @@ PYBIND11_MODULE(IBSLib, m) {
           ptr_clog[1] = clog[1];
         },
         "Calculate the Coulomb Log with tailcut using ring average.");
+  m.def("piwinski_lattice",
+        [](double pnumber, double ex, double ey, double sigs, double dponp,
+           map<string, double> &header, map<string, vector<double>> &table,
+           double r0, py::array_t<double> out) {
+          double *ibs;
+          ibs =
+              PiwinskiLattice(pnumber, ex, ey, sigs, dponp, header, table, r0);
+
+          auto buf_out = out.request();
+          double *ptr_out = static_cast<double *>(buf_out.ptr);
+          ptr_out[0] = ibs[0];
+          ptr_out[1] = ibs[1];
+          ptr_out[2] = ibs[2];
+        },
+        "piwinski_lattice");
   m.def("integrator_simpson_decade",
         [](double a, double b, double c, double cl, double cx, double cy,
            double cprime, double cyy, double tl1, double tl2, double tx1,
@@ -345,9 +407,9 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
            vector<double> h, vector<double> v, vector<double> &t,
            vector<double> &ex, vector<double> &ey, vector<double> &sigs,
            vector<double> sige, int model, double pnumber,
-           int couplingpercentage, double threshold) {
+           int couplingpercentage, double threshold, string method) {
           ODE(twiss, twissdata, h.size(), h.data(), v.data(), t, ex, ey, sigs,
-              sige, model, pnumber, couplingpercentage, threshold);
+              sige, model, pnumber, couplingpercentage, threshold, method);
           map<string, vector<double>> res;
           res["t"] = t;
           res["ex"] = ex;
@@ -361,26 +423,10 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
            vector<double> h, vector<double> v, vector<double> &t,
            vector<double> &ex, vector<double> &ey, vector<double> &sigs,
            vector<double> sige, int model, double pnumber, int nsteps,
-           double stepsize, int couplingpercentage) {
+           double stepsize, int couplingpercentage, string method) {
           ODE(twiss, twissdata, h.size(), h.data(), v.data(), t, ex, ey, sigs,
-              sige, model, pnumber, nsteps, stepsize, couplingpercentage);
-          map<string, vector<double>> res;
-          res["t"] = t;
-          res["ex"] = ex;
-          res["ey"] = ey;
-          res["sigs"] = sigs;
-          return res;
-        },
-        "");
-  m.def("runODEBMAD",
-        [](map<string, double> &twiss, map<string, vector<double>> &twissdata,
-           vector<double> h, vector<double> v, vector<double> &t,
-           vector<double> &ex, vector<double> &ey, vector<double> &sigs,
-           vector<double> sige, int model, double pnumber, int nsteps,
-           double stepsize, int couplingpercentage) {
-          ODE_BMAD(twiss, twissdata, h.size(), h.data(), v.data(), t, ex, ey,
-                   sigs, sige, model, pnumber, nsteps, stepsize,
-                   couplingpercentage);
+              sige, model, pnumber, nsteps, stepsize, couplingpercentage,
+              method);
           map<string, vector<double>> res;
           res["t"] = t;
           res["ex"] = ex;

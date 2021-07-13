@@ -1225,5 +1225,5 @@ METHOD CONVERT DP/P TO DE/E IN ABSENCE OF ELECTRIC POTENTIAL
 */
 
 double dpp_to_dee(double dpp, double beta0) {
-  return sqrt((dpp + 1.0) * (dpp + 1.0) - (beta0 * beta0)) - 1.0;
+  return sqrt(((dpp + 1.0) * (dpp + 1.0) - 1.0) * (beta0 * beta0) + 1.0) - 1.0;
 }

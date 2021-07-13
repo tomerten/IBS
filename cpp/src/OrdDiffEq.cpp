@@ -219,7 +219,7 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   printf("=======================\n");
   printline("Tau_rad_x", tauradx, "s");
   printline("Tau_rad_y", taurady, "s");
-  printline("Tau_rad_s", tauradx, "s");
+  printline("Tau_rad_s", taurads, "s");
 
   blue();
   printf("\nLongitudinal Parameters\n");
@@ -252,12 +252,6 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   // ibs growth rates
   double *ibs;
   double aes, aex, aey;
-
-  // temp emit vectors to allow for correcting with quantum excitation
-  vector<double> extemp, eytemp, sige2temp;
-  extemp.push_back(ex[0]);
-  eytemp.push_back(ey[0]);
-  sige2temp.push_back(sige2[0]);
 
   // initial ibs growth rates
   switch (model) {
@@ -469,6 +463,7 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
       break;
     }
 
+    // increase loop variable
     i++;
 
     if (method == "rlx") {
@@ -507,47 +502,6 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
       sigs.push_back(sigsfromsige(sige[i], gamma, gammatr, omegas));
     }
 
-    /*
-      double tmpx = aex;
-      aex =
-          (2.0 * aex * aey) / ((2.0 - coupling) * aey +
-                               coupling * aex); // full coupling -> (tx + ty) /
-  2 aey = (2.0 * aex * aey) / ((2.0 - coupling) * tmpx + coupling * aey); //
-  full coupling -> (tx + ty) / 2
-
-      // update loop variable
-      i++;
-
-      // add ddt to previous time stamp
-      t.push_back(t[i - 1] + ddt);
-
-      // horizontal emittance
-      ex.push_back(extemp[i - 1] * exp(2 * ddt * (-1 / tauradx + aex)) +
-                   equi[3] * (1 - exp(-2 * ddt * i / tauradx)));
-      extemp.push_back(extemp[i - 1] * exp(2 * ddt * (-1 / tauradx + aex)));
-
-      // EQ. 47 in PHYS REV ST ACCEL BEAMS 081001 (2005)
-      if (couplingpercentage > 0) {
-        ey.push_back(((1 - coupling) * (1.0 / aey) / ((1.0 / aey) - taurady) +
-                      coupling * (1.0 / aex) / ((1.0 / aex) - tauradx)) *
-                     equi[4]);
-      } else {
-        // vertical emittance
-        ey.push_back(eytemp[i - 1] * exp(2 * ddt * (-1 / taurady + aey)) +
-                     equi[4] * (1 - exp(-2 * ddt * i / taurady)));
-        eytemp.push_back(eytemp[i - 1] * exp(2 * ddt * (-1 / taurady + aey)));
-      }
-
-      // bunch length
-      sige2.push_back(sige2temp[i - 1] * exp(2 * ddt * (-1 / taurads + aes)) +
-                      equi[5] * (1 - exp(-2 * i * ddt / taurads)));
-      sige2temp.push_back(sige2temp[i - 1] * exp(2 * ddt * (-1 / taurads +
-  aes)));
-
-      sige.push_back(sqrt(sige2[i]));
-      sigs.push_back(sigsfromsige(sige[i], gamma, gammatr, omegas));
-
-  */
     // while condition
   } while (i < ms && (fabs((ex[i] - ex[i - 1]) / ex[i - 1]) > threshold ||
                       fabs((ey[i] - ey[i - 1]) / ey[i - 1]) > threshold ||
@@ -571,10 +525,19 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
          int nrf, double harmon[], double voltages[], vector<double> &t,
          vector<double> &ex, vector<double> &ey, vector<double> &sigs,
          vector<double> sige, int model, double pnumber, int nsteps,
-         double stepsize, int couplingpercentage) {
+         double stepsize, int couplingpercentage, string method) {
+
   // sanitize limit settings
   if (couplingpercentage > 100 || couplingpercentage < 0) {
     couplingpercentage = 0;
+  }
+
+  if (!(method == "rlx" || method == "der")) {
+    method = "der";
+
+    red();
+    printf("%-20s : (%s)\n", "Warning method set to ", method.c_str());
+    reset();
   }
 
   double coupling = (double)couplingpercentage / 100.0;
@@ -597,6 +560,7 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   double omega = 2.0 * pi * frev;
   double neta = eta(gamma, gammatr);
   double epsilon = 1.0e-6;
+  double ddt = stepsize;
 
   double *radint;
   radint = RadiationDampingLattice(twissdata);
@@ -614,11 +578,13 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
       RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers(
           twiss, radint, aatom, qs);
 
-  double tauradx, taurady, taurads;
+  double tauradx, taurady, taurads, sigeoe2;
   tauradx = equi[0];
   taurady = equi[1];
   taurads = equi[2];
-  double sigeoe2 = equi[5];
+  sigeoe2 = equi[5];
+
+  double ey0_coupled = max(coupling * equi[3], equi[4]);
 
   cyan();
   printf("Radiation Damping Times\n");
@@ -655,15 +621,17 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
 
   // loop variable
   int i = 0;
+
   // ibs growth rates
   double *ibs;
   double aes, aex, aey;
 
-  // temp emit vectors to allow for correcting with quantum excitation
+  /* temp emit vectors to allow for correcting with quantum excitation
   vector<double> extemp, eytemp, sige2temp;
   extemp.push_back(ex[0]);
   eytemp.push_back(ey[0]);
   sige2temp.push_back(sige2[0]);
+*/
 
   // initial ibs growth rates
   switch (model) {
@@ -727,7 +695,22 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   MAIN LOOP
   ================================================================================
   */
+  int barWidth = 70;
   do {
+    // progress bar
+    std::cout << "[";
+    int progress = (double)i / nsteps * barWidth;
+    for (int j = 0; j < barWidth; ++j) {
+      if (j < progress)
+        std::cout << "=";
+      else if (j == progress)
+        std::cout << ">";
+      else
+        std::cout << " ";
+    }
+    std::cout << "]" << int((double)i / nsteps * 100) << " %\r";
+    std::cout.flush();
+
     // ibs growth rates update
     switch (model) {
     case 1:
@@ -822,54 +805,52 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
       break;
     }
 
-    // update transverse growth rates with coupling
-    double tmpx = aex;
-    aex =
-        (2.0 * aex * aey) / ((2.0 - coupling) * aey +
-                             coupling * aex); // full coupling -> (tx + ty) / 2
-    aey =
-        (2.0 * aex * aey) / ((2.0 - coupling) * tmpx +
-                             coupling * aey); // full coupling -> (tx + ty) / 2
-
+    // increase loop variable
     i++;
 
-    t.push_back(t[i - 1] + stepsize);
-    ex.push_back(extemp[i - 1] * exp(2 * stepsize * (-1 / tauradx + aex)) +
-                 equi[3] * (1 - exp(-2 * stepsize * i / tauradx)));
-    extemp.push_back(extemp[i - 1] * exp(2 * stepsize * (-1 / tauradx + aex)));
+    if (method == "rlx") {
+      ddt *= 2.;
+      double ratio_x = tauradx * aex;
+      double ratio_y = taurady * aey;
+      double ratio_s = taurads * aes;
 
-    ey.push_back(eytemp[i - 1] * exp(2 * stepsize * (-1 / taurady + aey)) +
-                 equi[4] * (1 - exp(-2 * stepsize * i / taurady)));
-    eytemp.push_back(eytemp[i - 1] * exp(2 * stepsize * (-1 / taurady + aey)));
+      double xfactor = 1.0 / (1.0 - ratio_x);
+      double yfactor = 1.0 / (1.0 - ratio_y);
+      double sfactor = 1.0 / (1.0 - ratio_s);
 
-    sige2.push_back(sige2temp[i - 1] *
-                        exp(2 * stepsize * (-1 / taurads + aes)) +
-                    equi[5] * (1 - exp(-2 * i * stepsize / taurads)));
-    sige2temp.push_back(sige2temp[i - 1] *
-                        exp(2 * stepsize * (-1 / taurads + aes)));
+      t.push_back(t[i - 1] + ddt);
+      ex.push_back(ex[i - 1] + ddt * (xfactor * equi[3] - ex[i - 1]));
+      ey.push_back(ey[i - 1] +
+                   ddt * (((1.0 - coupling) * yfactor + coupling * xfactor) *
+                              ey0_coupled -
+                          ey[i - 1]));
+      sige.push_back(sige[i - 1] +
+                     ddt * (sfactor * sqrt(equi[5]) - sige[i - 1]));
+      sige2.push_back(sige[i] * sige[i]);
+      sigs.push_back(sigsfromsige(sige[i], gamma, gammatr, omegas));
+    } else {
+      double dxdt =
+          -(ex[i - 1] - equi[3]) * 2. / tauradx + ex[i - 1] * 2.0 * aex;
+      double dydt =
+          -(ey[i - 1] - ey0_coupled) * 2. / taurady + ey[i - 1] * 2.0 * aey;
+      double dedt =
+          -(sige[i - 1] - sqrt(equi[5])) / taurads + sige[i - 1] * aes;
 
-    sige.push_back(sqrt(sige2[i]));
-    sigs.push_back(sigsfromsige(sige[i], gamma, gammatr, omegas));
+      t.push_back(t[i - 1] + ddt);
+      ex.push_back(ex[i - 1] + ddt * dxdt);
+      ey.push_back(ey[i - 1] + ddt * dydt);
+      sige.push_back(sige[i - 1] + ddt * dedt);
+      sige2.push_back(sige[i] * sige[i]);
+      sigs.push_back(sigsfromsige(sige[i], gamma, gammatr, omegas));
+    }
 
-    /*
-    // DEBUG
-    printf("--------------------\n");
-    printf("step : %10i\n", i);
-    cyan();
-    printf("ex   : %12.6e\n", ex[i]);
-    printf("ey   : %12.6e\n", ey[i]);
-    printf("sigs : %12.6e\n", sigs[i]);
-    green();
-    printf("exdiff abs  : %12.6e\n", (ex[i] - ex[i - 1]));
-    printf("eydiff abs  : %12.6e\n", (ey[i] - ey[i - 1]));
-    printf("sigsdiff abs: %12.6e\n", (sigs[i] - sigs[i - 1]));
-    yellow();
-    printf("exdiff   : %12.6e\n", fabs((ex[i] - ex[i - 1]) / ex[i - 1]));
-    printf("eydiff   : %12.6e\n", fabs((ey[i] - ey[i - 1]) / ey[i - 1]));
-    printf("sigsdiff : %12.6e\n", fabs((sigs[i] - sigs[i - 1]) / sigs[i -
-    1])); reset();
-    */
+    // while condition
   } while (i < nsteps);
+
+  // end progressbar
+  std::cout << std::endl;
+
+  // print final values
   blue();
   printf("%-20s : %12.6e\n", "Final ex", ex[ex.size() - 1]);
   printf("%-20s : %12.6e\n", "Final ey", ey[ey.size() - 1]);
@@ -880,7 +861,61 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
   printf("%-20s : %12.6e\n", "Final tau_ibs_s", 1.0 / ibs[0]);
   reset();
 }
+/* update transverse growth rates with coupling
+double tmpx = aex;
+aex = (2.0 * aex * aey) / ((2.0 - coupling) * aey +
+                           coupling * aex); // full coupling -> (tx + ty) / 2
+aey = (2.0 * aex * aey) / ((2.0 - coupling) * tmpx +
+                           coupling * aey); // full coupling -> (tx + ty) / 2
 
+t.push_back(t[i - 1] + stepsize);
+ex.push_back(extemp[i - 1] * exp(2 * stepsize * (-1 / tauradx + aex)) +
+             equi[3] * (1 - exp(-2 * stepsize * i / tauradx)));
+extemp.push_back(extemp[i - 1] * exp(2 * stepsize * (-1 / tauradx + aex)));
+
+ey.push_back(eytemp[i - 1] * exp(2 * stepsize * (-1 / taurady + aey)) +
+             equi[4] * (1 - exp(-2 * stepsize * i / taurady)));
+eytemp.push_back(eytemp[i - 1] * exp(2 * stepsize * (-1 / taurady + aey)));
+
+sige2.push_back(sige2temp[i - 1] * exp(2 * stepsize * (-1 / taurads + aes)) +
+                equi[5] * (1 - exp(-2 * i * stepsize / taurads)));
+sige2temp.push_back(sige2temp[i - 1] *
+                    exp(2 * stepsize * (-1 / taurads + aes)));
+
+sige.push_back(sqrt(sige2[i]));
+sigs.push_back(sigsfromsige(sige[i], gamma, gammatr, omegas));
+
+// DEBUG
+printf("--------------------\n");
+printf("step : %10i\n", i);
+cyan();
+printf("ex   : %12.6e\n", ex[i]);
+printf("ey   : %12.6e\n", ey[i]);
+printf("sigs : %12.6e\n", sigs[i]);
+green();
+printf("exdiff abs  : %12.6e\n", (ex[i] - ex[i - 1]));
+printf("eydiff abs  : %12.6e\n", (ey[i] - ey[i - 1]));
+printf("sigsdiff abs: %12.6e\n", (sigs[i] - sigs[i - 1]));
+yellow();
+printf("exdiff   : %12.6e\n", fabs((ex[i] - ex[i - 1]) / ex[i - 1]));
+printf("eydiff   : %12.6e\n", fabs((ey[i] - ey[i - 1]) / ey[i - 1]));
+printf("sigsdiff : %12.6e\n", fabs((sigs[i] - sigs[i - 1]) / sigs[i -
+1])); reset();
+}
+while (i < nsteps)
+  ;
+blue();
+printf("%-20s : %12.6e\n", "Final ex", ex[ex.size() - 1]);
+printf("%-20s : %12.6e\n", "Final ey", ey[ey.size() - 1]);
+printf("%-20s : %12.6e\n", "Final sigs", sigs[sigs.size() - 1]);
+
+printf("%-20s : %12.6e\n", "Final tau_ibs_x", 1.0 / ibs[1]);
+printf("%-20s : %12.6e\n", "Final tau_ibs_y", 1.0 / ibs[2]);
+printf("%-20s : %12.6e\n", "Final tau_ibs_s", 1.0 / ibs[0]);
+reset();
+}
+
+*/
 void ODE_BMAD(map<string, double> &twiss,
               map<string, vector<double>> &twissdata, int nrf, double harmon[],
               double voltages[], vector<double> &t, vector<double> &ex,
