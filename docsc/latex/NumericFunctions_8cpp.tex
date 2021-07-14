@@ -105,123 +105,519 @@ double \mbox{\hyperlink{NumericFunctions_8cpp_a12cee73c1a853e5184eb5b897f08e31b}
 \doxysubsubsection{\texorpdfstring{BetaRelativisticFromGamma()}{BetaRelativisticFromGamma()}}
 {\footnotesize\ttfamily double Beta\+Relativistic\+From\+Gamma (\begin{DoxyParamCaption}\item[{double}]{gamma }\end{DoxyParamCaption})}
 
+Calculate relativistic beta given relativistic gamma.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gamma} & Relativistic gamma factor.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Relativistic Beta 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_a6e88680d2d40201edcff14e02fdf3f0d}\label{NumericFunctions_8cpp_a6e88680d2d40201edcff14e02fdf3f0d}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!dee\_to\_dpp@{dee\_to\_dpp}}
 \index{dee\_to\_dpp@{dee\_to\_dpp}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{dee\_to\_dpp()}{dee\_to\_dpp()}}
 {\footnotesize\ttfamily double dee\+\_\+to\+\_\+dpp (\begin{DoxyParamCaption}\item[{double}]{dee,  }\item[{double}]{beta0 }\end{DoxyParamCaption})}
 
+Convert d\+E/E to dp/p.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dee} & d\+E/E \\
+\hline
+{\em beta0} & Relativistic Beta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+dp/p. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_a12cee73c1a853e5184eb5b897f08e31b}\label{NumericFunctions_8cpp_a12cee73c1a853e5184eb5b897f08e31b}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!dpp\_to\_dee@{dpp\_to\_dee}}
 \index{dpp\_to\_dee@{dpp\_to\_dee}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{dpp\_to\_dee()}{dpp\_to\_dee()}}
 {\footnotesize\ttfamily double dpp\+\_\+to\+\_\+dee (\begin{DoxyParamCaption}\item[{double}]{dpp,  }\item[{double}]{beta0 }\end{DoxyParamCaption})}
 
+Convert dp/p to d\+E/E.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dpp} & dp/p \\
+\hline
+{\em beta0} & Relativistic Beta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+d\+E/E. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_a88080b62380f71ff96ffdc74a4904f31}\label{NumericFunctions_8cpp_a88080b62380f71ff96ffdc74a4904f31}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!EffectiveRFVoltageInElectronVolt@{EffectiveRFVoltageInElectronVolt}}
 \index{EffectiveRFVoltageInElectronVolt@{EffectiveRFVoltageInElectronVolt}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{EffectiveRFVoltageInElectronVolt()}{EffectiveRFVoltageInElectronVolt()}}
 {\footnotesize\ttfamily double Effective\+RFVoltage\+In\+Electron\+Volt (\begin{DoxyParamCaption}\item[{double}]{phi,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
+Get the energy gain in eV produced by the RF systems for given harmonic numbers and voltages.
+
+
+\begin{DoxyParams}{Parameters}
+{\em phi} & RF phase for the particle \\
+\hline
+{\em charge} & Charge of the particle \\
+\hline
+{\em nrf} & Number of RF systems \\
+\hline
+{\em harmon} & List of harmonic numbers \\
+\hline
+{\em voltages} & List of voltages\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Energy gain \mbox{[}eV\mbox{]} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_a5bf77b80707fdf43c3cf9a7b3cb5a1a0}\label{NumericFunctions_8cpp_a5bf77b80707fdf43c3cf9a7b3cb5a1a0}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!EffectiveRFVoltageInElectronVoltPrime@{EffectiveRFVoltageInElectronVoltPrime}}
 \index{EffectiveRFVoltageInElectronVoltPrime@{EffectiveRFVoltageInElectronVoltPrime}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{EffectiveRFVoltageInElectronVoltPrime()}{EffectiveRFVoltageInElectronVoltPrime()}}
 {\footnotesize\ttfamily double Effective\+RFVoltage\+In\+Electron\+Volt\+Prime (\begin{DoxyParamCaption}\item[{double}]{phi,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
+Get the derivative of the energy gain in eV produced by the RF systems for given harmonic numbers and voltages.
+
+
+\begin{DoxyParams}{Parameters}
+{\em phi} & RF phase for the particle \\
+\hline
+{\em charge} & Charge of the particle \\
+\hline
+{\em nrf} & Number of RF systems \\
+\hline
+{\em harmon} & List of harmonic numbers \\
+\hline
+{\em voltages} & List of voltages\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Derivative of the Energy gain \mbox{[}eV\mbox{]} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_a82413379d3aa50e090b13e6bd5d2a470}\label{NumericFunctions_8cpp_a82413379d3aa50e090b13e6bd5d2a470}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!eta@{eta}}
 \index{eta@{eta}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{eta()}{eta()}}
 {\footnotesize\ttfamily double eta (\begin{DoxyParamCaption}\item[{double}]{gamma,  }\item[{double}]{gammatr }\end{DoxyParamCaption})}
 
+Calculate slip factor eta, from gamma and gamma transition.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gamma} & Relativistic Gamma of the particles. \\
+\hline
+{\em gammatr} & Transition Relativistic Gamma of the accelerator lattice.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Slip factor Eta. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_a8c9a407acfb650574b4a06a2db8180ec}\label{NumericFunctions_8cpp_a8c9a407acfb650574b4a06a2db8180ec}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!fmohl@{fmohl}}
 \index{fmohl@{fmohl}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{fmohl()}{fmohl()}}
 {\footnotesize\ttfamily double fmohl (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{q,  }\item[{int}]{n }\end{DoxyParamCaption})}
 
+Piwinski IBS approximation fmohl function. Reference in IBS models docstring.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+{\em q} & \\
+\hline
+{\em n} & Number of iterations for accuracy (standard 1000 is ok)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Fmohl 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_af0a22976992ba63309d36536957f72df}\label{NumericFunctions_8cpp_af0a22976992ba63309d36536957f72df}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!ParticleRadius@{ParticleRadius}}
 \index{ParticleRadius@{ParticleRadius}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{ParticleRadius()}{ParticleRadius()}}
 {\footnotesize\ttfamily double Particle\+Radius (\begin{DoxyParamCaption}\item[{double}]{charge,  }\item[{double}]{aatom }\end{DoxyParamCaption})}
 
+Calculate the classical particle radius from its charge and atomic mass number A.
+
+
+\begin{DoxyParams}{Parameters}
+{\em charge} & Charge of the particle. \\
+\hline
+{\em aatom} & Atomic mass number of the particle (A)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Classical radius of the particle. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_a8ec38a3d7a0099ca0b230d32559e72b8}\label{NumericFunctions_8cpp_a8ec38a3d7a0099ca0b230d32559e72b8}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!printTwissMap@{printTwissMap}}
 \index{printTwissMap@{printTwissMap}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{printTwissMap()}{printTwissMap()}}
 {\footnotesize\ttfamily void print\+Twiss\+Map (\begin{DoxyParamCaption}\item[{string}]{key,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{table }\end{DoxyParamCaption})}
 
+Prints the values of the given Twiss column name. Mostly for debugging.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Name of the column to print out. \\
+\hline
+{\em table} & Twiss Table Map to print from. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{NumericFunctions_8cpp_ab1f8d1bb5c0bd5775eaa65e99b14d245}\label{NumericFunctions_8cpp_ab1f8d1bb5c0bd5775eaa65e99b14d245}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!rds@{rds}}
 \index{rds@{rds}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{rds()}{rds()}}
 {\footnotesize\ttfamily double rds (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})}
 
+Nagaitsev\textquotesingle{}s approximation rds function. Reference in IBS models docstring.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em z} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+rds 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_a5e1e2d811d4be9befd501d37ba774704}\label{NumericFunctions_8cpp_a5e1e2d811d4be9befd501d37ba774704}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!SigeFromRFAndSigs@{SigeFromRFAndSigs}}
 \index{SigeFromRFAndSigs@{SigeFromRFAndSigs}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{SigeFromRFAndSigs()}{SigeFromRFAndSigs()}}
 {\footnotesize\ttfamily double Sige\+From\+RFAnd\+Sigs (\begin{DoxyParamCaption}\item[{double}]{sigs,  }\item[{double}]{U0,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{double}]{gamma,  }\item[{double}]{gammatr,  }\item[{double}]{pc,  }\item[{double}]{circ,  }\item[{double}]{phis,  }\item[{bool}]{printout }\end{DoxyParamCaption})}
 
+Convert $\sigma_s $ to $\sigma_e $ using RF parameters
+
+
+\begin{DoxyParams}{Parameters}
+{\em sigs} & $\sigma_s $ \\
+\hline
+{\em U0} & Radiation losses per turn \mbox{[}eV\mbox{]} \\
+\hline
+{\em charge} & Charge of the particle \\
+\hline
+{\em nrf} & Number of RF systems \\
+\hline
+{\em harmon} & List of harmonic numbers \\
+\hline
+{\em voltages} & List of voltages \\
+\hline
+{\em gamma} & Relativistic Gamma \\
+\hline
+{\em gammatr} & Transition Relativistic Gamma \\
+\hline
+{\em pc} & Particle Momentum \mbox{[}GeV\mbox{]} \\
+\hline
+{\em circ} & Accelerator length \\
+\hline
+{\em phis} & Synchronuous phase of the particle \\
+\hline
+{\em printout} & Flag to print out the summary.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\sigma_e $ 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_aee56f422409b1d45d63b2f18808b96b1}\label{NumericFunctions_8cpp_aee56f422409b1d45d63b2f18808b96b1}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!sigefromsigs@{sigefromsigs}}
 \index{sigefromsigs@{sigefromsigs}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{sigefromsigs()}{sigefromsigs()}}
 {\footnotesize\ttfamily double sigefromsigs (\begin{DoxyParamCaption}\item[{double}]{omega0,  }\item[{double}]{sigs,  }\item[{double}]{qs,  }\item[{double}]{gamma,  }\item[{double}]{gammatr }\end{DoxyParamCaption})}
 
+Convert $\sigma_s $ to $\sigma_e $
+
+
+\begin{DoxyParams}{Parameters}
+{\em omega0} & Particle revolution angular frequency ( $ 2 \pi f $ ) \\
+\hline
+{\em sigs} & $\sigma_s $ \\
+\hline
+{\em qs} & Synchrotron Tune \\
+\hline
+{\em gamma} & Relativistic Gamma \\
+\hline
+{\em gammatr} & Transition Relativistic Gamma\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\sigma_e $ 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_a67d4e0c2346e489535ec10ced4e81a92}\label{NumericFunctions_8cpp_a67d4e0c2346e489535ec10ced4e81a92}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!sigsfromsige@{sigsfromsige}}
 \index{sigsfromsige@{sigsfromsige}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{sigsfromsige()}{sigsfromsige()}}
 {\footnotesize\ttfamily double sigsfromsige (\begin{DoxyParamCaption}\item[{double}]{sige,  }\item[{double}]{gamma,  }\item[{double}]{gammatr,  }\item[{double}]{omegas }\end{DoxyParamCaption})}
 
+Convert $\sigma_e $ to $\sigma_s $
+
+
+\begin{DoxyParams}{Parameters}
+{\em omega0} & Particle revolution angular frequency ( $ 2 \pi f $ ) \\
+\hline
+{\em sige} & $\sigma_e $ \\
+\hline
+{\em gamma} & Relativistic Gamma \\
+\hline
+{\em gammatr} & Transition Relativistic Gamma \\
+\hline
+{\em omegas} & Synchrotron Frequency ( $ \omega q_s $)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\sigma_s $ 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_a1a8df6971aa019b325647dcc9df43343}\label{NumericFunctions_8cpp_a1a8df6971aa019b325647dcc9df43343}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!SynchronuousPhase@{SynchronuousPhase}}
 \index{SynchronuousPhase@{SynchronuousPhase}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{SynchronuousPhase()}{SynchronuousPhase()}}
 {\footnotesize\ttfamily double Synchronuous\+Phase (\begin{DoxyParamCaption}\item[{double}]{target,  }\item[{double}]{init\+\_\+phi,  }\item[{double}]{U0,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{double}]{epsilon }\end{DoxyParamCaption})}
 
+Get the synchronuous phase for a particle for given energy gain, RF settings and radiation losses.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Target energy gain per turn \mbox{[}eV\mbox{]} \\
+\hline
+{\em init\+\_\+phi} & RF phase to start search from. \\
+\hline
+{\em U0} & Radiation losses per turn \mbox{[}eV\mbox{]} \\
+\hline
+{\em charge} & Charge of the particle \\
+\hline
+{\em nrf} & Number of RF systems \\
+\hline
+{\em harmon} & List of harmonic numbers \\
+\hline
+{\em voltages} & List of voltages \\
+\hline
+{\em epsilon} & Accuracy threshold for the target.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Synchronuous phase. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_ad1b45469475427d0cac75acf9245badd}\label{NumericFunctions_8cpp_ad1b45469475427d0cac75acf9245badd}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!SynchronuousPhaseWithPWD@{SynchronuousPhaseWithPWD}}
 \index{SynchronuousPhaseWithPWD@{SynchronuousPhaseWithPWD}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{SynchronuousPhaseWithPWD()}{SynchronuousPhaseWithPWD()}}
 {\footnotesize\ttfamily double Synchronuous\+Phase\+With\+PWD (\begin{DoxyParamCaption}\item[{double}]{target,  }\item[{double}]{init\+\_\+phi,  }\item[{double}]{U0,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{double}]{L,  }\item[{double}]{N,  }\item[{double}]{sigs,  }\item[{double}]{pc,  }\item[{double}]{epsilon }\end{DoxyParamCaption})}
 
+Get the synchronuous phase with Potential Well Distortion for a particle for given energy gain, RF settings and radiation losses.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Target energy gain per turn \mbox{[}eV\mbox{]} \\
+\hline
+{\em init\+\_\+phi} & RF phase to start search from \\
+\hline
+{\em U0} & Radiation losses per turn \mbox{[}eV\mbox{]} \\
+\hline
+{\em charge} & Charge of the particle \\
+\hline
+{\em nrf} & Number of RF systems \\
+\hline
+{\em harmon} & List of harmonic numbers \\
+\hline
+{\em voltages} & List of voltages \\
+\hline
+{\em L} & Impedance L \\
+\hline
+{\em N} & Impedance N \\
+\hline
+{\em sigs} & $\sigma_s $ bunch length \\
+\hline
+{\em pc} & Particle Momentum in GeV \\
+\hline
+{\em epsilon} & Accuracy threshold for the target\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Synchronuous phase with Potential Well Distortion. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_adeb8136a44f6bab90c66ae55db2a2ca2}\label{NumericFunctions_8cpp_adeb8136a44f6bab90c66ae55db2a2ca2}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!SynchrotronTune@{SynchrotronTune}}
 \index{SynchrotronTune@{SynchrotronTune}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{SynchrotronTune()}{SynchrotronTune()}}
 {\footnotesize\ttfamily double Synchrotron\+Tune (\begin{DoxyParamCaption}\item[{double}]{omega0,  }\item[{double}]{U0,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{double}]{phis,  }\item[{double}]{eta,  }\item[{double}]{pc }\end{DoxyParamCaption})}
 
+Synchrotron Tune
+
+
+\begin{DoxyParams}{Parameters}
+{\em omega0} & Angular revolution frequency of the particle. \\
+\hline
+{\em U0} & Radiation losses per turn \mbox{[}eV\mbox{]} \\
+\hline
+{\em charge} & Charge of the particle \\
+\hline
+{\em nrf} & Number of RF systems \\
+\hline
+{\em harmon} & List of harmonic numbers \\
+\hline
+{\em voltages} & List of voltages \\
+\hline
+{\em phis} & Synchronuous phase of the particle \\
+\hline
+{\em eta} & Phase slip factor \\
+\hline
+{\em pc} & Particle Momentum \mbox{[}GeV\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Synchrotron Tune 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_aa69cd4e636551a0ec2fe691bfe5c3493}\label{NumericFunctions_8cpp_aa69cd4e636551a0ec2fe691bfe5c3493}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!SynchrotronTunePWD@{SynchrotronTunePWD}}
 \index{SynchrotronTunePWD@{SynchrotronTunePWD}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{SynchrotronTunePWD()}{SynchrotronTunePWD()}}
 {\footnotesize\ttfamily double Synchrotron\+Tune\+PWD (\begin{DoxyParamCaption}\item[{double}]{omega0,  }\item[{double}]{U0,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{double}]{L,  }\item[{double}]{N,  }\item[{double}]{sigs,  }\item[{double}]{phis,  }\item[{double}]{eta,  }\item[{double}]{pc }\end{DoxyParamCaption})}
 
+Synchrotron Tune with Potential Well Distortion
+
+
+\begin{DoxyParams}{Parameters}
+{\em omega0} & Angular revolution frequency of the particle. \\
+\hline
+{\em U0} & Radiation losses per turn \mbox{[}eV\mbox{]} \\
+\hline
+{\em charge} & Charge of the particle \\
+\hline
+{\em nrf} & Number of RF systems \\
+\hline
+{\em harmon} & List of harmonic numbers \\
+\hline
+{\em voltages} & List of voltages \\
+\hline
+{\em L} & Impedance L \\
+\hline
+{\em N} & Impedance N \\
+\hline
+{\em phis} & Synchronuous phase of the particle \\
+\hline
+{\em eta} & Phase slip factor \\
+\hline
+{\em pc} & Particle Momentum \mbox{[}GeV\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Synchrotron Tune with Potential Well Distortion 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_a194fecd97256a8796080aa16e118d890}\label{NumericFunctions_8cpp_a194fecd97256a8796080aa16e118d890}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!updateTwiss@{updateTwiss}}
 \index{updateTwiss@{updateTwiss}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{updateTwiss()}{updateTwiss()}}
 {\footnotesize\ttfamily void update\+Twiss (\begin{DoxyParamCaption}\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{table }\end{DoxyParamCaption})}
 
+Add ratiation integrals (I1-\/\+I5) per element to the Twiss Table Map. It also adds the relevant quantities to calculate them (e.\+g. curly H, rho, ...).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em table} & Twiss Table Map \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{NumericFunctions_8cpp_afaa6e52a0176321c1ca7ba8af91f3498}\label{NumericFunctions_8cpp_afaa6e52a0176321c1ca7ba8af91f3498}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!VeffRFeVPotentialWellDistortion@{VeffRFeVPotentialWellDistortion}}
 \index{VeffRFeVPotentialWellDistortion@{VeffRFeVPotentialWellDistortion}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{VeffRFeVPotentialWellDistortion()}{VeffRFeVPotentialWellDistortion()}}
 {\footnotesize\ttfamily double Veff\+RFe\+VPotential\+Well\+Distortion (\begin{DoxyParamCaption}\item[{double}]{phi,  }\item[{double}]{U0,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{double}]{L,  }\item[{double}]{N,  }\item[{double}]{sigs,  }\item[{double}]{pc }\end{DoxyParamCaption})}
 
+Get the energy gain in eV produced by the RF systems for given harmonic numbers and voltages taking potetial well distortion and radiation losses into account.
+
+
+\begin{DoxyParams}{Parameters}
+{\em phi} & RF phase for the particle \\
+\hline
+{\em U0} & Radiation losses per turn \mbox{[}eV\mbox{]} \\
+\hline
+{\em charge} & Charge of the particle \\
+\hline
+{\em nrf} & Number of RF systems \\
+\hline
+{\em harmon} & List of harmonic numbers \\
+\hline
+{\em voltages} & List of voltages \\
+\hline
+{\em L} & Impedance L \\
+\hline
+{\em N} & Impedance N \\
+\hline
+{\em sigs} & $\sigma_s $ bunch length \\
+\hline
+{\em pc} & Particle Momentum in GeV\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Energy gain \mbox{[}eV\mbox{]} with Potential Well Distortion and Radiation Losses. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_a5e36c772b619064009590d4399793a6e}\label{NumericFunctions_8cpp_a5e36c772b619064009590d4399793a6e}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!VeffRFeVPotentialWellDistortionPrime@{VeffRFeVPotentialWellDistortionPrime}}
 \index{VeffRFeVPotentialWellDistortionPrime@{VeffRFeVPotentialWellDistortionPrime}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{VeffRFeVPotentialWellDistortionPrime()}{VeffRFeVPotentialWellDistortionPrime()}}
 {\footnotesize\ttfamily double Veff\+RFe\+VPotential\+Well\+Distortion\+Prime (\begin{DoxyParamCaption}\item[{double}]{phi,  }\item[{double}]{U0,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{double}]{L,  }\item[{double}]{N,  }\item[{double}]{sigs,  }\item[{double}]{pc }\end{DoxyParamCaption})}
 
+Get the derivative of the energy gain in eV produced by the RF systems for given harmonic numbers and voltages taking potetial well distortion and radiation losses into account.
+
+
+\begin{DoxyParams}{Parameters}
+{\em phi} & RF phase for the particle \\
+\hline
+{\em U0} & Radiation losses per turn \mbox{[}eV\mbox{]} \\
+\hline
+{\em charge} & Charge of the particle \\
+\hline
+{\em nrf} & Number of RF systems \\
+\hline
+{\em harmon} & List of harmonic numbers \\
+\hline
+{\em voltages} & List of voltages \\
+\hline
+{\em L} & Impedance L \\
+\hline
+{\em N} & Impedance N \\
+\hline
+{\em sigs} & $\sigma_s $ bunch length \\
+\hline
+{\em pc} & Particle Momentum in GeV\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Derivative of the Energy gain \mbox{[}eV\mbox{]} with Potential Well Distortion and Radiation Losses. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{NumericFunctions_8cpp_a80fbe13a6283d06cc250bfef1cb38f6a}\label{NumericFunctions_8cpp_a80fbe13a6283d06cc250bfef1cb38f6a}} 
 \index{NumericFunctions.cpp@{NumericFunctions.cpp}!VeffRFeVRadlosses@{VeffRFeVRadlosses}}
 \index{VeffRFeVRadlosses@{VeffRFeVRadlosses}!NumericFunctions.cpp@{NumericFunctions.cpp}}
 \doxysubsubsection{\texorpdfstring{VeffRFeVRadlosses()}{VeffRFeVRadlosses()}}
 {\footnotesize\ttfamily double Veff\+RFe\+VRadlosses (\begin{DoxyParamCaption}\item[{double}]{phi,  }\item[{double}]{U0,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
+Get the energy gain in eV produced by the RF systems for given harmonic numbers and voltages taking radiation losses into account.
+
+
+\begin{DoxyParams}{Parameters}
+{\em phi} & RF phase for the particle \\
+\hline
+{\em U0} & Radiation losses per turn \mbox{[}eV\mbox{]} \\
+\hline
+{\em charge} & Charge of the particle \\
+\hline
+{\em nrf} & Number of RF systems \\
+\hline
+{\em harmon} & List of harmonic numbers \\
+\hline
+{\em voltages} & List of voltages\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Energy gain \mbox{[}eV\mbox{]} taking radiation losses into account. 
+\end{DoxyReturn}

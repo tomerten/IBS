@@ -1,4 +1,4 @@
-TWISS
+Twiss
 *****
 
 .. doxygenfunction:: GetTwissHeader
@@ -7,3 +7,5 @@ TWISS
 .. doxygenfunction:: GetTable
     :project: ibs
 
+.. doxygenfunction:: GetTwissTableAsMap
+    :project: ibs

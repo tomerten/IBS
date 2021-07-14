@@ -21,16 +21,19 @@ PYBIND11_MODULE(IBSLib, m) {
   m.def("GetTwissHeader", &GetTwissHeader,
         "Get the twiss header as a dictionary.", py::arg("filename"));
 
-  m.def("GetTwissTable", &GetTwissTableAsMap, "Get the twiss data table.");
+  m.def("GetTwissTable", &GetTwissTableAsMap, "Get the twiss data table.",
+        py::arg("filename"));
 
   m.def("updateTwiss",
         [](map<string, vector<double>> &table) {
           updateTwiss(table);
           return table;
         },
-        "Extend Twiss Table with rad int, CS gamma, curly H and rho.");
+        "Extend Twiss Table with rad int, CS gamma, curly H and rho.",
+        py::arg("table"));
 
-  m.def("printTwissColumn", &printTwissMap, "Print Twiss column");
+  m.def("printTwissColumn", &printTwissMap, "Print Twiss column",
+        py::arg("columnName"), py::arg("twissTableMap"));
   /*
 ================================================================================
                                     CONSTANTS
@@ -128,64 +131,90 @@ PYBIND11_MODULE(IBSLib, m) {
  ================================================================================
   */
   m.def("beta_relativistic_from_gamma", &BetaRelativisticFromGamma,
-        "Beta relativistic.");
+        "Beta relativistic.", py::arg("Gamma"));
 
-  m.def("eta", &eta, "Slip factor");
+  m.def("eta", &eta, "Slip factor", py::arg("Gamma"),
+        py::arg("GammaTransition"));
 
   m.def("particle_radius", &ParticleRadius,
-        "Particle radius from charge and atomic mass.");
+        "Particle radius from charge and atomic mass.", py::arg("charge"),
+        py::arg("AtomicNumber"));
 
-  m.def("dee_to_dpp", &dee_to_dpp, "DE/E to DP/P");
+  m.def("dee_to_dpp", &dee_to_dpp, "DE/E to DP/P", py::arg("dee"),
+        py::arg("beta"));
 
-  m.def("dpp_to_dee", &dpp_to_dee, "DP/P to DE/E");
+  m.def("dpp_to_dee", &dpp_to_dee, "DP/P to DE/E", py::arg("dpp"),
+        py::arg("beta"));
 
   /*
  ================================================================================
                               LONGITUDINAL / RF
  ================================================================================
   */
-  m.def("sige_from_sigs", &sigefromsigs, "Energy spread from bunch length.");
+  m.def("sige_from_sigs", &sigefromsigs, "Energy spread from bunch length.",
+        py::arg("omega0"), py::arg("sigs"), py::arg("qs"), py::arg("gamma"),
+        py::arg("gammatr"));
 
-  m.def("sigs_from_sige", &sigsfromsige, "Bunch length from energy spread.");
+  m.def("sigs_from_sige", &sigsfromsige, "Bunch length from energy spread.",
+        py::arg("sige"), py::arg("gamma"), py::arg("gammatr"),
+        py::arg("omegas"));
 
   m.def("rf_voltage_in_ev",
         [](double phi, double c, std::vector<double> h, std::vector<double> v) {
           return EffectiveRFVoltageInElectronVolt(phi, c, h.size(), h.data(),
                                                   v.data());
-        });
+        },
+        "RF energy gain per turn [eV]", py::arg("phi"), py::arg("charge"),
+        py::arg("harmonicNumbers"), py::arg("voltages"));
 
   m.def("rf_voltage_in_ev_prime",
         [](double phi, double c, std::vector<double> h, std::vector<double> v) {
           return EffectiveRFVoltageInElectronVoltPrime(phi, c, h.size(),
                                                        h.data(), v.data());
-        });
+        },
+        "Derivative of RF energy gain per turn [eV]", py::arg("phi"),
+        py::arg("charge"), py::arg("harmonicNumbers"), py::arg("voltages"));
 
   m.def("rf_voltage_in_ev_with_rad_losses",
         [](double phi, double U0, double c, std::vector<double> h,
            std::vector<double> v) {
           return VeffRFeVRadlosses(phi, c, U0, h.size(), h.data(), v.data());
-        });
+        },
+        "RF energy gain per turn [eV] with Radiation Losses", py::arg("phi"),
+        py::arg("U0"), py::arg("charge"), py::arg("harmonicNumbers"),
+        py::arg("voltages"));
 
   m.def("get_synchronuous_phase",
         [](double target, double init_phi, double U0, double c,
            std::vector<double> h, std::vector<double> v, double e) {
           return SynchronuousPhase(target, init_phi, U0, c, h.size(), h.data(),
                                    v.data(), e);
-        });
+        },
+        "Synchronuous Phase", py::arg("targetEnergyGain"), py::arg("init_phi"),
+        py::arg("U0"), py::arg("charge"), py::arg("harmonicNumbers"),
+        py::arg("voltages"), py::arg("epsilon"));
 
   m.def("rf_voltage_with_potential_well_distortion",
         [](double target, double U0, double c, std::vector<double> h,
            std::vector<double> v, double L, double N, double sigs, double pc) {
           return VeffRFeVPotentialWellDistortion(
               target, U0, c, h.size(), h.data(), v.data(), L, N, sigs, pc);
-        });
+        },
+        "RF energy gain [eV] with Potential Well Distortion", py::arg("phi"),
+        py::arg("U0"), py::arg("charge"), py::arg("harmonicNumbers"),
+        py::arg("voltages"), py::arg("L"), py::arg("N"), py::arg("sigs"),
+        py::arg("pc"));
 
   m.def("rf_voltage_with_potential_well_distortion_prime",
         [](double target, double U0, double c, std::vector<double> h,
            std::vector<double> v, double L, double N, double sigs, double pc) {
           return VeffRFeVPotentialWellDistortionPrime(
               target, U0, c, h.size(), h.data(), v.data(), L, N, sigs, pc);
-        });
+        },
+        "Derivative of RF energy gain [eV] with Potential Well Distortion",
+        py::arg("phi"), py::arg("U0"), py::arg("charge"),
+        py::arg("harmonicNumbers"), py::arg("voltages"), py::arg("L"),
+        py::arg("N"), py::arg("sigs"), py::arg("pc"));
 
   m.def("get_synchronuous_phase_with_potential_well_distortion",
         [](double target, double init_phi, double U0, double c,
@@ -194,21 +223,34 @@ PYBIND11_MODULE(IBSLib, m) {
           return SynchronuousPhaseWithPWD(target, init_phi, U0, c, h.size(),
                                           h.data(), v.data(), L, N, sigs, pc,
                                           e);
-        });
+        },
+        "Synchronuous Phase with Potential Well Distortion",
+        py::arg("targetEnergyGain"), py::arg("init_phi"), py::arg("U0"),
+        py::arg("charge"), py::arg("harmonicNumbers"), py::arg("voltages"),
+        py::arg("L"), py::arg("N"), py::arg("sigs"), py::arg("pc"),
+        py::arg("epsilon"));
 
   m.def("get_synchrotron_tune",
         [](double omega0, double U0, double c, std::vector<double> h,
            std::vector<double> v, double phis, double eta, double pc) {
           return SynchrotronTune(omega0, U0, c, h.size(), h.data(), v.data(),
                                  phis, eta, pc);
-        });
+        },
+        "Synchronuous Tune", py::arg("omega0"), py::arg("U0"),
+        py::arg("charge"), py::arg("harmonicNumbers"), py::arg("voltages"),
+        py::arg("phis"), py::arg("eta"), py::arg("pc"));
+
   m.def("get_synchrotron_tune_with_potential_well",
         [](double omega0, double U0, double c, std::vector<double> h,
            std::vector<double> v, double L, double N, double sigs, double phis,
            double eta, double pc) {
           return SynchrotronTunePWD(omega0, U0, c, h.size(), h.data(), v.data(),
                                     L, N, sigs, phis, eta, pc);
-        });
+        },
+        "Synchronuous Tune ith Potential Well Distortion", py::arg("omega0"),
+        py::arg("U0"), py::arg("charge"), py::arg("harmonicNumbers"),
+        py::arg("voltages"), py::arg("L"), py::arg("N"), py::arg("sigs"),
+        py::arg("phis"), py::arg("eta"), py::arg("pc"));
 
   m.def("sige_form_sigs_using_rf",
         [](double sigs, double U0, double c, std::vector<double> h,
@@ -216,7 +258,11 @@ PYBIND11_MODULE(IBSLib, m) {
            double circ, double phis, bool printout) {
           return SigeFromRFAndSigs(sigs, U0, c, h.size(), h.data(), v.data(),
                                    gamma, gammatr, pc, circ, phis, printout);
-        });
+        },
+        "Sigma E from Sigma s using RF settings.", py::arg(""), py::arg("U0"),
+        py::arg("charge"), py::arg("harmonicNumbers"), py::arg("voltages"),
+        py::arg("gamma"), py::arg("gammaTransition"), py::arg("pc"),
+        py::arg("circ"), py::arg("phis"), py::arg("printout"));
 
   /*
 ================================================================================

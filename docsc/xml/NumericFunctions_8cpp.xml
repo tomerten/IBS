@@ -148,6 +148,51 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Convert <formula id="3">$\sigma_s $</formula> to <formula id="4">$\sigma_e $</formula></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>omega0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Particle revolution angular frequency ( <formula id="5">$ 2 \pi f $</formula> ) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><formula id="3">$\sigma_s $</formula> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Synchrotron Tune </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gamma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relativistic Gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gammatr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Transition Relativistic Gamma</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><formula id="4">$\sigma_e $</formula> </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -177,6 +222,51 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Convert <formula id="4">$\sigma_e $</formula> to <formula id="3">$\sigma_s $</formula></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>omega0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Particle revolution angular frequency ( <formula id="5">$ 2 \pi f $</formula> ) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sige</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><formula id="4">$\sigma_e $</formula> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gamma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relativistic Gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gammatr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Transition Relativistic Gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>omegas</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Synchrotron Frequency ( <formula id="6">$ \omega q_s $</formula>)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><formula id="3">$\sigma_s $</formula> </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -198,6 +288,27 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Calculate slip factor eta, from gamma and gamma transition.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gamma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relativistic Gamma of the particles. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gammatr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Transition Relativistic Gamma of the accelerator lattice.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Slip factor Eta. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -227,6 +338,43 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Piwinski IBS approximation fmohl function. Reference in IBS models docstring.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of iterations for accuracy (standard 1000 is ok)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Fmohl </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -248,6 +396,27 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Calculate the classical particle radius from its charge and atomic mass number A.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>charge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Charge of the particle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aatom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Atomic mass number of the particle (A)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Classical radius of the particle. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -265,6 +434,19 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Calculate relativistic beta given relativistic gamma.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gamma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relativistic gamma factor.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Relativistic Beta </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -290,6 +472,35 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Nagaitsev&apos;s approximation rds function. Reference in IBS models docstring.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>rds </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -325,6 +536,51 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Get the energy gain in eV produced by the RF systems for given harmonic numbers and voltages.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>phi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RF phase for the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>charge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Charge of the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nrf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of RF systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>harmon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of harmonic numbers </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>voltages</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of voltages</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Energy gain [eV] </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -360,6 +616,51 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Get the derivative of the energy gain in eV produced by the RF systems for given harmonic numbers and voltages.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>phi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RF phase for the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>charge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Charge of the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nrf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of RF systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>harmon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of harmonic numbers </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>voltages</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of voltages</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Derivative of the Energy gain [eV] </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -399,6 +700,59 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Get the energy gain in eV produced by the RF systems for given harmonic numbers and voltages taking radiation losses into account.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>phi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RF phase for the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>U0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Radiation losses per turn [eV] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>charge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Charge of the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nrf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of RF systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>harmon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of harmonic numbers </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>voltages</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of voltages</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Energy gain [eV] taking radiation losses into account. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -446,6 +800,75 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Get the synchronuous phase for a particle for given energy gain, RF settings and radiation losses.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Target energy gain per turn [eV] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>init_phi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RF phase to start search from. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>U0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Radiation losses per turn [eV] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>charge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Charge of the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nrf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of RF systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>harmon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of harmonic numbers </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>voltages</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of voltages </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>epsilon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Accuracy threshold for the target.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Synchronuous phase. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -501,6 +924,91 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Get the energy gain in eV produced by the RF systems for given harmonic numbers and voltages taking potetial well distortion and radiation losses into account.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>phi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RF phase for the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>U0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Radiation losses per turn [eV] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>charge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Charge of the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nrf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of RF systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>harmon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of harmonic numbers </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>voltages</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of voltages </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Impedance L </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Impedance N </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><formula id="3">$\sigma_s $</formula> bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Particle Momentum in GeV</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Energy gain [eV] with Potential Well Distortion and Radiation Losses. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -556,6 +1064,91 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Get the derivative of the energy gain in eV produced by the RF systems for given harmonic numbers and voltages taking potetial well distortion and radiation losses into account.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>phi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RF phase for the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>U0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Radiation losses per turn [eV] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>charge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Charge of the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nrf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of RF systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>harmon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of harmonic numbers </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>voltages</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of voltages </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Impedance L </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Impedance N </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><formula id="3">$\sigma_s $</formula> bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Particle Momentum in GeV</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Derivative of the Energy gain [eV] with Potential Well Distortion and Radiation Losses. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -619,6 +1212,107 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Get the synchronuous phase with Potential Well Distortion for a particle for given energy gain, RF settings and radiation losses.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Target energy gain per turn [eV] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>init_phi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RF phase to start search from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>U0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Radiation losses per turn [eV] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>charge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Charge of the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nrf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of RF systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>harmon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of harmonic numbers </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>voltages</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of voltages </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Impedance L </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Impedance N </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><formula id="3">$\sigma_s $</formula> bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Particle Momentum in GeV </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>epsilon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Accuracy threshold for the target</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Synchronuous phase with Potential Well Distortion. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -670,6 +1364,83 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Synchrotron Tune</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>omega0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Angular revolution frequency of the particle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>U0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Radiation losses per turn [eV] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>charge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Charge of the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nrf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of RF systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>harmon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of harmonic numbers </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>voltages</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of voltages </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>phis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Synchronuous phase of the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>eta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Phase slip factor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Particle Momentum [GeV]</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Synchrotron Tune </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -733,6 +1504,99 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Synchrotron Tune with Potential Well Distortion</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>omega0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Angular revolution frequency of the particle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>U0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Radiation losses per turn [eV] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>charge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Charge of the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nrf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of RF systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>harmon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of harmonic numbers </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>voltages</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of voltages </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Impedance L </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Impedance N </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>phis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Synchronuous phase of the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>eta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Phase slip factor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Particle Momentum [GeV]</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Synchrotron Tune with Potential Well Distortion </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -796,6 +1660,107 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Convert <formula id="3">$\sigma_s $</formula> to <formula id="4">$\sigma_e $</formula> using RF parameters</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sigs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><formula id="3">$\sigma_s $</formula> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>U0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Radiation losses per turn [eV] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>charge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Charge of the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nrf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of RF systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>harmon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of harmonic numbers </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>voltages</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of voltages </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gamma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relativistic Gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gammatr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Transition Relativistic Gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Particle Momentum [GeV] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>circ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Accelerator length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>phis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Synchronuous phase of the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>printout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag to print out the summary.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><formula id="4">$\sigma_e $</formula> </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -813,6 +1778,17 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Add ratiation integrals (I1-I5) per element to the Twiss Table Map. It also adds the relevant quantities to calculate them (e.g. curly H, rho, ...).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Table Map </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -834,6 +1810,25 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Prints the values of the given Twiss column name. Mostly for debugging.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the column to print out. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Table Map to print from. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -855,6 +1850,27 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Convert dE/E to dp/p.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dee</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dE/E </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>beta0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relativistic Beta</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>dp/p. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -876,6 +1892,27 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Convert dp/p to dE/E.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dpp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dp/p </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>beta0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relativistic Beta</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>dE/E. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

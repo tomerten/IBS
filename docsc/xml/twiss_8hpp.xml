@@ -106,7 +106,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Load Twiss header / summary from file</para>
+<para>Load Twiss header / summary from file.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>filename</parametername>
@@ -118,13 +118,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A map of twiss header parameters and their values.</para>
 </simplesect>
-<simplesect kind="note"><para>Twiss file needs to be produced with Madx.</para>
+<simplesect kind="note"><para>Twiss file needs to be produced with Madx. </para>
 </simplesect>
-Test </para>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/twiss.hpp" line="27" column="5" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/twiss.cpp" bodystart="18" bodyend="62" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/twiss.hpp" declline="27" declcolumn="5"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/twiss.hpp" line="27" column="5" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/twiss.cpp" bodystart="16" bodyend="60" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/twiss.hpp" declline="27" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="twiss_8hpp_1adfcd4453959b12c5e8467a41f9cd06c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; vector&lt; double &gt; &gt;</type>
@@ -142,10 +142,33 @@ Test </para>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Load the Twiss table as vector of vectors.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the Twiss file. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>columns</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Columns to extract from the Twiss file and store in the table.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Table with the values of the selected Twiss columns.</para>
+</simplesect>
+<simplesect kind="note"><para>Twiss file needs to be produced with Madx. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/twiss.hpp" line="29" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/twiss.cpp" bodystart="64" bodyend="152" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/twiss.hpp" declline="29" declcolumn="8"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/twiss.hpp" line="39" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/twiss.cpp" bodystart="62" bodyend="150" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/twiss.hpp" declline="39" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="twiss_8hpp_1ab4bbb88db0c39db6588438e3be7888a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>map&lt; string, vector&lt; double &gt; &gt;</type>
@@ -159,10 +182,27 @@ Test </para>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Loat the Twiss table as a map (columnNames -&gt; values).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the Twiss file.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Map with column names as keys and values are the respective Twiss values for that column.</para>
+</simplesect>
+<simplesect kind="note"><para>Twiss file needs to be produced with Madx. </para>
+</simplesect>
+<simplesect kind="warning"><para>Pre-selection of columns is taken : {&quot;L&quot;, &quot;BETX&quot;, &quot;ALFX&quot;, &quot;BETY&quot;,&quot;ALFY&quot;, &quot;DX&quot;, &quot;DPX&quot;, &quot;DY&quot;, &quot;DPY&quot;, &quot;K1L&quot;, &quot;K1SL&quot;, &quot;ANGLE&quot;} </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/twiss.hpp" line="30" column="5" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/twiss.cpp" bodystart="154" bodyend="219" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/twiss.hpp" declline="30" declcolumn="5"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/twiss.hpp" line="54" column="5" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/twiss.cpp" bodystart="152" bodyend="217" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/twiss.hpp" declline="54" declcolumn="5"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -190,10 +230,11 @@ Test </para>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal">map&lt;string,<sp/>double&gt;<sp/><ref refid="twiss_8hpp_1acd0a31fc6b222ebfe10a9a7b9f182b5d" kindref="member">GetTwissHeader</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>filename);</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal">vector&lt;vector&lt;double&gt;&gt;<sp/><ref refid="twiss_8hpp_1adfcd4453959b12c5e8467a41f9cd06c1" kindref="member">GetTable</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>filename,<sp/>vector&lt;string&gt;<sp/>columns);</highlight></codeline>
-<codeline lineno="30"><highlight class="normal">map&lt;string,<sp/>vector&lt;double&gt;&gt;<sp/><ref refid="twiss_8hpp_1ab4bbb88db0c39db6588438e3be7888a5" kindref="member">GetTwissTableAsMap</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>filename);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">vector&lt;vector&lt;double&gt;&gt;<sp/><ref refid="twiss_8hpp_1adfcd4453959b12c5e8467a41f9cd06c1" kindref="member">GetTable</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>filename,<sp/>vector&lt;string&gt;<sp/>columns);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">map&lt;string,<sp/>vector&lt;double&gt;&gt;<sp/><ref refid="twiss_8hpp_1ab4bbb88db0c39db6588438e3be7888a5" kindref="member">GetTwissTableAsMap</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>filename);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/twiss.hpp"/>
   </compounddef>

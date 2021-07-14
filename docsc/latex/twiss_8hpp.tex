@@ -30,13 +30,28 @@ map$<$ string, vector$<$ double $>$ $>$ \mbox{\hyperlink{twiss_8hpp_ab4bbb88db0c
 \doxysubsubsection{\texorpdfstring{GetTable()}{GetTable()}}
 {\footnotesize\ttfamily vector$<$vector$<$double$>$ $>$ Get\+Table (\begin{DoxyParamCaption}\item[{string}]{filename,  }\item[{vector$<$ string $>$}]{columns }\end{DoxyParamCaption})}
 
+Load the Twiss table as vector of vectors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path to the Twiss file. \\
+\hline
+{\em columns} & Columns to extract from the Twiss file and store in the table.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Table with the values of the selected Twiss columns.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Twiss file needs to be produced with Madx. 
+\end{DoxyNote}
 \mbox{\Hypertarget{twiss_8hpp_acd0a31fc6b222ebfe10a9a7b9f182b5d}\label{twiss_8hpp_acd0a31fc6b222ebfe10a9a7b9f182b5d}} 
 \index{twiss.hpp@{twiss.hpp}!GetTwissHeader@{GetTwissHeader}}
 \index{GetTwissHeader@{GetTwissHeader}!twiss.hpp@{twiss.hpp}}
 \doxysubsubsection{\texorpdfstring{GetTwissHeader()}{GetTwissHeader()}}
 {\footnotesize\ttfamily map$<$string, double$>$ Get\+Twiss\+Header (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
 
-Load Twiss header / summary from file
+Load Twiss header / summary from file.
 
 
 \begin{DoxyParams}{Parameters}
@@ -47,11 +62,27 @@ Load Twiss header / summary from file
 A map of twiss header parameters and their values.
 \end{DoxyReturn}
 \begin{DoxyNote}{Note}
-Twiss file needs to be produced with Madx.
+Twiss file needs to be produced with Madx. 
 \end{DoxyNote}
-Test \mbox{\Hypertarget{twiss_8hpp_ab4bbb88db0c39db6588438e3be7888a5}\label{twiss_8hpp_ab4bbb88db0c39db6588438e3be7888a5}} 
+\mbox{\Hypertarget{twiss_8hpp_ab4bbb88db0c39db6588438e3be7888a5}\label{twiss_8hpp_ab4bbb88db0c39db6588438e3be7888a5}} 
 \index{twiss.hpp@{twiss.hpp}!GetTwissTableAsMap@{GetTwissTableAsMap}}
 \index{GetTwissTableAsMap@{GetTwissTableAsMap}!twiss.hpp@{twiss.hpp}}
 \doxysubsubsection{\texorpdfstring{GetTwissTableAsMap()}{GetTwissTableAsMap()}}
 {\footnotesize\ttfamily map$<$string, vector$<$double$>$ $>$ Get\+Twiss\+Table\+As\+Map (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
 
+Loat the Twiss table as a map (column\+Names -\/$>$ values).
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path to the Twiss file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Map with column names as keys and values are the respective Twiss values for that column.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Twiss file needs to be produced with Madx. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Pre-\/selection of columns is taken \+: \{\char`\"{}\+L\char`\"{}, \char`\"{}\+BETX\char`\"{}, \char`\"{}\+ALFX\char`\"{}, \char`\"{}\+BETY\char`\"{},\char`\"{}\+ALFY\char`\"{}, \char`\"{}\+DX\char`\"{}, \char`\"{}\+DPX\char`\"{}, \char`\"{}\+DY\char`\"{}, \char`\"{}\+DPY\char`\"{}, \char`\"{}\+K1\+L\char`\"{}, \char`\"{}\+K1\+SL\char`\"{}, \char`\"{}\+ANGLE\char`\"{}\} 
+\end{DoxyWarning}

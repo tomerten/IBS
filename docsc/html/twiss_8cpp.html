@@ -119,6 +119,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Load the Twiss table as vector of vectors.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Path to the Twiss file. </td></tr>
+    <tr><td class="paramname">columns</td><td>Columns to extract from the Twiss file and store in the table.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Table with the values of the selected Twiss columns.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Twiss file needs to be produced with Madx. </dd></dl>
 
 </div>
 </div>
@@ -137,7 +147,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Test </p>
+<p>Load Twiss header / summary from file.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Path to the Twiss file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A map of twiss header parameters and their values.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Twiss file needs to be produced with Madx. </dd></dl>
 
 </div>
 </div>
@@ -156,6 +174,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Loat the Twiss table as a map (columnNames -&gt; values).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Path to the Twiss file.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Map with column names as keys and values are the respective Twiss values for that column.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Twiss file needs to be produced with Madx. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Pre-selection of columns is taken : {"L", "BETX", "ALFX", "BETY","ALFY", "DX", "DPX", "DY", "DPY", "K1L", "K1SL", "ANGLE"} </dd></dl>
 
 </div>
 </div>
