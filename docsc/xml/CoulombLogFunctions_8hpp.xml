@@ -1,0 +1,445 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="CoulombLogFunctions_8hpp" kind="file" language="C++">
+    <compoundname>CoulombLogFunctions.hpp</compoundname>
+    <includes refid="NumericFunctions_8hpp" local="yes">NumericFunctions.hpp</includes>
+    <includes refid="RadiationDamping_8hpp" local="yes">RadiationDamping.hpp</includes>
+    <includes local="no">map</includes>
+    <includes local="no">math.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">string</includes>
+    <includedby refid="Models_8hpp" local="yes">/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp</includedby>
+    <includedby refid="Integrators_8cpp" local="yes">/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp</includedby>
+    <includedby refid="Models_8cpp" local="yes">/home/mti/github-tomerten/ibs/cpp/src/Models.cpp</includedby>
+    <includedby refid="OrdDiffEq_8cpp" local="yes">/home/mti/github-tomerten/ibs/cpp/src/OrdDiffEq.cpp</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>NumericFunctions.hpp</label>
+        <link refid="NumericFunctions_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>map</label>
+      </node>
+      <node id="7">
+        <label>RadiationDamping.hpp</label>
+        <link refid="RadiationDamping_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+      <node id="1">
+        <label>/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp</label>
+        <link refid="CoulombLogFunctions_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>math.h</label>
+      </node>
+      <node id="8">
+        <label>iostream</label>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>/home/mti/github-tomerten/ibs/cpp/src/OrdDiffEq.cpp</label>
+        <link refid="OrdDiffEq_8cpp"/>
+      </node>
+      <node id="5">
+        <label>/home/mti/github-tomerten/ibs/cpp/src/Models.cpp</label>
+        <link refid="Models_8cpp"/>
+      </node>
+      <node id="2">
+        <label>/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp</label>
+        <link refid="Models_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp</label>
+        <link refid="CoulombLogFunctions_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp</label>
+        <link refid="Integrators_8cpp"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="CoulombLogFunctions_8hpp_1abf7b9e9c5da8bf0b23fffcb01961ebbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void twclog</definition>
+        <argsstring>(double pnumber, double bx, double by, double dx, double dy, double ex, double ey, double r0, double gamma, double charge, double en0, double amass, double sige, double sigt, double *clog)</argsstring>
+        <name>twclog</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>by</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dy</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r0</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>gamma</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>charge</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>en0</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>amass</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sige</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigt</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>clog</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" line="8" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/CoulombLogFunctions.cpp" bodystart="67" bodyend="120" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" declline="8" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="CoulombLogFunctions_8hpp_1aaeb3e23eea67e16a5329a24687458297" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void twclogtail</definition>
+        <argsstring>(double pnumber, double l, double bx, double by, double dx, double dpx, double dy, double dpy, double ax, double ay, double angle, double k1l, double k1sl, double ex, double ey, double r0, double aatom, double gamma, double en0, double len, double amass, double charge, double sige, double sigt, double *clog)</argsstring>
+        <name>twclogtail</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>by</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dpx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dy</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dpy</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ax</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ay</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>angle</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>k1l</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>k1sl</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r0</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>aatom</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>gamma</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>en0</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>amass</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>charge</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sige</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigt</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>clog</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" line="12" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/CoulombLogFunctions.cpp" bodystart="200" bodyend="285" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" declline="12" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="CoulombLogFunctions_8hpp_1ab908400a7d0b3f9d9d35da9684d875c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CoulombLog</definition>
+        <argsstring>(double pnumber, double ex, double ey, map&lt; string, double &gt; &amp;twissheader, double sige, double sigt, double r0, bool printout, double *clog)</argsstring>
+        <name>CoulombLog</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>map&lt; string, double &gt; &amp;</type>
+          <declname>twissheader</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sige</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigt</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r0</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>printout</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>clog</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" line="19" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/CoulombLogFunctions.cpp" bodystart="334" bodyend="419" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" declline="19" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="CoulombLogFunctions_8hpp_1ada19d63bb5e67dfd7885b4bd24c5bcb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TailCutCoulombLog</definition>
+        <argsstring>(double pnumber, double ex, double ey, map&lt; string, double &gt; &amp;twissheader, double sige, double sigt, double tauradx, double taurady, double taurads, double r0, bool printout, double *clog)</argsstring>
+        <name>TailCutCoulombLog</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>map&lt; string, double &gt; &amp;</type>
+          <declname>twissheader</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sige</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigt</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>tauradx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>taurady</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>taurads</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r0</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>printout</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>clog</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" line="23" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/CoulombLogFunctions.cpp" bodystart="475" bodyend="574" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" declline="23" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="NumericFunctions_8hpp" kindref="compound">NumericFunctions.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="RadiationDamping_8hpp" kindref="compound">RadiationDamping.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="CoulombLogFunctions_8hpp_1abf7b9e9c5da8bf0b23fffcb01961ebbe" kindref="member">twclog</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>by,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gamma,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>charge,</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>en0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>amass,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigt,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*clog);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="CoulombLogFunctions_8hpp_1aaeb3e23eea67e16a5329a24687458297" kindref="member">twclogtail</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>l,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>by,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ay,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>angle,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>k1l,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>k1sl,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aatom,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gamma,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>en0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>len,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>amass,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>charge,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigt,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*clog);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="CoulombLogFunctions_8hpp_1ab908400a7d0b3f9d9d35da9684d875c2" kindref="member">CoulombLog</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigt,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>printout,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*clog);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="CoulombLogFunctions_8hpp_1ada19d63bb5e67dfd7885b4bd24c5bcb1" kindref="member">TailCutCoulombLog</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigt,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tauradx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>taurady,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>taurads,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>printout,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*clog);</highlight></codeline>
+    </programlisting>
+    <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp"/>
+  </compounddef>
+</doxygen>

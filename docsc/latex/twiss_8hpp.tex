@@ -1,0 +1,57 @@
+\hypertarget{twiss_8hpp}{}\doxysection{/home/mti/github-\/tomerten/ibs/cpp/include/ibs\+\_\+bits/twiss.hpp File Reference}
+\label{twiss_8hpp}\index{/home/mti/github-\/tomerten/ibs/cpp/include/ibs\_bits/twiss.hpp@{/home/mti/github-\/tomerten/ibs/cpp/include/ibs\_bits/twiss.hpp}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ string, double $>$ \mbox{\hyperlink{twiss_8hpp_acd0a31fc6b222ebfe10a9a7b9f182b5d}{Get\+Twiss\+Header}} (string filename)
+\item 
+vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{twiss_8hpp_adfcd4453959b12c5e8467a41f9cd06c1}{Get\+Table}} (string filename, vector$<$ string $>$ columns)
+\item 
+map$<$ string, vector$<$ double $>$ $>$ \mbox{\hyperlink{twiss_8hpp_ab4bbb88db0c39db6588438e3be7888a5}{Get\+Twiss\+Table\+As\+Map}} (string filename)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{twiss_8hpp_adfcd4453959b12c5e8467a41f9cd06c1}\label{twiss_8hpp_adfcd4453959b12c5e8467a41f9cd06c1}} 
+\index{twiss.hpp@{twiss.hpp}!GetTable@{GetTable}}
+\index{GetTable@{GetTable}!twiss.hpp@{twiss.hpp}}
+\doxysubsubsection{\texorpdfstring{GetTable()}{GetTable()}}
+{\footnotesize\ttfamily vector$<$vector$<$double$>$ $>$ Get\+Table (\begin{DoxyParamCaption}\item[{string}]{filename,  }\item[{vector$<$ string $>$}]{columns }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{twiss_8hpp_acd0a31fc6b222ebfe10a9a7b9f182b5d}\label{twiss_8hpp_acd0a31fc6b222ebfe10a9a7b9f182b5d}} 
+\index{twiss.hpp@{twiss.hpp}!GetTwissHeader@{GetTwissHeader}}
+\index{GetTwissHeader@{GetTwissHeader}!twiss.hpp@{twiss.hpp}}
+\doxysubsubsection{\texorpdfstring{GetTwissHeader()}{GetTwissHeader()}}
+{\footnotesize\ttfamily map$<$string, double$>$ Get\+Twiss\+Header (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+
+Load Twiss header / summary from file
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path to the Twiss file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map of twiss header parameters and their values.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Twiss file needs to be produced with Madx.
+\end{DoxyNote}
+Test \mbox{\Hypertarget{twiss_8hpp_ab4bbb88db0c39db6588438e3be7888a5}\label{twiss_8hpp_ab4bbb88db0c39db6588438e3be7888a5}} 
+\index{twiss.hpp@{twiss.hpp}!GetTwissTableAsMap@{GetTwissTableAsMap}}
+\index{GetTwissTableAsMap@{GetTwissTableAsMap}!twiss.hpp@{twiss.hpp}}
+\doxysubsubsection{\texorpdfstring{GetTwissTableAsMap()}{GetTwissTableAsMap()}}
+{\footnotesize\ttfamily map$<$string, vector$<$double$>$ $>$ Get\+Twiss\+Table\+As\+Map (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+

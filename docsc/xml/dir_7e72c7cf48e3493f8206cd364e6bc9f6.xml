@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_7e72c7cf48e3493f8206cd364e6bc9f6" kind="dir">
+    <compoundname>/home/mti/github-tomerten/ibs/cpp/src</compoundname>
+    <innerfile refid="CoulombLogFunctions_8cpp">CoulombLogFunctions.cpp</innerfile>
+    <innerfile refid="Integrators_8cpp">Integrators.cpp</innerfile>
+    <innerfile refid="Models_8cpp">Models.cpp</innerfile>
+    <innerfile refid="NumericFunctions_8cpp">NumericFunctions.cpp</innerfile>
+    <innerfile refid="OrdDiffEq_8cpp">OrdDiffEq.cpp</innerfile>
+    <innerfile refid="RadiationDamping_8cpp">RadiationDamping.cpp</innerfile>
+    <innerfile refid="twiss_8cpp">twiss.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/mti/github-tomerten/ibs/cpp/src/"/>
+  </compounddef>
+</doxygen>

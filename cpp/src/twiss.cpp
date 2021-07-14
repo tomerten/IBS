@@ -12,6 +12,7 @@
 #include <vector>
 
 using namespace std;
+
 map<string, double> GetTwissHeader(string filename) {
   vector<string> TWISSHEADERKEYS /* */ {
       "MASS",     "CHARGE",  "ENERGY",  "PC",      "GAMMA",   "KBUNCH",

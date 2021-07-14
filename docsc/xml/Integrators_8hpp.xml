@@ -1,0 +1,611 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="Integrators_8hpp" kind="file" language="C++">
+    <compoundname>Integrators.hpp</compoundname>
+    <includes local="no">functional</includes>
+    <includedby refid="Models_8hpp" local="yes">/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp</includedby>
+    <includedby refid="Models_8cpp" local="yes">/home/mti/github-tomerten/ibs/cpp/src/Models.cpp</includedby>
+    <includedby refid="OrdDiffEq_8cpp" local="yes">/home/mti/github-tomerten/ibs/cpp/src/OrdDiffEq.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>functional</label>
+      </node>
+      <node id="1">
+        <label>/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp</label>
+        <link refid="Integrators_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>/home/mti/github-tomerten/ibs/cpp/src/OrdDiffEq.cpp</label>
+        <link refid="OrdDiffEq_8cpp"/>
+      </node>
+      <node id="4">
+        <label>/home/mti/github-tomerten/ibs/cpp/src/Models.cpp</label>
+        <link refid="Models_8cpp"/>
+      </node>
+      <node id="2">
+        <label>/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp</label>
+        <link refid="Models_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp</label>
+        <link refid="Integrators_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="Integrators_8hpp_1aa2baccc4e5ebf7d1277ac74a16f1a648" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SimpsonDecade</definition>
+        <argsstring>(double a, double b, double c, double cl, double cx, double cy, double cprime, double cyy, double tl1, double tl2, double tx1, double tx2, double ty1, double ty2, double *tau)</argsstring>
+        <name>SimpsonDecade</name>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>cl</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>cx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>cy</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>cprime</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>cyy</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>tl1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>tl2</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>tx1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>tx2</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ty1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ty2</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>tau</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="3" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="68" bodyend="152" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="3" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="Integrators_8hpp_1a2970e94e892a02fa6009d70da0980d6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void twsint</definition>
+        <argsstring>(double pnumber, double ex, double ey, double sigs, double sige, double gammas, double betax, double betay, double alx, double aly, double dx, double dpx, double dy, double dpy, double *tau)</argsstring>
+        <name>twsint</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sige</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>gammas</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>betax</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>betay</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>alx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>aly</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dpx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dy</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dpy</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>tau</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="7" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="894" bodyend="1078" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="7" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="Integrators_8hpp_1a15dde65ca2b0f0abdff524fcc5eae127" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double IBSIntegralIntegrand</definition>
+        <argsstring>(double lambda, double ax, double bx, double a, double b, double c)</argsstring>
+        <name>IBSIntegralIntegrand</name>
+        <param>
+          <type>double</type>
+          <declname>lambda</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ax</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="11" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="188" bodyend="194" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="11" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="Integrators_8hpp_1a82a55ddfd8a8e3a5b2b663541c90132d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double simpson</definition>
+        <argsstring>(const std::function&lt; double(double, double, double, double, double, double)&gt; &amp;ibsintegrand, double ax, double bx, double a, double b, double c, double al, double bl, int n)</argsstring>
+        <name>simpson</name>
+        <param>
+          <type>const std::function&lt; double(double, double, double, double, double, double)&gt; &amp;</type>
+          <declname>ibsintegrand</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ax</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>al</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>bl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="14" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="245" bodyend="268" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="14" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="Integrators_8hpp_1a8046a0a2a4459af05e50b4b78a602bb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void intSimpson</definition>
+        <argsstring>(const std::function&lt; double(double, double, double, double, double, double)&gt; &amp;ibsintegrand, double ax, double bx, double ay, double by, double as, double bs, double a, double b, double ci, double *integral)</argsstring>
+        <name>intSimpson</name>
+        <param>
+          <type>const std::function&lt; double(double, double, double, double, double, double)&gt; &amp;</type>
+          <declname>ibsintegrand</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ax</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ay</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>by</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>as</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>bs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ci</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>integral</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="19" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="322" bodyend="371" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="19" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="Integrators_8hpp_1aff7fc053dc61a5105b48ce4ed301d379" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BjorkenMtingwaInt</definition>
+        <argsstring>(double pnumber, double ex, double ey, double sigs, double sige, double gammas, double betx, double bety, double alx, double aly, double dx, double dpx, double dy, double dpy, double *tau)</argsstring>
+        <name>BjorkenMtingwaInt</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sige</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>gammas</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>betx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>bety</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>alx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>aly</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dpx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dy</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dpy</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>tau</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="31" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="446" bodyend="513" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="31" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="Integrators_8hpp_1ab6bdafe839c9bdd143be3e44fbb51d42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConteMartiniInt</definition>
+        <argsstring>(double pnumber, double ex, double ey, double sigs, double sige, double gammas, double betx, double bety, double alx, double aly, double dx, double dpx, double dy, double dpy, double *tau)</argsstring>
+        <name>ConteMartiniInt</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sige</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>gammas</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>betx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>bety</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>alx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>aly</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dpx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dy</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dpy</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>tau</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="36" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="573" bodyend="665" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="36" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="Integrators_8hpp_1a87b3e55c02aa31dba0de4d19a57c01db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MadxInt</definition>
+        <argsstring>(double pnumber, double ex, double ey, double sigs, double sige, double gammas, double betx, double bety, double alx, double aly, double dx, double dpx, double dy, double dpy, double *tau)</argsstring>
+        <name>MadxInt</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sige</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>gammas</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>betx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>bety</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>alx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>aly</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dpx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dy</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dpy</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>tau</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="41" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="725" bodyend="823" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="41" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1aa2baccc4e5ebf7d1277ac74a16f1a648" kindref="member">SimpsonDecade</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>c,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cl,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cx,</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cprime,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cyy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tl1,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tl2,</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tx1,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tx2,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ty1,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ty2,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*tau);</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1a2970e94e892a02fa6009d70da0980d6b" kindref="member">twsint</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammas,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betay,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aly,</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*tau);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1a15dde65ca2b0f0abdff524fcc5eae127" kindref="member">IBSIntegralIntegrand</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lambda,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a,</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>c);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1a82a55ddfd8a8e3a5b2b663541c90132d" kindref="member">simpson</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::function&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)&gt;<sp/>&amp;ibsintegrand,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>c,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>al,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1a8046a0a2a4459af05e50b4b78a602bb0" kindref="member">intSimpson</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::function&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)&gt;<sp/>&amp;ibsintegrand,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ay,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>by,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>as,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bs,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ci,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*integral);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">==============================================================================</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"></highlight></codeline>
+<codeline lineno="27"><highlight class="comment">MODEL<sp/>INTEGRATORS</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"></highlight></codeline>
+<codeline lineno="29"><highlight class="comment">==============================================================================</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1aff7fc053dc61a5105b48ce4ed301d379" kindref="member">BjorkenMtingwaInt</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammas,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bety,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aly,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*tau);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1ab6bdafe839c9bdd143be3e44fbb51d42" kindref="member">ConteMartiniInt</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammas,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bety,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aly,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*tau);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1a87b3e55c02aa31dba0de4d19a57c01db" kindref="member">MadxInt</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammas,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bety,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aly,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*tau);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1a2970e94e892a02fa6009d70da0980d6b" kindref="member">twsint</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammas,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betay,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aly,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*tau);</highlight></codeline>
+    </programlisting>
+    <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp"/>
+  </compounddef>
+</doxygen>

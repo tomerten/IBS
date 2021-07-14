@@ -8,8 +8,7 @@
 ================================================================================
 ================================================================================
 SIMPSON INTEGRATOR WITH DECADE SPLITTING TO BE ABLE TO ADD
-CONTE-MARTINI AND BJORKEN-MTINGWA - NORMAL SIMPSON GIVES TOO
-LARGE DEVIATIONS COMPARED TO SIMPSON DECADE.
+CONTE-MARTINI AND BJORKEN-MTINGWA.
 ================================================================================
   AUTHORS:
     - MADX AUTHORS COPYRIGHT CERN
@@ -19,7 +18,7 @@ LARGE DEVIATIONS COMPARED TO SIMPSON DECADE.
     - 08/06/2021 : initial cpp version (Tom)
 
   REF:
-    - MADX ORIGINAL SOURCE CODE IN TWSINT FUNCTION
+    - BASED ON MADX ORIGINAL SOURCE CODE IN TWSINT FUNCTION
     - CERN NOTE CERN-AB-2006-002 EQ 8
 
 ================================================================================
@@ -156,11 +155,6 @@ void SimpsonDecade(double a, double b, double c, double cl, double cx,
 ================================================================================
 IBS INTEGRALS INTEGRAND AS FUNCTION TO BE ABLE TO ADD
 CONTE-MARTINI AND BJORKEN-MTINGWA.
-
-NOTE:
------
-NORMAL SIMPSON GIVES TOO
-LARGE DEVIATIONS COMPARED TO SIMPSON DECADE.
 ================================================================================
   AUTHORS:
     - TOM MERTENS

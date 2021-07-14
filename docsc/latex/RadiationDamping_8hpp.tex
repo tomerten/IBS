@@ -1,0 +1,71 @@
+\hypertarget{RadiationDamping_8hpp}{}\doxysection{/home/mti/github-\/tomerten/ibs/cpp/include/ibs\+\_\+bits/\+Radiation\+Damping.hpp File Reference}
+\label{RadiationDamping_8hpp}\index{/home/mti/github-\/tomerten/ibs/cpp/include/ibs\_bits/RadiationDamping.hpp@{/home/mti/github-\/tomerten/ibs/cpp/include/ibs\_bits/RadiationDamping.hpp}}
+{\ttfamily \#include \char`\"{}Numeric\+Functions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{RadiationDamping_8hpp_a142911566ea9b0a6bd166d22285468fc}{printradint}} (double out\mbox{[}7\mbox{]})
+\item 
+double $\ast$ \mbox{\hyperlink{RadiationDamping_8hpp_ab17d5a1994334f44cad3bded2095bdb4}{Radiation\+Damping\+Approx}} (double lattice\+Length, double gamma, double gamma\+Transition, double dipole\+Bending\+Radius, double betax, double betay)
+\item 
+double $\ast$ \mbox{\hyperlink{RadiationDamping_8hpp_a2ce252d6fff2c43456d535ab02385b8d}{Radiation\+Damping\+Lattice}} (map$<$ string, vector$<$ double $>$$>$ \&table)
+\item 
+double $\ast$ \mbox{\hyperlink{RadiationDamping_8hpp_ad560efc2b253ed2af586985ed3f06762}{Radiation\+Damping\+Life\+Times\+And\+Equilibrium\+Emittances\+With\+Partition\+Numbers}} (map$<$ string, double $>$ \&twissheadermap, double radiation\+Integrals\mbox{[}7\mbox{]}, double aatom, double qs)
+\item 
+double \mbox{\hyperlink{RadiationDamping_8hpp_afd8638e744af458ddb89b3d0a50faa2a}{Radiation\+Losses\+Per\+Turn}} (map$<$ string, double $>$ \&twiss, double I2, double aatom)
+\item 
+double $\ast$ \mbox{\hyperlink{RadiationDamping_8hpp_a9103cf89280b308e7604921a72c395f0}{Radiation\+Critical\+Energy}} (double rho, double gamma, double omega)
+\item 
+double $\ast$ \mbox{\hyperlink{RadiationDamping_8hpp_a273d98b9b67c5016b3a794a4b866f26d}{Radiation\+Damping\+Element}} (double l, double bx, double by, double dx, double dpx, double dy, double dpy, double ax, double ay, double angle, double k1l, double k1sl)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{RadiationDamping_8hpp_a142911566ea9b0a6bd166d22285468fc}\label{RadiationDamping_8hpp_a142911566ea9b0a6bd166d22285468fc}} 
+\index{RadiationDamping.hpp@{RadiationDamping.hpp}!printradint@{printradint}}
+\index{printradint@{printradint}!RadiationDamping.hpp@{RadiationDamping.hpp}}
+\doxysubsubsection{\texorpdfstring{printradint()}{printradint()}}
+{\footnotesize\ttfamily void printradint (\begin{DoxyParamCaption}\item[{double}]{out\mbox{[}7\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RadiationDamping_8hpp_a9103cf89280b308e7604921a72c395f0}\label{RadiationDamping_8hpp_a9103cf89280b308e7604921a72c395f0}} 
+\index{RadiationDamping.hpp@{RadiationDamping.hpp}!RadiationCriticalEnergy@{RadiationCriticalEnergy}}
+\index{RadiationCriticalEnergy@{RadiationCriticalEnergy}!RadiationDamping.hpp@{RadiationDamping.hpp}}
+\doxysubsubsection{\texorpdfstring{RadiationCriticalEnergy()}{RadiationCriticalEnergy()}}
+{\footnotesize\ttfamily double$\ast$ Radiation\+Critical\+Energy (\begin{DoxyParamCaption}\item[{double}]{rho,  }\item[{double}]{gamma,  }\item[{double}]{omega }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RadiationDamping_8hpp_ab17d5a1994334f44cad3bded2095bdb4}\label{RadiationDamping_8hpp_ab17d5a1994334f44cad3bded2095bdb4}} 
+\index{RadiationDamping.hpp@{RadiationDamping.hpp}!RadiationDampingApprox@{RadiationDampingApprox}}
+\index{RadiationDampingApprox@{RadiationDampingApprox}!RadiationDamping.hpp@{RadiationDamping.hpp}}
+\doxysubsubsection{\texorpdfstring{RadiationDampingApprox()}{RadiationDampingApprox()}}
+{\footnotesize\ttfamily double$\ast$ Radiation\+Damping\+Approx (\begin{DoxyParamCaption}\item[{double}]{lattice\+Length,  }\item[{double}]{gamma,  }\item[{double}]{gamma\+Transition,  }\item[{double}]{dipole\+Bending\+Radius,  }\item[{double}]{betax,  }\item[{double}]{betay }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RadiationDamping_8hpp_a273d98b9b67c5016b3a794a4b866f26d}\label{RadiationDamping_8hpp_a273d98b9b67c5016b3a794a4b866f26d}} 
+\index{RadiationDamping.hpp@{RadiationDamping.hpp}!RadiationDampingElement@{RadiationDampingElement}}
+\index{RadiationDampingElement@{RadiationDampingElement}!RadiationDamping.hpp@{RadiationDamping.hpp}}
+\doxysubsubsection{\texorpdfstring{RadiationDampingElement()}{RadiationDampingElement()}}
+{\footnotesize\ttfamily double$\ast$ Radiation\+Damping\+Element (\begin{DoxyParamCaption}\item[{double}]{l,  }\item[{double}]{bx,  }\item[{double}]{by,  }\item[{double}]{dx,  }\item[{double}]{dpx,  }\item[{double}]{dy,  }\item[{double}]{dpy,  }\item[{double}]{ax,  }\item[{double}]{ay,  }\item[{double}]{angle,  }\item[{double}]{k1l,  }\item[{double}]{k1sl }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RadiationDamping_8hpp_a2ce252d6fff2c43456d535ab02385b8d}\label{RadiationDamping_8hpp_a2ce252d6fff2c43456d535ab02385b8d}} 
+\index{RadiationDamping.hpp@{RadiationDamping.hpp}!RadiationDampingLattice@{RadiationDampingLattice}}
+\index{RadiationDampingLattice@{RadiationDampingLattice}!RadiationDamping.hpp@{RadiationDamping.hpp}}
+\doxysubsubsection{\texorpdfstring{RadiationDampingLattice()}{RadiationDampingLattice()}}
+{\footnotesize\ttfamily double$\ast$ Radiation\+Damping\+Lattice (\begin{DoxyParamCaption}\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{table }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RadiationDamping_8hpp_ad560efc2b253ed2af586985ed3f06762}\label{RadiationDamping_8hpp_ad560efc2b253ed2af586985ed3f06762}} 
+\index{RadiationDamping.hpp@{RadiationDamping.hpp}!RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers@{RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers}}
+\index{RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers@{RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers}!RadiationDamping.hpp@{RadiationDamping.hpp}}
+\doxysubsubsection{\texorpdfstring{RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers()}{RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers()}}
+{\footnotesize\ttfamily double$\ast$ Radiation\+Damping\+Life\+Times\+And\+Equilibrium\+Emittances\+With\+Partition\+Numbers (\begin{DoxyParamCaption}\item[{map$<$ string, double $>$ \&}]{twissheadermap,  }\item[{double}]{radiation\+Integrals\mbox{[}7\mbox{]},  }\item[{double}]{aatom,  }\item[{double}]{qs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RadiationDamping_8hpp_afd8638e744af458ddb89b3d0a50faa2a}\label{RadiationDamping_8hpp_afd8638e744af458ddb89b3d0a50faa2a}} 
+\index{RadiationDamping.hpp@{RadiationDamping.hpp}!RadiationLossesPerTurn@{RadiationLossesPerTurn}}
+\index{RadiationLossesPerTurn@{RadiationLossesPerTurn}!RadiationDamping.hpp@{RadiationDamping.hpp}}
+\doxysubsubsection{\texorpdfstring{RadiationLossesPerTurn()}{RadiationLossesPerTurn()}}
+{\footnotesize\ttfamily double Radiation\+Losses\+Per\+Turn (\begin{DoxyParamCaption}\item[{map$<$ string, double $>$ \&}]{twiss,  }\item[{double}]{I2,  }\item[{double}]{aatom }\end{DoxyParamCaption})}
+

@@ -1,0 +1,435 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="DemoIBS_8cpp" kind="file" language="C++">
+    <compoundname>DemoIBS.cpp</compoundname>
+    <includes local="no">fstream</includes>
+    <includes local="no">ibs</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">map</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/mti/github-tomerten/ibs/cpp/tests/src/DemoIBS.cpp</label>
+        <link refid="DemoIBS_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>map</label>
+      </node>
+      <node id="3">
+        <label>ibs</label>
+      </node>
+      <node id="2">
+        <label>fstream</label>
+      </node>
+      <node id="8">
+        <label>vector</label>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+      <node id="6">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="DemoIBS_8cpp_1a39abd40f68d03c40857be1e74407efb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void red</definition>
+        <argsstring>()</argsstring>
+        <name>red</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/tests/src/DemoIBS.cpp" line="11" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/tests/src/DemoIBS.cpp" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="DemoIBS_8cpp_1ab0c10e6284be130a7973fa029a690ef7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void yellow</definition>
+        <argsstring>()</argsstring>
+        <name>yellow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/tests/src/DemoIBS.cpp" line="12" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/tests/src/DemoIBS.cpp" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="DemoIBS_8cpp_1a0df115437fbb77c0311e65300c65289e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void green</definition>
+        <argsstring>()</argsstring>
+        <name>green</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/tests/src/DemoIBS.cpp" line="13" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/tests/src/DemoIBS.cpp" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="DemoIBS_8cpp_1a161aec8a96c389795d228ca0c3a949d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blue</definition>
+        <argsstring>()</argsstring>
+        <name>blue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/tests/src/DemoIBS.cpp" line="14" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/tests/src/DemoIBS.cpp" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="DemoIBS_8cpp_1a52a6a14bd8e9463315ea114aceda1d92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cyan</definition>
+        <argsstring>()</argsstring>
+        <name>cyan</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/tests/src/DemoIBS.cpp" line="15" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/tests/src/DemoIBS.cpp" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="DemoIBS_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/tests/src/DemoIBS.cpp" line="16" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/tests/src/DemoIBS.cpp" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="DemoIBS_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/tests/src/DemoIBS.cpp" line="18" column="5" bodyfile="/home/mti/github-tomerten/ibs/cpp/tests/src/DemoIBS.cpp" bodystart="18" bodyend="281"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ibs&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="DemoIBS_8cpp_1a39abd40f68d03c40857be1e74407efb9" kindref="member">red</ref>()<sp/>{<sp/>printf(</highlight><highlight class="stringliteral">&quot;\033[1;31m&quot;</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="DemoIBS_8cpp_1ab0c10e6284be130a7973fa029a690ef7" kindref="member">yellow</ref>()<sp/>{<sp/>printf(</highlight><highlight class="stringliteral">&quot;\033[1;33m&quot;</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="DemoIBS_8cpp_1a0df115437fbb77c0311e65300c65289e" kindref="member">green</ref>()<sp/>{<sp/>printf(</highlight><highlight class="stringliteral">&quot;\033[1;32m&quot;</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="DemoIBS_8cpp_1a161aec8a96c389795d228ca0c3a949d5" kindref="member">blue</ref>()<sp/>{<sp/>printf(</highlight><highlight class="stringliteral">&quot;\033[1;34m&quot;</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="DemoIBS_8cpp_1a52a6a14bd8e9463315ea114aceda1d92" kindref="member">cyan</ref>()<sp/>{<sp/>printf(</highlight><highlight class="stringliteral">&quot;\033[1;36m&quot;</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="DemoIBS_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kindref="member">reset</ref>()<sp/>{<sp/>printf(</highlight><highlight class="stringliteral">&quot;\033[0m&quot;</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="DemoIBS_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>twissfilename<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;../src/b2_design_lattice_1996.twiss&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>map&lt;string,<sp/>double&gt;<sp/>twissheadermap;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>map&lt;string,<sp/>vector&lt;double&gt;&gt;<sp/>twisstablemap;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>twissheadermap<sp/>=<sp/><ref refid="twiss_8hpp_1acd0a31fc6b222ebfe10a9a7b9f182b5d" kindref="member">GetTwissHeader</ref>(twissfilename);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>twisstablemap<sp/>=<sp/><ref refid="twiss_8hpp_1ab4bbb88db0c39db6588438e3be7888a5" kindref="member">GetTwissTableAsMap</ref>(twissfilename);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aatom<sp/>=<sp/><ref refid="NumericFunctions_8hpp_1ad9a420612e351e8c1bebe83f9d2b61a7" kindref="member">emass</ref><sp/>/<sp/><ref refid="NumericFunctions_8hpp_1ae59bfa691c89a2a67dfbfb06ef2ee319" kindref="member">pmass</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>VeffRFeV</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrf<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>harmon[1];</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>voltages[1];</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>harmon[0]<sp/>=<sp/>400.;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>voltages[0]<sp/>=<sp/>-4.<sp/>*<sp/>375e3;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/><sp/>================================================================================</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/><sp/>BASIC<sp/>NUMERIC<sp/>FUNCTIONS</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/>================================================================================</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>parameters<sp/>needed<sp/>in<sp/>this<sp/>section</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammar<sp/>=<sp/>twissheadermap[</highlight><highlight class="stringliteral">&quot;GAMMA&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammatr<sp/>=<sp/>twissheadermap[</highlight><highlight class="stringliteral">&quot;GAMMATR&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pc<sp/>=<sp/>twissheadermap[</highlight><highlight class="stringliteral">&quot;PC&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>len<sp/>=<sp/>twissheadermap[</highlight><highlight class="stringliteral">&quot;LENGTH&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>fmohl</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a<sp/>=<sp/>5.709563671168914e-04;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b<sp/>=<sp/>2.329156389696222e-01;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>q<sp/>=<sp/>2.272866910079534e00;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>npp<sp/>=<sp/>1000;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>synchronuous<sp/>phase<sp/>eps</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>epsilon<sp/>=<sp/>1.0e-6;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>rho<sp/>=<sp/>4.35;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>updateTwiss</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><ref refid="NumericFunctions_8hpp_1a194fecd97256a8796080aa16e118d890" kindref="member">updateTwiss</ref>(twisstablemap);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>printTwissMap(&quot;I2&quot;,<sp/>twisstablemap);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betar<sp/>=<sp/><ref refid="NumericFunctions_8hpp_1a62e62321d9e22d41773039926c86b084" kindref="member">BetaRelativisticFromGamma</ref>(gammar);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0<sp/>=<sp/><ref refid="NumericFunctions_8hpp_1af0a22976992ba63309d36536957f72df" kindref="member">ParticleRadius</ref>(1,<sp/>aatom);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>trev<sp/>=<sp/>len<sp/>/<sp/>(betar<sp/>*<sp/><ref refid="NumericFunctions_8hpp_1aa31d45974a65b3b50eb72c5fa8663dc2" kindref="member">clight</ref>);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>frev<sp/>=<sp/>1.0<sp/>/<sp/>trev;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>omega<sp/>=<sp/>2.0<sp/>*<sp/><ref refid="NumericFunctions_8hpp_1a43016d873124d39034edb8cd164794db" kindref="member">pi</ref><sp/>*<sp/>frev;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Lpwd<sp/>=<sp/>1.0e6;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs<sp/>=<sp/>0.005;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>neta<sp/>=<sp/><ref refid="NumericFunctions_8hpp_1a82413379d3aa50e090b13e6bd5d2a470" kindref="member">eta</ref>(gammar,<sp/>gammatr);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>VrfEffeV<sp/>=</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="NumericFunctions_8hpp_1a88080b62380f71ff96ffdc74a4904f31" kindref="member">EffectiveRFVoltageInElectronVolt</ref>(173,<sp/>-1,<sp/>1,<sp/>harmon,<sp/>voltages);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>VrfEffeVp<sp/>=</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="NumericFunctions_8hpp_1a5bf77b80707fdf43c3cf9a7b3cb5a1a0" kindref="member">EffectiveRFVoltageInElectronVoltPrime</ref>(173,<sp/>-1,<sp/>1,<sp/>harmon,<sp/>voltages);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*radint;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>radint<sp/>=<sp/><ref refid="RadiationDamping_8hpp_1a2ce252d6fff2c43456d535ab02385b8d" kindref="member">RadiationDampingLattice</ref>(twisstablemap);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>U0<sp/>=<sp/><ref refid="RadiationDamping_8hpp_1afd8638e744af458ddb89b3d0a50faa2a" kindref="member">RadiationLossesPerTurn</ref>(twissheadermap,<sp/>radint[1],<sp/><ref refid="NumericFunctions_8hpp_1ad9a420612e351e8c1bebe83f9d2b61a7" kindref="member">emass</ref><sp/>/<sp/><ref refid="NumericFunctions_8hpp_1ae59bfa691c89a2a67dfbfb06ef2ee319" kindref="member">pmass</ref>);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>VrfEffeVU0<sp/>=<sp/><ref refid="NumericFunctions_8hpp_1a80fbe13a6283d06cc250bfef1cb38f6a" kindref="member">VeffRFeVRadlosses</ref>(173,<sp/>U0,<sp/>-1,<sp/>1,<sp/>harmon,<sp/>voltages);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>phis<sp/>=</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="NumericFunctions_8hpp_1a1a8df6971aa019b325647dcc9df43343" kindref="member">SynchronuousPhase</ref>(0.0,<sp/>173,<sp/>U0,<sp/>-1,<sp/>1,<sp/>harmon,<sp/>voltages,<sp/>epsilon);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>qs<sp/>=</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="NumericFunctions_8hpp_1adeb8136a44f6bab90c66ae55db2a2ca2" kindref="member">SynchrotronTune</ref>(omega,<sp/>U0,<sp/>-1,<sp/>1,<sp/>harmon,<sp/>voltages,<sp/>phis,<sp/>neta,<sp/>pc);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige0<sp/>=<sp/><ref refid="NumericFunctions_8hpp_1aee56f422409b1d45d63b2f18808b96b1" kindref="member">sigefromsigs</ref>(omega,<sp/>sigs,<sp/>qs,<sp/>gammar,<sp/>gammatr);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>omegas<sp/>=<sp/>qs<sp/>*<sp/>omega;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>VrfEffeVPWD<sp/>=<sp/><ref refid="NumericFunctions_8hpp_1afaa6e52a0176321c1ca7ba8af91f3498" kindref="member">VeffRFeVPotentialWellDistortion</ref>(</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>173,<sp/>U0,<sp/>-1,<sp/>1,<sp/>harmon,<sp/>voltages,<sp/>Lpwd,<sp/>1,<sp/>0.005,<sp/>pc);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>VrfEffeVPWDp<sp/>=<sp/><ref refid="NumericFunctions_8hpp_1a5e36c772b619064009590d4399793a6e" kindref="member">VeffRFeVPotentialWellDistortionPrime</ref>(</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>173,<sp/>U0,<sp/>-1,<sp/>1,<sp/>harmon,<sp/>voltages,<sp/>Lpwd,<sp/>1,<sp/>0.005,<sp/>pc);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>phisPWD<sp/>=<sp/><ref refid="NumericFunctions_8hpp_1ad1b45469475427d0cac75acf9245badd" kindref="member">SynchronuousPhaseWithPWD</ref>(</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0.0,<sp/>173,<sp/>U0,<sp/>-1,<sp/>1,<sp/>harmon,<sp/>voltages,<sp/>Lpwd,<sp/>1,<sp/>0.005,<sp/>pc,<sp/>epsilon);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>qsPWD<sp/>=<sp/><ref refid="NumericFunctions_8hpp_1aa69cd4e636551a0ec2fe691bfe5c3493" kindref="member">SynchrotronTunePWD</ref>(omega,<sp/>U0,<sp/>-1,<sp/>1,<sp/>harmon,<sp/>voltages,<sp/>Lpwd,<sp/>1,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.005,<sp/>phisPWD,<sp/>neta,<sp/>pc);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bxavg<sp/>=<sp/>len<sp/>/<sp/>(2.0<sp/>*<sp/><ref refid="NumericFunctions_8hpp_1a43016d873124d39034edb8cd164794db" kindref="member">pi</ref><sp/>*<sp/>twissheadermap[</highlight><highlight class="stringliteral">&quot;Q1&quot;</highlight><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>byavg<sp/>=<sp/>len<sp/>/<sp/>(2.0<sp/>*<sp/><ref refid="NumericFunctions_8hpp_1a43016d873124d39034edb8cd164794db" kindref="member">pi</ref><sp/>*<sp/>twissheadermap[</highlight><highlight class="stringliteral">&quot;Q2&quot;</highlight><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>va</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber<sp/>=<sp/>1e10;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex<sp/>=<sp/>5e-9;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey<sp/>=<sp/>1e-10;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dxavg<sp/>=<sp/>twissheadermap[</highlight><highlight class="stringliteral">&quot;DXRMS&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dyavg<sp/>=<sp/>twissheadermap[</highlight><highlight class="stringliteral">&quot;DYRMS&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>charge<sp/>=<sp/>twissheadermap[</highlight><highlight class="stringliteral">&quot;CHARGE&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>en0<sp/>=<sp/>twissheadermap[</highlight><highlight class="stringliteral">&quot;ENERGY&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>mass<sp/>=<sp/>twissheadermap[</highlight><highlight class="stringliteral">&quot;MASS&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigt<sp/>=<sp/>sigs<sp/>/<sp/><ref refid="NumericFunctions_8hpp_1aa31d45974a65b3b50eb72c5fa8663dc2" kindref="member">clight</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>printout<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>radint<sp/>=<sp/><ref refid="RadiationDamping_8hpp_1a2ce252d6fff2c43456d535ab02385b8d" kindref="member">RadiationDampingLattice</ref>(twisstablemap);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*equi<sp/>=</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="RadiationDamping_8hpp_1ad560efc2b253ed2af586985ed3f06762" kindref="member">RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers</ref>(</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twissheadermap,<sp/>radint,<sp/>aatom,<sp/>omegas);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>ofstream<sp/>myfile(</highlight><highlight class="stringliteral">&quot;IBS_models_demo_output.txt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(myfile.is_open())<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout.precision(12);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>myfile<sp/>&lt;&lt;<sp/>std::scientific;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>myfile<sp/>&lt;&lt;<sp/>std::fixed;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>myfile<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Model<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;t_ibs_sige2<sp/><sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;t_ibs_x_emit<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;t_ibs_y_emit<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>myfile<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;================================================================&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;===\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1a161aec8a96c389795d228ca0c3a949d5" kindref="member">blue</ref>();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;IBS<sp/>Models\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;==========\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1a0df115437fbb77c0311e65300c65289e" kindref="member">green</ref>();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nPiwinski<sp/>Smooth<sp/>...\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*res;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>sige0<sp/>=<sp/>1e-4;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/><ref refid="Models_8hpp_1a457aba69818a03f83bcdd6b7cbe6a94b" kindref="member">PiwinskiSmooth</ref>(pnumber,<sp/>equi[3],<sp/>equi[4],<sp/>sigs,<sp/>sige0,<sp/>twissheadermap,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r0);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Models_8hpp_1a5177ff26367b44c7ee61bc623835f282" kindref="member">printouts</ref>(res);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>myfile<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Piwinski<sp/>smooth<sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[0]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[1]</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[2]<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1a0df115437fbb77c0311e65300c65289e" kindref="member">green</ref>();</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nPiwinski<sp/>Lattice<sp/>...\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/><ref refid="Models_8hpp_1a9cea68959e4213d225114601b330ea31" kindref="member">PiwinskiLattice</ref>(1e10,<sp/>equi[3],<sp/>equi[4],<sp/>sigs,<sp/>sige0,<sp/>twissheadermap,</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twisstablemap,<sp/>r0);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>myfile<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Piwinski<sp/>Lattice<sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[0]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[1]</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[2]<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Models_8hpp_1a5177ff26367b44c7ee61bc623835f282" kindref="member">printouts</ref>(res);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1a0df115437fbb77c0311e65300c65289e" kindref="member">green</ref>();</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nPiwinski<sp/>Lattice<sp/>modified...\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/><ref refid="Models_8hpp_1a8313e6dc3141e0f08ec219f5d2b5088f" kindref="member">PiwinskiLatticeModified</ref>(pnumber,<sp/>equi[3],<sp/>equi[4],<sp/>sigs,<sp/>sige0,</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twissheadermap,<sp/>twisstablemap,<sp/>r0);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Models_8hpp_1a5177ff26367b44c7ee61bc623835f282" kindref="member">printouts</ref>(res);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>myfile<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Piwinski<sp/>Lat<sp/>Mod<sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[0]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[1]</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[2]<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1a0df115437fbb77c0311e65300c65289e" kindref="member">green</ref>();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nNagaitsev...\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/><ref refid="Models_8hpp_1a790596a851d113f7fef4007288ebef8d" kindref="member">Nagaitsev</ref>(pnumber,<sp/>equi[3],<sp/>equi[4],<sp/>sigs,<sp/>sige0,<sp/>twissheadermap,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twisstablemap,<sp/>r0);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Models_8hpp_1a5177ff26367b44c7ee61bc623835f282" kindref="member">printouts</ref>(res);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>myfile<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Nagiatsev<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[0]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[1]</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[2]<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1a52a6a14bd8e9463315ea114aceda1d92" kindref="member">cyan</ref>();</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nNagaitsev...<sp/>with<sp/>tailcut\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/><ref refid="Models_8hpp_1a32f7d2d9f5d5b006811501065a091ba5" kindref="member">Nagaitsevtailcut</ref>(pnumber,<sp/>equi[3],<sp/>equi[4],<sp/>sigs,<sp/>sige0,</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twissheadermap,<sp/>twisstablemap,<sp/>r0,<sp/>aatom);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Models_8hpp_1a5177ff26367b44c7ee61bc623835f282" kindref="member">printouts</ref>(res);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>myfile<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Nagiatsev<sp/>Tailcut<sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[0]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[1]</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[2]<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"></highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/><sp/><sp/><sp/>================================================================================</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"></highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/><sp/><sp/><sp/>IBS<sp/>METHODS<sp/>WITH<sp/>DEDICATED<sp/>INTEGRATORS</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"></highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/><sp/><sp/><sp/>================================================================================</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1a0df115437fbb77c0311e65300c65289e" kindref="member">green</ref>();</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nIBS<sp/>Madx...\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1a39abd40f68d03c40857be1e74407efb9" kindref="member">red</ref>();</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/><ref refid="Models_8hpp_1af37167229ca90e60b1bb3948120c3d94" kindref="member">ibsmadx</ref>(pnumber,<sp/>equi[3],<sp/>equi[4],<sp/>sigs,<sp/>sige0,<sp/>twissheadermap,</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twisstablemap,<sp/>r0,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>myfile<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Madx<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[0]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[1]</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[2]<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1a52a6a14bd8e9463315ea114aceda1d92" kindref="member">cyan</ref>();</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nIBS<sp/>Madx...<sp/>with<sp/>tailcut\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1a39abd40f68d03c40857be1e74407efb9" kindref="member">red</ref>();</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/><ref refid="Models_8hpp_1a7cd4e1da200f68d350937685feeced50" kindref="member">ibsmadxtailcut</ref>(pnumber,<sp/>equi[3],<sp/>equi[4],<sp/>sigs,<sp/>sige0,<sp/>twissheadermap,</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twisstablemap,<sp/>r0,<sp/>aatom);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Models_8hpp_1a5177ff26367b44c7ee61bc623835f282" kindref="member">printouts</ref>(res);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>myfile<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Madx<sp/>Tailcut<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[0]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[1]</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[2]<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1a0df115437fbb77c0311e65300c65289e" kindref="member">green</ref>();</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nIBS<sp/>Bjorken-Mtingwa<sp/>using<sp/>standard<sp/>Simpson\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/><ref refid="Models_8hpp_1aca7b8c6140de544cc3b805b6a1a34a98" kindref="member">BjorkenMtingwa2</ref>(pnumber,<sp/>equi[3],<sp/>equi[4],<sp/>sigs,<sp/>sige0,</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twissheadermap,<sp/>twisstablemap,<sp/>r0);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Models_8hpp_1a5177ff26367b44c7ee61bc623835f282" kindref="member">printouts</ref>(res);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>myfile<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Bjorken-Mtingwa<sp/><sp/>S<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[0]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[1]</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[2]<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1a0df115437fbb77c0311e65300c65289e" kindref="member">green</ref>();</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;\nIBS<sp/>Bjorken-Mtingwa...<sp/>now<sp/>using<sp/>simpson<sp/>per<sp/>decade<sp/>integration<sp/>\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/><ref refid="Models_8hpp_1a18d9b9112d787d706a73db10aa9f8892" kindref="member">BjorkenMtingwa</ref>(pnumber,<sp/>equi[3],<sp/>equi[4],<sp/>sigs,<sp/>sige0,<sp/>twissheadermap,</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twisstablemap,<sp/>r0);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Models_8hpp_1a5177ff26367b44c7ee61bc623835f282" kindref="member">printouts</ref>(res);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>myfile<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Bjorken-Mtingwa<sp/>SD<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[0]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[1]</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[2]<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1a52a6a14bd8e9463315ea114aceda1d92" kindref="member">cyan</ref>();</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nIBS<sp/>Bjorken-Mtingwa...<sp/>now<sp/>using<sp/>simpson<sp/>per<sp/>decade<sp/>integration<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;with<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;tailcut<sp/>\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/><ref refid="Models_8hpp_1a1f0e46c3ecdfe469390552a2e7fe749f" kindref="member">BjorkenMtingwatailcut</ref>(pnumber,<sp/>equi[3],<sp/>equi[4],<sp/>sigs,<sp/>sige0,</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twissheadermap,<sp/>twisstablemap,<sp/>r0,<sp/>aatom);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Models_8hpp_1a5177ff26367b44c7ee61bc623835f282" kindref="member">printouts</ref>(res);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>myfile<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Bjorken-Mtingwa<sp/>TC<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[0]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[1]</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[2]<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1a0df115437fbb77c0311e65300c65289e" kindref="member">green</ref>();</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nIBS<sp/>Conte-Martini...<sp/><sp/>using<sp/>simpson<sp/>per<sp/>decade<sp/>integration<sp/>\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/><ref refid="Models_8hpp_1adb747c4baceaf64765460d4bcfe4a89a" kindref="member">ConteMartini</ref>(pnumber,<sp/>equi[3],<sp/>equi[4],<sp/>sigs,<sp/>sige0,<sp/>twissheadermap,</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twisstablemap,<sp/>r0);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Models_8hpp_1a5177ff26367b44c7ee61bc623835f282" kindref="member">printouts</ref>(res);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>myfile<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Conte-Martini<sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[0]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[1]</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[2]<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1a52a6a14bd8e9463315ea114aceda1d92" kindref="member">cyan</ref>();</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nIBS<sp/>Conte-Martini...<sp/><sp/>using<sp/>simpson<sp/>per<sp/>decade<sp/>integration<sp/>with<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;tailcut\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/><ref refid="Models_8hpp_1ad6f50598686914b09ee51ed9585f8454" kindref="member">ConteMartinitailcut</ref>(pnumber,<sp/>equi[3],<sp/>equi[4],<sp/>sigs,<sp/>sige0,</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twissheadermap,<sp/>twisstablemap,<sp/>r0,<sp/>aatom);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Models_8hpp_1a5177ff26367b44c7ee61bc623835f282" kindref="member">printouts</ref>(res);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>myfile<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Conte-Martini<sp/>TC<sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[0]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[1]</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[2]<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1a0df115437fbb77c0311e65300c65289e" kindref="member">green</ref>();</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nIBS<sp/>MADX...<sp/><sp/>using<sp/>simpson<sp/>per<sp/>decade<sp/>integration<sp/>\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;IBS<sp/>MADX...<sp/><sp/>uses<sp/>a<sp/>slightly<sp/>different<sp/>way<sp/>of<sp/>calculating<sp/>the<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;integrand<sp/>than<sp/>ibsmadx.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="DemoIBS_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/><ref refid="Models_8hpp_1a9fc594bfaa0f4b061eca6f7ed6c6a3d7" kindref="member">MadxIBS</ref>(pnumber,<sp/>equi[3],<sp/>equi[4],<sp/>sigs,<sp/>sige0,<sp/>twissheadermap,</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twisstablemap,<sp/>r0);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Models_8hpp_1a5177ff26367b44c7ee61bc623835f282" kindref="member">printouts</ref>(res);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>myfile<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Madx<sp/>SD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[0]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[1]</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0.5<sp/>/<sp/>res[2]<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>myfile.close();</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Unable<sp/>to<sp/>open<sp/>file.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/>ifstream<sp/>pfile(</highlight><highlight class="stringliteral">&quot;IBS_models_demo_output.txt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>line;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><ref refid="DemoIBS_8cpp_1ab0c10e6284be130a7973fa029a690ef7" kindref="member">yellow</ref>();</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;SUMMARY<sp/>TABLE:\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;=============-\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;S<sp/><sp/>:<sp/>Standard<sp/>Simpson<sp/>\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;SD<sp/>:<sp/>Simpson<sp/>Decade\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;TC<sp/>:<sp/>Tail<sp/>Cut\n\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><ref refid="DemoIBS_8cpp_1a161aec8a96c389795d228ca0c3a949d5" kindref="member">blue</ref>();</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pfile.is_open())<sp/>{</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!pfile.eof())<sp/>{</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>getline(pfile,<sp/>line);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>line<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><ref refid="DemoIBS_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/mti/github-tomerten/ibs/cpp/tests/src/DemoIBS.cpp"/>
+  </compounddef>
+</doxygen>

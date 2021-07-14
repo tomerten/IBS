@@ -16,7 +16,16 @@ using namespace std;
 #ifndef TWISS_H
 #define TWISS_H
 
+/**
+ * Load Twiss header / summary  from file.
+ *
+ * @param filename Path to the Twiss file.
+ * @return A map of twiss header parameters and their values.
+ *
+ * @note Twiss file needs to be produced with Madx.
+ */
 map<string, double> GetTwissHeader(string filename);
+
 vector<vector<double>> GetTable(string filename, vector<string> columns);
 map<string, vector<double>> GetTwissTableAsMap(string filename);
 

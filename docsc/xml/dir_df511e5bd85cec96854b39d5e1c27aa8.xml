@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_df511e5bd85cec96854b39d5e1c27aa8" kind="dir">
+    <compoundname>/home/mti/github-tomerten/ibs/cpp</compoundname>
+    <innerdir refid="dir_07f37e320deb3031a60f4b23b9c60eb5">/home/mti/github-tomerten/ibs/cpp/include</innerdir>
+    <innerdir refid="dir_7e72c7cf48e3493f8206cd364e6bc9f6">/home/mti/github-tomerten/ibs/cpp/src</innerdir>
+    <innerdir refid="dir_d1eb7f32592100b226cc7f73f9055757">/home/mti/github-tomerten/ibs/cpp/tests</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/mti/github-tomerten/ibs/cpp/"/>
+  </compounddef>
+</doxygen>

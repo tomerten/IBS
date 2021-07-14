@@ -6,6 +6,7 @@
 
 using namespace std;
 
+// some fancy print colors
 void red() { printf("\033[1;31m"); }
 void yellow() { printf("\033[1;33m"); }
 void green() { printf("\033[1;32m"); }
@@ -22,10 +23,12 @@ int main() {
   twisstablemap = GetTwissTableAsMap(twissfilename);
 
   double aatom = emass / pmass;
+
   // VeffRFeV
   int nrf = 1;
   double harmon[1];
   double voltages[1];
+
   harmon[0] = 400.;
   voltages[0] = -4. * 375e3;
 
@@ -39,18 +42,13 @@ int main() {
   double gammatr = twissheadermap["GAMMATR"];
   double pc = twissheadermap["PC"];
   double len = twissheadermap["LENGTH"];
-  // fmohl
-  double a = 5.709563671168914e-04;
-  double b = 2.329156389696222e-01;
-  double q = 2.272866910079534e00;
-  int npp = 1000;
+
   // synchronuous phase eps
   double epsilon = 1.0e-6;
-  double rho = 4.35;
 
   // updateTwiss
   updateTwiss(twisstablemap);
-  // printTwissMap("I2", twisstablemap);
+
   double betar = BetaRelativisticFromGamma(gammar);
   double r0 = ParticleRadius(1, aatom);
   double trev = len / (betar * clight);
@@ -81,6 +79,7 @@ int main() {
       0.0, 173, U0, -1, 1, harmon, voltages, Lpwd, 1, 0.005, pc, epsilon);
   double qsPWD = SynchrotronTunePWD(omega, U0, -1, 1, harmon, voltages, Lpwd, 1,
                                     0.005, phisPWD, neta, pc);
+
   double bxavg = len / (2.0 * pi * twissheadermap["Q1"]);
   double byavg = len / (2.0 * pi * twissheadermap["Q2"]);
 

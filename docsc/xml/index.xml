@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.1" xml:lang="en-US">
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="CoulombLogFunctions_8hpp" kind="file"><name>CoulombLogFunctions.hpp</name>
+    <member refid="CoulombLogFunctions_8hpp_1abf7b9e9c5da8bf0b23fffcb01961ebbe" kind="function"><name>twclog</name></member>
+    <member refid="CoulombLogFunctions_8hpp_1aaeb3e23eea67e16a5329a24687458297" kind="function"><name>twclogtail</name></member>
+    <member refid="CoulombLogFunctions_8hpp_1ab908400a7d0b3f9d9d35da9684d875c2" kind="function"><name>CoulombLog</name></member>
+    <member refid="CoulombLogFunctions_8hpp_1ada19d63bb5e67dfd7885b4bd24c5bcb1" kind="function"><name>TailCutCoulombLog</name></member>
+  </compound>
+  <compound refid="Integrators_8hpp" kind="file"><name>Integrators.hpp</name>
+    <member refid="Integrators_8hpp_1aa2baccc4e5ebf7d1277ac74a16f1a648" kind="function"><name>SimpsonDecade</name></member>
+    <member refid="Integrators_8hpp_1a2970e94e892a02fa6009d70da0980d6b" kind="function"><name>twsint</name></member>
+    <member refid="Integrators_8hpp_1a15dde65ca2b0f0abdff524fcc5eae127" kind="function"><name>IBSIntegralIntegrand</name></member>
+    <member refid="Integrators_8hpp_1a82a55ddfd8a8e3a5b2b663541c90132d" kind="function"><name>simpson</name></member>
+    <member refid="Integrators_8hpp_1a8046a0a2a4459af05e50b4b78a602bb0" kind="function"><name>intSimpson</name></member>
+    <member refid="Integrators_8hpp_1aff7fc053dc61a5105b48ce4ed301d379" kind="function"><name>BjorkenMtingwaInt</name></member>
+    <member refid="Integrators_8hpp_1ab6bdafe839c9bdd143be3e44fbb51d42" kind="function"><name>ConteMartiniInt</name></member>
+    <member refid="Integrators_8hpp_1a87b3e55c02aa31dba0de4d19a57c01db" kind="function"><name>MadxInt</name></member>
+  </compound>
+  <compound refid="Models_8hpp" kind="file"><name>Models.hpp</name>
+    <member refid="Models_8hpp_1a5177ff26367b44c7ee61bc623835f282" kind="function"><name>printouts</name></member>
+    <member refid="Models_8hpp_1a457aba69818a03f83bcdd6b7cbe6a94b" kind="function"><name>PiwinskiSmooth</name></member>
+    <member refid="Models_8hpp_1a9cea68959e4213d225114601b330ea31" kind="function"><name>PiwinskiLattice</name></member>
+    <member refid="Models_8hpp_1a8313e6dc3141e0f08ec219f5d2b5088f" kind="function"><name>PiwinskiLatticeModified</name></member>
+    <member refid="Models_8hpp_1a790596a851d113f7fef4007288ebef8d" kind="function"><name>Nagaitsev</name></member>
+    <member refid="Models_8hpp_1a32f7d2d9f5d5b006811501065a091ba5" kind="function"><name>Nagaitsevtailcut</name></member>
+    <member refid="Models_8hpp_1af37167229ca90e60b1bb3948120c3d94" kind="function"><name>ibsmadx</name></member>
+    <member refid="Models_8hpp_1a7cd4e1da200f68d350937685feeced50" kind="function"><name>ibsmadxtailcut</name></member>
+    <member refid="Models_8hpp_1aca7b8c6140de544cc3b805b6a1a34a98" kind="function"><name>BjorkenMtingwa2</name></member>
+    <member refid="Models_8hpp_1a18d9b9112d787d706a73db10aa9f8892" kind="function"><name>BjorkenMtingwa</name></member>
+    <member refid="Models_8hpp_1a1f0e46c3ecdfe469390552a2e7fe749f" kind="function"><name>BjorkenMtingwatailcut</name></member>
+    <member refid="Models_8hpp_1adb747c4baceaf64765460d4bcfe4a89a" kind="function"><name>ConteMartini</name></member>
+    <member refid="Models_8hpp_1ad6f50598686914b09ee51ed9585f8454" kind="function"><name>ConteMartinitailcut</name></member>
+    <member refid="Models_8hpp_1a9fc594bfaa0f4b061eca6f7ed6c6a3d7" kind="function"><name>MadxIBS</name></member>
+  </compound>
+  <compound refid="NumericFunctions_8hpp" kind="file"><name>NumericFunctions.hpp</name>
+    <member refid="NumericFunctions_8hpp_1aa31d45974a65b3b50eb72c5fa8663dc2" kind="variable"><name>clight</name></member>
+    <member refid="NumericFunctions_8hpp_1a0ae50bc0ad13e33e23eec85ec44b3e2b" kind="variable"><name>hbar</name></member>
+    <member refid="NumericFunctions_8hpp_1ad9a420612e351e8c1bebe83f9d2b61a7" kind="variable"><name>emass</name></member>
+    <member refid="NumericFunctions_8hpp_1ae59bfa691c89a2a67dfbfb06ef2ee319" kind="variable"><name>pmass</name></member>
+    <member refid="NumericFunctions_8hpp_1a134a8c8a08ff61ffb39555b6181a1df7" kind="variable"><name>nmass</name></member>
+    <member refid="NumericFunctions_8hpp_1a5313df570ff6e05f00b517242d5989a2" kind="variable"><name>mumass</name></member>
+    <member refid="NumericFunctions_8hpp_1ac463de9fcfce05611017d4c83862d008" kind="variable"><name>atomicmassunit</name></member>
+    <member refid="NumericFunctions_8hpp_1a43016d873124d39034edb8cd164794db" kind="variable"><name>pi</name></member>
+    <member refid="NumericFunctions_8hpp_1a5cfb94a47bfcc4e20bfca979771abcfa" kind="variable"><name>ec</name></member>
+    <member refid="NumericFunctions_8hpp_1a4f1a76c7e81a94392f95b4db03a1ec99" kind="variable"><name>euler</name></member>
+    <member refid="NumericFunctions_8hpp_1a8b36460086a5518bb8558aabb9faa648" kind="variable"><name>erad</name></member>
+    <member refid="NumericFunctions_8hpp_1afa5d13b9889850465c7006a55f92d64e" kind="variable"><name>prad</name></member>
+    <member refid="NumericFunctions_8hpp_1a194fecd97256a8796080aa16e118d890" kind="function"><name>updateTwiss</name></member>
+    <member refid="NumericFunctions_8hpp_1a8ec38a3d7a0099ca0b230d32559e72b8" kind="function"><name>printTwissMap</name></member>
+    <member refid="NumericFunctions_8hpp_1a62e62321d9e22d41773039926c86b084" kind="function"><name>BetaRelativisticFromGamma</name></member>
+    <member refid="NumericFunctions_8hpp_1a82413379d3aa50e090b13e6bd5d2a470" kind="function"><name>eta</name></member>
+    <member refid="NumericFunctions_8hpp_1af0a22976992ba63309d36536957f72df" kind="function"><name>ParticleRadius</name></member>
+    <member refid="NumericFunctions_8hpp_1a6e88680d2d40201edcff14e02fdf3f0d" kind="function"><name>dee_to_dpp</name></member>
+    <member refid="NumericFunctions_8hpp_1a12cee73c1a853e5184eb5b897f08e31b" kind="function"><name>dpp_to_dee</name></member>
+    <member refid="NumericFunctions_8hpp_1aee56f422409b1d45d63b2f18808b96b1" kind="function"><name>sigefromsigs</name></member>
+    <member refid="NumericFunctions_8hpp_1a67d4e0c2346e489535ec10ced4e81a92" kind="function"><name>sigsfromsige</name></member>
+    <member refid="NumericFunctions_8hpp_1a88080b62380f71ff96ffdc74a4904f31" kind="function"><name>EffectiveRFVoltageInElectronVolt</name></member>
+    <member refid="NumericFunctions_8hpp_1a5bf77b80707fdf43c3cf9a7b3cb5a1a0" kind="function"><name>EffectiveRFVoltageInElectronVoltPrime</name></member>
+    <member refid="NumericFunctions_8hpp_1a80fbe13a6283d06cc250bfef1cb38f6a" kind="function"><name>VeffRFeVRadlosses</name></member>
+    <member refid="NumericFunctions_8hpp_1a1a8df6971aa019b325647dcc9df43343" kind="function"><name>SynchronuousPhase</name></member>
+    <member refid="NumericFunctions_8hpp_1afaa6e52a0176321c1ca7ba8af91f3498" kind="function"><name>VeffRFeVPotentialWellDistortion</name></member>
+    <member refid="NumericFunctions_8hpp_1a5e36c772b619064009590d4399793a6e" kind="function"><name>VeffRFeVPotentialWellDistortionPrime</name></member>
+    <member refid="NumericFunctions_8hpp_1ad1b45469475427d0cac75acf9245badd" kind="function"><name>SynchronuousPhaseWithPWD</name></member>
+    <member refid="NumericFunctions_8hpp_1adeb8136a44f6bab90c66ae55db2a2ca2" kind="function"><name>SynchrotronTune</name></member>
+    <member refid="NumericFunctions_8hpp_1aa69cd4e636551a0ec2fe691bfe5c3493" kind="function"><name>SynchrotronTunePWD</name></member>
+    <member refid="NumericFunctions_8hpp_1a5e1e2d811d4be9befd501d37ba774704" kind="function"><name>SigeFromRFAndSigs</name></member>
+    <member refid="NumericFunctions_8hpp_1a8c9a407acfb650574b4a06a2db8180ec" kind="function"><name>fmohl</name></member>
+    <member refid="NumericFunctions_8hpp_1ab1f8d1bb5c0bd5775eaa65e99b14d245" kind="function"><name>rds</name></member>
+  </compound>
+  <compound refid="OrdDiffEq_8hpp" kind="file"><name>OrdDiffEq.hpp</name>
+    <member refid="OrdDiffEq_8hpp_1ad2a6c40b251579ddc74597f93e030013" kind="function"><name>WriteToFile</name></member>
+    <member refid="OrdDiffEq_8hpp_1a2911080d9ba7a80b86762e0e7370d7a1" kind="function"><name>ODE</name></member>
+    <member refid="OrdDiffEq_8hpp_1aaa1e63178907dcd61097398cc60ef686" kind="function"><name>ODE</name></member>
+  </compound>
+  <compound refid="RadiationDamping_8hpp" kind="file"><name>RadiationDamping.hpp</name>
+    <member refid="RadiationDamping_8hpp_1a142911566ea9b0a6bd166d22285468fc" kind="function"><name>printradint</name></member>
+    <member refid="RadiationDamping_8hpp_1ab17d5a1994334f44cad3bded2095bdb4" kind="function"><name>RadiationDampingApprox</name></member>
+    <member refid="RadiationDamping_8hpp_1a2ce252d6fff2c43456d535ab02385b8d" kind="function"><name>RadiationDampingLattice</name></member>
+    <member refid="RadiationDamping_8hpp_1ad560efc2b253ed2af586985ed3f06762" kind="function"><name>RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers</name></member>
+    <member refid="RadiationDamping_8hpp_1afd8638e744af458ddb89b3d0a50faa2a" kind="function"><name>RadiationLossesPerTurn</name></member>
+    <member refid="RadiationDamping_8hpp_1a9103cf89280b308e7604921a72c395f0" kind="function"><name>RadiationCriticalEnergy</name></member>
+    <member refid="RadiationDamping_8hpp_1a273d98b9b67c5016b3a794a4b866f26d" kind="function"><name>RadiationDampingElement</name></member>
+  </compound>
+  <compound refid="twiss_8hpp" kind="file"><name>twiss.hpp</name>
+    <member refid="twiss_8hpp_1acd0a31fc6b222ebfe10a9a7b9f182b5d" kind="function"><name>GetTwissHeader</name></member>
+    <member refid="twiss_8hpp_1adfcd4453959b12c5e8467a41f9cd06c1" kind="function"><name>GetTable</name></member>
+    <member refid="twiss_8hpp_1ab4bbb88db0c39db6588438e3be7888a5" kind="function"><name>GetTwissTableAsMap</name></member>
+  </compound>
+  <compound refid="CoulombLogFunctions_8cpp" kind="file"><name>CoulombLogFunctions.cpp</name>
+    <member refid="CoulombLogFunctions_8cpp_1abf7b9e9c5da8bf0b23fffcb01961ebbe" kind="function"><name>twclog</name></member>
+    <member refid="CoulombLogFunctions_8cpp_1aaeb3e23eea67e16a5329a24687458297" kind="function"><name>twclogtail</name></member>
+    <member refid="CoulombLogFunctions_8cpp_1ab908400a7d0b3f9d9d35da9684d875c2" kind="function"><name>CoulombLog</name></member>
+    <member refid="CoulombLogFunctions_8cpp_1ada19d63bb5e67dfd7885b4bd24c5bcb1" kind="function"><name>TailCutCoulombLog</name></member>
+  </compound>
+  <compound refid="Integrators_8cpp" kind="file"><name>Integrators.cpp</name>
+    <member refid="Integrators_8cpp_1aa2baccc4e5ebf7d1277ac74a16f1a648" kind="function"><name>SimpsonDecade</name></member>
+    <member refid="Integrators_8cpp_1a15dde65ca2b0f0abdff524fcc5eae127" kind="function"><name>IBSIntegralIntegrand</name></member>
+    <member refid="Integrators_8cpp_1a82a55ddfd8a8e3a5b2b663541c90132d" kind="function"><name>simpson</name></member>
+    <member refid="Integrators_8cpp_1abf6aceda45fd7628be3aa33f2d083837" kind="function"><name>intSimpson</name></member>
+    <member refid="Integrators_8cpp_1aff7fc053dc61a5105b48ce4ed301d379" kind="function"><name>BjorkenMtingwaInt</name></member>
+    <member refid="Integrators_8cpp_1ab6bdafe839c9bdd143be3e44fbb51d42" kind="function"><name>ConteMartiniInt</name></member>
+    <member refid="Integrators_8cpp_1a87b3e55c02aa31dba0de4d19a57c01db" kind="function"><name>MadxInt</name></member>
+    <member refid="Integrators_8cpp_1a2970e94e892a02fa6009d70da0980d6b" kind="function"><name>twsint</name></member>
+  </compound>
+  <compound refid="Models_8cpp" kind="file"><name>Models.cpp</name>
+    <member refid="Models_8cpp_1a5177ff26367b44c7ee61bc623835f282" kind="function"><name>printouts</name></member>
+    <member refid="Models_8cpp_1a457aba69818a03f83bcdd6b7cbe6a94b" kind="function"><name>PiwinskiSmooth</name></member>
+    <member refid="Models_8cpp_1a9cea68959e4213d225114601b330ea31" kind="function"><name>PiwinskiLattice</name></member>
+    <member refid="Models_8cpp_1a8313e6dc3141e0f08ec219f5d2b5088f" kind="function"><name>PiwinskiLatticeModified</name></member>
+    <member refid="Models_8cpp_1a790596a851d113f7fef4007288ebef8d" kind="function"><name>Nagaitsev</name></member>
+    <member refid="Models_8cpp_1a32f7d2d9f5d5b006811501065a091ba5" kind="function"><name>Nagaitsevtailcut</name></member>
+    <member refid="Models_8cpp_1af37167229ca90e60b1bb3948120c3d94" kind="function"><name>ibsmadx</name></member>
+    <member refid="Models_8cpp_1a7cd4e1da200f68d350937685feeced50" kind="function"><name>ibsmadxtailcut</name></member>
+    <member refid="Models_8cpp_1aca7b8c6140de544cc3b805b6a1a34a98" kind="function"><name>BjorkenMtingwa2</name></member>
+    <member refid="Models_8cpp_1a18d9b9112d787d706a73db10aa9f8892" kind="function"><name>BjorkenMtingwa</name></member>
+    <member refid="Models_8cpp_1ae1da8f6f552e3908dbdd68d7fbd21c78" kind="function"><name>BjorkenMtingwatailcut</name></member>
+    <member refid="Models_8cpp_1adb747c4baceaf64765460d4bcfe4a89a" kind="function"><name>ConteMartini</name></member>
+    <member refid="Models_8cpp_1ad6f50598686914b09ee51ed9585f8454" kind="function"><name>ConteMartinitailcut</name></member>
+    <member refid="Models_8cpp_1a9fc594bfaa0f4b061eca6f7ed6c6a3d7" kind="function"><name>MadxIBS</name></member>
+  </compound>
+  <compound refid="NumericFunctions_8cpp" kind="file"><name>NumericFunctions.cpp</name>
+    <member refid="NumericFunctions_8cpp_1affe776513b24d84b39af8ab0930fef7f" kind="define"><name>max</name></member>
+    <member refid="NumericFunctions_8cpp_1ac6afabdc09a49a433ee19d8a9486056d" kind="define"><name>min</name></member>
+    <member refid="NumericFunctions_8cpp_1aee56f422409b1d45d63b2f18808b96b1" kind="function"><name>sigefromsigs</name></member>
+    <member refid="NumericFunctions_8cpp_1a67d4e0c2346e489535ec10ced4e81a92" kind="function"><name>sigsfromsige</name></member>
+    <member refid="NumericFunctions_8cpp_1a82413379d3aa50e090b13e6bd5d2a470" kind="function"><name>eta</name></member>
+    <member refid="NumericFunctions_8cpp_1a8c9a407acfb650574b4a06a2db8180ec" kind="function"><name>fmohl</name></member>
+    <member refid="NumericFunctions_8cpp_1af0a22976992ba63309d36536957f72df" kind="function"><name>ParticleRadius</name></member>
+    <member refid="NumericFunctions_8cpp_1a62e62321d9e22d41773039926c86b084" kind="function"><name>BetaRelativisticFromGamma</name></member>
+    <member refid="NumericFunctions_8cpp_1ab1f8d1bb5c0bd5775eaa65e99b14d245" kind="function"><name>rds</name></member>
+    <member refid="NumericFunctions_8cpp_1a88080b62380f71ff96ffdc74a4904f31" kind="function"><name>EffectiveRFVoltageInElectronVolt</name></member>
+    <member refid="NumericFunctions_8cpp_1a5bf77b80707fdf43c3cf9a7b3cb5a1a0" kind="function"><name>EffectiveRFVoltageInElectronVoltPrime</name></member>
+    <member refid="NumericFunctions_8cpp_1a80fbe13a6283d06cc250bfef1cb38f6a" kind="function"><name>VeffRFeVRadlosses</name></member>
+    <member refid="NumericFunctions_8cpp_1a1a8df6971aa019b325647dcc9df43343" kind="function"><name>SynchronuousPhase</name></member>
+    <member refid="NumericFunctions_8cpp_1afaa6e52a0176321c1ca7ba8af91f3498" kind="function"><name>VeffRFeVPotentialWellDistortion</name></member>
+    <member refid="NumericFunctions_8cpp_1a5e36c772b619064009590d4399793a6e" kind="function"><name>VeffRFeVPotentialWellDistortionPrime</name></member>
+    <member refid="NumericFunctions_8cpp_1ad1b45469475427d0cac75acf9245badd" kind="function"><name>SynchronuousPhaseWithPWD</name></member>
+    <member refid="NumericFunctions_8cpp_1adeb8136a44f6bab90c66ae55db2a2ca2" kind="function"><name>SynchrotronTune</name></member>
+    <member refid="NumericFunctions_8cpp_1aa69cd4e636551a0ec2fe691bfe5c3493" kind="function"><name>SynchrotronTunePWD</name></member>
+    <member refid="NumericFunctions_8cpp_1a5e1e2d811d4be9befd501d37ba774704" kind="function"><name>SigeFromRFAndSigs</name></member>
+    <member refid="NumericFunctions_8cpp_1a194fecd97256a8796080aa16e118d890" kind="function"><name>updateTwiss</name></member>
+    <member refid="NumericFunctions_8cpp_1a8ec38a3d7a0099ca0b230d32559e72b8" kind="function"><name>printTwissMap</name></member>
+    <member refid="NumericFunctions_8cpp_1a6e88680d2d40201edcff14e02fdf3f0d" kind="function"><name>dee_to_dpp</name></member>
+    <member refid="NumericFunctions_8cpp_1a12cee73c1a853e5184eb5b897f08e31b" kind="function"><name>dpp_to_dee</name></member>
+  </compound>
+  <compound refid="OrdDiffEq_8cpp" kind="file"><name>OrdDiffEq.cpp</name>
+    <member refid="OrdDiffEq_8cpp_1a39abd40f68d03c40857be1e74407efb9" kind="function"><name>red</name></member>
+    <member refid="OrdDiffEq_8cpp_1ab0c10e6284be130a7973fa029a690ef7" kind="function"><name>yellow</name></member>
+    <member refid="OrdDiffEq_8cpp_1a0df115437fbb77c0311e65300c65289e" kind="function"><name>green</name></member>
+    <member refid="OrdDiffEq_8cpp_1a161aec8a96c389795d228ca0c3a949d5" kind="function"><name>blue</name></member>
+    <member refid="OrdDiffEq_8cpp_1a52a6a14bd8e9463315ea114aceda1d92" kind="function"><name>cyan</name></member>
+    <member refid="OrdDiffEq_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kind="function"><name>reset</name></member>
+    <member refid="OrdDiffEq_8cpp_1a39778846439a1c588be88ea5bd512288" kind="function"><name>printline</name></member>
+    <member refid="OrdDiffEq_8cpp_1ad2a6c40b251579ddc74597f93e030013" kind="function"><name>WriteToFile</name></member>
+    <member refid="OrdDiffEq_8cpp_1a2911080d9ba7a80b86762e0e7370d7a1" kind="function"><name>ODE</name></member>
+    <member refid="OrdDiffEq_8cpp_1aaa1e63178907dcd61097398cc60ef686" kind="function"><name>ODE</name></member>
+    <member refid="OrdDiffEq_8cpp_1a761126948136fd8fc3c5017b8d991fde" kind="function"><name>ODE_BMAD</name></member>
+  </compound>
+  <compound refid="RadiationDamping_8cpp" kind="file"><name>RadiationDamping.cpp</name>
+    <member refid="RadiationDamping_8cpp_1a142911566ea9b0a6bd166d22285468fc" kind="function"><name>printradint</name></member>
+    <member refid="RadiationDamping_8cpp_1ab17d5a1994334f44cad3bded2095bdb4" kind="function"><name>RadiationDampingApprox</name></member>
+    <member refid="RadiationDamping_8cpp_1a2ce252d6fff2c43456d535ab02385b8d" kind="function"><name>RadiationDampingLattice</name></member>
+    <member refid="RadiationDamping_8cpp_1ad560efc2b253ed2af586985ed3f06762" kind="function"><name>RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers</name></member>
+    <member refid="RadiationDamping_8cpp_1afd8638e744af458ddb89b3d0a50faa2a" kind="function"><name>RadiationLossesPerTurn</name></member>
+    <member refid="RadiationDamping_8cpp_1a9103cf89280b308e7604921a72c395f0" kind="function"><name>RadiationCriticalEnergy</name></member>
+    <member refid="RadiationDamping_8cpp_1a273d98b9b67c5016b3a794a4b866f26d" kind="function"><name>RadiationDampingElement</name></member>
+  </compound>
+  <compound refid="twiss_8cpp" kind="file"><name>twiss.cpp</name>
+    <member refid="twiss_8cpp_1acd0a31fc6b222ebfe10a9a7b9f182b5d" kind="function"><name>GetTwissHeader</name></member>
+    <member refid="twiss_8cpp_1adfcd4453959b12c5e8467a41f9cd06c1" kind="function"><name>GetTable</name></member>
+    <member refid="twiss_8cpp_1ab4bbb88db0c39db6588438e3be7888a5" kind="function"><name>GetTwissTableAsMap</name></member>
+  </compound>
+  <compound refid="Demo__twiss_8cpp" kind="file"><name>Demo_twiss.cpp</name>
+    <member refid="Demo__twiss_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="DemoCoulombLog_8cpp" kind="file"><name>DemoCoulombLog.cpp</name>
+    <member refid="DemoCoulombLog_8cpp_1a39abd40f68d03c40857be1e74407efb9" kind="function"><name>red</name></member>
+    <member refid="DemoCoulombLog_8cpp_1ab0c10e6284be130a7973fa029a690ef7" kind="function"><name>yellow</name></member>
+    <member refid="DemoCoulombLog_8cpp_1a0df115437fbb77c0311e65300c65289e" kind="function"><name>green</name></member>
+    <member refid="DemoCoulombLog_8cpp_1a161aec8a96c389795d228ca0c3a949d5" kind="function"><name>blue</name></member>
+    <member refid="DemoCoulombLog_8cpp_1a52a6a14bd8e9463315ea114aceda1d92" kind="function"><name>cyan</name></member>
+    <member refid="DemoCoulombLog_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kind="function"><name>reset</name></member>
+    <member refid="DemoCoulombLog_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="DemoIBS_8cpp" kind="file"><name>DemoIBS.cpp</name>
+    <member refid="DemoIBS_8cpp_1a39abd40f68d03c40857be1e74407efb9" kind="function"><name>red</name></member>
+    <member refid="DemoIBS_8cpp_1ab0c10e6284be130a7973fa029a690ef7" kind="function"><name>yellow</name></member>
+    <member refid="DemoIBS_8cpp_1a0df115437fbb77c0311e65300c65289e" kind="function"><name>green</name></member>
+    <member refid="DemoIBS_8cpp_1a161aec8a96c389795d228ca0c3a949d5" kind="function"><name>blue</name></member>
+    <member refid="DemoIBS_8cpp_1a52a6a14bd8e9463315ea114aceda1d92" kind="function"><name>cyan</name></member>
+    <member refid="DemoIBS_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kind="function"><name>reset</name></member>
+    <member refid="DemoIBS_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="DemoIntegrators_8cpp" kind="file"><name>DemoIntegrators.cpp</name>
+    <member refid="DemoIntegrators_8cpp_1a39abd40f68d03c40857be1e74407efb9" kind="function"><name>red</name></member>
+    <member refid="DemoIntegrators_8cpp_1ab0c10e6284be130a7973fa029a690ef7" kind="function"><name>yellow</name></member>
+    <member refid="DemoIntegrators_8cpp_1a0df115437fbb77c0311e65300c65289e" kind="function"><name>green</name></member>
+    <member refid="DemoIntegrators_8cpp_1a161aec8a96c389795d228ca0c3a949d5" kind="function"><name>blue</name></member>
+    <member refid="DemoIntegrators_8cpp_1a52a6a14bd8e9463315ea114aceda1d92" kind="function"><name>cyan</name></member>
+    <member refid="DemoIntegrators_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kind="function"><name>reset</name></member>
+    <member refid="DemoIntegrators_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="DemoODE_8cpp" kind="file"><name>DemoODE.cpp</name>
+    <member refid="DemoODE_8cpp_1a39abd40f68d03c40857be1e74407efb9" kind="function"><name>red</name></member>
+    <member refid="DemoODE_8cpp_1ab0c10e6284be130a7973fa029a690ef7" kind="function"><name>yellow</name></member>
+    <member refid="DemoODE_8cpp_1a0df115437fbb77c0311e65300c65289e" kind="function"><name>green</name></member>
+    <member refid="DemoODE_8cpp_1a161aec8a96c389795d228ca0c3a949d5" kind="function"><name>blue</name></member>
+    <member refid="DemoODE_8cpp_1a52a6a14bd8e9463315ea114aceda1d92" kind="function"><name>cyan</name></member>
+    <member refid="DemoODE_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kind="function"><name>reset</name></member>
+    <member refid="DemoODE_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="DemoRadDamping_8cpp" kind="file"><name>DemoRadDamping.cpp</name>
+    <member refid="DemoRadDamping_8cpp_1a39abd40f68d03c40857be1e74407efb9" kind="function"><name>red</name></member>
+    <member refid="DemoRadDamping_8cpp_1ab0c10e6284be130a7973fa029a690ef7" kind="function"><name>yellow</name></member>
+    <member refid="DemoRadDamping_8cpp_1a0df115437fbb77c0311e65300c65289e" kind="function"><name>green</name></member>
+    <member refid="DemoRadDamping_8cpp_1a161aec8a96c389795d228ca0c3a949d5" kind="function"><name>blue</name></member>
+    <member refid="DemoRadDamping_8cpp_1a52a6a14bd8e9463315ea114aceda1d92" kind="function"><name>cyan</name></member>
+    <member refid="DemoRadDamping_8cpp_1ad20897c5c8bd47f5d4005989bead0e55" kind="function"><name>reset</name></member>
+    <member refid="DemoRadDamping_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dir_df511e5bd85cec96854b39d5e1c27aa8" kind="dir"><name>/home/mti/github-tomerten/ibs/cpp</name>
+  </compound>
+  <compound refid="dir_16177bb4d692ac2de02a51ddff4ddfa7" kind="dir"><name>/home/mti/github-tomerten/ibs/cpp/include/ibs_bits</name>
+  </compound>
+  <compound refid="dir_07f37e320deb3031a60f4b23b9c60eb5" kind="dir"><name>/home/mti/github-tomerten/ibs/cpp/include</name>
+  </compound>
+  <compound refid="dir_7e72c7cf48e3493f8206cd364e6bc9f6" kind="dir"><name>/home/mti/github-tomerten/ibs/cpp/src</name>
+  </compound>
+  <compound refid="dir_3fe0f282267a1650cd940a937ccf145a" kind="dir"><name>/home/mti/github-tomerten/ibs/cpp/tests/src</name>
+  </compound>
+  <compound refid="dir_d1eb7f32592100b226cc7f73f9055757" kind="dir"><name>/home/mti/github-tomerten/ibs/cpp/tests</name>
+  </compound>
+</doxygenindex>

@@ -109,6 +109,7 @@ void twclog(double pnumber, double bx, double by, double dx, double dy,
   double rminqm = hbar * c * ot5 / (two * sqrt(ttm3 * etrans * amass));
   double rmin = max(rmincl, rminqm);
   double coulog = log(rmax / rmin);
+
   // calculate coulomb log constant pre-factor
   double constt = pnumber * coulog * r0 * r0 * c /
                   (eight * pi * betar * betar * betar * gamma * gamma * gamma *
@@ -269,14 +270,8 @@ void twclogtail(double pnumber, double l, double bx, double by, double dx,
     double rmintailcut =
         1.0f / sqrt(pnumber * pi * tauradmax * c * gamma * sqrt(ex / bx));
     rmin = max(max(rmincl, rminqm), rmintailcut);
-    // printf("rmax %12.6e   rmin %12.6e rmincl %12.6e rminqm %12.6e rmintailcut
-    // "
-    //       "%12.6e\n",
-    //       rmax, rmin, rmincl, rminqm, rmintailcut);
   } else {
     rmin = max(rmincl, rminqm);
-    // printf("rmax %12.6e   rmin %12.6e rmincl %12.6e rminqm %12.6e\n", rmax,
-    //       rmin, rmincl, rminqm);
   }
   double coulog = log(rmax / rmin);
 

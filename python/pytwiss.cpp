@@ -19,7 +19,7 @@ PYBIND11_MODULE(IBSLib, m) {
 ================================================================================
   */
   m.def("GetTwissHeader", &GetTwissHeader,
-        "Get the twiss header as a dictionary.");
+        "Get the twiss header as a dictionary.", py::arg("filename"));
 
   m.def("GetTwissTable", &GetTwissTableAsMap, "Get the twiss data table.");
 
@@ -429,6 +429,179 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_out[2] = ibs[2];
         },
         "Piwinski Lattice");
+
+  m.def("PiwinskiLatticeModified",
+        [](double pnumber, double ex, double ey, double sigs, double dponp,
+           map<string, double> &header, map<string, vector<double>> &table,
+           double r0, py::array_t<double> out) {
+          double *ibs;
+          ibs = PiwinskiLatticeModified(pnumber, ex, ey, sigs, dponp, header,
+                                        table, r0);
+
+          auto buf_out = out.request();
+          double *ptr_out = static_cast<double *>(buf_out.ptr);
+          ptr_out[0] = ibs[0];
+          ptr_out[1] = ibs[1];
+          ptr_out[2] = ibs[2];
+        },
+        "Piwinski Lattice Modified");
+
+  m.def("Nagaitsev",
+        [](double pnumber, double ex, double ey, double sigs, double dponp,
+           map<string, double> &header, map<string, vector<double>> &table,
+           double r0, py::array_t<double> out) {
+          double *ibs;
+          ibs = Nagaitsev(pnumber, ex, ey, sigs, dponp, header, table, r0);
+
+          auto buf_out = out.request();
+          double *ptr_out = static_cast<double *>(buf_out.ptr);
+          ptr_out[0] = ibs[0];
+          ptr_out[1] = ibs[1];
+          ptr_out[2] = ibs[2];
+        },
+        "Nagaitsev");
+
+  m.def("NagaitsevTailcut",
+        [](double pnumber, double ex, double ey, double sigs, double dponp,
+           map<string, double> &header, map<string, vector<double>> &table,
+           double aatom, double r0, py::array_t<double> out) {
+          double *ibs;
+          ibs = Nagaitsevtailcut(pnumber, ex, ey, sigs, dponp, header, table,
+                                 r0, aatom);
+
+          auto buf_out = out.request();
+          double *ptr_out = static_cast<double *>(buf_out.ptr);
+          ptr_out[0] = ibs[0];
+          ptr_out[1] = ibs[1];
+          ptr_out[2] = ibs[2];
+        },
+        "Nagaitsev Tailcut");
+
+  m.def("Zimmerman",
+        [](double pnumber, double ex, double ey, double sigs, double sige,
+           map<string, double> &header, map<string, vector<double>> &table,
+           double r0, bool printout, py::array_t<double> out) {
+          double *ibs;
+          ibs =
+              ibsmadx(pnumber, ex, ey, sigs, sige, header, table, r0, printout);
+
+          auto buf_out = out.request();
+          double *ptr_out = static_cast<double *>(buf_out.ptr);
+          ptr_out[0] = ibs[0];
+          ptr_out[1] = ibs[1];
+          ptr_out[2] = ibs[2];
+        },
+        "Zimmerman");
+
+  m.def("ZimmermanTailcut",
+        [](double pnumber, double ex, double ey, double sigs, double sige,
+           map<string, double> &header, map<string, vector<double>> &table,
+           double r0, bool aatom, py::array_t<double> out) {
+          double *ibs;
+          ibs = ibsmadxtailcut(pnumber, ex, ey, sigs, sige, header, table, r0,
+                               aatom);
+
+          auto buf_out = out.request();
+          double *ptr_out = static_cast<double *>(buf_out.ptr);
+          ptr_out[0] = ibs[0];
+          ptr_out[1] = ibs[1];
+          ptr_out[2] = ibs[2];
+        },
+        "Zimmerman Tailcut");
+
+  m.def("BjorkenMtingwaSimpson",
+        [](double pnumber, double ex, double ey, double sigs, double dponp,
+           map<string, double> &header, map<string, vector<double>> &table,
+           double r0, bool aatom, py::array_t<double> out) {
+          double *ibs;
+          ibs =
+              BjorkenMtingwa2(pnumber, ex, ey, sigs, dponp, header, table, r0);
+
+          auto buf_out = out.request();
+          double *ptr_out = static_cast<double *>(buf_out.ptr);
+          ptr_out[0] = ibs[0];
+          ptr_out[1] = ibs[1];
+          ptr_out[2] = ibs[2];
+        },
+        "Bjorken-Mtingwa using Standard Simpson integration.");
+
+  m.def("BjorkenMtingwaSimpsonDecade",
+        [](double pnumber, double ex, double ey, double sigs, double sige,
+           map<string, double> &header, map<string, vector<double>> &table,
+           double r0, bool aatom, py::array_t<double> out) {
+          double *ibs;
+          ibs = BjorkenMtingwa(pnumber, ex, ey, sigs, sige, header, table, r0);
+
+          auto buf_out = out.request();
+          double *ptr_out = static_cast<double *>(buf_out.ptr);
+          ptr_out[0] = ibs[0];
+          ptr_out[1] = ibs[1];
+          ptr_out[2] = ibs[2];
+        },
+        "Bjorken-Mtingwa using Simpson Decade integration.");
+
+  m.def("BjorkenMtingwaTailcutSimpsonDecade",
+        [](double pnumber, double ex, double ey, double sigs, double sige,
+           map<string, double> &header, map<string, vector<double>> &table,
+           double r0, bool aatom, py::array_t<double> out) {
+          double *ibs;
+          ibs = BjorkenMtingwatailcut(pnumber, ex, ey, sigs, sige, header,
+                                      table, r0, aatom);
+
+          auto buf_out = out.request();
+          double *ptr_out = static_cast<double *>(buf_out.ptr);
+          ptr_out[0] = ibs[0];
+          ptr_out[1] = ibs[1];
+          ptr_out[2] = ibs[2];
+        },
+        "Bjorken-Mtingwa using Simpson Decade integration with Tailcut");
+
+  m.def("ConteMartiniSimpsonDecade",
+        [](double pnumber, double ex, double ey, double sigs, double sige,
+           map<string, double> &header, map<string, vector<double>> &table,
+           double r0, bool aatom, py::array_t<double> out) {
+          double *ibs;
+          ibs = ConteMartini(pnumber, ex, ey, sigs, sige, header, table, r0);
+
+          auto buf_out = out.request();
+          double *ptr_out = static_cast<double *>(buf_out.ptr);
+          ptr_out[0] = ibs[0];
+          ptr_out[1] = ibs[1];
+          ptr_out[2] = ibs[2];
+        },
+        "Conte-Martini using Simpson Decade integration.");
+
+  m.def("ConteMartiniTailcutSimpsonDecade",
+        [](double pnumber, double ex, double ey, double sigs, double sige,
+           map<string, double> &header, map<string, vector<double>> &table,
+           double r0, bool aatom, py::array_t<double> out) {
+          double *ibs;
+          ibs = ConteMartinitailcut(pnumber, ex, ey, sigs, sige, header, table,
+                                    r0, aatom);
+
+          auto buf_out = out.request();
+          double *ptr_out = static_cast<double *>(buf_out.ptr);
+          ptr_out[0] = ibs[0];
+          ptr_out[1] = ibs[1];
+          ptr_out[2] = ibs[2];
+        },
+        "Conte-Martini using Simpson Decade integration with Tailcut");
+
+  m.def("ZimmermanSimpsonDecade",
+        [](double pnumber, double ex, double ey, double sigs, double sige,
+           map<string, double> &header, map<string, vector<double>> &table,
+           double r0, bool printout, py::array_t<double> out) {
+          double *ibs;
+          ibs =
+              ibsmadx(pnumber, ex, ey, sigs, sige, header, table, r0, printout);
+
+          auto buf_out = out.request();
+          double *ptr_out = static_cast<double *>(buf_out.ptr);
+          ptr_out[0] = ibs[0];
+          ptr_out[1] = ibs[1];
+          ptr_out[2] = ibs[2];
+        },
+        "Zimmerman using Simpson Decade");
 
   m.def("runODE",
         [](map<string, double> &twiss, map<string, vector<double>> &twissdata,

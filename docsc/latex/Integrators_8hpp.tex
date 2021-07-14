@@ -1,0 +1,73 @@
+\hypertarget{Integrators_8hpp}{}\doxysection{/home/mti/github-\/tomerten/ibs/cpp/include/ibs\+\_\+bits/\+Integrators.hpp File Reference}
+\label{Integrators_8hpp}\index{/home/mti/github-\/tomerten/ibs/cpp/include/ibs\_bits/Integrators.hpp@{/home/mti/github-\/tomerten/ibs/cpp/include/ibs\_bits/Integrators.hpp}}
+{\ttfamily \#include $<$functional$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Integrators_8hpp_aa2baccc4e5ebf7d1277ac74a16f1a648}{Simpson\+Decade}} (double a, double b, double c, double cl, double cx, double cy, double cprime, double cyy, double tl1, double tl2, double tx1, double tx2, double ty1, double ty2, double $\ast$tau)
+\item 
+void \mbox{\hyperlink{Integrators_8hpp_a2970e94e892a02fa6009d70da0980d6b}{twsint}} (double pnumber, double ex, double ey, double sigs, double sige, double gammas, double betax, double betay, double alx, double aly, double dx, double dpx, double dy, double dpy, double $\ast$tau)
+\item 
+double \mbox{\hyperlink{Integrators_8hpp_a15dde65ca2b0f0abdff524fcc5eae127}{IBSIntegral\+Integrand}} (double lambda, double ax, double bx, double a, double b, double c)
+\item 
+double \mbox{\hyperlink{Integrators_8hpp_a82a55ddfd8a8e3a5b2b663541c90132d}{simpson}} (const std\+::function$<$ double(double, double, double, double, double, double)$>$ \&ibsintegrand, double ax, double bx, double a, double b, double c, double al, double bl, int n)
+\item 
+void \mbox{\hyperlink{Integrators_8hpp_a8046a0a2a4459af05e50b4b78a602bb0}{int\+Simpson}} (const std\+::function$<$ double(double, double, double, double, double, double)$>$ \&ibsintegrand, double ax, double bx, double ay, double by, double as, double bs, double a, double b, double ci, double $\ast$integral)
+\item 
+void \mbox{\hyperlink{Integrators_8hpp_aff7fc053dc61a5105b48ce4ed301d379}{Bjorken\+Mtingwa\+Int}} (double pnumber, double ex, double ey, double sigs, double sige, double gammas, double betx, double bety, double alx, double aly, double dx, double dpx, double dy, double dpy, double $\ast$tau)
+\item 
+void \mbox{\hyperlink{Integrators_8hpp_ab6bdafe839c9bdd143be3e44fbb51d42}{Conte\+Martini\+Int}} (double pnumber, double ex, double ey, double sigs, double sige, double gammas, double betx, double bety, double alx, double aly, double dx, double dpx, double dy, double dpy, double $\ast$tau)
+\item 
+void \mbox{\hyperlink{Integrators_8hpp_a87b3e55c02aa31dba0de4d19a57c01db}{Madx\+Int}} (double pnumber, double ex, double ey, double sigs, double sige, double gammas, double betx, double bety, double alx, double aly, double dx, double dpx, double dy, double dpy, double $\ast$tau)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Integrators_8hpp_aff7fc053dc61a5105b48ce4ed301d379}\label{Integrators_8hpp_aff7fc053dc61a5105b48ce4ed301d379}} 
+\index{Integrators.hpp@{Integrators.hpp}!BjorkenMtingwaInt@{BjorkenMtingwaInt}}
+\index{BjorkenMtingwaInt@{BjorkenMtingwaInt}!Integrators.hpp@{Integrators.hpp}}
+\doxysubsubsection{\texorpdfstring{BjorkenMtingwaInt()}{BjorkenMtingwaInt()}}
+{\footnotesize\ttfamily void Bjorken\+Mtingwa\+Int (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{sige,  }\item[{double}]{gammas,  }\item[{double}]{betx,  }\item[{double}]{bety,  }\item[{double}]{alx,  }\item[{double}]{aly,  }\item[{double}]{dx,  }\item[{double}]{dpx,  }\item[{double}]{dy,  }\item[{double}]{dpy,  }\item[{double $\ast$}]{tau }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Integrators_8hpp_ab6bdafe839c9bdd143be3e44fbb51d42}\label{Integrators_8hpp_ab6bdafe839c9bdd143be3e44fbb51d42}} 
+\index{Integrators.hpp@{Integrators.hpp}!ConteMartiniInt@{ConteMartiniInt}}
+\index{ConteMartiniInt@{ConteMartiniInt}!Integrators.hpp@{Integrators.hpp}}
+\doxysubsubsection{\texorpdfstring{ConteMartiniInt()}{ConteMartiniInt()}}
+{\footnotesize\ttfamily void Conte\+Martini\+Int (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{sige,  }\item[{double}]{gammas,  }\item[{double}]{betx,  }\item[{double}]{bety,  }\item[{double}]{alx,  }\item[{double}]{aly,  }\item[{double}]{dx,  }\item[{double}]{dpx,  }\item[{double}]{dy,  }\item[{double}]{dpy,  }\item[{double $\ast$}]{tau }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Integrators_8hpp_a15dde65ca2b0f0abdff524fcc5eae127}\label{Integrators_8hpp_a15dde65ca2b0f0abdff524fcc5eae127}} 
+\index{Integrators.hpp@{Integrators.hpp}!IBSIntegralIntegrand@{IBSIntegralIntegrand}}
+\index{IBSIntegralIntegrand@{IBSIntegralIntegrand}!Integrators.hpp@{Integrators.hpp}}
+\doxysubsubsection{\texorpdfstring{IBSIntegralIntegrand()}{IBSIntegralIntegrand()}}
+{\footnotesize\ttfamily double IBSIntegral\+Integrand (\begin{DoxyParamCaption}\item[{double}]{lambda,  }\item[{double}]{ax,  }\item[{double}]{bx,  }\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Integrators_8hpp_a8046a0a2a4459af05e50b4b78a602bb0}\label{Integrators_8hpp_a8046a0a2a4459af05e50b4b78a602bb0}} 
+\index{Integrators.hpp@{Integrators.hpp}!intSimpson@{intSimpson}}
+\index{intSimpson@{intSimpson}!Integrators.hpp@{Integrators.hpp}}
+\doxysubsubsection{\texorpdfstring{intSimpson()}{intSimpson()}}
+{\footnotesize\ttfamily void int\+Simpson (\begin{DoxyParamCaption}\item[{const std\+::function$<$ double(double, double, double, double, double, double)$>$ \&}]{ibsintegrand,  }\item[{double}]{ax,  }\item[{double}]{bx,  }\item[{double}]{ay,  }\item[{double}]{by,  }\item[{double}]{as,  }\item[{double}]{bs,  }\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{ci,  }\item[{double $\ast$}]{integral }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Integrators_8hpp_a87b3e55c02aa31dba0de4d19a57c01db}\label{Integrators_8hpp_a87b3e55c02aa31dba0de4d19a57c01db}} 
+\index{Integrators.hpp@{Integrators.hpp}!MadxInt@{MadxInt}}
+\index{MadxInt@{MadxInt}!Integrators.hpp@{Integrators.hpp}}
+\doxysubsubsection{\texorpdfstring{MadxInt()}{MadxInt()}}
+{\footnotesize\ttfamily void Madx\+Int (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{sige,  }\item[{double}]{gammas,  }\item[{double}]{betx,  }\item[{double}]{bety,  }\item[{double}]{alx,  }\item[{double}]{aly,  }\item[{double}]{dx,  }\item[{double}]{dpx,  }\item[{double}]{dy,  }\item[{double}]{dpy,  }\item[{double $\ast$}]{tau }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Integrators_8hpp_a82a55ddfd8a8e3a5b2b663541c90132d}\label{Integrators_8hpp_a82a55ddfd8a8e3a5b2b663541c90132d}} 
+\index{Integrators.hpp@{Integrators.hpp}!simpson@{simpson}}
+\index{simpson@{simpson}!Integrators.hpp@{Integrators.hpp}}
+\doxysubsubsection{\texorpdfstring{simpson()}{simpson()}}
+{\footnotesize\ttfamily double simpson (\begin{DoxyParamCaption}\item[{const std\+::function$<$ double(double, double, double, double, double, double)$>$ \&}]{ibsintegrand,  }\item[{double}]{ax,  }\item[{double}]{bx,  }\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{double}]{al,  }\item[{double}]{bl,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Integrators_8hpp_aa2baccc4e5ebf7d1277ac74a16f1a648}\label{Integrators_8hpp_aa2baccc4e5ebf7d1277ac74a16f1a648}} 
+\index{Integrators.hpp@{Integrators.hpp}!SimpsonDecade@{SimpsonDecade}}
+\index{SimpsonDecade@{SimpsonDecade}!Integrators.hpp@{Integrators.hpp}}
+\doxysubsubsection{\texorpdfstring{SimpsonDecade()}{SimpsonDecade()}}
+{\footnotesize\ttfamily void Simpson\+Decade (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{double}]{cl,  }\item[{double}]{cx,  }\item[{double}]{cy,  }\item[{double}]{cprime,  }\item[{double}]{cyy,  }\item[{double}]{tl1,  }\item[{double}]{tl2,  }\item[{double}]{tx1,  }\item[{double}]{tx2,  }\item[{double}]{ty1,  }\item[{double}]{ty2,  }\item[{double $\ast$}]{tau }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Integrators_8hpp_a2970e94e892a02fa6009d70da0980d6b}\label{Integrators_8hpp_a2970e94e892a02fa6009d70da0980d6b}} 
+\index{Integrators.hpp@{Integrators.hpp}!twsint@{twsint}}
+\index{twsint@{twsint}!Integrators.hpp@{Integrators.hpp}}
+\doxysubsubsection{\texorpdfstring{twsint()}{twsint()}}
+{\footnotesize\ttfamily void twsint (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{sige,  }\item[{double}]{gammas,  }\item[{double}]{betax,  }\item[{double}]{betay,  }\item[{double}]{alx,  }\item[{double}]{aly,  }\item[{double}]{dx,  }\item[{double}]{dpx,  }\item[{double}]{dy,  }\item[{double}]{dpy,  }\item[{double $\ast$}]{tau }\end{DoxyParamCaption})}
+

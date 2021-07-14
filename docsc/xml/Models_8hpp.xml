@@ -1,0 +1,828 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="Models_8hpp" kind="file" language="C++">
+    <compoundname>Models.hpp</compoundname>
+    <includes refid="CoulombLogFunctions_8hpp" local="yes">CoulombLogFunctions.hpp</includes>
+    <includes refid="Integrators_8hpp" local="yes">Integrators.hpp</includes>
+    <includes refid="NumericFunctions_8hpp" local="yes">NumericFunctions.hpp</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">map</includes>
+    <includes local="no">math.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="OrdDiffEq_8cpp" local="yes">/home/mti/github-tomerten/ibs/cpp/src/OrdDiffEq.cpp</includedby>
+    <incdepgraph>
+      <node id="12">
+        <label>functional</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>NumericFunctions.hpp</label>
+        <link refid="NumericFunctions_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>map</label>
+      </node>
+      <node id="8">
+        <label>RadiationDamping.hpp</label>
+        <link refid="RadiationDamping_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp</label>
+        <link refid="Models_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>vector</label>
+      </node>
+      <node id="2">
+        <label>CoulombLogFunctions.hpp</label>
+        <link refid="CoulombLogFunctions_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>math.h</label>
+      </node>
+      <node id="9">
+        <label>iostream</label>
+      </node>
+      <node id="11">
+        <label>Integrators.hpp</label>
+        <link refid="Integrators_8hpp"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/mti/github-tomerten/ibs/cpp/src/OrdDiffEq.cpp</label>
+        <link refid="OrdDiffEq_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp</label>
+        <link refid="Models_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="Models_8hpp_1a5177ff26367b44c7ee61bc623835f282" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printouts</definition>
+        <argsstring>(double output[3])</argsstring>
+        <name>printouts</name>
+        <param>
+          <type>double</type>
+          <declname>output</declname>
+          <array>[3]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" line="11" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Models.cpp" bodystart="31" bodyend="44" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" declline="11" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="Models_8hpp_1a457aba69818a03f83bcdd6b7cbe6a94b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double *</type>
+        <definition>double* PiwinskiSmooth</definition>
+        <argsstring>(double pnumber, double ex, double ey, double sigs, double dponp, map&lt; string, double &gt; &amp;twiss, double r0)</argsstring>
+        <name>PiwinskiSmooth</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dponp</declname>
+        </param>
+        <param>
+          <type>map&lt; string, double &gt; &amp;</type>
+          <declname>twiss</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r0</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" line="13" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Models.cpp" bodystart="93" bodyend="146" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" declline="13" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="Models_8hpp_1a9cea68959e4213d225114601b330ea31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double *</type>
+        <definition>double* PiwinskiLattice</definition>
+        <argsstring>(double pnumber, double ex, double ey, double sigs, double dponp, map&lt; string, double &gt; &amp;twissheader, map&lt; string, vector&lt; double &gt;&gt; &amp;twissdata, double r0)</argsstring>
+        <name>PiwinskiLattice</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dponp</declname>
+        </param>
+        <param>
+          <type>map&lt; string, double &gt; &amp;</type>
+          <declname>twissheader</declname>
+        </param>
+        <param>
+          <type>map&lt; string, vector&lt; double &gt;&gt; &amp;</type>
+          <declname>twissdata</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r0</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" line="16" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Models.cpp" bodystart="197" bodyend="261" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" declline="16" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="Models_8hpp_1a8313e6dc3141e0f08ec219f5d2b5088f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double *</type>
+        <definition>double* PiwinskiLatticeModified</definition>
+        <argsstring>(double pnumber, double ex, double ey, double sigs, double dponp, map&lt; string, double &gt; &amp;twissheader, map&lt; string, vector&lt; double &gt;&gt; &amp;twissdata, double r0)</argsstring>
+        <name>PiwinskiLatticeModified</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dponp</declname>
+        </param>
+        <param>
+          <type>map&lt; string, double &gt; &amp;</type>
+          <declname>twissheader</declname>
+        </param>
+        <param>
+          <type>map&lt; string, vector&lt; double &gt;&gt; &amp;</type>
+          <declname>twissdata</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r0</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" line="20" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Models.cpp" bodystart="312" bodyend="383" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" declline="20" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="Models_8hpp_1a790596a851d113f7fef4007288ebef8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double *</type>
+        <definition>double* Nagaitsev</definition>
+        <argsstring>(double pnumber, double ex, double ey, double sigs, double dponp, map&lt; string, double &gt; &amp;twissheader, map&lt; string, vector&lt; double &gt;&gt; &amp;twissdata, double r0)</argsstring>
+        <name>Nagaitsev</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dponp</declname>
+        </param>
+        <param>
+          <type>map&lt; string, double &gt; &amp;</type>
+          <declname>twissheader</declname>
+        </param>
+        <param>
+          <type>map&lt; string, vector&lt; double &gt;&gt; &amp;</type>
+          <declname>twissdata</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r0</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" line="26" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Models.cpp" bodystart="434" bodyend="521" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" declline="26" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="Models_8hpp_1a32f7d2d9f5d5b006811501065a091ba5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double *</type>
+        <definition>double* Nagaitsevtailcut</definition>
+        <argsstring>(double pnumber, double ex, double ey, double sigs, double dponp, map&lt; string, double &gt; &amp;twissheader, map&lt; string, vector&lt; double &gt;&gt; &amp;twissdata, double r0, double aatom)</argsstring>
+        <name>Nagaitsevtailcut</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dponp</declname>
+        </param>
+        <param>
+          <type>map&lt; string, double &gt; &amp;</type>
+          <declname>twissheader</declname>
+        </param>
+        <param>
+          <type>map&lt; string, vector&lt; double &gt;&gt; &amp;</type>
+          <declname>twissdata</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r0</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>aatom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" line="30" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Models.cpp" bodystart="574" bodyend="672" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" declline="30" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="Models_8hpp_1af37167229ca90e60b1bb3948120c3d94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double *</type>
+        <definition>double* ibsmadx</definition>
+        <argsstring>(double pnumber, double ex, double ey, double sigs, double sige, map&lt; string, double &gt; &amp;twissheader, map&lt; string, vector&lt; double &gt;&gt; &amp;twissdata, double r0, bool printout)</argsstring>
+        <name>ibsmadx</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sige</declname>
+        </param>
+        <param>
+          <type>map&lt; string, double &gt; &amp;</type>
+          <declname>twissheader</declname>
+        </param>
+        <param>
+          <type>map&lt; string, vector&lt; double &gt;&gt; &amp;</type>
+          <declname>twissdata</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r0</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>printout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" line="41" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Models.cpp" bodystart="740" bodyend="939" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" declline="41" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="Models_8hpp_1a7cd4e1da200f68d350937685feeced50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double *</type>
+        <definition>double* ibsmadxtailcut</definition>
+        <argsstring>(double pnumber, double ex, double ey, double sigs, double sige, map&lt; string, double &gt; &amp;twissheader, map&lt; string, vector&lt; double &gt;&gt; &amp;twissdata, double r0, double aatom)</argsstring>
+        <name>ibsmadxtailcut</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sige</declname>
+        </param>
+        <param>
+          <type>map&lt; string, double &gt; &amp;</type>
+          <declname>twissheader</declname>
+        </param>
+        <param>
+          <type>map&lt; string, vector&lt; double &gt;&gt; &amp;</type>
+          <declname>twissdata</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r0</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>aatom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" line="46" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Models.cpp" bodystart="991" bodyend="1115" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" declline="46" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="Models_8hpp_1aca7b8c6140de544cc3b805b6a1a34a98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double *</type>
+        <definition>double* BjorkenMtingwa2</definition>
+        <argsstring>(double pnumber, double ex, double ey, double sigs, double dponp, map&lt; string, double &gt; &amp;twissheader, map&lt; string, vector&lt; double &gt;&gt; &amp;twissdata, double r0)</argsstring>
+        <name>BjorkenMtingwa2</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dponp</declname>
+        </param>
+        <param>
+          <type>map&lt; string, double &gt; &amp;</type>
+          <declname>twissheader</declname>
+        </param>
+        <param>
+          <type>map&lt; string, vector&lt; double &gt;&gt; &amp;</type>
+          <declname>twissdata</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r0</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" line="51" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Models.cpp" bodystart="1163" bodyend="1247" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" declline="51" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="Models_8hpp_1a18d9b9112d787d706a73db10aa9f8892" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double *</type>
+        <definition>double* BjorkenMtingwa</definition>
+        <argsstring>(double pnumber, double ex, double ey, double sigs, double dponp, map&lt; string, double &gt; &amp;twissheader, map&lt; string, vector&lt; double &gt;&gt; &amp;twissdata, double r0)</argsstring>
+        <name>BjorkenMtingwa</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dponp</declname>
+        </param>
+        <param>
+          <type>map&lt; string, double &gt; &amp;</type>
+          <declname>twissheader</declname>
+        </param>
+        <param>
+          <type>map&lt; string, vector&lt; double &gt;&gt; &amp;</type>
+          <declname>twissdata</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r0</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" line="55" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Models.cpp" bodystart="1295" bodyend="1350" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" declline="55" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="Models_8hpp_1a1f0e46c3ecdfe469390552a2e7fe749f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double *</type>
+        <definition>double* BjorkenMtingwatailcut</definition>
+        <argsstring>(double pnumber, double ex, double ey, double sigs, double sige, map&lt; string, double &gt; &amp;twissheader, map&lt; string, vector&lt; double &gt;&gt; &amp;twissdata, double r0, double aatom)</argsstring>
+        <name>BjorkenMtingwatailcut</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sige</declname>
+        </param>
+        <param>
+          <type>map&lt; string, double &gt; &amp;</type>
+          <declname>twissheader</declname>
+        </param>
+        <param>
+          <type>map&lt; string, vector&lt; double &gt;&gt; &amp;</type>
+          <declname>twissdata</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r0</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>aatom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" line="59" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Models.cpp" bodystart="1398" bodyend="1459" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" declline="59" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="Models_8hpp_1adb747c4baceaf64765460d4bcfe4a89a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double *</type>
+        <definition>double* ConteMartini</definition>
+        <argsstring>(double pnumber, double ex, double ey, double sigs, double dponp, map&lt; string, double &gt; &amp;twissheader, map&lt; string, vector&lt; double &gt;&gt; &amp;twissdata, double r0)</argsstring>
+        <name>ConteMartini</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dponp</declname>
+        </param>
+        <param>
+          <type>map&lt; string, double &gt; &amp;</type>
+          <declname>twissheader</declname>
+        </param>
+        <param>
+          <type>map&lt; string, vector&lt; double &gt;&gt; &amp;</type>
+          <declname>twissdata</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r0</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" line="64" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Models.cpp" bodystart="1507" bodyend="1561" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" declline="64" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="Models_8hpp_1ad6f50598686914b09ee51ed9585f8454" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double *</type>
+        <definition>double* ConteMartinitailcut</definition>
+        <argsstring>(double pnumber, double ex, double ey, double sigs, double dponp, map&lt; string, double &gt; &amp;twissheader, map&lt; string, vector&lt; double &gt;&gt; &amp;twissdata, double r0, double aatom)</argsstring>
+        <name>ConteMartinitailcut</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dponp</declname>
+        </param>
+        <param>
+          <type>map&lt; string, double &gt; &amp;</type>
+          <declname>twissheader</declname>
+        </param>
+        <param>
+          <type>map&lt; string, vector&lt; double &gt;&gt; &amp;</type>
+          <declname>twissdata</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r0</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>aatom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" line="68" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Models.cpp" bodystart="1608" bodyend="1667" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" declline="68" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="Models_8hpp_1a9fc594bfaa0f4b061eca6f7ed6c6a3d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double *</type>
+        <definition>double* MadxIBS</definition>
+        <argsstring>(double pnumber, double ex, double ey, double sigs, double dponp, map&lt; string, double &gt; &amp;twissheader, map&lt; string, vector&lt; double &gt;&gt; &amp;twissdata, double r0)</argsstring>
+        <name>MadxIBS</name>
+        <param>
+          <type>double</type>
+          <declname>pnumber</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ey</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dponp</declname>
+        </param>
+        <param>
+          <type>map&lt; string, double &gt; &amp;</type>
+          <declname>twissheader</declname>
+        </param>
+        <param>
+          <type>map&lt; string, vector&lt; double &gt;&gt; &amp;</type>
+          <declname>twissdata</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>r0</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" line="73" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Models.cpp" bodystart="1716" bodyend="1771" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp" declline="73" declcolumn="8"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CoulombLogFunctions_8hpp" kindref="compound">CoulombLogFunctions.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Integrators_8hpp" kindref="compound">Integrators.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="NumericFunctions_8hpp" kindref="compound">NumericFunctions.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Models_8hpp_1a5177ff26367b44c7ee61bc623835f282" kindref="member">printouts</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>output[3]);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="Models_8hpp_1a457aba69818a03f83bcdd6b7cbe6a94b" kindref="member">PiwinskiSmooth</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dponp,<sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twiss,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="Models_8hpp_1a9cea68959e4213d225114601b330ea31" kindref="member">PiwinskiLattice</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dponp,<sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;twissdata,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="Models_8hpp_1a8313e6dc3141e0f08ec219f5d2b5088f" kindref="member">PiwinskiLatticeModified</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dponp,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;twissdata,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="Models_8hpp_1a790596a851d113f7fef4007288ebef8d" kindref="member">Nagaitsev</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dponp,<sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;twissdata,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="Models_8hpp_1a32f7d2d9f5d5b006811501065a091ba5" kindref="member">Nagaitsevtailcut</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dponp,<sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;twissdata,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aatom);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment">================================================================================</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"></highlight></codeline>
+<codeline lineno="37"><highlight class="comment">IBS<sp/>MODELS<sp/>USING<sp/>DEDICATED<sp/>INTEGRATORS<sp/>(SEE<sp/>INTEGRATORS)</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"></highlight></codeline>
+<codeline lineno="39"><highlight class="comment">================================================================================</highlight></codeline>
+<codeline lineno="40"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="Models_8hpp_1af37167229ca90e60b1bb3948120c3d94" kindref="member">ibsmadx</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;twissdata,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>printout);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="Models_8hpp_1a7cd4e1da200f68d350937685feeced50" kindref="member">ibsmadxtailcut</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,<sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;twissdata,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aatom);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="Models_8hpp_1aca7b8c6140de544cc3b805b6a1a34a98" kindref="member">BjorkenMtingwa2</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dponp,<sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;twissdata,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="Models_8hpp_1a18d9b9112d787d706a73db10aa9f8892" kindref="member">BjorkenMtingwa</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dponp,<sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;twissdata,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="Models_8hpp_1a1f0e46c3ecdfe469390552a2e7fe749f" kindref="member">BjorkenMtingwatailcut</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,<sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;twissdata,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aatom);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="Models_8hpp_1adb747c4baceaf64765460d4bcfe4a89a" kindref="member">ConteMartini</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dponp,<sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;twissdata,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="Models_8hpp_1ad6f50598686914b09ee51ed9585f8454" kindref="member">ConteMartinitailcut</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dponp,<sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;twissdata,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aatom);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="Models_8hpp_1a9fc594bfaa0f4b061eca6f7ed6c6a3d7" kindref="member">MadxIBS</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dponp,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;twissdata,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0);</highlight></codeline>
+    </programlisting>
+    <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Models.hpp"/>
+  </compounddef>
+</doxygen>

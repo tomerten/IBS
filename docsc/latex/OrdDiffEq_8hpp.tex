@@ -1,0 +1,38 @@
+\hypertarget{OrdDiffEq_8hpp}{}\doxysection{/home/mti/github-\/tomerten/ibs/cpp/include/ibs\+\_\+bits/\+Ord\+Diff\+Eq.hpp File Reference}
+\label{OrdDiffEq_8hpp}\index{/home/mti/github-\/tomerten/ibs/cpp/include/ibs\_bits/OrdDiffEq.hpp@{/home/mti/github-\/tomerten/ibs/cpp/include/ibs\_bits/OrdDiffEq.hpp}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{OrdDiffEq_8hpp_ad2a6c40b251579ddc74597f93e030013}{Write\+To\+File}} (string filename, vector$<$ double $>$ \&t, vector$<$ double $>$ \&ex, vector$<$ double $>$ \&ey, vector$<$ double $>$ \&sigs)
+\item 
+void \mbox{\hyperlink{OrdDiffEq_8hpp_a2911080d9ba7a80b86762e0e7370d7a1}{ODE}} (map$<$ string, double $>$ \&twiss, map$<$ string, vector$<$ double $>$$>$ \&twissdata, int nrf, double harmon\mbox{[}$\,$\mbox{]}, double voltages\mbox{[}$\,$\mbox{]}, vector$<$ double $>$ \&t, vector$<$ double $>$ \&ex, vector$<$ double $>$ \&ey, vector$<$ double $>$ \&sigs, vector$<$ double $>$ sige, int model, double pnumber, int couplingpercentage, double threshold, string method)
+\item 
+void \mbox{\hyperlink{OrdDiffEq_8hpp_aaa1e63178907dcd61097398cc60ef686}{ODE}} (map$<$ string, double $>$ \&twiss, map$<$ string, vector$<$ double $>$$>$ \&twissdata, int nrf, double harmon\mbox{[}$\,$\mbox{]}, double voltages\mbox{[}$\,$\mbox{]}, vector$<$ double $>$ \&t, vector$<$ double $>$ \&ex, vector$<$ double $>$ \&ey, vector$<$ double $>$ \&sigs, vector$<$ double $>$ sige, int model, double pnumber, int nsteps, double stepsize, int couplingpercentage, string method)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{OrdDiffEq_8hpp_a2911080d9ba7a80b86762e0e7370d7a1}\label{OrdDiffEq_8hpp_a2911080d9ba7a80b86762e0e7370d7a1}} 
+\index{OrdDiffEq.hpp@{OrdDiffEq.hpp}!ODE@{ODE}}
+\index{ODE@{ODE}!OrdDiffEq.hpp@{OrdDiffEq.hpp}}
+\doxysubsubsection{\texorpdfstring{ODE()}{ODE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ODE (\begin{DoxyParamCaption}\item[{map$<$ string, double $>$ \&}]{twiss,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{twissdata,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{vector$<$ double $>$ \&}]{t,  }\item[{vector$<$ double $>$ \&}]{ex,  }\item[{vector$<$ double $>$ \&}]{ey,  }\item[{vector$<$ double $>$ \&}]{sigs,  }\item[{vector$<$ double $>$}]{sige,  }\item[{int}]{model,  }\item[{double}]{pnumber,  }\item[{int}]{couplingpercentage,  }\item[{double}]{threshold,  }\item[{string}]{method }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{OrdDiffEq_8hpp_aaa1e63178907dcd61097398cc60ef686}\label{OrdDiffEq_8hpp_aaa1e63178907dcd61097398cc60ef686}} 
+\index{OrdDiffEq.hpp@{OrdDiffEq.hpp}!ODE@{ODE}}
+\index{ODE@{ODE}!OrdDiffEq.hpp@{OrdDiffEq.hpp}}
+\doxysubsubsection{\texorpdfstring{ODE()}{ODE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ODE (\begin{DoxyParamCaption}\item[{map$<$ string, double $>$ \&}]{twiss,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{twissdata,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{vector$<$ double $>$ \&}]{t,  }\item[{vector$<$ double $>$ \&}]{ex,  }\item[{vector$<$ double $>$ \&}]{ey,  }\item[{vector$<$ double $>$ \&}]{sigs,  }\item[{vector$<$ double $>$}]{sige,  }\item[{int}]{model,  }\item[{double}]{pnumber,  }\item[{int}]{nsteps,  }\item[{double}]{stepsize,  }\item[{int}]{couplingpercentage,  }\item[{string}]{method }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{OrdDiffEq_8hpp_ad2a6c40b251579ddc74597f93e030013}\label{OrdDiffEq_8hpp_ad2a6c40b251579ddc74597f93e030013}} 
+\index{OrdDiffEq.hpp@{OrdDiffEq.hpp}!WriteToFile@{WriteToFile}}
+\index{WriteToFile@{WriteToFile}!OrdDiffEq.hpp@{OrdDiffEq.hpp}}
+\doxysubsubsection{\texorpdfstring{WriteToFile()}{WriteToFile()}}
+{\footnotesize\ttfamily void Write\+To\+File (\begin{DoxyParamCaption}\item[{string}]{filename,  }\item[{vector$<$ double $>$ \&}]{t,  }\item[{vector$<$ double $>$ \&}]{ex,  }\item[{vector$<$ double $>$ \&}]{ey,  }\item[{vector$<$ double $>$ \&}]{sigs }\end{DoxyParamCaption})}
+

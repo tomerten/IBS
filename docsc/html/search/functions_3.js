@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['effectiverfvoltageinelectronvolt_135',['EffectiveRFVoltageInElectronVolt',['../NumericFunctions_8hpp.html#a88080b62380f71ff96ffdc74a4904f31',1,'EffectiveRFVoltageInElectronVolt(double phi, double charge, int nrf, double harmon[], double voltages[]):&#160;NumericFunctions.cpp'],['../NumericFunctions_8cpp.html#a88080b62380f71ff96ffdc74a4904f31',1,'EffectiveRFVoltageInElectronVolt(double phi, double charge, int nrf, double harmon[], double voltages[]):&#160;NumericFunctions.cpp']]],
+  ['effectiverfvoltageinelectronvoltprime_136',['EffectiveRFVoltageInElectronVoltPrime',['../NumericFunctions_8hpp.html#a5bf77b80707fdf43c3cf9a7b3cb5a1a0',1,'EffectiveRFVoltageInElectronVoltPrime(double phi, double charge, int nrf, double harmon[], double voltages[]):&#160;NumericFunctions.cpp'],['../NumericFunctions_8cpp.html#a5bf77b80707fdf43c3cf9a7b3cb5a1a0',1,'EffectiveRFVoltageInElectronVoltPrime(double phi, double charge, int nrf, double harmon[], double voltages[]):&#160;NumericFunctions.cpp']]],
+  ['eta_137',['eta',['../NumericFunctions_8hpp.html#a82413379d3aa50e090b13e6bd5d2a470',1,'eta(double gamma, double gammatr):&#160;NumericFunctions.cpp'],['../NumericFunctions_8cpp.html#a82413379d3aa50e090b13e6bd5d2a470',1,'eta(double gamma, double gammatr):&#160;NumericFunctions.cpp']]]
+];

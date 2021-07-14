@@ -8,6 +8,7 @@ Top-level package for ibs.
 """
 
 import ibs.cli_runode
+
 __version__ = "0.0.0"
 
 
@@ -22,3 +23,5 @@ def hello(who="world"):
 
 
 import IBSLib as ibslib
+
+from .cli_runode import plot

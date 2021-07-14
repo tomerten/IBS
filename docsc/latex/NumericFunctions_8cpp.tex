@@ -1,0 +1,227 @@
+\hypertarget{NumericFunctions_8cpp}{}\doxysection{/home/mti/github-\/tomerten/ibs/cpp/src/\+Numeric\+Functions.cpp File Reference}
+\label{NumericFunctions_8cpp}\index{/home/mti/github-\/tomerten/ibs/cpp/src/NumericFunctions.cpp@{/home/mti/github-\/tomerten/ibs/cpp/src/NumericFunctions.cpp}}
+{\ttfamily \#include \char`\"{}../include/ibs\+\_\+bits/\+Numeric\+Functions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{NumericFunctions_8cpp_affe776513b24d84b39af8ab0930fef7f}{max}}(a,  b)
+\item 
+\#define \mbox{\hyperlink{NumericFunctions_8cpp_ac6afabdc09a49a433ee19d8a9486056d}{min}}(a,  b)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_aee56f422409b1d45d63b2f18808b96b1}{sigefromsigs}} (double omega0, double sigs, double qs, double gamma, double gammatr)
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_a67d4e0c2346e489535ec10ced4e81a92}{sigsfromsige}} (double sige, double gamma, double gammatr, double omegas)
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_a82413379d3aa50e090b13e6bd5d2a470}{eta}} (double gamma, double gammatr)
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_a8c9a407acfb650574b4a06a2db8180ec}{fmohl}} (double a, double b, double q, int n)
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_af0a22976992ba63309d36536957f72df}{Particle\+Radius}} (double charge, double aatom)
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_a62e62321d9e22d41773039926c86b084}{Beta\+Relativistic\+From\+Gamma}} (double gamma)
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_ab1f8d1bb5c0bd5775eaa65e99b14d245}{rds}} (double x, double y, double z)
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_a88080b62380f71ff96ffdc74a4904f31}{Effective\+RFVoltage\+In\+Electron\+Volt}} (double phi, double charge, int nrf, double harmon\mbox{[}$\,$\mbox{]}, double voltages\mbox{[}$\,$\mbox{]})
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_a5bf77b80707fdf43c3cf9a7b3cb5a1a0}{Effective\+RFVoltage\+In\+Electron\+Volt\+Prime}} (double phi, double charge, int nrf, double harmon\mbox{[}$\,$\mbox{]}, double voltages\mbox{[}$\,$\mbox{]})
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_a80fbe13a6283d06cc250bfef1cb38f6a}{Veff\+RFe\+VRadlosses}} (double phi, double U0, double charge, int nrf, double harmon\mbox{[}$\,$\mbox{]}, double voltages\mbox{[}$\,$\mbox{]})
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_a1a8df6971aa019b325647dcc9df43343}{Synchronuous\+Phase}} (double target, double init\+\_\+phi, double U0, double charge, int nrf, double harmon\mbox{[}$\,$\mbox{]}, double voltages\mbox{[}$\,$\mbox{]}, double epsilon)
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_afaa6e52a0176321c1ca7ba8af91f3498}{Veff\+RFe\+VPotential\+Well\+Distortion}} (double phi, double U0, double charge, int nrf, double harmon\mbox{[}$\,$\mbox{]}, double voltages\mbox{[}$\,$\mbox{]}, double L, double N, double sigs, double pc)
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_a5e36c772b619064009590d4399793a6e}{Veff\+RFe\+VPotential\+Well\+Distortion\+Prime}} (double phi, double U0, double charge, int nrf, double harmon\mbox{[}$\,$\mbox{]}, double voltages\mbox{[}$\,$\mbox{]}, double L, double N, double sigs, double pc)
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_ad1b45469475427d0cac75acf9245badd}{Synchronuous\+Phase\+With\+PWD}} (double target, double init\+\_\+phi, double U0, double charge, int nrf, double harmon\mbox{[}$\,$\mbox{]}, double voltages\mbox{[}$\,$\mbox{]}, double L, double N, double sigs, double pc, double epsilon)
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_adeb8136a44f6bab90c66ae55db2a2ca2}{Synchrotron\+Tune}} (double omega0, double U0, double charge, int nrf, double harmon\mbox{[}$\,$\mbox{]}, double voltages\mbox{[}$\,$\mbox{]}, double phis, double \mbox{\hyperlink{NumericFunctions_8cpp_a82413379d3aa50e090b13e6bd5d2a470}{eta}}, double pc)
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_aa69cd4e636551a0ec2fe691bfe5c3493}{Synchrotron\+Tune\+PWD}} (double omega0, double U0, double charge, int nrf, double harmon\mbox{[}$\,$\mbox{]}, double voltages\mbox{[}$\,$\mbox{]}, double L, double N, double sigs, double phis, double \mbox{\hyperlink{NumericFunctions_8cpp_a82413379d3aa50e090b13e6bd5d2a470}{eta}}, double pc)
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_a5e1e2d811d4be9befd501d37ba774704}{Sige\+From\+RFAnd\+Sigs}} (double sigs, double U0, double charge, int nrf, double harmon\mbox{[}$\,$\mbox{]}, double voltages\mbox{[}$\,$\mbox{]}, double gamma, double gammatr, double pc, double circ, double phis, bool printout)
+\item 
+void \mbox{\hyperlink{NumericFunctions_8cpp_a194fecd97256a8796080aa16e118d890}{update\+Twiss}} (map$<$ string, vector$<$ double $>$$>$ \&table)
+\item 
+void \mbox{\hyperlink{NumericFunctions_8cpp_a8ec38a3d7a0099ca0b230d32559e72b8}{print\+Twiss\+Map}} (string key, map$<$ string, vector$<$ double $>$$>$ \&table)
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_a6e88680d2d40201edcff14e02fdf3f0d}{dee\+\_\+to\+\_\+dpp}} (double dee, double beta0)
+\item 
+double \mbox{\hyperlink{NumericFunctions_8cpp_a12cee73c1a853e5184eb5b897f08e31b}{dpp\+\_\+to\+\_\+dee}} (double dpp, double beta0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{NumericFunctions_8cpp_affe776513b24d84b39af8ab0930fef7f}\label{NumericFunctions_8cpp_affe776513b24d84b39af8ab0930fef7f}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!max@{max}}
+\index{max@{max}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{max}{max}}
+{\footnotesize\ttfamily \#define max(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  (\{                                                                           \(\backslash\)}
+\DoxyCodeLine{    \_\_typeof\_\_(a) \_a = (a);                                                    \(\backslash\)}
+\DoxyCodeLine{    \_\_typeof\_\_(b) \_b = (b);                                                    \(\backslash\)}
+\DoxyCodeLine{    \_a > \_b ? \_a : \_b;                                                         \(\backslash\)}
+\DoxyCodeLine{  \})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{NumericFunctions_8cpp_ac6afabdc09a49a433ee19d8a9486056d}\label{NumericFunctions_8cpp_ac6afabdc09a49a433ee19d8a9486056d}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!min@{min}}
+\index{min@{min}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily \#define min(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  (\{                                                                           \(\backslash\)}
+\DoxyCodeLine{    \_\_typeof\_\_(a) \_a = (a);                                                    \(\backslash\)}
+\DoxyCodeLine{    \_\_typeof\_\_(b) \_b = (b);                                                    \(\backslash\)}
+\DoxyCodeLine{    \_a < \_b ? \_a : \_b;                                                         \(\backslash\)}
+\DoxyCodeLine{  \})}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{NumericFunctions_8cpp_a62e62321d9e22d41773039926c86b084}\label{NumericFunctions_8cpp_a62e62321d9e22d41773039926c86b084}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!BetaRelativisticFromGamma@{BetaRelativisticFromGamma}}
+\index{BetaRelativisticFromGamma@{BetaRelativisticFromGamma}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{BetaRelativisticFromGamma()}{BetaRelativisticFromGamma()}}
+{\footnotesize\ttfamily double Beta\+Relativistic\+From\+Gamma (\begin{DoxyParamCaption}\item[{double}]{gamma }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_a6e88680d2d40201edcff14e02fdf3f0d}\label{NumericFunctions_8cpp_a6e88680d2d40201edcff14e02fdf3f0d}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!dee\_to\_dpp@{dee\_to\_dpp}}
+\index{dee\_to\_dpp@{dee\_to\_dpp}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{dee\_to\_dpp()}{dee\_to\_dpp()}}
+{\footnotesize\ttfamily double dee\+\_\+to\+\_\+dpp (\begin{DoxyParamCaption}\item[{double}]{dee,  }\item[{double}]{beta0 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_a12cee73c1a853e5184eb5b897f08e31b}\label{NumericFunctions_8cpp_a12cee73c1a853e5184eb5b897f08e31b}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!dpp\_to\_dee@{dpp\_to\_dee}}
+\index{dpp\_to\_dee@{dpp\_to\_dee}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{dpp\_to\_dee()}{dpp\_to\_dee()}}
+{\footnotesize\ttfamily double dpp\+\_\+to\+\_\+dee (\begin{DoxyParamCaption}\item[{double}]{dpp,  }\item[{double}]{beta0 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_a88080b62380f71ff96ffdc74a4904f31}\label{NumericFunctions_8cpp_a88080b62380f71ff96ffdc74a4904f31}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!EffectiveRFVoltageInElectronVolt@{EffectiveRFVoltageInElectronVolt}}
+\index{EffectiveRFVoltageInElectronVolt@{EffectiveRFVoltageInElectronVolt}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{EffectiveRFVoltageInElectronVolt()}{EffectiveRFVoltageInElectronVolt()}}
+{\footnotesize\ttfamily double Effective\+RFVoltage\+In\+Electron\+Volt (\begin{DoxyParamCaption}\item[{double}]{phi,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_a5bf77b80707fdf43c3cf9a7b3cb5a1a0}\label{NumericFunctions_8cpp_a5bf77b80707fdf43c3cf9a7b3cb5a1a0}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!EffectiveRFVoltageInElectronVoltPrime@{EffectiveRFVoltageInElectronVoltPrime}}
+\index{EffectiveRFVoltageInElectronVoltPrime@{EffectiveRFVoltageInElectronVoltPrime}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{EffectiveRFVoltageInElectronVoltPrime()}{EffectiveRFVoltageInElectronVoltPrime()}}
+{\footnotesize\ttfamily double Effective\+RFVoltage\+In\+Electron\+Volt\+Prime (\begin{DoxyParamCaption}\item[{double}]{phi,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_a82413379d3aa50e090b13e6bd5d2a470}\label{NumericFunctions_8cpp_a82413379d3aa50e090b13e6bd5d2a470}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!eta@{eta}}
+\index{eta@{eta}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{eta()}{eta()}}
+{\footnotesize\ttfamily double eta (\begin{DoxyParamCaption}\item[{double}]{gamma,  }\item[{double}]{gammatr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_a8c9a407acfb650574b4a06a2db8180ec}\label{NumericFunctions_8cpp_a8c9a407acfb650574b4a06a2db8180ec}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!fmohl@{fmohl}}
+\index{fmohl@{fmohl}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{fmohl()}{fmohl()}}
+{\footnotesize\ttfamily double fmohl (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{q,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_af0a22976992ba63309d36536957f72df}\label{NumericFunctions_8cpp_af0a22976992ba63309d36536957f72df}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!ParticleRadius@{ParticleRadius}}
+\index{ParticleRadius@{ParticleRadius}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{ParticleRadius()}{ParticleRadius()}}
+{\footnotesize\ttfamily double Particle\+Radius (\begin{DoxyParamCaption}\item[{double}]{charge,  }\item[{double}]{aatom }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_a8ec38a3d7a0099ca0b230d32559e72b8}\label{NumericFunctions_8cpp_a8ec38a3d7a0099ca0b230d32559e72b8}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!printTwissMap@{printTwissMap}}
+\index{printTwissMap@{printTwissMap}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{printTwissMap()}{printTwissMap()}}
+{\footnotesize\ttfamily void print\+Twiss\+Map (\begin{DoxyParamCaption}\item[{string}]{key,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{table }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_ab1f8d1bb5c0bd5775eaa65e99b14d245}\label{NumericFunctions_8cpp_ab1f8d1bb5c0bd5775eaa65e99b14d245}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!rds@{rds}}
+\index{rds@{rds}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{rds()}{rds()}}
+{\footnotesize\ttfamily double rds (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_a5e1e2d811d4be9befd501d37ba774704}\label{NumericFunctions_8cpp_a5e1e2d811d4be9befd501d37ba774704}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!SigeFromRFAndSigs@{SigeFromRFAndSigs}}
+\index{SigeFromRFAndSigs@{SigeFromRFAndSigs}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{SigeFromRFAndSigs()}{SigeFromRFAndSigs()}}
+{\footnotesize\ttfamily double Sige\+From\+RFAnd\+Sigs (\begin{DoxyParamCaption}\item[{double}]{sigs,  }\item[{double}]{U0,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{double}]{gamma,  }\item[{double}]{gammatr,  }\item[{double}]{pc,  }\item[{double}]{circ,  }\item[{double}]{phis,  }\item[{bool}]{printout }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_aee56f422409b1d45d63b2f18808b96b1}\label{NumericFunctions_8cpp_aee56f422409b1d45d63b2f18808b96b1}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!sigefromsigs@{sigefromsigs}}
+\index{sigefromsigs@{sigefromsigs}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{sigefromsigs()}{sigefromsigs()}}
+{\footnotesize\ttfamily double sigefromsigs (\begin{DoxyParamCaption}\item[{double}]{omega0,  }\item[{double}]{sigs,  }\item[{double}]{qs,  }\item[{double}]{gamma,  }\item[{double}]{gammatr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_a67d4e0c2346e489535ec10ced4e81a92}\label{NumericFunctions_8cpp_a67d4e0c2346e489535ec10ced4e81a92}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!sigsfromsige@{sigsfromsige}}
+\index{sigsfromsige@{sigsfromsige}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{sigsfromsige()}{sigsfromsige()}}
+{\footnotesize\ttfamily double sigsfromsige (\begin{DoxyParamCaption}\item[{double}]{sige,  }\item[{double}]{gamma,  }\item[{double}]{gammatr,  }\item[{double}]{omegas }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_a1a8df6971aa019b325647dcc9df43343}\label{NumericFunctions_8cpp_a1a8df6971aa019b325647dcc9df43343}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!SynchronuousPhase@{SynchronuousPhase}}
+\index{SynchronuousPhase@{SynchronuousPhase}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{SynchronuousPhase()}{SynchronuousPhase()}}
+{\footnotesize\ttfamily double Synchronuous\+Phase (\begin{DoxyParamCaption}\item[{double}]{target,  }\item[{double}]{init\+\_\+phi,  }\item[{double}]{U0,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{double}]{epsilon }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_ad1b45469475427d0cac75acf9245badd}\label{NumericFunctions_8cpp_ad1b45469475427d0cac75acf9245badd}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!SynchronuousPhaseWithPWD@{SynchronuousPhaseWithPWD}}
+\index{SynchronuousPhaseWithPWD@{SynchronuousPhaseWithPWD}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{SynchronuousPhaseWithPWD()}{SynchronuousPhaseWithPWD()}}
+{\footnotesize\ttfamily double Synchronuous\+Phase\+With\+PWD (\begin{DoxyParamCaption}\item[{double}]{target,  }\item[{double}]{init\+\_\+phi,  }\item[{double}]{U0,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{double}]{L,  }\item[{double}]{N,  }\item[{double}]{sigs,  }\item[{double}]{pc,  }\item[{double}]{epsilon }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_adeb8136a44f6bab90c66ae55db2a2ca2}\label{NumericFunctions_8cpp_adeb8136a44f6bab90c66ae55db2a2ca2}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!SynchrotronTune@{SynchrotronTune}}
+\index{SynchrotronTune@{SynchrotronTune}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{SynchrotronTune()}{SynchrotronTune()}}
+{\footnotesize\ttfamily double Synchrotron\+Tune (\begin{DoxyParamCaption}\item[{double}]{omega0,  }\item[{double}]{U0,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{double}]{phis,  }\item[{double}]{eta,  }\item[{double}]{pc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_aa69cd4e636551a0ec2fe691bfe5c3493}\label{NumericFunctions_8cpp_aa69cd4e636551a0ec2fe691bfe5c3493}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!SynchrotronTunePWD@{SynchrotronTunePWD}}
+\index{SynchrotronTunePWD@{SynchrotronTunePWD}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{SynchrotronTunePWD()}{SynchrotronTunePWD()}}
+{\footnotesize\ttfamily double Synchrotron\+Tune\+PWD (\begin{DoxyParamCaption}\item[{double}]{omega0,  }\item[{double}]{U0,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{double}]{L,  }\item[{double}]{N,  }\item[{double}]{sigs,  }\item[{double}]{phis,  }\item[{double}]{eta,  }\item[{double}]{pc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_a194fecd97256a8796080aa16e118d890}\label{NumericFunctions_8cpp_a194fecd97256a8796080aa16e118d890}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!updateTwiss@{updateTwiss}}
+\index{updateTwiss@{updateTwiss}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{updateTwiss()}{updateTwiss()}}
+{\footnotesize\ttfamily void update\+Twiss (\begin{DoxyParamCaption}\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{table }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_afaa6e52a0176321c1ca7ba8af91f3498}\label{NumericFunctions_8cpp_afaa6e52a0176321c1ca7ba8af91f3498}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!VeffRFeVPotentialWellDistortion@{VeffRFeVPotentialWellDistortion}}
+\index{VeffRFeVPotentialWellDistortion@{VeffRFeVPotentialWellDistortion}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{VeffRFeVPotentialWellDistortion()}{VeffRFeVPotentialWellDistortion()}}
+{\footnotesize\ttfamily double Veff\+RFe\+VPotential\+Well\+Distortion (\begin{DoxyParamCaption}\item[{double}]{phi,  }\item[{double}]{U0,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{double}]{L,  }\item[{double}]{N,  }\item[{double}]{sigs,  }\item[{double}]{pc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_a5e36c772b619064009590d4399793a6e}\label{NumericFunctions_8cpp_a5e36c772b619064009590d4399793a6e}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!VeffRFeVPotentialWellDistortionPrime@{VeffRFeVPotentialWellDistortionPrime}}
+\index{VeffRFeVPotentialWellDistortionPrime@{VeffRFeVPotentialWellDistortionPrime}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{VeffRFeVPotentialWellDistortionPrime()}{VeffRFeVPotentialWellDistortionPrime()}}
+{\footnotesize\ttfamily double Veff\+RFe\+VPotential\+Well\+Distortion\+Prime (\begin{DoxyParamCaption}\item[{double}]{phi,  }\item[{double}]{U0,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{double}]{L,  }\item[{double}]{N,  }\item[{double}]{sigs,  }\item[{double}]{pc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NumericFunctions_8cpp_a80fbe13a6283d06cc250bfef1cb38f6a}\label{NumericFunctions_8cpp_a80fbe13a6283d06cc250bfef1cb38f6a}} 
+\index{NumericFunctions.cpp@{NumericFunctions.cpp}!VeffRFeVRadlosses@{VeffRFeVRadlosses}}
+\index{VeffRFeVRadlosses@{VeffRFeVRadlosses}!NumericFunctions.cpp@{NumericFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{VeffRFeVRadlosses()}{VeffRFeVRadlosses()}}
+{\footnotesize\ttfamily double Veff\+RFe\+VRadlosses (\begin{DoxyParamCaption}\item[{double}]{phi,  }\item[{double}]{U0,  }\item[{double}]{charge,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+

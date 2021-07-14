@@ -1,0 +1,46 @@
+\hypertarget{CoulombLogFunctions_8hpp}{}\doxysection{/home/mti/github-\/tomerten/ibs/cpp/include/ibs\+\_\+bits/\+Coulomb\+Log\+Functions.hpp File Reference}
+\label{CoulombLogFunctions_8hpp}\index{/home/mti/github-\/tomerten/ibs/cpp/include/ibs\_bits/CoulombLogFunctions.hpp@{/home/mti/github-\/tomerten/ibs/cpp/include/ibs\_bits/CoulombLogFunctions.hpp}}
+{\ttfamily \#include \char`\"{}Numeric\+Functions.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Radiation\+Damping.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{CoulombLogFunctions_8hpp_abf7b9e9c5da8bf0b23fffcb01961ebbe}{twclog}} (double pnumber, double bx, double by, double dx, double dy, double ex, double ey, double r0, double gamma, double charge, double en0, double amass, double sige, double sigt, double $\ast$clog)
+\item 
+void \mbox{\hyperlink{CoulombLogFunctions_8hpp_aaeb3e23eea67e16a5329a24687458297}{twclogtail}} (double pnumber, double l, double bx, double by, double dx, double dpx, double dy, double dpy, double ax, double ay, double angle, double k1l, double k1sl, double ex, double ey, double r0, double aatom, double gamma, double en0, double len, double amass, double charge, double sige, double sigt, double $\ast$clog)
+\item 
+void \mbox{\hyperlink{CoulombLogFunctions_8hpp_ab908400a7d0b3f9d9d35da9684d875c2}{Coulomb\+Log}} (double pnumber, double ex, double ey, map$<$ string, double $>$ \&twissheader, double sige, double sigt, double r0, bool printout, double $\ast$clog)
+\item 
+void \mbox{\hyperlink{CoulombLogFunctions_8hpp_ada19d63bb5e67dfd7885b4bd24c5bcb1}{Tail\+Cut\+Coulomb\+Log}} (double pnumber, double ex, double ey, map$<$ string, double $>$ \&twissheader, double sige, double sigt, double tauradx, double taurady, double taurads, double r0, bool printout, double $\ast$clog)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{CoulombLogFunctions_8hpp_ab908400a7d0b3f9d9d35da9684d875c2}\label{CoulombLogFunctions_8hpp_ab908400a7d0b3f9d9d35da9684d875c2}} 
+\index{CoulombLogFunctions.hpp@{CoulombLogFunctions.hpp}!CoulombLog@{CoulombLog}}
+\index{CoulombLog@{CoulombLog}!CoulombLogFunctions.hpp@{CoulombLogFunctions.hpp}}
+\doxysubsubsection{\texorpdfstring{CoulombLog()}{CoulombLog()}}
+{\footnotesize\ttfamily void Coulomb\+Log (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{map$<$ string, double $>$ \&}]{twissheader,  }\item[{double}]{sige,  }\item[{double}]{sigt,  }\item[{double}]{r0,  }\item[{bool}]{printout,  }\item[{double $\ast$}]{clog }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CoulombLogFunctions_8hpp_ada19d63bb5e67dfd7885b4bd24c5bcb1}\label{CoulombLogFunctions_8hpp_ada19d63bb5e67dfd7885b4bd24c5bcb1}} 
+\index{CoulombLogFunctions.hpp@{CoulombLogFunctions.hpp}!TailCutCoulombLog@{TailCutCoulombLog}}
+\index{TailCutCoulombLog@{TailCutCoulombLog}!CoulombLogFunctions.hpp@{CoulombLogFunctions.hpp}}
+\doxysubsubsection{\texorpdfstring{TailCutCoulombLog()}{TailCutCoulombLog()}}
+{\footnotesize\ttfamily void Tail\+Cut\+Coulomb\+Log (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{map$<$ string, double $>$ \&}]{twissheader,  }\item[{double}]{sige,  }\item[{double}]{sigt,  }\item[{double}]{tauradx,  }\item[{double}]{taurady,  }\item[{double}]{taurads,  }\item[{double}]{r0,  }\item[{bool}]{printout,  }\item[{double $\ast$}]{clog }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CoulombLogFunctions_8hpp_abf7b9e9c5da8bf0b23fffcb01961ebbe}\label{CoulombLogFunctions_8hpp_abf7b9e9c5da8bf0b23fffcb01961ebbe}} 
+\index{CoulombLogFunctions.hpp@{CoulombLogFunctions.hpp}!twclog@{twclog}}
+\index{twclog@{twclog}!CoulombLogFunctions.hpp@{CoulombLogFunctions.hpp}}
+\doxysubsubsection{\texorpdfstring{twclog()}{twclog()}}
+{\footnotesize\ttfamily void twclog (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{bx,  }\item[{double}]{by,  }\item[{double}]{dx,  }\item[{double}]{dy,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{r0,  }\item[{double}]{gamma,  }\item[{double}]{charge,  }\item[{double}]{en0,  }\item[{double}]{amass,  }\item[{double}]{sige,  }\item[{double}]{sigt,  }\item[{double $\ast$}]{clog }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CoulombLogFunctions_8hpp_aaeb3e23eea67e16a5329a24687458297}\label{CoulombLogFunctions_8hpp_aaeb3e23eea67e16a5329a24687458297}} 
+\index{CoulombLogFunctions.hpp@{CoulombLogFunctions.hpp}!twclogtail@{twclogtail}}
+\index{twclogtail@{twclogtail}!CoulombLogFunctions.hpp@{CoulombLogFunctions.hpp}}
+\doxysubsubsection{\texorpdfstring{twclogtail()}{twclogtail()}}
+{\footnotesize\ttfamily void twclogtail (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{l,  }\item[{double}]{bx,  }\item[{double}]{by,  }\item[{double}]{dx,  }\item[{double}]{dpx,  }\item[{double}]{dy,  }\item[{double}]{dpy,  }\item[{double}]{ax,  }\item[{double}]{ay,  }\item[{double}]{angle,  }\item[{double}]{k1l,  }\item[{double}]{k1sl,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{r0,  }\item[{double}]{aatom,  }\item[{double}]{gamma,  }\item[{double}]{en0,  }\item[{double}]{len,  }\item[{double}]{amass,  }\item[{double}]{charge,  }\item[{double}]{sige,  }\item[{double}]{sigt,  }\item[{double $\ast$}]{clog }\end{DoxyParamCaption})}
+

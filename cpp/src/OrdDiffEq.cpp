@@ -367,7 +367,7 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
     ddt = min(ddt, 1.0 / ibs[0]);
     ddt = min(ddt, 1.0 / ibs[1]);
     ddt = min(ddt, 1.0 / ibs[2]);
-    // ddt /= 2.0;
+    ddt /= 2.0;
 
     // ibs growth rates update
     switch (model) {
@@ -467,7 +467,7 @@ void ODE(map<string, double> &twiss, map<string, vector<double>> &twissdata,
     i++;
 
     if (method == "rlx") {
-      ddt *= 2.;
+      ddt *= 4.;
       double ratio_x = tauradx * aex;
       double ratio_y = taurady * aey;
       double ratio_s = taurads * aes;

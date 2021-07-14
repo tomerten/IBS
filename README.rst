@@ -2,11 +2,12 @@
 IBS - Intra Beam Scattering
 ===========================
 
+
 C++ Library with PYBIND11 Python wrapper for IBS calculations, including an ODE model simulation.
 
 
-* Free software: MIT license
-* Documentation: https://ibs.readthedocs.io.
+*  Free software: MIT license
+*  Documentation: https://ibs.readthedocs.io.
 
 
 Features
@@ -40,14 +41,14 @@ Coublomb Log methods
 - TailCutCoulombLog - uses ring averages
 
 Integration methods
-===================
+-------------------
 
 - Simpson (standard implementation)
 - SimpsonDecade - Simspon per decade for covering large spread in integration ranges (ususally 50 orders of magnitude difference between low and high)
 - TWINT, SimsponDecade with scaling method
 
 Radiation Damping
-=================
+-----------------
 
 - Radiation Damping using smooth lattice approximation 
 - Radiation Damping element by element
@@ -56,7 +57,7 @@ Radiation Damping
 - Critical omega, theta, photon energy
 
 Numeric Functions
-=================
+-----------------
 
 - sigefromsigs
 - eta 
@@ -75,7 +76,7 @@ Numeric Functions
 - csige (calculates sige from RF settings, radiation losses and sigs)
 
 ODE 
-===
+---
 
 The tables below show examples of the output of the ODE method, with `threshold` 
 set to `1e-3` written to a csv file.
