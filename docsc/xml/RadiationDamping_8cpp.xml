@@ -100,6 +100,17 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method to print out radiation integrals.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array output of Radation Damping Methods (Approx and Lattice) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -137,6 +148,61 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method for calculating approximate radiation integrals. The approximation is due to using ring averages for the bending radius and beta functions.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>latticeLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of the accelerator lattice </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gamma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relativistic gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gammaTransition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Transition relativistic gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dipoleBendingRadius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Main dipole bending radius </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>betax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ring averaged horizontal beta </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>betay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ring averaged vertical beta</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Approximate Radiation Damping integrals: <formula id="7">$ I_1, I_2, I_3, I_{4x}, I_{4y}, I_{5x}, I_{5y} $</formula></para>
+</simplesect>
+<simplesect kind="note"><para>Based on formulas in the Accelerator Handbook for Physicists and Engineers. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -154,6 +220,23 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method for calculating element weighted radiation integrals. The integrals are calculated element by element and then weighted with the element&apos;s length.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Table data in Map format. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="twiss_8cpp_1ab4bbb88db0c39db6588438e3be7888a5" kindref="member">GetTwissTableAsMap</ref></para>
+</simplesect>
+<simplesect kind="return"><para>Element weighted Radiation Damping integrals: <formula id="7">$ I_1, I_2, I_3, I_{4x}, I_{4y}, I_{5x}, I_{5y} $</formula></para>
+</simplesect>
+<simplesect kind="note"><para>Based on formulas in the Accelerator Handbook for Physicists and </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -184,6 +267,47 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method that calculates the radiation damping times, the radiation partition numbers and radiation and quantum excitation equilibria for horizontal emittance, vertical emittance, energy spread squared and bunchlength.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>twissheadermap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Header Map </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>radiationIntegrals</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output of the Radiation Damping Integrals Methods </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aatom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Atomic Mass Number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Synchrotron Tune</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="RadiationDamping_8hpp_1ab17d5a1994334f44cad3bded2095bdb4" kindref="member">RadiationDampingApprox</ref>, <ref refid="RadiationDamping_8hpp_1a2ce252d6fff2c43456d535ab02385b8d" kindref="member">RadiationDampingLattice</ref></para>
+</simplesect>
+<simplesect kind="return"><para><formula id="9">$ \tau_x, \tau_y, \tau_{\sigam_E^2}, \epsilon_x^\infty, \epsilon_y^\infty, \sigma_E^2, \sigma_s, J_x, J_y $</formula></para>
+</simplesect>
+<simplesect kind="note"><para>Based on formulas in the Accelerator Handbook for Physicists and </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -209,6 +333,37 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method to calculated the radiation losses per turn [eV].</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>twiss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Header Map </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>I2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second radiation integral </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aatom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Atomic Mass Number</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Radiation Losses per turn [eV]</para>
+</simplesect>
+<simplesect kind="note"><para>Based on formulas in the Accelerator Handbook for Physicists and </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -234,6 +389,37 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>CALCULATE THE CRITICAL FREQUENCY AND ANGLE OF EMITTED RADIATION</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rho</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Average bending radius </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gamma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relativistic gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>omega</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Angular revolution frequency</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Radiation data as an array containing 0 -&gt; omega critical 1 -&gt; theta critical 2 -&gt; critical photon energy for given omega 3 -&gt; average energy per photon 4 -&gt; average number of photons emitted per turn</para>
+</simplesect>
+<simplesect kind="note"><para>Based on Wolski Accelerator Lectures. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -295,6 +481,109 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method to calculate Radiation Damping integrals for single lattice element.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of the element </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal beta function at the element </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>by</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical beta function at the element </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal Dispersion at the element </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dpx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Derivative of the horizontal dispersion at the element </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical dispersion at the element </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Derivative of the vertical dispersion at the element </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal alpha </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical alpha </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bending angle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k1l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Quadrupole component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k1sl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Skew quadrupole component</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Radiation Damping integrals for single lattice element.</para>
+</simplesect>
+<simplesect kind="note"><para>Based on formulas in the Accelerator Handbook for Physicists and </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

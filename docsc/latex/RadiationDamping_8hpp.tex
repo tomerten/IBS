@@ -33,39 +33,176 @@ double $\ast$ \mbox{\hyperlink{RadiationDamping_8hpp_a273d98b9b67c5016b3a794a4b8
 \doxysubsubsection{\texorpdfstring{printradint()}{printradint()}}
 {\footnotesize\ttfamily void printradint (\begin{DoxyParamCaption}\item[{double}]{out\mbox{[}7\mbox{]} }\end{DoxyParamCaption})}
 
+Method to print out radiation integrals.
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Array output of Radation Damping Methods (Approx and Lattice) \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{RadiationDamping_8hpp_a9103cf89280b308e7604921a72c395f0}\label{RadiationDamping_8hpp_a9103cf89280b308e7604921a72c395f0}} 
 \index{RadiationDamping.hpp@{RadiationDamping.hpp}!RadiationCriticalEnergy@{RadiationCriticalEnergy}}
 \index{RadiationCriticalEnergy@{RadiationCriticalEnergy}!RadiationDamping.hpp@{RadiationDamping.hpp}}
 \doxysubsubsection{\texorpdfstring{RadiationCriticalEnergy()}{RadiationCriticalEnergy()}}
 {\footnotesize\ttfamily double$\ast$ Radiation\+Critical\+Energy (\begin{DoxyParamCaption}\item[{double}]{rho,  }\item[{double}]{gamma,  }\item[{double}]{omega }\end{DoxyParamCaption})}
 
+CALCULATE THE CRITICAL FREQUENCY AND ANGLE OF EMITTED RADIATION
+
+
+\begin{DoxyParams}{Parameters}
+{\em rho} & Average bending radius \\
+\hline
+{\em gamma} & Relativistic gamma \\
+\hline
+{\em omega} & Angular revolution frequency\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Radiation data as an array containing 0 -\/$>$ omega critical 1 -\/$>$ theta critical 2 -\/$>$ critical photon energy for given omega 3 -\/$>$ average energy per photon 4 -\/$>$ average number of photons emitted per turn
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Based on Wolski Accelerator Lectures. 
+\end{DoxyNote}
 \mbox{\Hypertarget{RadiationDamping_8hpp_ab17d5a1994334f44cad3bded2095bdb4}\label{RadiationDamping_8hpp_ab17d5a1994334f44cad3bded2095bdb4}} 
 \index{RadiationDamping.hpp@{RadiationDamping.hpp}!RadiationDampingApprox@{RadiationDampingApprox}}
 \index{RadiationDampingApprox@{RadiationDampingApprox}!RadiationDamping.hpp@{RadiationDamping.hpp}}
 \doxysubsubsection{\texorpdfstring{RadiationDampingApprox()}{RadiationDampingApprox()}}
 {\footnotesize\ttfamily double$\ast$ Radiation\+Damping\+Approx (\begin{DoxyParamCaption}\item[{double}]{lattice\+Length,  }\item[{double}]{gamma,  }\item[{double}]{gamma\+Transition,  }\item[{double}]{dipole\+Bending\+Radius,  }\item[{double}]{betax,  }\item[{double}]{betay }\end{DoxyParamCaption})}
 
+Method for calculating approximate radiation integrals. The approximation is due to using ring averages for the bending radius and beta functions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lattice\+Length} & Length of the accelerator lattice \\
+\hline
+{\em gamma} & Relativistic gamma \\
+\hline
+{\em gamma\+Transition} & Transition relativistic gamma \\
+\hline
+{\em dipole\+Bending\+Radius} & Main dipole bending radius \\
+\hline
+{\em betax} & Ring averaged horizontal beta \\
+\hline
+{\em betay} & Ring averaged vertical beta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Approximate Radiation Damping integrals\+: $ I_1, I_2, I_3, I_{4x}, I_{4y}, I_{5x}, I_{5y} $
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Based on formulas in the Accelerator Handbook for Physicists and Engineers. 
+\end{DoxyNote}
 \mbox{\Hypertarget{RadiationDamping_8hpp_a273d98b9b67c5016b3a794a4b866f26d}\label{RadiationDamping_8hpp_a273d98b9b67c5016b3a794a4b866f26d}} 
 \index{RadiationDamping.hpp@{RadiationDamping.hpp}!RadiationDampingElement@{RadiationDampingElement}}
 \index{RadiationDampingElement@{RadiationDampingElement}!RadiationDamping.hpp@{RadiationDamping.hpp}}
 \doxysubsubsection{\texorpdfstring{RadiationDampingElement()}{RadiationDampingElement()}}
 {\footnotesize\ttfamily double$\ast$ Radiation\+Damping\+Element (\begin{DoxyParamCaption}\item[{double}]{l,  }\item[{double}]{bx,  }\item[{double}]{by,  }\item[{double}]{dx,  }\item[{double}]{dpx,  }\item[{double}]{dy,  }\item[{double}]{dpy,  }\item[{double}]{ax,  }\item[{double}]{ay,  }\item[{double}]{angle,  }\item[{double}]{k1l,  }\item[{double}]{k1sl }\end{DoxyParamCaption})}
 
+Method to calculate Radiation Damping integrals for single lattice element.
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & Length of the element \\
+\hline
+{\em bx} & Horizontal beta function at the element \\
+\hline
+{\em by} & Vertical beta function at the element \\
+\hline
+{\em dx} & Horizontal Dispersion at the element \\
+\hline
+{\em dpx} & Derivative of the horizontal dispersion at the element \\
+\hline
+{\em dy} & Vertical dispersion at the element \\
+\hline
+{\em dpy} & Derivative of the vertical dispersion at the element \\
+\hline
+{\em ax} & Horizontal alpha \\
+\hline
+{\em ay} & Vertical alpha \\
+\hline
+{\em angle} & Bending angle \\
+\hline
+{\em k1l} & Quadrupole component \\
+\hline
+{\em k1sl} & Skew quadrupole component\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Radiation Damping integrals for single lattice element.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Based on formulas in the Accelerator Handbook for Physicists and 
+\end{DoxyNote}
 \mbox{\Hypertarget{RadiationDamping_8hpp_a2ce252d6fff2c43456d535ab02385b8d}\label{RadiationDamping_8hpp_a2ce252d6fff2c43456d535ab02385b8d}} 
 \index{RadiationDamping.hpp@{RadiationDamping.hpp}!RadiationDampingLattice@{RadiationDampingLattice}}
 \index{RadiationDampingLattice@{RadiationDampingLattice}!RadiationDamping.hpp@{RadiationDamping.hpp}}
 \doxysubsubsection{\texorpdfstring{RadiationDampingLattice()}{RadiationDampingLattice()}}
 {\footnotesize\ttfamily double$\ast$ Radiation\+Damping\+Lattice (\begin{DoxyParamCaption}\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{table }\end{DoxyParamCaption})}
 
+Method for calculating element weighted radiation integrals. The integrals are calculated element by element and then weighted with the element\textquotesingle{}s length.
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Twiss Table data in Map format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{twiss_8cpp_ab4bbb88db0c39db6588438e3be7888a5}{Get\+Twiss\+Table\+As\+Map}}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Element weighted Radiation Damping integrals\+: $ I_1, I_2, I_3, I_{4x}, I_{4y}, I_{5x}, I_{5y} $
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Based on formulas in the Accelerator Handbook for Physicists and 
+\end{DoxyNote}
 \mbox{\Hypertarget{RadiationDamping_8hpp_ad560efc2b253ed2af586985ed3f06762}\label{RadiationDamping_8hpp_ad560efc2b253ed2af586985ed3f06762}} 
 \index{RadiationDamping.hpp@{RadiationDamping.hpp}!RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers@{RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers}}
 \index{RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers@{RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers}!RadiationDamping.hpp@{RadiationDamping.hpp}}
 \doxysubsubsection{\texorpdfstring{RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers()}{RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers()}}
 {\footnotesize\ttfamily double$\ast$ Radiation\+Damping\+Life\+Times\+And\+Equilibrium\+Emittances\+With\+Partition\+Numbers (\begin{DoxyParamCaption}\item[{map$<$ string, double $>$ \&}]{twissheadermap,  }\item[{double}]{radiation\+Integrals\mbox{[}7\mbox{]},  }\item[{double}]{aatom,  }\item[{double}]{qs }\end{DoxyParamCaption})}
 
+Method that calculates the radiation damping times, the radiation partition numbers and radiation and quantum excitation equilibria for horizontal emittance, vertical emittance, energy spread squared and bunchlength.
+
+
+\begin{DoxyParams}{Parameters}
+{\em twissheadermap} & Twiss Header Map \\
+\hline
+{\em radiation\+Integrals} & Output of the Radiation Damping Integrals Methods \\
+\hline
+{\em aatom} & Atomic Mass Number \\
+\hline
+{\em qs} & Synchrotron Tune\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{RadiationDamping_8hpp_ab17d5a1994334f44cad3bded2095bdb4}{Radiation\+Damping\+Approx}}, \mbox{\hyperlink{RadiationDamping_8hpp_a2ce252d6fff2c43456d535ab02385b8d}{Radiation\+Damping\+Lattice}}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+$ \tau_x, \tau_y, \tau_{\sigam_E^2}, \epsilon_x^\infty, \epsilon_y^\infty, \sigma_E^2, \sigma_s, J_x, J_y $
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Based on formulas in the Accelerator Handbook for Physicists and 
+\end{DoxyNote}
 \mbox{\Hypertarget{RadiationDamping_8hpp_afd8638e744af458ddb89b3d0a50faa2a}\label{RadiationDamping_8hpp_afd8638e744af458ddb89b3d0a50faa2a}} 
 \index{RadiationDamping.hpp@{RadiationDamping.hpp}!RadiationLossesPerTurn@{RadiationLossesPerTurn}}
 \index{RadiationLossesPerTurn@{RadiationLossesPerTurn}!RadiationDamping.hpp@{RadiationDamping.hpp}}
 \doxysubsubsection{\texorpdfstring{RadiationLossesPerTurn()}{RadiationLossesPerTurn()}}
 {\footnotesize\ttfamily double Radiation\+Losses\+Per\+Turn (\begin{DoxyParamCaption}\item[{map$<$ string, double $>$ \&}]{twiss,  }\item[{double}]{I2,  }\item[{double}]{aatom }\end{DoxyParamCaption})}
 
+Method to calculated the radiation losses per turn \mbox{[}eV\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em twiss} & Twiss Header Map \\
+\hline
+{\em I2} & Second radiation integral \\
+\hline
+{\em aatom} & Atomic Mass Number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Radiation Losses per turn \mbox{[}eV\mbox{]}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Based on formulas in the Accelerator Handbook for Physicists and 
+\end{DoxyNote}

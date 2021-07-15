@@ -75,7 +75,9 @@ PYBIND11_MODULE(IBSLib, m) {
           ptr_out[5] = radint[5];
           ptr_out[6] = radint[6];
         },
-        "Radiation Damping using Ring averages.");
+        "Radiation Damping using Ring averages.", py::arg("latticelength"),
+        py::arg("gamma"), py::arg("gammaTransition"), py::arg("bendingradius"),
+        py::arg("betax"), py::arg("betay"), py::arg("outputArray"));
 
   m.def("RadiationDampingLattice",
         [](map<string, vector<double>> &table, py::array_t<double> out) {
@@ -92,7 +94,8 @@ PYBIND11_MODULE(IBSLib, m) {
           ptr_out[5] = radint[5];
           ptr_out[6] = radint[6];
         },
-        "Radiation damping weighted per element.");
+        "Radiation damping weighted per element.", py::arg("twissTableMap"),
+        py::arg("outputArray"));
 
   m.def(
       "RadiationDampingEquilibria",
@@ -120,10 +123,13 @@ PYBIND11_MODULE(IBSLib, m) {
         ptr_out[7] = equi[7];
         ptr_out[8] = equi[8];
       },
-      "Get radiation damping equilibs.");
+      "Get radiation damping equilibs.", py::arg("twissHeaderMap"),
+      py::arg("RadIntArray"), py::arg("AtomicMassNumber"),
+      py::arg("synchrotronTune"), py::arg("outputArray"));
 
   m.def("get_energy_loss_per_turn", &RadiationLossesPerTurn,
-        "Get the energy loss per turn.");
+        "Get the energy loss per turn.", py::arg("twissTableMap"),
+        py::arg("I2"), py::arg("AtomicMassNumber"));
 
   /*
  ================================================================================
@@ -291,7 +297,12 @@ PYBIND11_MODULE(IBSLib, m) {
           ptr_clog[0] = clog[0];
           ptr_clog[1] = clog[1];
         },
-        "Calculate the Coulomb Log.");
+        "Calculate the Coulomb Log.", py::arg("pnumber"), py::arg("betax"),
+        py::arg("betay"), py::arg("dispersionx"), py::arg("disperisony"),
+        py::arg("emitx"), py::arg("emity"), py::arg("classicalRadius"),
+        py::arg("gamma"), py::arg("charge"), py::arg("energy"),
+        py::arg("restEnergy_GeV"), py::arg("sige"), py::arg("sigt"),
+        py::arg("outputArray"));
 
   m.def("twclogtail",
         [](double pnumber, double l, double bx, double by, double dx,
@@ -309,7 +320,16 @@ PYBIND11_MODULE(IBSLib, m) {
           ptr_clog[0] = clog[0];
           ptr_clog[1] = clog[1];
         },
-        "Calculate the Coulomb Log with Tailcut.");
+        "Calculate the Coulomb Log with Tailcut.", py::arg("pnumber"),
+        py::arg("elementLength"), py::arg("betax"), py::arg("betay"),
+        py::arg("dispersionx"), py::arg("dispersionx_der"),
+        py::arg("dispersiony"), py::arg("dispersiony_der"), py::arg("alphax"),
+        py::arg("alphay"), py::arg("angle"), py::arg("k1l"), py::arg("k1sl"),
+        py::arg("emitx"), py::arg("emity"), py::arg("classicalRadius"),
+        py::arg("AtomicMassNumber"), py::arg("gamma"), py::arg("energy"),
+        py::arg("acceleratorLength"), py::arg("restEnergy_GeV"),
+        py::arg("charge"), py::arg("sige"), py::arg("sigt"),
+        py::arg("outputArray"));
 
   m.def("coulomblog",
         [](double pnumber, double ex, double ey,
@@ -323,7 +343,10 @@ PYBIND11_MODULE(IBSLib, m) {
           ptr_clog[0] = clog[0];
           ptr_clog[1] = clog[1];
         },
-        "Calculate the Coulomb Log using ring average.");
+        "Calculate the Coulomb Log using ring average.", py::arg("pnumber"),
+        py::arg("emitx"), py::arg("emity"), py::arg("twissheader"),
+        py::arg("sige"), py::arg("sigt"), py::arg("classialRadius"),
+        py::arg("printout"), py::arg("outputArray"));
 
   m.def("coulomblogtail",
         [](double pnumber, double ex, double ey,
@@ -338,7 +361,11 @@ PYBIND11_MODULE(IBSLib, m) {
           ptr_clog[0] = clog[0];
           ptr_clog[1] = clog[1];
         },
-        "Calculate the Coulomb Log with tailcut using ring average.");
+        "Calculate the Coulomb Log with tailcut using ring average.",
+        py::arg("pnumber"), py::arg("emitx"), py::arg("emity"),
+        py::arg("twissheader"), py::arg("sige"), py::arg("sigt"),
+        py::arg("tauradx"), py::arg("taurady"), py::arg("taurads"),
+        py::arg("classialRadius"), py::arg("printout"), py::arg("outputArray"));
   /*
 ================================================================================
                     INTEGRATORS

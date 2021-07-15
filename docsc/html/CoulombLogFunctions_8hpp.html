@@ -159,6 +159,22 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Method to calculate Coulomb Log and constant using accelerator ring averages.</p>
+<dl class="section note"><dt>Note</dt><dd>Based on the formulae in AIP physics vade mecum p.264 (1981).</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">pnumber</td><td>Number of particles in the bunch </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ex</td><td>Horizontal emittance </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ey</td><td>Vertical emittance </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">twissheader</td><td>Twiss Header Map </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">sige</td><td>Energy spread </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">sigt</td><td>Bunch length </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">r0</td><td>Classical radius of the particles in the bunch </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">printout</td><td>Boolean flag to switch verbose mode on or off </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">clog</td><td>Ouput array 0 -&gt; Coulomb Log 1 -&gt; IBS Coulomb pre-factor </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -247,6 +263,25 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Method to calculate Coulomb Log and constant using accelerator ring averages with tailcut.</p>
+<dl class="section note"><dt>Note</dt><dd>Based on the formulae in AIP physics vade mecum p.264 (1981).</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">pnumber</td><td>Number of particles in the bunch </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ex</td><td>Horizontal emittance </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ey</td><td>Vertical emittance </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">twissheader</td><td>Twiss Header Map </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">sige</td><td>Energy spread </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">sigt</td><td>Bunch length </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">tauradx</td><td>Horizontal Radiation Damping Time </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">taurady</td><td>Vertical Radiation Damping Time </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">taurads</td><td>Longitudinal Radiation Damping Time </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">r0</td><td>Classical radius of the particles in the bunch </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">printout</td><td>Boolean flag to switch verbose mode on or off </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">clog</td><td>Ouput array 0 -&gt; Coulomb Log 1 -&gt; IBS Coulomb pre-factor </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -353,6 +388,28 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Method to calculate Coulomb Log and constant for single lattice element.</p>
+<dl class="section note"><dt>Note</dt><dd>Adapted from original code in MADX (copyright CERN). Based on the formulae in AIP physics vade mecum p.264 (1981).</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">pnumber</td><td>Number of particles in the bunch </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">bx</td><td>Horizontal beta function </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">by</td><td>Vertical beta function </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dx</td><td>Horizontal dispersion </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dy</td><td>Vertical dispersion </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ex</td><td>Horizontal emittance </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ey</td><td>Vertical emittance </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">r0</td><td>Classical radius of the particles in the bunch </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">gamma</td><td>Relativistic Gamma </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">charge</td><td>Particle electric charge </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">en0</td><td>Energy of the particle </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">amass</td><td>Rest Energy of the partice [GeV] </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">sige</td><td>Energy spread </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">sigt</td><td>Bunch length </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">clog</td><td>Ouput array 0 -&gt; Coulomb Log 1 -&gt; IBS Coulomb pre-factor </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -519,6 +576,38 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Method to calculate Coulomb Log and constant for single lattice element with Tailcut (taking radiation damping into account).</p>
+<dl class="section note"><dt>Note</dt><dd>Based on the formulae in AIP physics vade mecum p.264 (1981).</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">pnumber</td><td>Number of particles in the bunch </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">l</td><td>Element length </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">bx</td><td>Horizontal beta function </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">by</td><td>Vertical beta function </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dx</td><td>Horizontal dispersion </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dpx</td><td>Horizontal dispersion derivative </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dy</td><td>Vertical dispersion </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dpy</td><td>Vertical dispersion derivative </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ax</td><td>Horizontal alpha </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ay</td><td>Vertical alpha </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">angle</td><td>Bending angle </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">k1l</td><td>Quadrupole component </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">k1sl</td><td>Skew Quadrupole component </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ex</td><td>Horizontal emittance </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ey</td><td>Vertical emittance </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">r0</td><td>Classical radius of the particles in the bunch </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">aatom</td><td>Atomic Mass Number </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">gamma</td><td>Relativistic Gamma </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">en0</td><td>Energy of the particle </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">len</td><td>Accelerator length </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">amass</td><td>Rest Energy of the partice [GeV] </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">charge</td><td>Particle electric charge </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">sige</td><td>Energy spread </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">sigt</td><td>Bunch length </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">clog</td><td>Ouput array 0 -&gt; Coulomb Log 1 -&gt; IBS Coulomb pre-factor </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

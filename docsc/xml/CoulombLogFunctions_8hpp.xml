@@ -179,10 +179,135 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method to calculate Coulomb Log and constant for single lattice element.</para>
+<para><simplesect kind="note"><para>Adapted from original code in MADX (copyright CERN). Based on the formulae in AIP physics vade mecum p.264 (1981).</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal beta function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>by</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical beta function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Classical radius of the particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gamma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relativistic Gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>charge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Particle electric charge </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>en0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Energy of the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>amass</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Rest Energy of the partice [GeV] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sige</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Energy spread </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">clog</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ouput array 0 -&gt; Coulomb Log 1 -&gt; IBS Coulomb pre-factor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" line="8" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/CoulombLogFunctions.cpp" bodystart="67" bodyend="120" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" declline="8" declcolumn="6"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" line="33" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/CoulombLogFunctions.cpp" bodystart="67" bodyend="120" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" declline="33" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="CoulombLogFunctions_8hpp_1aaeb3e23eea67e16a5329a24687458297" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -292,10 +417,215 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method to calculate Coulomb Log and constant for single lattice element with Tailcut (taking radiation damping into account).</para>
+<para><simplesect kind="note"><para>Based on the formulae in AIP physics vade mecum p.264 (1981).</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Element length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal beta function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>by</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical beta function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dpx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal dispersion derivative </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical dispersion derivative </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal alpha </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical alpha </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bending angle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k1l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Quadrupole component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k1sl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Skew Quadrupole component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Classical radius of the particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aatom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Atomic Mass Number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gamma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relativistic Gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>en0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Energy of the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Accelerator length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>amass</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Rest Energy of the partice [GeV] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>charge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Particle electric charge </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sige</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Energy spread </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">clog</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ouput array 0 -&gt; Coulomb Log 1 -&gt; IBS Coulomb pre-factor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" line="12" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/CoulombLogFunctions.cpp" bodystart="200" bodyend="285" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" declline="12" declcolumn="6"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" line="73" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/CoulombLogFunctions.cpp" bodystart="200" bodyend="285" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" declline="73" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="CoulombLogFunctions_8hpp_1ab908400a7d0b3f9d9d35da9684d875c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -341,10 +671,87 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method to calculate Coulomb Log and constant using accelerator ring averages.</para>
+<para><simplesect kind="note"><para>Based on the formulae in AIP physics vade mecum p.264 (1981).</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>twissheader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Header Map </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sige</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Energy spread </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Classical radius of the particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>printout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean flag to switch verbose mode on or off </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">clog</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ouput array 0 -&gt; Coulomb Log 1 -&gt; IBS Coulomb pre-factor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" line="19" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/CoulombLogFunctions.cpp" bodystart="334" bodyend="419" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" declline="19" declcolumn="6"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" line="99" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/CoulombLogFunctions.cpp" bodystart="334" bodyend="419" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" declline="99" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="CoulombLogFunctions_8hpp_1ada19d63bb5e67dfd7885b4bd24c5bcb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -402,10 +809,111 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method to calculate Coulomb Log and constant using accelerator ring averages with tailcut.</para>
+<para><simplesect kind="note"><para>Based on the formulae in AIP physics vade mecum p.264 (1981).</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>twissheader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Header Map </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sige</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Energy spread </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tauradx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal Radiation Damping Time </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>taurady</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical Radiation Damping Time </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>taurads</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitudinal Radiation Damping Time </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Classical radius of the particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>printout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean flag to switch verbose mode on or off </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">clog</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ouput array 0 -&gt; Coulomb Log 1 -&gt; IBS Coulomb pre-factor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" line="23" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/CoulombLogFunctions.cpp" bodystart="475" bodyend="574" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" declline="23" declcolumn="6"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" line="127" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/CoulombLogFunctions.cpp" bodystart="475" bodyend="574" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp" declline="127" declcolumn="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -420,25 +928,25 @@
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="CoulombLogFunctions_8hpp_1abf7b9e9c5da8bf0b23fffcb01961ebbe" kindref="member">twclog</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>by,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gamma,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>charge,</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>en0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>amass,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigt,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*clog);</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="CoulombLogFunctions_8hpp_1aaeb3e23eea67e16a5329a24687458297" kindref="member">twclogtail</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>l,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>by,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ay,</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>angle,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>k1l,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>k1sl,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aatom,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gamma,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>en0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>len,</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>amass,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>charge,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigt,</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*clog);</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="CoulombLogFunctions_8hpp_1ab908400a7d0b3f9d9d35da9684d875c2" kindref="member">CoulombLog</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigt,</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>printout,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*clog);</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="CoulombLogFunctions_8hpp_1ada19d63bb5e67dfd7885b4bd24c5bcb1" kindref="member">TailCutCoulombLog</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigt,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tauradx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>taurady,</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>taurads,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>printout,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*clog);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="CoulombLogFunctions_8hpp_1abf7b9e9c5da8bf0b23fffcb01961ebbe" kindref="member">twclog</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>by,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gamma,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>charge,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>en0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>amass,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigt,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*clog);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="CoulombLogFunctions_8hpp_1aaeb3e23eea67e16a5329a24687458297" kindref="member">twclogtail</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>l,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>by,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ay,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>angle,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>k1l,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>k1sl,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aatom,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gamma,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>en0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>len,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>amass,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>charge,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigt,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*clog);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="CoulombLogFunctions_8hpp_1ab908400a7d0b3f9d9d35da9684d875c2" kindref="member">CoulombLog</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigt,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>printout,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*clog);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="CoulombLogFunctions_8hpp_1ada19d63bb5e67dfd7885b4bd24c5bcb1" kindref="member">TailCutCoulombLog</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheader,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigt,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tauradx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>taurady,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>taurads,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r0,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>printout,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*clog);</highlight></codeline>
     </programlisting>
     <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/CoulombLogFunctions.hpp"/>
   </compounddef>

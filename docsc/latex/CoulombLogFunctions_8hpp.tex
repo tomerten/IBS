@@ -26,21 +26,175 @@ void \mbox{\hyperlink{CoulombLogFunctions_8hpp_ada19d63bb5e67dfd7885b4bd24c5bcb1
 \doxysubsubsection{\texorpdfstring{CoulombLog()}{CoulombLog()}}
 {\footnotesize\ttfamily void Coulomb\+Log (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{map$<$ string, double $>$ \&}]{twissheader,  }\item[{double}]{sige,  }\item[{double}]{sigt,  }\item[{double}]{r0,  }\item[{bool}]{printout,  }\item[{double $\ast$}]{clog }\end{DoxyParamCaption})}
 
+Method to calculate Coulomb Log and constant using accelerator ring averages.
+
+\begin{DoxyNote}{Note}
+Based on the formulae in AIP physics vade mecum p.\+264 (1981).
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em pnumber} & Number of particles in the bunch \\
+\hline
+ & {\em ex} & Horizontal emittance \\
+\hline
+ & {\em ey} & Vertical emittance \\
+\hline
+ & {\em twissheader} & Twiss Header Map \\
+\hline
+ & {\em sige} & Energy spread \\
+\hline
+ & {\em sigt} & Bunch length \\
+\hline
+ & {\em r0} & Classical radius of the particles in the bunch \\
+\hline
+ & {\em printout} & Boolean flag to switch verbose mode on or off \\
+\hline
+\mbox{\texttt{ out}}  & {\em clog} & Ouput array 0 -\/$>$ Coulomb Log 1 -\/$>$ IBS Coulomb pre-\/factor \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{CoulombLogFunctions_8hpp_ada19d63bb5e67dfd7885b4bd24c5bcb1}\label{CoulombLogFunctions_8hpp_ada19d63bb5e67dfd7885b4bd24c5bcb1}} 
 \index{CoulombLogFunctions.hpp@{CoulombLogFunctions.hpp}!TailCutCoulombLog@{TailCutCoulombLog}}
 \index{TailCutCoulombLog@{TailCutCoulombLog}!CoulombLogFunctions.hpp@{CoulombLogFunctions.hpp}}
 \doxysubsubsection{\texorpdfstring{TailCutCoulombLog()}{TailCutCoulombLog()}}
 {\footnotesize\ttfamily void Tail\+Cut\+Coulomb\+Log (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{map$<$ string, double $>$ \&}]{twissheader,  }\item[{double}]{sige,  }\item[{double}]{sigt,  }\item[{double}]{tauradx,  }\item[{double}]{taurady,  }\item[{double}]{taurads,  }\item[{double}]{r0,  }\item[{bool}]{printout,  }\item[{double $\ast$}]{clog }\end{DoxyParamCaption})}
 
+Method to calculate Coulomb Log and constant using accelerator ring averages with tailcut.
+
+\begin{DoxyNote}{Note}
+Based on the formulae in AIP physics vade mecum p.\+264 (1981).
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em pnumber} & Number of particles in the bunch \\
+\hline
+ & {\em ex} & Horizontal emittance \\
+\hline
+ & {\em ey} & Vertical emittance \\
+\hline
+ & {\em twissheader} & Twiss Header Map \\
+\hline
+ & {\em sige} & Energy spread \\
+\hline
+ & {\em sigt} & Bunch length \\
+\hline
+ & {\em tauradx} & Horizontal Radiation Damping Time \\
+\hline
+ & {\em taurady} & Vertical Radiation Damping Time \\
+\hline
+ & {\em taurads} & Longitudinal Radiation Damping Time \\
+\hline
+ & {\em r0} & Classical radius of the particles in the bunch \\
+\hline
+ & {\em printout} & Boolean flag to switch verbose mode on or off \\
+\hline
+\mbox{\texttt{ out}}  & {\em clog} & Ouput array 0 -\/$>$ Coulomb Log 1 -\/$>$ IBS Coulomb pre-\/factor \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{CoulombLogFunctions_8hpp_abf7b9e9c5da8bf0b23fffcb01961ebbe}\label{CoulombLogFunctions_8hpp_abf7b9e9c5da8bf0b23fffcb01961ebbe}} 
 \index{CoulombLogFunctions.hpp@{CoulombLogFunctions.hpp}!twclog@{twclog}}
 \index{twclog@{twclog}!CoulombLogFunctions.hpp@{CoulombLogFunctions.hpp}}
 \doxysubsubsection{\texorpdfstring{twclog()}{twclog()}}
 {\footnotesize\ttfamily void twclog (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{bx,  }\item[{double}]{by,  }\item[{double}]{dx,  }\item[{double}]{dy,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{r0,  }\item[{double}]{gamma,  }\item[{double}]{charge,  }\item[{double}]{en0,  }\item[{double}]{amass,  }\item[{double}]{sige,  }\item[{double}]{sigt,  }\item[{double $\ast$}]{clog }\end{DoxyParamCaption})}
 
+Method to calculate Coulomb Log and constant for single lattice element.
+
+\begin{DoxyNote}{Note}
+Adapted from original code in MADX (copyright CERN). Based on the formulae in AIP physics vade mecum p.\+264 (1981).
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em pnumber} & Number of particles in the bunch \\
+\hline
+ & {\em bx} & Horizontal beta function \\
+\hline
+ & {\em by} & Vertical beta function \\
+\hline
+ & {\em dx} & Horizontal dispersion \\
+\hline
+ & {\em dy} & Vertical dispersion \\
+\hline
+ & {\em ex} & Horizontal emittance \\
+\hline
+ & {\em ey} & Vertical emittance \\
+\hline
+ & {\em r0} & Classical radius of the particles in the bunch \\
+\hline
+ & {\em gamma} & Relativistic Gamma \\
+\hline
+ & {\em charge} & Particle electric charge \\
+\hline
+ & {\em en0} & Energy of the particle \\
+\hline
+ & {\em amass} & Rest Energy of the partice \mbox{[}GeV\mbox{]} \\
+\hline
+ & {\em sige} & Energy spread \\
+\hline
+ & {\em sigt} & Bunch length \\
+\hline
+\mbox{\texttt{ out}}  & {\em clog} & Ouput array 0 -\/$>$ Coulomb Log 1 -\/$>$ IBS Coulomb pre-\/factor \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{CoulombLogFunctions_8hpp_aaeb3e23eea67e16a5329a24687458297}\label{CoulombLogFunctions_8hpp_aaeb3e23eea67e16a5329a24687458297}} 
 \index{CoulombLogFunctions.hpp@{CoulombLogFunctions.hpp}!twclogtail@{twclogtail}}
 \index{twclogtail@{twclogtail}!CoulombLogFunctions.hpp@{CoulombLogFunctions.hpp}}
 \doxysubsubsection{\texorpdfstring{twclogtail()}{twclogtail()}}
 {\footnotesize\ttfamily void twclogtail (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{l,  }\item[{double}]{bx,  }\item[{double}]{by,  }\item[{double}]{dx,  }\item[{double}]{dpx,  }\item[{double}]{dy,  }\item[{double}]{dpy,  }\item[{double}]{ax,  }\item[{double}]{ay,  }\item[{double}]{angle,  }\item[{double}]{k1l,  }\item[{double}]{k1sl,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{r0,  }\item[{double}]{aatom,  }\item[{double}]{gamma,  }\item[{double}]{en0,  }\item[{double}]{len,  }\item[{double}]{amass,  }\item[{double}]{charge,  }\item[{double}]{sige,  }\item[{double}]{sigt,  }\item[{double $\ast$}]{clog }\end{DoxyParamCaption})}
 
+Method to calculate Coulomb Log and constant for single lattice element with Tailcut (taking radiation damping into account).
+
+\begin{DoxyNote}{Note}
+Based on the formulae in AIP physics vade mecum p.\+264 (1981).
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em pnumber} & Number of particles in the bunch \\
+\hline
+ & {\em l} & Element length \\
+\hline
+ & {\em bx} & Horizontal beta function \\
+\hline
+ & {\em by} & Vertical beta function \\
+\hline
+ & {\em dx} & Horizontal dispersion \\
+\hline
+ & {\em dpx} & Horizontal dispersion derivative \\
+\hline
+ & {\em dy} & Vertical dispersion \\
+\hline
+ & {\em dpy} & Vertical dispersion derivative \\
+\hline
+ & {\em ax} & Horizontal alpha \\
+\hline
+ & {\em ay} & Vertical alpha \\
+\hline
+ & {\em angle} & Bending angle \\
+\hline
+ & {\em k1l} & Quadrupole component \\
+\hline
+ & {\em k1sl} & Skew Quadrupole component \\
+\hline
+ & {\em ex} & Horizontal emittance \\
+\hline
+ & {\em ey} & Vertical emittance \\
+\hline
+ & {\em r0} & Classical radius of the particles in the bunch \\
+\hline
+ & {\em aatom} & Atomic Mass Number \\
+\hline
+ & {\em gamma} & Relativistic Gamma \\
+\hline
+ & {\em en0} & Energy of the particle \\
+\hline
+ & {\em len} & Accelerator length \\
+\hline
+ & {\em amass} & Rest Energy of the partice \mbox{[}GeV\mbox{]} \\
+\hline
+ & {\em charge} & Particle electric charge \\
+\hline
+ & {\em sige} & Energy spread \\
+\hline
+ & {\em sigt} & Bunch length \\
+\hline
+\mbox{\texttt{ out}}  & {\em clog} & Ouput array 0 -\/$>$ Coulomb Log 1 -\/$>$ IBS Coulomb pre-\/factor \\
+\hline
+\end{DoxyParams}

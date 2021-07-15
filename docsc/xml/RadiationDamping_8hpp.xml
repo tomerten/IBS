@@ -129,10 +129,21 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method to print out radiation integrals.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array output of Radation Damping Methods (Approx and Lattice) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" line="11" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/RadiationDamping.cpp" bodystart="38" bodyend="48" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" declline="11" declcolumn="6"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" line="16" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/RadiationDamping.cpp" bodystart="38" bodyend="48" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" declline="16" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="RadiationDamping_8hpp_1ab17d5a1994334f44cad3bded2095bdb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double *</type>
@@ -166,10 +177,65 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method for calculating approximate radiation integrals. The approximation is due to using ring averages for the bending radius and beta functions.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>latticeLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of the accelerator lattice </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gamma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relativistic gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gammaTransition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Transition relativistic gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dipoleBendingRadius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Main dipole bending radius </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>betax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ring averaged horizontal beta </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>betay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ring averaged vertical beta</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Approximate Radiation Damping integrals: <formula id="7">$ I_1, I_2, I_3, I_{4x}, I_{4y}, I_{5x}, I_{5y} $</formula></para>
+</simplesect>
+<simplesect kind="note"><para>Based on formulas in the Accelerator Handbook for Physicists and Engineers. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" line="13" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/RadiationDamping.cpp" bodystart="96" bodyend="131" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" declline="13" declcolumn="8"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" line="36" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/RadiationDamping.cpp" bodystart="96" bodyend="131" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" declline="36" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="RadiationDamping_8hpp_1a2ce252d6fff2c43456d535ab02385b8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double *</type>
@@ -183,10 +249,27 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method for calculating element weighted radiation integrals. The integrals are calculated element by element and then weighted with the element&apos;s length.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Table data in Map format. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="twiss_8cpp_1ab4bbb88db0c39db6588438e3be7888a5" kindref="member">GetTwissTableAsMap</ref></para>
+</simplesect>
+<simplesect kind="return"><para>Element weighted Radiation Damping integrals: <formula id="7">$ I_1, I_2, I_3, I_{4x}, I_{4y}, I_{5x}, I_{5y} $</formula></para>
+</simplesect>
+<simplesect kind="note"><para>Based on formulas in the Accelerator Handbook for Physicists and </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" line="18" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/RadiationDamping.cpp" bodystart="166" bodyend="184" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" declline="18" declcolumn="8"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" line="54" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/RadiationDamping.cpp" bodystart="166" bodyend="184" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" declline="54" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="RadiationDamping_8hpp_1ad560efc2b253ed2af586985ed3f06762" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double *</type>
@@ -213,10 +296,51 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method that calculates the radiation damping times, the radiation partition numbers and radiation and quantum excitation equilibria for horizontal emittance, vertical emittance, energy spread squared and bunchlength.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>twissheadermap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Header Map </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>radiationIntegrals</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output of the Radiation Damping Integrals Methods </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aatom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Atomic Mass Number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Synchrotron Tune</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="RadiationDamping_8hpp_1ab17d5a1994334f44cad3bded2095bdb4" kindref="member">RadiationDampingApprox</ref>, <ref refid="RadiationDamping_8hpp_1a2ce252d6fff2c43456d535ab02385b8d" kindref="member">RadiationDampingLattice</ref></para>
+</simplesect>
+<simplesect kind="return"><para><formula id="9">$ \tau_x, \tau_y, \tau_{\sigam_E^2}, \epsilon_x^\infty, \epsilon_y^\infty, \sigma_E^2, \sigma_s, J_x, J_y $</formula></para>
+</simplesect>
+<simplesect kind="note"><para>Based on formulas in the Accelerator Handbook for Physicists and </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" line="20" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/RadiationDamping.cpp" bodystart="233" bodyend="303" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" declline="20" declcolumn="8"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" line="73" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/RadiationDamping.cpp" bodystart="233" bodyend="303" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" declline="73" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="RadiationDamping_8hpp_1afd8638e744af458ddb89b3d0a50faa2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -238,10 +362,41 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method to calculated the radiation losses per turn [eV].</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>twiss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Header Map </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>I2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second radiation integral </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aatom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Atomic Mass Number</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Radiation Losses per turn [eV]</para>
+</simplesect>
+<simplesect kind="note"><para>Based on formulas in the Accelerator Handbook for Physicists and </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" line="24" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/RadiationDamping.cpp" bodystart="338" bodyend="354" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" declline="24" declcolumn="8"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" line="88" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/RadiationDamping.cpp" bodystart="338" bodyend="354" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" declline="88" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="RadiationDamping_8hpp_1a9103cf89280b308e7604921a72c395f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double *</type>
@@ -263,10 +418,41 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>CALCULATE THE CRITICAL FREQUENCY AND ANGLE OF EMITTED RADIATION</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rho</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Average bending radius </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gamma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relativistic gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>omega</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Angular revolution frequency</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Radiation data as an array containing 0 -&gt; omega critical 1 -&gt; theta critical 2 -&gt; critical photon energy for given omega 3 -&gt; average energy per photon 4 -&gt; average number of photons emitted per turn</para>
+</simplesect>
+<simplesect kind="note"><para>Based on Wolski Accelerator Lectures. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" line="27" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/RadiationDamping.cpp" bodystart="390" bodyend="406" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" declline="27" declcolumn="8"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" line="107" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/RadiationDamping.cpp" bodystart="390" bodyend="406" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" declline="107" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="RadiationDamping_8hpp_1a273d98b9b67c5016b3a794a4b866f26d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double *</type>
@@ -324,10 +510,113 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method to calculate Radiation Damping integrals for single lattice element.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of the element </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal beta function at the element </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>by</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical beta function at the element </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal Dispersion at the element </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dpx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Derivative of the horizontal dispersion at the element </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical dispersion at the element </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Derivative of the vertical dispersion at the element </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal alpha </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical alpha </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bending angle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k1l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Quadrupole component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k1sl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Skew quadrupole component</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Radiation Damping integrals for single lattice element.</para>
+</simplesect>
+<simplesect kind="note"><para>Based on formulas in the Accelerator Handbook for Physicists and </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" line="29" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/RadiationDamping.cpp" bodystart="451" bodyend="500" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" declline="29" declcolumn="8"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" line="130" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/RadiationDamping.cpp" bodystart="451" bodyend="500" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp" declline="130" declcolumn="8"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -345,28 +634,27 @@
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="RadiationDamping_8hpp_1a142911566ea9b0a6bd166d22285468fc" kindref="member">printradint</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>out[7]);</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="RadiationDamping_8hpp_1ab17d5a1994334f44cad3bded2095bdb4" kindref="member">RadiationDampingApprox</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>latticeLength,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gamma,</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammaTransition,</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dipoleBendingRadius,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betax,</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betay);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="RadiationDamping_8hpp_1a142911566ea9b0a6bd166d22285468fc" kindref="member">printradint</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>out[7]);</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="RadiationDamping_8hpp_1a2ce252d6fff2c43456d535ab02385b8d" kindref="member">RadiationDampingLattice</ref>(map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;table);</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="RadiationDamping_8hpp_1ad560efc2b253ed2af586985ed3f06762" kindref="member">RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers</ref>(</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheadermap,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>radiationIntegrals[7],</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aatom,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>qs);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="RadiationDamping_8hpp_1afd8638e744af458ddb89b3d0a50faa2a" kindref="member">RadiationLossesPerTurn</ref>(map&lt;string,<sp/>double&gt;<sp/>&amp;twiss,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>I2,</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aatom);</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="RadiationDamping_8hpp_1a9103cf89280b308e7604921a72c395f0" kindref="member">RadiationCriticalEnergy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>rho,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gamma,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>omega);</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="RadiationDamping_8hpp_1a273d98b9b67c5016b3a794a4b866f26d" kindref="member">RadiationDampingElement</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>l,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>by,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ax,</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ay,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>angle,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>k1l,</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>k1sl);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="RadiationDamping_8hpp_1ab17d5a1994334f44cad3bded2095bdb4" kindref="member">RadiationDampingApprox</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>latticeLength,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gamma,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammaTransition,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dipoleBendingRadius,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betax,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betay);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="RadiationDamping_8hpp_1a2ce252d6fff2c43456d535ab02385b8d" kindref="member">RadiationDampingLattice</ref>(map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;table);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="RadiationDamping_8hpp_1ad560efc2b253ed2af586985ed3f06762" kindref="member">RadiationDampingLifeTimesAndEquilibriumEmittancesWithPartitionNumbers</ref>(</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>map&lt;string,<sp/>double&gt;<sp/>&amp;twissheadermap,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>radiationIntegrals[7],</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aatom,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>qs);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="RadiationDamping_8hpp_1afd8638e744af458ddb89b3d0a50faa2a" kindref="member">RadiationLossesPerTurn</ref>(map&lt;string,<sp/>double&gt;<sp/>&amp;twiss,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>I2,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aatom);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="RadiationDamping_8hpp_1a9103cf89280b308e7604921a72c395f0" kindref="member">RadiationCriticalEnergy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>rho,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gamma,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>omega);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="RadiationDamping_8hpp_1a273d98b9b67c5016b3a794a4b866f26d" kindref="member">RadiationDampingElement</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>l,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>by,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ax,</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ay,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>angle,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>k1l,</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>k1sl);</highlight></codeline>
     </programlisting>
     <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/RadiationDamping.hpp"/>
   </compounddef>

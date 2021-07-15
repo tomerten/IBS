@@ -65,7 +65,7 @@ double *RadiationDampingLattice(map<string, vector<double>> &table);
  *
  * @see RadiationDampingApprox, RadiationDampingLattice
  *
- * @return @f$ \tau_x, \tau_y, \tau_{dEoE2}, \epsilon_x^\infty,
+ * @return @f$ \tau_x, \tau_y, \tau_{\sigma_E^2}, \epsilon_x^\infty,
  \epsilon_y^\infty, \sigma_E^2, \sigma_s, J_x, J_y @f$
  *
  * @note Based on formulas in the Accelerator Handbook for Physicists and

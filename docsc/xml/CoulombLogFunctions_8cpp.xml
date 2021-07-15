@@ -137,6 +137,131 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method to calculate Coulomb Log and constant for single lattice element.</para>
+<para><simplesect kind="note"><para>Adapted from original code in MADX (copyright CERN). Based on the formulae in AIP physics vade mecum p.264 (1981).</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal beta function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>by</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical beta function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Classical radius of the particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gamma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relativistic Gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>charge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Particle electric charge </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>en0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Energy of the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>amass</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Rest Energy of the partice [GeV] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sige</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Energy spread </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">clog</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ouput array 0 -&gt; Coulomb Log 1 -&gt; IBS Coulomb pre-factor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -250,6 +375,211 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method to calculate Coulomb Log and constant for single lattice element with Tailcut (taking radiation damping into account).</para>
+<para><simplesect kind="note"><para>Based on the formulae in AIP physics vade mecum p.264 (1981).</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Element length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal beta function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>by</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical beta function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dpx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal dispersion derivative </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical dispersion derivative </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal alpha </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical alpha </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bending angle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k1l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Quadrupole component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k1sl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Skew Quadrupole component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Classical radius of the particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aatom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Atomic Mass Number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gamma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relativistic Gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>en0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Energy of the particle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Accelerator length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>amass</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Rest Energy of the partice [GeV] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>charge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Particle electric charge </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sige</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Energy spread </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">clog</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ouput array 0 -&gt; Coulomb Log 1 -&gt; IBS Coulomb pre-factor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -299,6 +629,83 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method to calculate Coulomb Log and constant using accelerator ring averages.</para>
+<para><simplesect kind="note"><para>Based on the formulae in AIP physics vade mecum p.264 (1981).</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>twissheader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Header Map </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sige</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Energy spread </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Classical radius of the particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>printout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean flag to switch verbose mode on or off </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">clog</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ouput array 0 -&gt; Coulomb Log 1 -&gt; IBS Coulomb pre-factor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -360,6 +767,107 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method to calculate Coulomb Log and constant using accelerator ring averages with tailcut.</para>
+<para><simplesect kind="note"><para>Based on the formulae in AIP physics vade mecum p.264 (1981).</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>twissheader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Header Map </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sige</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Energy spread </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tauradx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal Radiation Damping Time </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>taurady</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical Radiation Damping Time </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>taurads</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Longitudinal Radiation Damping Time </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Classical radius of the particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>printout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean flag to switch verbose mode on or off </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">clog</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ouput array 0 -&gt; Coulomb Log 1 -&gt; IBS Coulomb pre-factor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
