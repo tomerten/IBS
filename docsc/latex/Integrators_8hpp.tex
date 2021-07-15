@@ -6,13 +6,13 @@
 \item 
 void \mbox{\hyperlink{Integrators_8hpp_aa2baccc4e5ebf7d1277ac74a16f1a648}{Simpson\+Decade}} (double a, double b, double c, double cl, double cx, double cy, double cprime, double cyy, double tl1, double tl2, double tx1, double tx2, double ty1, double ty2, double $\ast$tau)
 \item 
-void \mbox{\hyperlink{Integrators_8hpp_a2970e94e892a02fa6009d70da0980d6b}{twsint}} (double pnumber, double ex, double ey, double sigs, double sige, double gammas, double betax, double betay, double alx, double aly, double dx, double dpx, double dy, double dpy, double $\ast$tau)
-\item 
 double \mbox{\hyperlink{Integrators_8hpp_a15dde65ca2b0f0abdff524fcc5eae127}{IBSIntegral\+Integrand}} (double lambda, double ax, double bx, double a, double b, double c)
 \item 
 double \mbox{\hyperlink{Integrators_8hpp_a82a55ddfd8a8e3a5b2b663541c90132d}{simpson}} (const std\+::function$<$ double(double, double, double, double, double, double)$>$ \&ibsintegrand, double ax, double bx, double a, double b, double c, double al, double bl, int n)
 \item 
-void \mbox{\hyperlink{Integrators_8hpp_a8046a0a2a4459af05e50b4b78a602bb0}{int\+Simpson}} (const std\+::function$<$ double(double, double, double, double, double, double)$>$ \&ibsintegrand, double ax, double bx, double ay, double by, double as, double bs, double a, double b, double ci, double $\ast$integral)
+void \mbox{\hyperlink{Integrators_8hpp_a3fceadeedb06929f293ed0dbabdba158}{int\+Simpson}} (const std\+::function$<$ double(double, double, double, double, double, double)$>$ \&Bjorken\+Mtingwa\+Integrand, double ax, double bx, double ay, double by, double as, double bs, double a, double b, double ci, double $\ast$integral)
+\item 
+void \mbox{\hyperlink{Integrators_8hpp_a2970e94e892a02fa6009d70da0980d6b}{twsint}} (double pnumber, double ex, double ey, double sigs, double sige, double gammas, double betax, double betay, double alx, double aly, double dx, double dpx, double dy, double dpy, double $\ast$tau)
 \item 
 void \mbox{\hyperlink{Integrators_8hpp_aff7fc053dc61a5105b48ce4ed301d379}{Bjorken\+Mtingwa\+Int}} (double pnumber, double ex, double ey, double sigs, double sige, double gammas, double betx, double bety, double alx, double aly, double dx, double dpx, double dy, double dpy, double $\ast$tau)
 \item 
@@ -29,45 +29,308 @@ void \mbox{\hyperlink{Integrators_8hpp_a87b3e55c02aa31dba0de4d19a57c01db}{Madx\+
 \doxysubsubsection{\texorpdfstring{BjorkenMtingwaInt()}{BjorkenMtingwaInt()}}
 {\footnotesize\ttfamily void Bjorken\+Mtingwa\+Int (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{sige,  }\item[{double}]{gammas,  }\item[{double}]{betx,  }\item[{double}]{bety,  }\item[{double}]{alx,  }\item[{double}]{aly,  }\item[{double}]{dx,  }\item[{double}]{dpx,  }\item[{double}]{dy,  }\item[{double}]{dpy,  }\item[{double $\ast$}]{tau }\end{DoxyParamCaption})}
 
+BJorken-\/\+Mtingwa IBS model growth rates using Simpson Decade Integratino.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em pnumber} & number of real particles in the bunch \\
+\hline
+ & {\em ex} & horizontal emittance \\
+\hline
+ & {\em ey} & vertical emittance \\
+\hline
+ & {\em sigs} & bunch length \\
+\hline
+ & {\em sige} & energy spread d\+E/E \\
+\hline
+ & {\em gammas} & relativistic gamma \\
+\hline
+ & {\em betax} & horizontal beta function \\
+\hline
+ & {\em betay} & vertical beta function \\
+\hline
+ & {\em alx} & horizontal alpha \\
+\hline
+ & {\em aly} & vertical alpha \\
+\hline
+ & {\em dx} & horizontal dispersion \\
+\hline
+ & {\em dpx} & derivative horizontal dispersion \\
+\hline
+ & {\em dy} & vertical dispersion \\
+\hline
+ & {\em dpy} & derivative vertical dispersion \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em tau} & output Array 0 -\/$>$ IBS longitudinal amplitude growth rate 1 -\/$>$ IBS horizontal amplitude growth rate 2 -\/$>$ IBS vertical amplitude growth rate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+CERN NOTE CERN-\/\+AB-\/2006-\/002 EQ 8. 
+\end{DoxyNote}
 \mbox{\Hypertarget{Integrators_8hpp_ab6bdafe839c9bdd143be3e44fbb51d42}\label{Integrators_8hpp_ab6bdafe839c9bdd143be3e44fbb51d42}} 
 \index{Integrators.hpp@{Integrators.hpp}!ConteMartiniInt@{ConteMartiniInt}}
 \index{ConteMartiniInt@{ConteMartiniInt}!Integrators.hpp@{Integrators.hpp}}
 \doxysubsubsection{\texorpdfstring{ConteMartiniInt()}{ConteMartiniInt()}}
 {\footnotesize\ttfamily void Conte\+Martini\+Int (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{sige,  }\item[{double}]{gammas,  }\item[{double}]{betx,  }\item[{double}]{bety,  }\item[{double}]{alx,  }\item[{double}]{aly,  }\item[{double}]{dx,  }\item[{double}]{dpx,  }\item[{double}]{dy,  }\item[{double}]{dpy,  }\item[{double $\ast$}]{tau }\end{DoxyParamCaption})}
 
+Conte-\/\+Martini IBS model growth rates using Simpson Decade Integratino.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em pnumber} & number of real particles in the bunch \\
+\hline
+ & {\em ex} & horizontal emittance \\
+\hline
+ & {\em ey} & vertical emittance \\
+\hline
+ & {\em sigs} & bunch length \\
+\hline
+ & {\em sige} & energy spread d\+E/E \\
+\hline
+ & {\em gammas} & relativistic gamma \\
+\hline
+ & {\em betax} & horizontal beta function \\
+\hline
+ & {\em betay} & vertical beta function \\
+\hline
+ & {\em alx} & horizontal alpha \\
+\hline
+ & {\em aly} & vertical alpha \\
+\hline
+ & {\em dx} & horizontal dispersion \\
+\hline
+ & {\em dpx} & derivative horizontal dispersion \\
+\hline
+ & {\em dy} & vertical dispersion \\
+\hline
+ & {\em dpy} & derivative vertical dispersion \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em tau} & output Array 0 -\/$>$ IBS longitudinal amplitude growth rate 1 -\/$>$ IBS horizontal amplitude growth rate 2 -\/$>$ IBS vertical amplitude growth rate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+CERN NOTE CERN-\/\+AB-\/2006-\/002 EQ 8. 
+\end{DoxyNote}
 \mbox{\Hypertarget{Integrators_8hpp_a15dde65ca2b0f0abdff524fcc5eae127}\label{Integrators_8hpp_a15dde65ca2b0f0abdff524fcc5eae127}} 
 \index{Integrators.hpp@{Integrators.hpp}!IBSIntegralIntegrand@{IBSIntegralIntegrand}}
 \index{IBSIntegralIntegrand@{IBSIntegralIntegrand}!Integrators.hpp@{Integrators.hpp}}
 \doxysubsubsection{\texorpdfstring{IBSIntegralIntegrand()}{IBSIntegralIntegrand()}}
 {\footnotesize\ttfamily double IBSIntegral\+Integrand (\begin{DoxyParamCaption}\item[{double}]{lambda,  }\item[{double}]{ax,  }\item[{double}]{bx,  }\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{Integrators_8hpp_a8046a0a2a4459af05e50b4b78a602bb0}\label{Integrators_8hpp_a8046a0a2a4459af05e50b4b78a602bb0}} 
+The IBS integral integrand function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lambda} & integration variable \\
+\hline
+{\em ax} & lambda coefficient integral numerator \\
+\hline
+{\em bx} & constant term integral numerator \\
+\hline
+{\em a} & lambda$\ast$$\ast$2 coefficient integral denominator \\
+\hline
+{\em b} & lambda coefficient integral denominator \\
+\hline
+{\em c} & constant integral denominator\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integrand value
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+CERN NOTE CERN-\/\+AB-\/2006-\/002 EQ 8 
+\end{DoxyNote}
+\mbox{\Hypertarget{Integrators_8hpp_a3fceadeedb06929f293ed0dbabdba158}\label{Integrators_8hpp_a3fceadeedb06929f293ed0dbabdba158}} 
 \index{Integrators.hpp@{Integrators.hpp}!intSimpson@{intSimpson}}
 \index{intSimpson@{intSimpson}!Integrators.hpp@{Integrators.hpp}}
 \doxysubsubsection{\texorpdfstring{intSimpson()}{intSimpson()}}
-{\footnotesize\ttfamily void int\+Simpson (\begin{DoxyParamCaption}\item[{const std\+::function$<$ double(double, double, double, double, double, double)$>$ \&}]{ibsintegrand,  }\item[{double}]{ax,  }\item[{double}]{bx,  }\item[{double}]{ay,  }\item[{double}]{by,  }\item[{double}]{as,  }\item[{double}]{bs,  }\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{ci,  }\item[{double $\ast$}]{integral }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void int\+Simpson (\begin{DoxyParamCaption}\item[{const std\+::function$<$ double(double, double, double, double, double, double)$>$ \&}]{Bjorken\+Mtingwa\+Integrand,  }\item[{double}]{ax,  }\item[{double}]{bx,  }\item[{double}]{ay,  }\item[{double}]{by,  }\item[{double}]{as,  }\item[{double}]{bs,  }\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{ci,  }\item[{double $\ast$}]{integral }\end{DoxyParamCaption})}
 
+Standard Simpson integration.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em Bjorken\+Mtingwa\+Integrand} & IBS Bjorken-\/\+Mtingwa integrand as in CERN NOTE CERN-\/\+AB-\/2006-\/002 \\
+\hline
+ & {\em ax} & horizontal lambda coefficient integral numerator \\
+\hline
+ & {\em bx} & horizontal constant term integral numerator \\
+\hline
+ & {\em ay} & vertical lambda coefficient integral numerator \\
+\hline
+ & {\em by} & vertical constant term integral numerator \\
+\hline
+ & {\em as} & longitudinal lambda coefficient integral numerator \\
+\hline
+ & {\em bs} & longitudinal constant term integral numerator \\
+\hline
+ & {\em a} & lambda$\ast$$\ast$2 coefficient integral denominator \\
+\hline
+ & {\em b} & lambda coefficient integral denominator \\
+\hline
+ & {\em c} & constant integral denominator \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em integral} & output\+Array 0 -\/$>$ IBS longitudinal amplitude growth rate 1 -\/$>$ IBS horizontal amplitude growth rate 2 -\/$>$ IBS vertical amplitude growth rate \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{Integrators_8hpp_a87b3e55c02aa31dba0de4d19a57c01db}\label{Integrators_8hpp_a87b3e55c02aa31dba0de4d19a57c01db}} 
 \index{Integrators.hpp@{Integrators.hpp}!MadxInt@{MadxInt}}
 \index{MadxInt@{MadxInt}!Integrators.hpp@{Integrators.hpp}}
 \doxysubsubsection{\texorpdfstring{MadxInt()}{MadxInt()}}
 {\footnotesize\ttfamily void Madx\+Int (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{sige,  }\item[{double}]{gammas,  }\item[{double}]{betx,  }\item[{double}]{bety,  }\item[{double}]{alx,  }\item[{double}]{aly,  }\item[{double}]{dx,  }\item[{double}]{dpx,  }\item[{double}]{dy,  }\item[{double}]{dpy,  }\item[{double $\ast$}]{tau }\end{DoxyParamCaption})}
 
+Zimmerman IBS model growth rates using Simpson Decade Integration.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em pnumber} & number of real particles in the bunch \\
+\hline
+ & {\em ex} & horizontal emittance \\
+\hline
+ & {\em ey} & vertical emittance \\
+\hline
+ & {\em sigs} & bunch length \\
+\hline
+ & {\em sige} & energy spread d\+E/E \\
+\hline
+ & {\em gammas} & relativistic gamma \\
+\hline
+ & {\em betax} & horizontal beta function \\
+\hline
+ & {\em betay} & vertical beta function \\
+\hline
+ & {\em alx} & horizontal alpha \\
+\hline
+ & {\em aly} & vertical alpha \\
+\hline
+ & {\em dx} & horizontal dispersion \\
+\hline
+ & {\em dpx} & derivative horizontal dispersion \\
+\hline
+ & {\em dy} & vertical dispersion \\
+\hline
+ & {\em dpy} & derivative vertical dispersion \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em tau} & output Array 0 -\/$>$ IBS longitudinal amplitude growth rate 1 -\/$>$ IBS horizontal amplitude growth rate 2 -\/$>$ IBS vertical amplitude growth rate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+CERN NOTE CERN-\/\+AB-\/2006-\/002 EQ 8. 
+\end{DoxyNote}
 \mbox{\Hypertarget{Integrators_8hpp_a82a55ddfd8a8e3a5b2b663541c90132d}\label{Integrators_8hpp_a82a55ddfd8a8e3a5b2b663541c90132d}} 
 \index{Integrators.hpp@{Integrators.hpp}!simpson@{simpson}}
 \index{simpson@{simpson}!Integrators.hpp@{Integrators.hpp}}
 \doxysubsubsection{\texorpdfstring{simpson()}{simpson()}}
 {\footnotesize\ttfamily double simpson (\begin{DoxyParamCaption}\item[{const std\+::function$<$ double(double, double, double, double, double, double)$>$ \&}]{ibsintegrand,  }\item[{double}]{ax,  }\item[{double}]{bx,  }\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{double}]{al,  }\item[{double}]{bl,  }\item[{int}]{n }\end{DoxyParamCaption})}
 
+Standard Simpson integration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ibsintegrand} & IBS integrand as in CERN NOTE CERN-\/\+AB-\/2006-\/002 EQ 8 \\
+\hline
+{\em ax} & lambda coefficient integral numerator \\
+\hline
+{\em bx} & constant term integral numerator \\
+\hline
+{\em a} & lambda$\ast$$\ast$2 coefficient integral denominator \\
+\hline
+{\em b} & lambda coefficient integral denominator \\
+\hline
+{\em c} & constant integral denominator \\
+\hline
+{\em al} & lower integration boundary \\
+\hline
+{\em bl} & higher integration boundary \\
+\hline
+{\em n} & number of interval splits for the Simpson method\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Simpson integral value 
+\end{DoxyReturn}
 \mbox{\Hypertarget{Integrators_8hpp_aa2baccc4e5ebf7d1277ac74a16f1a648}\label{Integrators_8hpp_aa2baccc4e5ebf7d1277ac74a16f1a648}} 
 \index{Integrators.hpp@{Integrators.hpp}!SimpsonDecade@{SimpsonDecade}}
 \index{SimpsonDecade@{SimpsonDecade}!Integrators.hpp@{Integrators.hpp}}
 \doxysubsubsection{\texorpdfstring{SimpsonDecade()}{SimpsonDecade()}}
 {\footnotesize\ttfamily void Simpson\+Decade (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{double}]{cl,  }\item[{double}]{cx,  }\item[{double}]{cy,  }\item[{double}]{cprime,  }\item[{double}]{cyy,  }\item[{double}]{tl1,  }\item[{double}]{tl2,  }\item[{double}]{tx1,  }\item[{double}]{tx2,  }\item[{double}]{ty1,  }\item[{double}]{ty2,  }\item[{double $\ast$}]{tau }\end{DoxyParamCaption})}
 
+Simpson integrator with decade splitting.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em a} & lambda$\ast$$\ast$2 coefficient integral denominator \\
+\hline
+ & {\em b} & lambda coefficient integral denominator \\
+\hline
+ & {\em c} & constant integral denominator \\
+\hline
+ & {\em cl} & longitudinal growth time factor \\
+\hline
+ & {\em cx} & horizontal growth time factor \\
+\hline
+ & {\em cy} & vertical growht time factor \\
+\hline
+ & {\em cprime} & scaling factor \\
+\hline
+ & {\em cyy} & scaling factor adapted to sqrt denominator \\
+\hline
+ & {\em tl1} & longitudinal lambda coefficient integral numerator \\
+\hline
+ & {\em tl2} & longitudinal constant term integral numerator \\
+\hline
+ & {\em tx1} & horizontal lambda coefficient integral numerator \\
+\hline
+ & {\em tx2} & horizontal constant term integral numerator \\
+\hline
+ & {\em ty1} & vertical lambda coefficient integral numerator \\
+\hline
+ & {\em ty2} & vertical constant term integral numerator \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em tau} & output\+Array 0 -\/$>$ IBS amplitude growth rate longitudinal 1 -\/$>$ IBS amplitude growth rate horizontal 2 -\/$>$ IBS amplitude growth rate vertical \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{Integrators_8hpp_a2970e94e892a02fa6009d70da0980d6b}\label{Integrators_8hpp_a2970e94e892a02fa6009d70da0980d6b}} 
 \index{Integrators.hpp@{Integrators.hpp}!twsint@{twsint}}
 \index{twsint@{twsint}!Integrators.hpp@{Integrators.hpp}}
 \doxysubsubsection{\texorpdfstring{twsint()}{twsint()}}
 {\footnotesize\ttfamily void twsint (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{sige,  }\item[{double}]{gammas,  }\item[{double}]{betax,  }\item[{double}]{betay,  }\item[{double}]{alx,  }\item[{double}]{aly,  }\item[{double}]{dx,  }\item[{double}]{dpx,  }\item[{double}]{dy,  }\item[{double}]{dpy,  }\item[{double $\ast$}]{tau }\end{DoxyParamCaption})}
 
+Zimmerman IBS model growth rates adapted from MADX implementation.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em pnumber} & number of real particles in the bunch \\
+\hline
+ & {\em ex} & horizontal emittance \\
+\hline
+ & {\em ey} & vertical emittance \\
+\hline
+ & {\em sigs} & bunch length \\
+\hline
+ & {\em sige} & energy spread d\+E/E \\
+\hline
+ & {\em gammas} & relativistic gamma \\
+\hline
+ & {\em betax} & horizontal beta function \\
+\hline
+ & {\em betay} & vertical beta function \\
+\hline
+ & {\em alx} & horizontal alpha \\
+\hline
+ & {\em aly} & vertical alpha \\
+\hline
+ & {\em dx} & horizontal dispersion \\
+\hline
+ & {\em dpx} & derivative horizontal dispersion \\
+\hline
+ & {\em dy} & vertical dispersion \\
+\hline
+ & {\em dpy} & derivative vertical dispersion \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em tau} & output Array 0 -\/$>$ IBS longitudinal amplitude growth rate 1 -\/$>$ IBS horizontal amplitude growth rate 2 -\/$>$ IBS vertical amplitude growth rate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Based on implementation of twsint in MADX (copyright CERN) CERN NOTE CERN-\/\+AB-\/2006-\/002 EQ 8. 
+\end{DoxyNote}

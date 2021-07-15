@@ -112,10 +112,499 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Simpson integrator with decade splitting.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lambda**2 coefficient integral denominator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lambda coefficient integral denominator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>constant integral denominator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>longitudinal growth time factor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal growth time factor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical growht time factor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cprime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>scaling factor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cyy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>scaling factor adapted to sqrt denominator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tl1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>longitudinal lambda coefficient integral numerator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tl2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>longitudinal constant term integral numerator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tx1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal lambda coefficient integral numerator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tx2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal constant term integral numerator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ty1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical lambda coefficient integral numerator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ty2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical constant term integral numerator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">tau</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>outputArray 0 -&gt; IBS amplitude growth rate longitudinal 1 -&gt; IBS amplitude growth rate horizontal 2 -&gt; IBS amplitude growth rate vertical </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="3" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="68" bodyend="152" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="3" declcolumn="6"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="25" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="68" bodyend="152" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="25" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="Integrators_8hpp_1a15dde65ca2b0f0abdff524fcc5eae127" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double IBSIntegralIntegrand</definition>
+        <argsstring>(double lambda, double ax, double bx, double a, double b, double c)</argsstring>
+        <name>IBSIntegralIntegrand</name>
+        <param>
+          <type>double</type>
+          <declname>lambda</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ax</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The IBS integral integrand function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>integration variable </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lambda coefficient integral numerator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>constant term integral numerator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lambda**2 coefficient integral denominator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lambda coefficient integral denominator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>constant integral denominator</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>integrand value</para>
+</simplesect>
+<simplesect kind="note"><para>CERN NOTE CERN-AB-2006-002 EQ 8 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="43" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="188" bodyend="194" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="43" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="Integrators_8hpp_1a82a55ddfd8a8e3a5b2b663541c90132d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double simpson</definition>
+        <argsstring>(const std::function&lt; double(double, double, double, double, double, double)&gt; &amp;ibsintegrand, double ax, double bx, double a, double b, double c, double al, double bl, int n)</argsstring>
+        <name>simpson</name>
+        <param>
+          <type>const std::function&lt; double(double, double, double, double, double, double)&gt; &amp;</type>
+          <declname>ibsintegrand</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ax</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>al</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>bl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Standard Simpson integration.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ibsintegrand</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>IBS integrand as in CERN NOTE CERN-AB-2006-002 EQ 8 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lambda coefficient integral numerator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>constant term integral numerator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lambda**2 coefficient integral denominator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lambda coefficient integral denominator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>constant integral denominator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>al</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lower integration boundary </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>higher integration boundary </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of interval splits for the Simpson method</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Simpson integral value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="62" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="245" bodyend="268" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="62" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="Integrators_8hpp_1a3fceadeedb06929f293ed0dbabdba158" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void intSimpson</definition>
+        <argsstring>(const std::function&lt; double(double, double, double, double, double, double)&gt; &amp;BjorkenMtingwaIntegrand, double ax, double bx, double ay, double by, double as, double bs, double a, double b, double ci, double *integral)</argsstring>
+        <name>intSimpson</name>
+        <param>
+          <type>const std::function&lt; double(double, double, double, double, double, double)&gt; &amp;</type>
+          <declname>BjorkenMtingwaIntegrand</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ax</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ay</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>by</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>as</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>bs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ci</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>integral</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Standard Simpson integration.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>BjorkenMtingwaIntegrand</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>IBS Bjorken-Mtingwa integrand as in CERN NOTE CERN-AB-2006-002 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal lambda coefficient integral numerator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal constant term integral numerator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical lambda coefficient integral numerator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>by</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical constant term integral numerator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>as</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>longitudinal lambda coefficient integral numerator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>longitudinal constant term integral numerator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lambda**2 coefficient integral denominator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lambda coefficient integral denominator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>constant integral denominator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">integral</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>outputArray 0 -&gt; IBS longitudinal amplitude growth rate 1 -&gt; IBS horizontal amplitude growth rate 2 -&gt; IBS vertical amplitude growth rate </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="87" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="322" bodyend="371" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="87" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="Integrators_8hpp_1a2970e94e892a02fa6009d70da0980d6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -185,153 +674,135 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Zimmerman IBS model growth rates adapted from MADX implementation.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of real particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sige</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>energy spread dE/E </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gammas</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>relativistic gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>betax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal beta function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>betay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical beta function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal alpha </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aly</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical alpha </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dpx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>derivative horizontal dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>derivative vertical dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">tau</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output Array 0 -&gt; IBS longitudinal amplitude growth rate 1 -&gt; IBS horizontal amplitude growth rate 2 -&gt; IBS vertical amplitude growth rate</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Based on implementation of twsint in MADX (copyright CERN) CERN NOTE CERN-AB-2006-002 EQ 8. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="7" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="894" bodyend="1078" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="7" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="Integrators_8hpp_1a15dde65ca2b0f0abdff524fcc5eae127" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>double</type>
-        <definition>double IBSIntegralIntegrand</definition>
-        <argsstring>(double lambda, double ax, double bx, double a, double b, double c)</argsstring>
-        <name>IBSIntegralIntegrand</name>
-        <param>
-          <type>double</type>
-          <declname>lambda</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>ax</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>bx</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>a</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>b</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>c</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="11" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="188" bodyend="194" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="11" declcolumn="8"/>
-      </memberdef>
-      <memberdef kind="function" id="Integrators_8hpp_1a82a55ddfd8a8e3a5b2b663541c90132d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>double</type>
-        <definition>double simpson</definition>
-        <argsstring>(const std::function&lt; double(double, double, double, double, double, double)&gt; &amp;ibsintegrand, double ax, double bx, double a, double b, double c, double al, double bl, int n)</argsstring>
-        <name>simpson</name>
-        <param>
-          <type>const std::function&lt; double(double, double, double, double, double, double)&gt; &amp;</type>
-          <declname>ibsintegrand</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>ax</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>bx</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>a</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>b</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>c</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>al</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>bl</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>n</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="14" column="8" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="245" bodyend="268" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="14" declcolumn="8"/>
-      </memberdef>
-      <memberdef kind="function" id="Integrators_8hpp_1a8046a0a2a4459af05e50b4b78a602bb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void intSimpson</definition>
-        <argsstring>(const std::function&lt; double(double, double, double, double, double, double)&gt; &amp;ibsintegrand, double ax, double bx, double ay, double by, double as, double bs, double a, double b, double ci, double *integral)</argsstring>
-        <name>intSimpson</name>
-        <param>
-          <type>const std::function&lt; double(double, double, double, double, double, double)&gt; &amp;</type>
-          <declname>ibsintegrand</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>ax</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>bx</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>ay</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>by</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>as</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>bs</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>a</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>b</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>ci</declname>
-        </param>
-        <param>
-          <type>double *</type>
-          <declname>integral</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="19" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="322" bodyend="371" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="19" declcolumn="6"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="119" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="894" bodyend="1078" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="119" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="Integrators_8hpp_1aff7fc053dc61a5105b48ce4ed301d379" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -401,10 +872,135 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>BJorken-Mtingwa IBS model growth rates using Simpson Decade Integratino.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of real particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sige</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>energy spread dE/E </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gammas</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>relativistic gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>betax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal beta function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>betay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical beta function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal alpha </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aly</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical alpha </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dpx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>derivative horizontal dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>derivative vertical dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">tau</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output Array 0 -&gt; IBS longitudinal amplitude growth rate 1 -&gt; IBS horizontal amplitude growth rate 2 -&gt; IBS vertical amplitude growth rate</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>CERN NOTE CERN-AB-2006-002 EQ 8. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="31" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="446" bodyend="513" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="31" declcolumn="6"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="155" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="446" bodyend="513" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="155" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="Integrators_8hpp_1ab6bdafe839c9bdd143be3e44fbb51d42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -474,10 +1070,135 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Conte-Martini IBS model growth rates using Simpson Decade Integratino.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of real particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sige</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>energy spread dE/E </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gammas</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>relativistic gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>betax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal beta function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>betay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical beta function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal alpha </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aly</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical alpha </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dpx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>derivative horizontal dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>derivative vertical dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">tau</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output Array 0 -&gt; IBS longitudinal amplitude growth rate 1 -&gt; IBS horizontal amplitude growth rate 2 -&gt; IBS vertical amplitude growth rate</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>CERN NOTE CERN-AB-2006-002 EQ 8. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="36" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="573" bodyend="665" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="36" declcolumn="6"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="185" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="573" bodyend="665" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="185" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="Integrators_8hpp_1a87b3e55c02aa31dba0de4d19a57c01db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -547,10 +1268,135 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Zimmerman IBS model growth rates using Simpson Decade Integration.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of real particles in the bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sige</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>energy spread dE/E </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gammas</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>relativistic gamma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>betax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal beta function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>betay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical beta function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal alpha </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aly</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical alpha </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dpx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>derivative horizontal dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>derivative vertical dispersion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">tau</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output Array 0 -&gt; IBS longitudinal amplitude growth rate 1 -&gt; IBS horizontal amplitude growth rate 2 -&gt; IBS vertical amplitude growth rate</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>CERN NOTE CERN-AB-2006-002 EQ 8. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="41" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="725" bodyend="823" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="41" declcolumn="6"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" line="215" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/Integrators.cpp" bodystart="725" bodyend="823" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp" declline="215" declcolumn="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -560,51 +1406,48 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1aa2baccc4e5ebf7d1277ac74a16f1a648" kindref="member">SimpsonDecade</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>c,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cl,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cx,</highlight></codeline>
-<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cprime,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cyy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tl1,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tl2,</highlight></codeline>
-<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tx1,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tx2,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ty1,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ty2,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*tau);</highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1a2970e94e892a02fa6009d70da0980d6b" kindref="member">twsint</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammas,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betay,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aly,</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*tau);</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1a15dde65ca2b0f0abdff524fcc5eae127" kindref="member">IBSIntegralIntegrand</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lambda,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a,</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>c);</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1a82a55ddfd8a8e3a5b2b663541c90132d" kindref="member">simpson</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::function&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)&gt;<sp/>&amp;ibsintegrand,</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>c,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>al,</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1a8046a0a2a4459af05e50b4b78a602bb0" kindref="member">intSimpson</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::function&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)&gt;<sp/>&amp;ibsintegrand,</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ay,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>by,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>as,</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bs,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ci,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*integral);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="25"><highlight class="comment">==============================================================================</highlight></codeline>
-<codeline lineno="26"><highlight class="comment"></highlight></codeline>
-<codeline lineno="27"><highlight class="comment">MODEL<sp/>INTEGRATORS</highlight></codeline>
-<codeline lineno="28"><highlight class="comment"></highlight></codeline>
-<codeline lineno="29"><highlight class="comment">==============================================================================</highlight></codeline>
-<codeline lineno="30"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1aff7fc053dc61a5105b48ce4ed301d379" kindref="member">BjorkenMtingwaInt</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammas,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bety,</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aly,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*tau);</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1ab6bdafe839c9bdd143be3e44fbb51d42" kindref="member">ConteMartiniInt</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammas,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bety,</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aly,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*tau);</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1a87b3e55c02aa31dba0de4d19a57c01db" kindref="member">MadxInt</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammas,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bety,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aly,</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*tau);</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1a2970e94e892a02fa6009d70da0980d6b" kindref="member">twsint</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammas,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betay,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aly,</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*tau);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1aa2baccc4e5ebf7d1277ac74a16f1a648" kindref="member">SimpsonDecade</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>c,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cl,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cx,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cprime,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cyy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tl1,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tl2,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tx1,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tx2,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ty1,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ty2,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*tau);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1a15dde65ca2b0f0abdff524fcc5eae127" kindref="member">IBSIntegralIntegrand</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lambda,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>c);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1a82a55ddfd8a8e3a5b2b663541c90132d" kindref="member">simpson</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::function&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)&gt;<sp/>&amp;ibsintegrand,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>c,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>al,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1a3fceadeedb06929f293ed0dbabdba158" kindref="member">intSimpson</ref>(</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::function&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)&gt;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;BjorkenMtingwaIntegrand,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ay,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>by,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>as,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bs,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ci,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*integral);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1a2970e94e892a02fa6009d70da0980d6b" kindref="member">twsint</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammas,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betax,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betay,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aly,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*tau);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="124"><highlight class="comment">==============================================================================</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"></highlight></codeline>
+<codeline lineno="126"><highlight class="comment">MODEL<sp/>INTEGRATORS</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"></highlight></codeline>
+<codeline lineno="128"><highlight class="comment">==============================================================================</highlight></codeline>
+<codeline lineno="129"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1aff7fc053dc61a5105b48ce4ed301d379" kindref="member">BjorkenMtingwaInt</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammas,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bety,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aly,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*tau);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1ab6bdafe839c9bdd143be3e44fbb51d42" kindref="member">ConteMartiniInt</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammas,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bety,</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aly,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*tau);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Integrators_8hpp_1a87b3e55c02aa31dba0de4d19a57c01db" kindref="member">MadxInt</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ex,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ey,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sigs,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sige,</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gammas,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>betx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bety,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aly,</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dpy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*tau);</highlight></codeline>
     </programlisting>
     <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/Integrators.hpp"/>
   </compounddef>

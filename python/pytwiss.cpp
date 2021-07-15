@@ -384,7 +384,11 @@ PYBIND11_MODULE(IBSLib, m) {
           ptr_tau[1] = alpha[1];
           ptr_tau[2] = alpha[2];
         },
-        "Simpson integrator with decade splitting.");
+        "Simpson integrator with decade splitting.", py::arg("a"), py::arg("b"),
+        py::arg("c"), py::arg("cl"), py::arg("cx"), py::arg("cy"),
+        py::arg("cprime"), py::arg("cyy"), py::arg("tl1"), py::arg("tl2"),
+        py::arg("tx1"), py::arg("tx2"), py::arg("ty1"), py::arg("ty2"),
+        py::arg("tau"));
   m.def("integrator_twsint",
         [](double pnumber, double ex, double ey, double sigs, double sige,
            double gammas, double betax, double betay, double alx, double aly,
@@ -399,8 +403,14 @@ PYBIND11_MODULE(IBSLib, m) {
           ptr_tau[1] = alpha[1];
           ptr_tau[2] = alpha[2];
         },
-        "MADX Simpson Decade with scaling integrator");
-  m.def("integrand", &IBSIntegralIntegrand, "IBS integral integrand ");
+        "MADX Simpson Decade with scaling integrator", py::arg("pnumber"),
+        py::arg("emitx"), py::arg("emity"), py::arg("sigs"), py::arg("sige"),
+        py::arg("gamma"), py::arg("betax"), py::arg("betay"), py::arg("alphax"),
+        py::arg("alphay"), py::arg("dispersionx"), py::arg("dispersionx_der"),
+        py::arg("dispersiony"), py::arg("dispersiony_der"), py::arg("tau"));
+  m.def("integrand", &IBSIntegralIntegrand, "IBS integral integrand ",
+        py::arg("int_var"), py::arg("ax"), py::arg("bx"), py::arg("a"),
+        py::arg("b"), py::arg("c"));
   m.def("integrator_simpson", &simpson,
         "standard simpson integration on variable integrand (function)"); /*
 [](const std::function<double(double, double, double, double, double,
@@ -437,7 +447,12 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_tau[1] = alpha[1];
           ptr_tau[2] = alpha[2];
         },
-        "Bjorken-Mtingwa integral calculated using Simpson Decade");
+        "Bjorken-Mtingwa integral calculated using Simpson Decade",
+        py::arg("pnumber"), py::arg("emitx"), py::arg("emity"), py::arg("sigs"),
+        py::arg("sige"), py::arg("gamma"), py::arg("betax"), py::arg("betay"),
+        py::arg("alphax"), py::arg("alphay"), py::arg("dispersionx"),
+        py::arg("dispersionx_der"), py::arg("dispersiony"),
+        py::arg("dispersiony_der"), py::arg("tau"));
   m.def("integral_conte_martini",
         [](double pnumber, double ex, double ey, double sigs, double sige,
            double gammas, double betx, double bety, double alx, double aly,
@@ -452,7 +467,12 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_tau[1] = alpha[1];
           ptr_tau[2] = alpha[2];
         },
-        "Conte-Martini integral calculated using Simpson Decade");
+        "Conte-Martini integral calculated using Simpson Decade",
+        py::arg("pnumber"), py::arg("emitx"), py::arg("emity"), py::arg("sigs"),
+        py::arg("sige"), py::arg("gamma"), py::arg("betax"), py::arg("betay"),
+        py::arg("alphax"), py::arg("alphay"), py::arg("dispersionx"),
+        py::arg("dispersionx_der"), py::arg("dispersiony"),
+        py::arg("dispersiony_der"), py::arg("tau"));
   m.def("integral_zimmerman",
         [](double pnumber, double ex, double ey, double sigs, double sige,
            double gammas, double betx, double bety, double alx, double aly,
@@ -467,7 +487,12 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_tau[1] = alpha[1];
           ptr_tau[2] = alpha[2];
         },
-        "Zimmerman integral calculated using Simpson Decade");
+        "Zimmerman integral calculated using Simpson Decade",
+        py::arg("pnumber"), py::arg("emitx"), py::arg("emity"), py::arg("sigs"),
+        py::arg("sige"), py::arg("gamma"), py::arg("betax"), py::arg("betay"),
+        py::arg("alphax"), py::arg("alphay"), py::arg("dispersionx"),
+        py::arg("dispersionx_der"), py::arg("dispersiony"),
+        py::arg("dispersiony_der"), py::arg("tau"));
   /*
 ================================================================================
                  IBS MODELS

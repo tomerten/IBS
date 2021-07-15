@@ -7,3 +7,4 @@
 \_form#6=19x9:$ \omega q_s $
 \_form#7=133x14:$ I_1, I_2, I_3, I_{4x}, I_{4y}, I_{5x}, I_{5y} $
 \_form#8=190x16:$ \tau_x, \tau_y, \tau_{dEoE2}, \epsilon_x^\infty, \epsilon_y^\infty, \sigma_E^2, \sigma_s, J_x, J_y $
+\_form#9=173x18:$ \tau_x, \tau_y, \tau_{\sigma_E^2}, \epsilon_x^\infty, \epsilon_y^\infty, \sigma_E^2, \sigma_s, J_x, J_y $

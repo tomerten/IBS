@@ -200,6 +200,28 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>BJorken-Mtingwa IBS model growth rates using Simpson Decade Integratino.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">pnumber</td><td>number of real particles in the bunch </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">sige</td><td>energy spread dE/E </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">gammas</td><td>relativistic gamma </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">betax</td><td>horizontal beta function </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">betay</td><td>vertical beta function </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">alx</td><td>horizontal alpha </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">aly</td><td>vertical alpha </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dx</td><td>horizontal dispersion </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dpx</td><td>derivative horizontal dispersion </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dy</td><td>vertical dispersion </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dpy</td><td>derivative vertical dispersion </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">tau</td><td>output Array 0 -&gt; IBS longitudinal amplitude growth rate 1 -&gt; IBS horizontal amplitude growth rate 2 -&gt; IBS vertical amplitude growth rate</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>CERN NOTE CERN-AB-2006-002 EQ 8. </dd></dl>
 
 </div>
 </div>
@@ -306,6 +328,28 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Conte-Martini IBS model growth rates using Simpson Decade Integratino.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">pnumber</td><td>number of real particles in the bunch </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">sige</td><td>energy spread dE/E </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">gammas</td><td>relativistic gamma </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">betax</td><td>horizontal beta function </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">betay</td><td>vertical beta function </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">alx</td><td>horizontal alpha </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">aly</td><td>vertical alpha </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dx</td><td>horizontal dispersion </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dpx</td><td>derivative horizontal dispersion </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dy</td><td>vertical dispersion </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dpy</td><td>derivative vertical dispersion </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">tau</td><td>output Array 0 -&gt; IBS longitudinal amplitude growth rate 1 -&gt; IBS horizontal amplitude growth rate 2 -&gt; IBS vertical amplitude growth rate</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>CERN NOTE CERN-AB-2006-002 EQ 8. </dd></dl>
 
 </div>
 </div>
@@ -358,6 +402,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>The IBS integral integrand function.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lambda</td><td>integration variable </td></tr>
+    <tr><td class="paramname">ax</td><td>lambda coefficient integral numerator </td></tr>
+    <tr><td class="paramname">bx</td><td>constant term integral numerator </td></tr>
+    <tr><td class="paramname">a</td><td>lambda**2 coefficient integral denominator </td></tr>
+    <tr><td class="paramname">b</td><td>lambda coefficient integral denominator </td></tr>
+    <tr><td class="paramname">c</td><td>constant integral denominator</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>integrand value</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>CERN NOTE CERN-AB-2006-002 EQ 8 </dd></dl>
 
 </div>
 </div>
@@ -425,7 +483,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>c</em>, </td>
+          <td class="paramname"><em>ci</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -440,6 +498,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Standard Simpson integration.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">BjorkenMtingwaIntegrand</td><td>IBS Bjorken-Mtingwa integrand as in CERN NOTE CERN-AB-2006-002 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ax</td><td>horizontal lambda coefficient integral numerator </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">bx</td><td>horizontal constant term integral numerator </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ay</td><td>vertical lambda coefficient integral numerator </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">by</td><td>vertical constant term integral numerator </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">as</td><td>longitudinal lambda coefficient integral numerator </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">bs</td><td>longitudinal constant term integral numerator </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">a</td><td>lambda**2 coefficient integral denominator </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">b</td><td>lambda coefficient integral denominator </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">c</td><td>constant integral denominator </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">integral</td><td>outputArray 0 -&gt; IBS longitudinal amplitude growth rate 1 -&gt; IBS horizontal amplitude growth rate 2 -&gt; IBS vertical amplitude growth rate </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -546,6 +621,28 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Zimmerman IBS model growth rates using Simpson Decade Integration.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">pnumber</td><td>number of real particles in the bunch </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">sige</td><td>energy spread dE/E </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">gammas</td><td>relativistic gamma </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">betax</td><td>horizontal beta function </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">betay</td><td>vertical beta function </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">alx</td><td>horizontal alpha </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">aly</td><td>vertical alpha </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dx</td><td>horizontal dispersion </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dpx</td><td>derivative horizontal dispersion </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dy</td><td>vertical dispersion </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dpy</td><td>derivative vertical dispersion </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">tau</td><td>output Array 0 -&gt; IBS longitudinal amplitude growth rate 1 -&gt; IBS horizontal amplitude growth rate 2 -&gt; IBS vertical amplitude growth rate</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>CERN NOTE CERN-AB-2006-002 EQ 8. </dd></dl>
 
 </div>
 </div>
@@ -616,6 +713,22 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Standard Simpson integration.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ibsintegrand</td><td>IBS integrand as in CERN NOTE CERN-AB-2006-002 EQ 8 </td></tr>
+    <tr><td class="paramname">ax</td><td>lambda coefficient integral numerator </td></tr>
+    <tr><td class="paramname">bx</td><td>constant term integral numerator </td></tr>
+    <tr><td class="paramname">a</td><td>lambda**2 coefficient integral denominator </td></tr>
+    <tr><td class="paramname">b</td><td>lambda coefficient integral denominator </td></tr>
+    <tr><td class="paramname">c</td><td>constant integral denominator </td></tr>
+    <tr><td class="paramname">al</td><td>lower integration boundary </td></tr>
+    <tr><td class="paramname">bl</td><td>higher integration boundary </td></tr>
+    <tr><td class="paramname">n</td><td>number of interval splits for the Simpson method</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Simpson integral value </dd></dl>
 
 </div>
 </div>
@@ -722,6 +835,27 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Simpson integrator with decade splitting.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">a</td><td>lambda**2 coefficient integral denominator </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">b</td><td>lambda coefficient integral denominator </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">c</td><td>constant integral denominator </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">cl</td><td>longitudinal growth time factor </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">cx</td><td>horizontal growth time factor </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">cy</td><td>vertical growht time factor </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">cprime</td><td>scaling factor </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">cyy</td><td>scaling factor adapted to sqrt denominator </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">tl1</td><td>longitudinal lambda coefficient integral numerator </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">tl2</td><td>longitudinal constant term integral numerator </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">tx1</td><td>horizontal lambda coefficient integral numerator </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">tx2</td><td>horizontal constant term integral numerator </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ty1</td><td>vertical lambda coefficient integral numerator </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ty2</td><td>vertical constant term integral numerator </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">tau</td><td>outputArray 0 -&gt; IBS amplitude growth rate longitudinal 1 -&gt; IBS amplitude growth rate horizontal 2 -&gt; IBS amplitude growth rate vertical </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -828,6 +962,28 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Zimmerman IBS model growth rates adapted from MADX implementation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">pnumber</td><td>number of real particles in the bunch </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">sige</td><td>energy spread dE/E </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">gammas</td><td>relativistic gamma </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">betax</td><td>horizontal beta function </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">betay</td><td>vertical beta function </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">alx</td><td>horizontal alpha </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">aly</td><td>vertical alpha </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dx</td><td>horizontal dispersion </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dpx</td><td>derivative horizontal dispersion </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dy</td><td>vertical dispersion </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dpy</td><td>derivative vertical dispersion </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">tau</td><td>output Array 0 -&gt; IBS longitudinal amplitude growth rate 1 -&gt; IBS horizontal amplitude growth rate 2 -&gt; IBS vertical amplitude growth rate</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Based on implementation of twsint in MADX (copyright CERN) CERN NOTE CERN-AB-2006-002 EQ 8. </dd></dl>
 
 </div>
 </div>

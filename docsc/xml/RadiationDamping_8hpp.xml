@@ -332,7 +332,7 @@
 </parameterlist>
 <simplesect kind="see"><para><ref refid="RadiationDamping_8hpp_1ab17d5a1994334f44cad3bded2095bdb4" kindref="member">RadiationDampingApprox</ref>, <ref refid="RadiationDamping_8hpp_1a2ce252d6fff2c43456d535ab02385b8d" kindref="member">RadiationDampingLattice</ref></para>
 </simplesect>
-<simplesect kind="return"><para><formula id="9">$ \tau_x, \tau_y, \tau_{\sigam_E^2}, \epsilon_x^\infty, \epsilon_y^\infty, \sigma_E^2, \sigma_s, J_x, J_y $</formula></para>
+<simplesect kind="return"><para><formula id="9">$ \tau_x, \tau_y, \tau_{\sigma_E^2}, \epsilon_x^\infty, \epsilon_y^\infty, \sigma_E^2, \sigma_s, J_x, J_y $</formula></para>
 </simplesect>
 <simplesect kind="note"><para>Based on formulas in the Accelerator Handbook for Physicists and </para>
 </simplesect>

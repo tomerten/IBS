@@ -1960,7 +1960,7 @@
 <codeline lineno="1224"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>integrals[3];</highlight></codeline>
 <codeline lineno="1226"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1227"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Integrators_8hpp_1a8046a0a2a4459af05e50b4b78a602bb0" kindref="member">intSimpson</ref>(<ref refid="Integrators_8hpp_1a15dde65ca2b0f0abdff524fcc5eae127" kindref="member">IBSIntegralIntegrand</ref>,<sp/>axx,<sp/>bxx,<sp/>ayy,<sp/>byy,<sp/>al,<sp/>bl,<sp/>a,<sp/>b,<sp/>c,</highlight></codeline>
+<codeline lineno="1227"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Integrators_8hpp_1a3fceadeedb06929f293ed0dbabdba158" kindref="member">intSimpson</ref>(<ref refid="Integrators_8hpp_1a15dde65ca2b0f0abdff524fcc5eae127" kindref="member">IBSIntegralIntegrand</ref>,<sp/>axx,<sp/>bxx,<sp/>ayy,<sp/>byy,<sp/>al,<sp/>bl,<sp/>a,<sp/>b,<sp/>c,</highlight></codeline>
 <codeline lineno="1228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>integrals);</highlight></codeline>
 <codeline lineno="1229"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>clog[2];</highlight></codeline>

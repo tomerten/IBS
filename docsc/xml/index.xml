@@ -10,10 +10,10 @@
   </compound>
   <compound refid="Integrators_8hpp" kind="file"><name>Integrators.hpp</name>
     <member refid="Integrators_8hpp_1aa2baccc4e5ebf7d1277ac74a16f1a648" kind="function"><name>SimpsonDecade</name></member>
-    <member refid="Integrators_8hpp_1a2970e94e892a02fa6009d70da0980d6b" kind="function"><name>twsint</name></member>
     <member refid="Integrators_8hpp_1a15dde65ca2b0f0abdff524fcc5eae127" kind="function"><name>IBSIntegralIntegrand</name></member>
     <member refid="Integrators_8hpp_1a82a55ddfd8a8e3a5b2b663541c90132d" kind="function"><name>simpson</name></member>
-    <member refid="Integrators_8hpp_1a8046a0a2a4459af05e50b4b78a602bb0" kind="function"><name>intSimpson</name></member>
+    <member refid="Integrators_8hpp_1a3fceadeedb06929f293ed0dbabdba158" kind="function"><name>intSimpson</name></member>
+    <member refid="Integrators_8hpp_1a2970e94e892a02fa6009d70da0980d6b" kind="function"><name>twsint</name></member>
     <member refid="Integrators_8hpp_1aff7fc053dc61a5105b48ce4ed301d379" kind="function"><name>BjorkenMtingwaInt</name></member>
     <member refid="Integrators_8hpp_1ab6bdafe839c9bdd143be3e44fbb51d42" kind="function"><name>ConteMartiniInt</name></member>
     <member refid="Integrators_8hpp_1a87b3e55c02aa31dba0de4d19a57c01db" kind="function"><name>MadxInt</name></member>
