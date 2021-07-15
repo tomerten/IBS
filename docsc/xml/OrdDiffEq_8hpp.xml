@@ -73,10 +73,53 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method to write simulation output to file.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the file to write to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>timesteps </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal emit steps </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical emit steps </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bunch length steps </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/OrdDiffEq.hpp" line="10" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/OrdDiffEq.cpp" bodystart="32" bodyend="53" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/OrdDiffEq.hpp" declline="10" declcolumn="6"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/OrdDiffEq.hpp" line="19" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/OrdDiffEq.cpp" bodystart="32" bodyend="53" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/OrdDiffEq.hpp" declline="19" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="OrdDiffEq_8hpp_1a2911080d9ba7a80b86762e0e7370d7a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -148,10 +191,135 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Run ODE simulation using auto time step.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>twiss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Header Map </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>twissdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Table Map </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nrf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of rf systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>harmon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list of harmonic numbers for the rf systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>voltages</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list of voltages for the rf systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>timesteps </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">sigs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">sige</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>energy spread </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>model</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>IBS model (1-13) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of particles per bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>couplingpercentage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>hor/ver coupling in percentage </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>threshold</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>evolution stop threshold </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>simulation method (rlx or der) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>: Relaxation method based on implementation in BMAD </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/OrdDiffEq.hpp" line="13" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/OrdDiffEq.cpp" bodystart="141" bodyend="522" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/OrdDiffEq.hpp" declline="13" declcolumn="6"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/OrdDiffEq.hpp" line="43" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/OrdDiffEq.cpp" bodystart="141" bodyend="522" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/OrdDiffEq.hpp" declline="43" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="OrdDiffEq_8hpp_1aaa1e63178907dcd61097398cc60ef686" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -227,10 +395,141 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Run ODE simulation using auto time step.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>twiss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Header Map </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>twissdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Table Map </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nrf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of rf systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>harmon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list of harmonic numbers for the rf systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>voltages</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list of voltages for the rf systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>timesteps </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">sigs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">sige</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>energy spread </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>model</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>IBS model (1-13) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of particles per bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nsteps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of simulation steps </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stepsize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time step size </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>couplingpercentage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>hor/ver coupling in percentage </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>simulation method (rlx or der) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/OrdDiffEq.hpp" line="19" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/OrdDiffEq.cpp" bodystart="524" bodyend="863" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/OrdDiffEq.hpp" declline="19" declcolumn="6"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/OrdDiffEq.hpp" line="70" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/OrdDiffEq.cpp" bodystart="524" bodyend="863" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/OrdDiffEq.hpp" declline="70" declcolumn="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -246,21 +545,19 @@
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="OrdDiffEq_8hpp_1ad2a6c40b251579ddc74597f93e030013" kindref="member">WriteToFile</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>filename,<sp/>vector&lt;double&gt;<sp/>&amp;t,<sp/>vector&lt;double&gt;<sp/>&amp;ex,</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>&amp;ey,<sp/>vector&lt;double&gt;<sp/>&amp;sigs);</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="OrdDiffEq_8hpp_1a2911080d9ba7a80b86762e0e7370d7a1" kindref="member">ODE</ref>(map&lt;string,<sp/>double&gt;<sp/>&amp;twiss,<sp/>map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;twissdata,</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrf,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>harmon[],<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>voltages[],<sp/>vector&lt;double&gt;<sp/>&amp;t,</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>&amp;ex,<sp/>vector&lt;double&gt;<sp/>&amp;ey,<sp/>vector&lt;double&gt;<sp/>&amp;sigs,</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>sige,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>model,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>couplingpercentage,</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>threshold,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>method);</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="OrdDiffEq_8hpp_1a2911080d9ba7a80b86762e0e7370d7a1" kindref="member">ODE</ref>(map&lt;string,<sp/>double&gt;<sp/>&amp;twiss,<sp/>map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;twissdata,</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrf,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>harmon[],<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>voltages[],<sp/>vector&lt;double&gt;<sp/>&amp;t,</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>&amp;ex,<sp/>vector&lt;double&gt;<sp/>&amp;ey,<sp/>vector&lt;double&gt;<sp/>&amp;sigs,</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>sige,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>model,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nsteps,</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>stepsize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>couplingpercentage,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>method);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="OrdDiffEq_8hpp_1ad2a6c40b251579ddc74597f93e030013" kindref="member">WriteToFile</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>filename,<sp/>vector&lt;double&gt;<sp/>&amp;t,<sp/>vector&lt;double&gt;<sp/>&amp;ex,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>&amp;ey,<sp/>vector&lt;double&gt;<sp/>&amp;sigs);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="OrdDiffEq_8hpp_1a2911080d9ba7a80b86762e0e7370d7a1" kindref="member">ODE</ref>(map&lt;string,<sp/>double&gt;<sp/>&amp;twiss,<sp/>map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;twissdata,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrf,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>harmon[],<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>voltages[],<sp/>vector&lt;double&gt;<sp/>&amp;t,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>&amp;ex,<sp/>vector&lt;double&gt;<sp/>&amp;ey,<sp/>vector&lt;double&gt;<sp/>&amp;sigs,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>sige,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>model,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>couplingpercentage,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>threshold,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>method);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="OrdDiffEq_8hpp_1a2911080d9ba7a80b86762e0e7370d7a1" kindref="member">ODE</ref>(map&lt;string,<sp/>double&gt;<sp/>&amp;twiss,<sp/>map&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>vector&lt;double&gt;&gt;<sp/>&amp;twissdata,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrf,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>harmon[],<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>voltages[],<sp/>vector&lt;double&gt;<sp/>&amp;t,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>&amp;ex,<sp/>vector&lt;double&gt;<sp/>&amp;ey,<sp/>vector&lt;double&gt;<sp/>&amp;sigs,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>sige,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>model,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pnumber,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nsteps,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>stepsize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>couplingpercentage,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>method);</highlight></codeline>
     </programlisting>
     <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/OrdDiffEq.hpp"/>
   </compounddef>

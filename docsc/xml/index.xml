@@ -29,7 +29,7 @@
     <member refid="Models_8hpp_1a7cd4e1da200f68d350937685feeced50" kind="function"><name>ibsmadxtailcut</name></member>
     <member refid="Models_8hpp_1aca7b8c6140de544cc3b805b6a1a34a98" kind="function"><name>BjorkenMtingwa2</name></member>
     <member refid="Models_8hpp_1a18d9b9112d787d706a73db10aa9f8892" kind="function"><name>BjorkenMtingwa</name></member>
-    <member refid="Models_8hpp_1a1f0e46c3ecdfe469390552a2e7fe749f" kind="function"><name>BjorkenMtingwatailcut</name></member>
+    <member refid="Models_8hpp_1ae1da8f6f552e3908dbdd68d7fbd21c78" kind="function"><name>BjorkenMtingwatailcut</name></member>
     <member refid="Models_8hpp_1adb747c4baceaf64765460d4bcfe4a89a" kind="function"><name>ConteMartini</name></member>
     <member refid="Models_8hpp_1ad6f50598686914b09ee51ed9585f8454" kind="function"><name>ConteMartinitailcut</name></member>
     <member refid="Models_8hpp_1a9fc594bfaa0f4b061eca6f7ed6c6a3d7" kind="function"><name>MadxIBS</name></member>

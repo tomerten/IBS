@@ -326,6 +326,49 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Method to write simulation output to file.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the file to write to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>timesteps </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal emit steps </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical emit steps </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bunch length steps </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -401,6 +444,131 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Run ODE simulation using auto time step.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>twiss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Header Map </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>twissdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Table Map </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nrf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of rf systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>harmon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list of harmonic numbers for the rf systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>voltages</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list of voltages for the rf systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>timesteps </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">sigs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">sige</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>energy spread </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>model</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>IBS model (1-13) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of particles per bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>couplingpercentage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>hor/ver coupling in percentage </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>threshold</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>evolution stop threshold </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>simulation method (rlx or der) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>: Relaxation method based on implementation in BMAD </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -480,6 +648,137 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Run ODE simulation using auto time step.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>twiss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Header Map </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>twissdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Twiss Table Map </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nrf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of rf systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>harmon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list of harmonic numbers for the rf systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>voltages</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list of voltages for the rf systems </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>timesteps </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">ey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical emittance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">sigs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bunch length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">sige</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>energy spread </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>model</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>IBS model (1-13) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of particles per bunch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nsteps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of simulation steps </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stepsize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time step size </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>couplingpercentage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>hor/ver coupling in percentage </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>simulation method (rlx or der) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -859,7 +1158,7 @@
 <codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twissdata,<sp/>r0);</highlight></codeline>
 <codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="293"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>10:</highlight></codeline>
-<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>ibs<sp/>=<sp/><ref refid="Models_8hpp_1a1f0e46c3ecdfe469390552a2e7fe749f" kindref="member">BjorkenMtingwatailcut</ref>(pnumber,<sp/>ex[0],<sp/>ey[0],<sp/>sigs[0],<sp/>sige[0],<sp/>twiss,</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>ibs<sp/>=<sp/><ref refid="Models_8hpp_1ae1da8f6f552e3908dbdd68d7fbd21c78" kindref="member">BjorkenMtingwatailcut</ref>(pnumber,<sp/>ex[0],<sp/>ey[0],<sp/>sigs[0],<sp/>sige[0],<sp/>twiss,</highlight></codeline>
 <codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twissdata,<sp/>r0,<sp/>aatom);</highlight></codeline>
 <codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="297"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>11:</highlight></codeline>
@@ -1002,7 +1301,7 @@
 <codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>aey<sp/>=<sp/>ibs[2];</highlight></codeline>
 <codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>10:</highlight></codeline>
-<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ibs<sp/>=<sp/><ref refid="Models_8hpp_1a1f0e46c3ecdfe469390552a2e7fe749f" kindref="member">BjorkenMtingwatailcut</ref>(pnumber,<sp/>ex[i],<sp/>ey[i],<sp/>sigs[i],<sp/>sige[i],</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ibs<sp/>=<sp/><ref refid="Models_8hpp_1ae1da8f6f552e3908dbdd68d7fbd21c78" kindref="member">BjorkenMtingwatailcut</ref>(pnumber,<sp/>ex[i],<sp/>ey[i],<sp/>sigs[i],<sp/>sige[i],</highlight></codeline>
 <codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twiss,<sp/>twissdata,<sp/>r0,<sp/>aatom);</highlight></codeline>
 <codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>aes<sp/>=<sp/>ibs[0];</highlight></codeline>
 <codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>aex<sp/>=<sp/>ibs[1];</highlight></codeline>
@@ -1239,7 +1538,7 @@
 <codeline lineno="671"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twissdata,<sp/>r0);</highlight></codeline>
 <codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="673"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>10:</highlight></codeline>
-<codeline lineno="674"><highlight class="normal"><sp/><sp/><sp/><sp/>ibs<sp/>=<sp/><ref refid="Models_8hpp_1a1f0e46c3ecdfe469390552a2e7fe749f" kindref="member">BjorkenMtingwatailcut</ref>(pnumber,<sp/>ex[0],<sp/>ey[0],<sp/>sigs[0],<sp/>sige[0],<sp/>twiss,</highlight></codeline>
+<codeline lineno="674"><highlight class="normal"><sp/><sp/><sp/><sp/>ibs<sp/>=<sp/><ref refid="Models_8hpp_1ae1da8f6f552e3908dbdd68d7fbd21c78" kindref="member">BjorkenMtingwatailcut</ref>(pnumber,<sp/>ex[0],<sp/>ey[0],<sp/>sigs[0],<sp/>sige[0],<sp/>twiss,</highlight></codeline>
 <codeline lineno="675"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twissdata,<sp/>r0,<sp/>aatom);</highlight></codeline>
 <codeline lineno="676"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="677"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>11:</highlight></codeline>
@@ -1344,7 +1643,7 @@
 <codeline lineno="776"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>aey<sp/>=<sp/>ibs[2];</highlight></codeline>
 <codeline lineno="777"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="778"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>10:</highlight></codeline>
-<codeline lineno="779"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ibs<sp/>=<sp/><ref refid="Models_8hpp_1a1f0e46c3ecdfe469390552a2e7fe749f" kindref="member">BjorkenMtingwatailcut</ref>(pnumber,<sp/>ex[i],<sp/>ey[i],<sp/>sigs[i],<sp/>sige[i],</highlight></codeline>
+<codeline lineno="779"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ibs<sp/>=<sp/><ref refid="Models_8hpp_1ae1da8f6f552e3908dbdd68d7fbd21c78" kindref="member">BjorkenMtingwatailcut</ref>(pnumber,<sp/>ex[i],<sp/>ey[i],<sp/>sigs[i],<sp/>sige[i],</highlight></codeline>
 <codeline lineno="780"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twiss,<sp/>twissdata,<sp/>r0,<sp/>aatom);</highlight></codeline>
 <codeline lineno="781"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>aes<sp/>=<sp/>ibs[0];</highlight></codeline>
 <codeline lineno="782"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>aex<sp/>=<sp/>ibs[1];</highlight></codeline>
@@ -1621,7 +1920,7 @@
 <codeline lineno="1053"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twissdata,<sp/>r0);</highlight></codeline>
 <codeline lineno="1054"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1055"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>10:</highlight></codeline>
-<codeline lineno="1056"><highlight class="normal"><sp/><sp/><sp/><sp/>ibs<sp/>=<sp/><ref refid="Models_8hpp_1a1f0e46c3ecdfe469390552a2e7fe749f" kindref="member">BjorkenMtingwatailcut</ref>(pnumber,<sp/>ex[0],<sp/>ey[0],<sp/>sigs[0],<sp/>sige[0],<sp/>twiss,</highlight></codeline>
+<codeline lineno="1056"><highlight class="normal"><sp/><sp/><sp/><sp/>ibs<sp/>=<sp/><ref refid="Models_8hpp_1ae1da8f6f552e3908dbdd68d7fbd21c78" kindref="member">BjorkenMtingwatailcut</ref>(pnumber,<sp/>ex[0],<sp/>ey[0],<sp/>sigs[0],<sp/>sige[0],<sp/>twiss,</highlight></codeline>
 <codeline lineno="1057"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twissdata,<sp/>r0,<sp/>aatom);</highlight></codeline>
 <codeline lineno="1058"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1059"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>11:</highlight></codeline>
@@ -1711,7 +2010,7 @@
 <codeline lineno="1143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>aey<sp/>=<sp/>ibs[2];</highlight></codeline>
 <codeline lineno="1144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>10:</highlight></codeline>
-<codeline lineno="1146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ibs<sp/>=<sp/><ref refid="Models_8hpp_1a1f0e46c3ecdfe469390552a2e7fe749f" kindref="member">BjorkenMtingwatailcut</ref>(pnumber,<sp/>ex[i],<sp/>ey[i],<sp/>sigs[i],<sp/>sige[i],</highlight></codeline>
+<codeline lineno="1146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ibs<sp/>=<sp/><ref refid="Models_8hpp_1ae1da8f6f552e3908dbdd68d7fbd21c78" kindref="member">BjorkenMtingwatailcut</ref>(pnumber,<sp/>ex[i],<sp/>ey[i],<sp/>sigs[i],<sp/>sige[i],</highlight></codeline>
 <codeline lineno="1147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>twiss,<sp/>twissdata,<sp/>r0,<sp/>aatom);</highlight></codeline>
 <codeline lineno="1148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>aes<sp/>=<sp/>ibs[0];</highlight></codeline>
 <codeline lineno="1149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>aex<sp/>=<sp/>ibs[1];</highlight></codeline>

@@ -266,6 +266,28 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Run ODE simulation using auto time step.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">twiss</td><td>Twiss Header Map </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">twissdata</td><td>Twiss Table Map </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">nrf</td><td>number of rf systems </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">harmon</td><td>list of harmonic numbers for the rf systems </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">voltages</td><td>list of voltages for the rf systems </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">t</td><td>timesteps </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">sige</td><td>energy spread </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">model</td><td>IBS model (1-13) </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">pnumber</td><td>number of particles per bunch </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">couplingpercentage</td><td>hor/ver coupling in percentage </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">threshold</td><td>evolution stop threshold </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">method</td><td>simulation method (rlx or der) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>: Relaxation method based on implementation in BMAD </dd></dl>
 
 </div>
 </div>
@@ -378,6 +400,28 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Run ODE simulation using auto time step.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">twiss</td><td>Twiss Header Map </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">twissdata</td><td>Twiss Table Map </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">nrf</td><td>number of rf systems </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">harmon</td><td>list of harmonic numbers for the rf systems </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">voltages</td><td>list of voltages for the rf systems </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">t</td><td>timesteps </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">sige</td><td>energy spread </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">model</td><td>IBS model (1-13) </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">pnumber</td><td>number of particles per bunch </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">nsteps</td><td>number of simulation steps </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">stepsize</td><td>time step size </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">couplingpercentage</td><td>hor/ver coupling in percentage </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">method</td><td>simulation method (rlx or der) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -598,6 +642,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Method to write simulation output to file.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>name of the file to write to </td></tr>
+    <tr><td class="paramname">t</td><td>timesteps </td></tr>
+    <tr><td class="paramname">ex</td><td>horizontal emit steps </td></tr>
+    <tr><td class="paramname">ey</td><td>vertical emit steps </td></tr>
+    <tr><td class="paramname">sigs</td><td>bunch length steps </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

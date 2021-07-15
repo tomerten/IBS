@@ -105,8 +105,8 @@ Functions</h2></td></tr>
 <tr class="separator:aca7b8c6140de544cc3b805b6a1a34a98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18d9b9112d787d706a73db10aa9f8892"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Models_8hpp.html#a18d9b9112d787d706a73db10aa9f8892">BjorkenMtingwa</a> (double pnumber, double ex, double ey, double sigs, double dponp, map&lt; string, double &gt; &amp;twissheader, map&lt; string, vector&lt; double &gt;&gt; &amp;twissdata, double r0)</td></tr>
 <tr class="separator:a18d9b9112d787d706a73db10aa9f8892"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f0e46c3ecdfe469390552a2e7fe749f"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Models_8hpp.html#a1f0e46c3ecdfe469390552a2e7fe749f">BjorkenMtingwatailcut</a> (double pnumber, double ex, double ey, double sigs, double sige, map&lt; string, double &gt; &amp;twissheader, map&lt; string, vector&lt; double &gt;&gt; &amp;twissdata, double r0, double aatom)</td></tr>
-<tr class="separator:a1f0e46c3ecdfe469390552a2e7fe749f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1da8f6f552e3908dbdd68d7fbd21c78"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Models_8hpp.html#ae1da8f6f552e3908dbdd68d7fbd21c78">BjorkenMtingwatailcut</a> (double pnumber, double ex, double ey, double sigs, double dponp, map&lt; string, double &gt; &amp;twissheader, map&lt; string, vector&lt; double &gt;&gt; &amp;twissdata, double r0, double aatom)</td></tr>
+<tr class="separator:ae1da8f6f552e3908dbdd68d7fbd21c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb747c4baceaf64765460d4bcfe4a89a"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Models_8hpp.html#adb747c4baceaf64765460d4bcfe4a89a">ConteMartini</a> (double pnumber, double ex, double ey, double sigs, double dponp, map&lt; string, double &gt; &amp;twissheader, map&lt; string, vector&lt; double &gt;&gt; &amp;twissdata, double r0)</td></tr>
 <tr class="separator:adb747c4baceaf64765460d4bcfe4a89a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6f50598686914b09ee51ed9585f8454"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Models_8hpp.html#ad6f50598686914b09ee51ed9585f8454">ConteMartinitailcut</a> (double pnumber, double ex, double ey, double sigs, double dponp, map&lt; string, double &gt; &amp;twissheader, map&lt; string, vector&lt; double &gt;&gt; &amp;twissdata, double r0, double aatom)</td></tr>
@@ -176,6 +176,22 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Bjorken-Mtingwa model element weighted with Coulomb logs calculated element by element using Simpson Decade integration.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pnumber</td><td>numper of real particles in the bunch </td></tr>
+    <tr><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramname">dponp</td><td><img class="formulaInl" alt="$ \frac{dp}{p} $" src="form_10.png" width="13" height="19"/> </td></tr>
+    <tr><td class="paramname">twissheader</td><td>Twiss Header Map </td></tr>
+    <tr><td class="paramname">twissdata</td><td>Twiss Table Map </td></tr>
+    <tr><td class="paramname">r0</td><td>Classical particle radius</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IBS amplitude growth rates (longitudinal, horizontal, vertical) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>CERN NOTE AB-2006&ndash;002 </dd></dl>
 
 </div>
 </div>
@@ -240,11 +256,27 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Bjorken-Mtingwa model element weighted with Coulomb logs calculated element by element using standard Simpson integration.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pnumber</td><td>numper of real particles in the bunch </td></tr>
+    <tr><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramname">sige</td><td><img class="formulaInl" alt="$ \frac{dE}{E} $" src="form_11.png" width="15" height="18"/> </td></tr>
+    <tr><td class="paramname">twissheader</td><td>Twiss Header Map </td></tr>
+    <tr><td class="paramname">twissdata</td><td>Twiss Table Map </td></tr>
+    <tr><td class="paramname">r0</td><td>Classical particle radius</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IBS amplitude growth rates (longitudinal, horizontal, vertical) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>CERN NOTE AB-2006&ndash;002 </dd></dl>
 
 </div>
 </div>
-<a id="a1f0e46c3ecdfe469390552a2e7fe749f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f0e46c3ecdfe469390552a2e7fe749f">&#9670;&nbsp;</a></span>BjorkenMtingwatailcut()</h2>
+<a id="ae1da8f6f552e3908dbdd68d7fbd21c78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1da8f6f552e3908dbdd68d7fbd21c78">&#9670;&nbsp;</a></span>BjorkenMtingwatailcut()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -277,7 +309,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>sige</em>, </td>
+          <td class="paramname"><em>dponp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -310,6 +342,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Bjorken-Mtingwa model element weighted with Coulomb logs calculated element by element taking tailcut into account using Simpson Decade integration.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pnumber</td><td>numper of real particles in the bunch </td></tr>
+    <tr><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramname">dponp</td><td><img class="formulaInl" alt="$ \frac{dp}{p} $" src="form_10.png" width="13" height="19"/> </td></tr>
+    <tr><td class="paramname">twissheader</td><td>Twiss Header Map </td></tr>
+    <tr><td class="paramname">twissdata</td><td>Twiss Table Map </td></tr>
+    <tr><td class="paramname">r0</td><td>Classical particle radius </td></tr>
+    <tr><td class="paramname">aatom</td><td>Atomic Mass Number</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IBS amplitude growth rates (longitudinal, horizontal, vertical) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>CERN NOTE AB-2006&ndash;002 </dd></dl>
 
 </div>
 </div>
@@ -374,6 +423,22 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Conte-Martini model element weighted with Coulomb logs calculated element by element using Simpson Decade integration.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pnumber</td><td>numper of real particles in the bunch </td></tr>
+    <tr><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramname">dponp</td><td><img class="formulaInl" alt="$ \frac{dp}{p} $" src="form_10.png" width="13" height="19"/> </td></tr>
+    <tr><td class="paramname">twissheader</td><td>Twiss Header Map </td></tr>
+    <tr><td class="paramname">twissdata</td><td>Twiss Table Map </td></tr>
+    <tr><td class="paramname">r0</td><td>Classical particle radius</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IBS amplitude growth rates (longitudinal, horizontal, vertical) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>CERN NOTE AB-2006&ndash;002 </dd></dl>
 
 </div>
 </div>
@@ -444,6 +509,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Conte-Martini model element weighted with Coulomb logs calculated element by element taking tailcut into account using Simpson Decade integration.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pnumber</td><td>numper of real particles in the bunch </td></tr>
+    <tr><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramname">dponp</td><td><img class="formulaInl" alt="$ \frac{dp}{p} $" src="form_10.png" width="13" height="19"/> </td></tr>
+    <tr><td class="paramname">twissheader</td><td>Twiss Header Map </td></tr>
+    <tr><td class="paramname">twissdata</td><td>Twiss Table Map </td></tr>
+    <tr><td class="paramname">r0</td><td>Classical particle radius </td></tr>
+    <tr><td class="paramname">aatom</td><td>Atomic Mass Number</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IBS amplitude growth rates (longitudinal, horizontal, vertical) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>CERN NOTE AB-2006&ndash;002 </dd></dl>
 
 </div>
 </div>
@@ -514,6 +596,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Zimmerman model element weighted with Coulomb logs calculated element by element using scaled Simpson Decade.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pnumber</td><td>numper of real particles in the bunch </td></tr>
+    <tr><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramname">sige</td><td><img class="formulaInl" alt="$ \frac{dE}{E} $" src="form_11.png" width="15" height="18"/> </td></tr>
+    <tr><td class="paramname">twissheader</td><td>Twiss Header Map </td></tr>
+    <tr><td class="paramname">twissdata</td><td>Twiss Table Map </td></tr>
+    <tr><td class="paramname">r0</td><td>Classical particle radius </td></tr>
+    <tr><td class="paramname">printout</td><td>Boolean flag to switch verbose mode on.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IBS amplitude growth rates (longitudinal, horizontal, vertical) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>CERN NOTE AB-2006&ndash;002 </dd></dl>
 
 </div>
 </div>
@@ -584,6 +683,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Zimmerman model element weighted with Coulomb logs calculated element by element taking tailcut into account using scaled Simpson Decade.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pnumber</td><td>numper of real particles in the bunch </td></tr>
+    <tr><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramname">sige</td><td><img class="formulaInl" alt="$ \frac{dE}{E} $" src="form_11.png" width="15" height="18"/> </td></tr>
+    <tr><td class="paramname">twissheader</td><td>Twiss Header Map </td></tr>
+    <tr><td class="paramname">twissdata</td><td>Twiss Table Map </td></tr>
+    <tr><td class="paramname">r0</td><td>Classical particle radius </td></tr>
+    <tr><td class="paramname">aatom</td><td>Atomic Mass Number</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IBS amplitude growth rates (longitudinal, horizontal, vertical) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>CERN NOTE AB-2006&ndash;002 </dd></dl>
 
 </div>
 </div>
@@ -648,6 +764,22 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Zimmerman model element weighted with Coulomb logs calculated element by element using Simpson Decade integration.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pnumber</td><td>numper of real particles in the bunch </td></tr>
+    <tr><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramname">dponp</td><td><img class="formulaInl" alt="$ \frac{dp}{p} $" src="form_10.png" width="13" height="19"/> </td></tr>
+    <tr><td class="paramname">twissheader</td><td>Twiss Header Map </td></tr>
+    <tr><td class="paramname">twissdata</td><td>Twiss Table Map </td></tr>
+    <tr><td class="paramname">r0</td><td>Classical particle radius</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IBS amplitude growth rates (longitudinal, horizontal, vertical) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>CERN NOTE AB-2006&ndash;002 </dd></dl>
 
 </div>
 </div>
@@ -712,6 +844,22 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Nagaitsev's high energy approximation element weighted with Coulomb logs calculated element by element.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pnumber</td><td>numper of real particles in the bunch </td></tr>
+    <tr><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramname">dponp</td><td><img class="formulaInl" alt="$ \frac{dp}{p} $" src="form_10.png" width="13" height="19"/> </td></tr>
+    <tr><td class="paramname">twissheader</td><td>Twiss Header Map </td></tr>
+    <tr><td class="paramname">twissdata</td><td>Twiss Table Map </td></tr>
+    <tr><td class="paramname">r0</td><td>Classical particle radius</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IBS amplitude growth rates (longitudinal, horizontal, vertical) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>PRSTAB 8, 064403 (2005 </dd></dl>
 
 </div>
 </div>
@@ -782,6 +930,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Nagaitsev's high energy approximation element weighted with Coulomb logs calculated element by element and taking tailcut into account.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pnumber</td><td>numper of real particles in the bunch </td></tr>
+    <tr><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramname">dponp</td><td><img class="formulaInl" alt="$ \frac{dp}{p} $" src="form_10.png" width="13" height="19"/> </td></tr>
+    <tr><td class="paramname">twissheader</td><td>Twiss Header Map </td></tr>
+    <tr><td class="paramname">twissdata</td><td>Twiss Table Map </td></tr>
+    <tr><td class="paramname">r0</td><td>Classical particle radius </td></tr>
+    <tr><td class="paramname">aatom</td><td>Atomic Mass Number</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IBS amplitude growth rates (longitudinal, horizontal, vertical) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>PRSTAB 8, 064403 (2005) </dd></dl>
 
 </div>
 </div>
@@ -846,6 +1011,22 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Piwinski approximation element weighted.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pnumber</td><td>numper of real particles in the bunch </td></tr>
+    <tr><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramname">dponp</td><td><img class="formulaInl" alt="$ \frac{dp}{p} $" src="form_10.png" width="13" height="19"/> </td></tr>
+    <tr><td class="paramname">twissheader</td><td>Twiss Header Map </td></tr>
+    <tr><td class="paramname">twissdata</td><td>Twiss Table Map </td></tr>
+    <tr><td class="paramname">r0</td><td>Classical particle radius</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IBS amplitude growth rates (longitudinal, horizontal, vertical) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>HANDBOOK FOR ACCELERATOR PHYSICISTS AND ENGINEERS P.126.. </dd></dl>
 
 </div>
 </div>
@@ -910,6 +1091,22 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Piwinski approximation element weighted taking also dispersion derivatives into account.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pnumber</td><td>numper of real particles in the bunch </td></tr>
+    <tr><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramname">dponp</td><td><img class="formulaInl" alt="$ \frac{dp}{p} $" src="form_10.png" width="13" height="19"/> </td></tr>
+    <tr><td class="paramname">twissheader</td><td>Twiss Header Map </td></tr>
+    <tr><td class="paramname">twissdata</td><td>Twiss Table Map </td></tr>
+    <tr><td class="paramname">r0</td><td>Classical particle radius</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IBS amplitude growth rates (longitudinal, horizontal, vertical) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>HANDBOOK FOR ACCELERATOR PHYSICISTS AND ENGINEERS P.126.. </dd></dl>
 
 </div>
 </div>
@@ -968,6 +1165,21 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Piwinski smooth approximation model.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pnumber</td><td>numper of real particles in the bunch </td></tr>
+    <tr><td class="paramname">ex</td><td>horizontal emittance </td></tr>
+    <tr><td class="paramname">ey</td><td>vertical emittance </td></tr>
+    <tr><td class="paramname">sigs</td><td>bunch length </td></tr>
+    <tr><td class="paramname">dponp</td><td><img class="formulaInl" alt="$ \frac{dp}{p} $" src="form_10.png" width="13" height="19"/> </td></tr>
+    <tr><td class="paramname">twiss</td><td>Twiss Header Map </td></tr>
+    <tr><td class="paramname">r0</td><td>Classical particle radius</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IBS amplitude growth rates (longitudinal, horizontal, vertical)</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>HANDBOOK FOR ACCELERATOR PHYSICISTS AND ENGINEERS P.126.. </dd></dl>
 
 </div>
 </div>
@@ -986,6 +1198,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Method that prints out IBS growth rates and times from given input array.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>IBS growth rates array. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

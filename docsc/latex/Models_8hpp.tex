@@ -32,7 +32,7 @@ double $\ast$ \mbox{\hyperlink{Models_8hpp_aca7b8c6140de544cc3b805b6a1a34a98}{Bj
 \item 
 double $\ast$ \mbox{\hyperlink{Models_8hpp_a18d9b9112d787d706a73db10aa9f8892}{Bjorken\+Mtingwa}} (double pnumber, double ex, double ey, double sigs, double dponp, map$<$ string, double $>$ \&twissheader, map$<$ string, vector$<$ double $>$$>$ \&twissdata, double r0)
 \item 
-double $\ast$ \mbox{\hyperlink{Models_8hpp_a1f0e46c3ecdfe469390552a2e7fe749f}{Bjorken\+Mtingwatailcut}} (double pnumber, double ex, double ey, double sigs, double sige, map$<$ string, double $>$ \&twissheader, map$<$ string, vector$<$ double $>$$>$ \&twissdata, double r0, double aatom)
+double $\ast$ \mbox{\hyperlink{Models_8hpp_ae1da8f6f552e3908dbdd68d7fbd21c78}{Bjorken\+Mtingwatailcut}} (double pnumber, double ex, double ey, double sigs, double dponp, map$<$ string, double $>$ \&twissheader, map$<$ string, vector$<$ double $>$$>$ \&twissdata, double r0, double aatom)
 \item 
 double $\ast$ \mbox{\hyperlink{Models_8hpp_adb747c4baceaf64765460d4bcfe4a89a}{Conte\+Martini}} (double pnumber, double ex, double ey, double sigs, double dponp, map$<$ string, double $>$ \&twissheader, map$<$ string, vector$<$ double $>$$>$ \&twissdata, double r0)
 \item 
@@ -49,81 +49,447 @@ double $\ast$ \mbox{\hyperlink{Models_8hpp_a9fc594bfaa0f4b061eca6f7ed6c6a3d7}{Ma
 \doxysubsubsection{\texorpdfstring{BjorkenMtingwa()}{BjorkenMtingwa()}}
 {\footnotesize\ttfamily double$\ast$ Bjorken\+Mtingwa (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{dponp,  }\item[{map$<$ string, double $>$ \&}]{twissheader,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{twissdata,  }\item[{double}]{r0 }\end{DoxyParamCaption})}
 
+Bjorken-\/\+Mtingwa model element weighted with Coulomb logs calculated element by element using Simpson Decade integration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnumber} & numper of real particles in the bunch \\
+\hline
+{\em ex} & horizontal emittance \\
+\hline
+{\em ey} & vertical emittance \\
+\hline
+{\em sigs} & bunch length \\
+\hline
+{\em dponp} & $ \frac{dp}{p} $ \\
+\hline
+{\em twissheader} & Twiss Header Map \\
+\hline
+{\em twissdata} & Twiss Table Map \\
+\hline
+{\em r0} & Classical particle radius\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IBS amplitude growth rates (longitudinal, horizontal, vertical) 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+CERN NOTE AB-\/2006--002 
+\end{DoxyNote}
 \mbox{\Hypertarget{Models_8hpp_aca7b8c6140de544cc3b805b6a1a34a98}\label{Models_8hpp_aca7b8c6140de544cc3b805b6a1a34a98}} 
 \index{Models.hpp@{Models.hpp}!BjorkenMtingwa2@{BjorkenMtingwa2}}
 \index{BjorkenMtingwa2@{BjorkenMtingwa2}!Models.hpp@{Models.hpp}}
 \doxysubsubsection{\texorpdfstring{BjorkenMtingwa2()}{BjorkenMtingwa2()}}
 {\footnotesize\ttfamily double$\ast$ Bjorken\+Mtingwa2 (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{dponp,  }\item[{map$<$ string, double $>$ \&}]{twissheader,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{twissdata,  }\item[{double}]{r0 }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{Models_8hpp_a1f0e46c3ecdfe469390552a2e7fe749f}\label{Models_8hpp_a1f0e46c3ecdfe469390552a2e7fe749f}} 
+Bjorken-\/\+Mtingwa model element weighted with Coulomb logs calculated element by element using standard Simpson integration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnumber} & numper of real particles in the bunch \\
+\hline
+{\em ex} & horizontal emittance \\
+\hline
+{\em ey} & vertical emittance \\
+\hline
+{\em sigs} & bunch length \\
+\hline
+{\em sige} & $ \frac{dE}{E} $ \\
+\hline
+{\em twissheader} & Twiss Header Map \\
+\hline
+{\em twissdata} & Twiss Table Map \\
+\hline
+{\em r0} & Classical particle radius\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IBS amplitude growth rates (longitudinal, horizontal, vertical) 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+CERN NOTE AB-\/2006--002 
+\end{DoxyNote}
+\mbox{\Hypertarget{Models_8hpp_ae1da8f6f552e3908dbdd68d7fbd21c78}\label{Models_8hpp_ae1da8f6f552e3908dbdd68d7fbd21c78}} 
 \index{Models.hpp@{Models.hpp}!BjorkenMtingwatailcut@{BjorkenMtingwatailcut}}
 \index{BjorkenMtingwatailcut@{BjorkenMtingwatailcut}!Models.hpp@{Models.hpp}}
 \doxysubsubsection{\texorpdfstring{BjorkenMtingwatailcut()}{BjorkenMtingwatailcut()}}
-{\footnotesize\ttfamily double$\ast$ Bjorken\+Mtingwatailcut (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{sige,  }\item[{map$<$ string, double $>$ \&}]{twissheader,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{twissdata,  }\item[{double}]{r0,  }\item[{double}]{aatom }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily double$\ast$ Bjorken\+Mtingwatailcut (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{dponp,  }\item[{map$<$ string, double $>$ \&}]{twissheader,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{twissdata,  }\item[{double}]{r0,  }\item[{double}]{aatom }\end{DoxyParamCaption})}
 
+Bjorken-\/\+Mtingwa model element weighted with Coulomb logs calculated element by element taking tailcut into account using Simpson Decade integration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnumber} & numper of real particles in the bunch \\
+\hline
+{\em ex} & horizontal emittance \\
+\hline
+{\em ey} & vertical emittance \\
+\hline
+{\em sigs} & bunch length \\
+\hline
+{\em dponp} & $ \frac{dp}{p} $ \\
+\hline
+{\em twissheader} & Twiss Header Map \\
+\hline
+{\em twissdata} & Twiss Table Map \\
+\hline
+{\em r0} & Classical particle radius \\
+\hline
+{\em aatom} & Atomic Mass Number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IBS amplitude growth rates (longitudinal, horizontal, vertical) 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+CERN NOTE AB-\/2006--002 
+\end{DoxyNote}
 \mbox{\Hypertarget{Models_8hpp_adb747c4baceaf64765460d4bcfe4a89a}\label{Models_8hpp_adb747c4baceaf64765460d4bcfe4a89a}} 
 \index{Models.hpp@{Models.hpp}!ConteMartini@{ConteMartini}}
 \index{ConteMartini@{ConteMartini}!Models.hpp@{Models.hpp}}
 \doxysubsubsection{\texorpdfstring{ConteMartini()}{ConteMartini()}}
 {\footnotesize\ttfamily double$\ast$ Conte\+Martini (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{dponp,  }\item[{map$<$ string, double $>$ \&}]{twissheader,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{twissdata,  }\item[{double}]{r0 }\end{DoxyParamCaption})}
 
+Conte-\/\+Martini model element weighted with Coulomb logs calculated element by element using Simpson Decade integration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnumber} & numper of real particles in the bunch \\
+\hline
+{\em ex} & horizontal emittance \\
+\hline
+{\em ey} & vertical emittance \\
+\hline
+{\em sigs} & bunch length \\
+\hline
+{\em dponp} & $ \frac{dp}{p} $ \\
+\hline
+{\em twissheader} & Twiss Header Map \\
+\hline
+{\em twissdata} & Twiss Table Map \\
+\hline
+{\em r0} & Classical particle radius\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IBS amplitude growth rates (longitudinal, horizontal, vertical) 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+CERN NOTE AB-\/2006--002 
+\end{DoxyNote}
 \mbox{\Hypertarget{Models_8hpp_ad6f50598686914b09ee51ed9585f8454}\label{Models_8hpp_ad6f50598686914b09ee51ed9585f8454}} 
 \index{Models.hpp@{Models.hpp}!ConteMartinitailcut@{ConteMartinitailcut}}
 \index{ConteMartinitailcut@{ConteMartinitailcut}!Models.hpp@{Models.hpp}}
 \doxysubsubsection{\texorpdfstring{ConteMartinitailcut()}{ConteMartinitailcut()}}
 {\footnotesize\ttfamily double$\ast$ Conte\+Martinitailcut (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{dponp,  }\item[{map$<$ string, double $>$ \&}]{twissheader,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{twissdata,  }\item[{double}]{r0,  }\item[{double}]{aatom }\end{DoxyParamCaption})}
 
+Conte-\/\+Martini model element weighted with Coulomb logs calculated element by element taking tailcut into account using Simpson Decade integration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnumber} & numper of real particles in the bunch \\
+\hline
+{\em ex} & horizontal emittance \\
+\hline
+{\em ey} & vertical emittance \\
+\hline
+{\em sigs} & bunch length \\
+\hline
+{\em dponp} & $ \frac{dp}{p} $ \\
+\hline
+{\em twissheader} & Twiss Header Map \\
+\hline
+{\em twissdata} & Twiss Table Map \\
+\hline
+{\em r0} & Classical particle radius \\
+\hline
+{\em aatom} & Atomic Mass Number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IBS amplitude growth rates (longitudinal, horizontal, vertical) 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+CERN NOTE AB-\/2006--002 
+\end{DoxyNote}
 \mbox{\Hypertarget{Models_8hpp_af37167229ca90e60b1bb3948120c3d94}\label{Models_8hpp_af37167229ca90e60b1bb3948120c3d94}} 
 \index{Models.hpp@{Models.hpp}!ibsmadx@{ibsmadx}}
 \index{ibsmadx@{ibsmadx}!Models.hpp@{Models.hpp}}
 \doxysubsubsection{\texorpdfstring{ibsmadx()}{ibsmadx()}}
 {\footnotesize\ttfamily double$\ast$ ibsmadx (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{sige,  }\item[{map$<$ string, double $>$ \&}]{twissheader,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{twissdata,  }\item[{double}]{r0,  }\item[{bool}]{printout }\end{DoxyParamCaption})}
 
+Zimmerman model element weighted with Coulomb logs calculated element by element using scaled Simpson Decade.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnumber} & numper of real particles in the bunch \\
+\hline
+{\em ex} & horizontal emittance \\
+\hline
+{\em ey} & vertical emittance \\
+\hline
+{\em sigs} & bunch length \\
+\hline
+{\em sige} & $ \frac{dE}{E} $ \\
+\hline
+{\em twissheader} & Twiss Header Map \\
+\hline
+{\em twissdata} & Twiss Table Map \\
+\hline
+{\em r0} & Classical particle radius \\
+\hline
+{\em printout} & Boolean flag to switch verbose mode on.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IBS amplitude growth rates (longitudinal, horizontal, vertical) 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+CERN NOTE AB-\/2006--002 
+\end{DoxyNote}
 \mbox{\Hypertarget{Models_8hpp_a7cd4e1da200f68d350937685feeced50}\label{Models_8hpp_a7cd4e1da200f68d350937685feeced50}} 
 \index{Models.hpp@{Models.hpp}!ibsmadxtailcut@{ibsmadxtailcut}}
 \index{ibsmadxtailcut@{ibsmadxtailcut}!Models.hpp@{Models.hpp}}
 \doxysubsubsection{\texorpdfstring{ibsmadxtailcut()}{ibsmadxtailcut()}}
 {\footnotesize\ttfamily double$\ast$ ibsmadxtailcut (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{sige,  }\item[{map$<$ string, double $>$ \&}]{twissheader,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{twissdata,  }\item[{double}]{r0,  }\item[{double}]{aatom }\end{DoxyParamCaption})}
 
+Zimmerman model element weighted with Coulomb logs calculated element by element taking tailcut into account using scaled Simpson Decade.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnumber} & numper of real particles in the bunch \\
+\hline
+{\em ex} & horizontal emittance \\
+\hline
+{\em ey} & vertical emittance \\
+\hline
+{\em sigs} & bunch length \\
+\hline
+{\em sige} & $ \frac{dE}{E} $ \\
+\hline
+{\em twissheader} & Twiss Header Map \\
+\hline
+{\em twissdata} & Twiss Table Map \\
+\hline
+{\em r0} & Classical particle radius \\
+\hline
+{\em aatom} & Atomic Mass Number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IBS amplitude growth rates (longitudinal, horizontal, vertical) 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+CERN NOTE AB-\/2006--002 
+\end{DoxyNote}
 \mbox{\Hypertarget{Models_8hpp_a9fc594bfaa0f4b061eca6f7ed6c6a3d7}\label{Models_8hpp_a9fc594bfaa0f4b061eca6f7ed6c6a3d7}} 
 \index{Models.hpp@{Models.hpp}!MadxIBS@{MadxIBS}}
 \index{MadxIBS@{MadxIBS}!Models.hpp@{Models.hpp}}
 \doxysubsubsection{\texorpdfstring{MadxIBS()}{MadxIBS()}}
 {\footnotesize\ttfamily double$\ast$ Madx\+IBS (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{dponp,  }\item[{map$<$ string, double $>$ \&}]{twissheader,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{twissdata,  }\item[{double}]{r0 }\end{DoxyParamCaption})}
 
+Zimmerman model element weighted with Coulomb logs calculated element by element using Simpson Decade integration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnumber} & numper of real particles in the bunch \\
+\hline
+{\em ex} & horizontal emittance \\
+\hline
+{\em ey} & vertical emittance \\
+\hline
+{\em sigs} & bunch length \\
+\hline
+{\em dponp} & $ \frac{dp}{p} $ \\
+\hline
+{\em twissheader} & Twiss Header Map \\
+\hline
+{\em twissdata} & Twiss Table Map \\
+\hline
+{\em r0} & Classical particle radius\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IBS amplitude growth rates (longitudinal, horizontal, vertical) 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+CERN NOTE AB-\/2006--002 
+\end{DoxyNote}
 \mbox{\Hypertarget{Models_8hpp_a790596a851d113f7fef4007288ebef8d}\label{Models_8hpp_a790596a851d113f7fef4007288ebef8d}} 
 \index{Models.hpp@{Models.hpp}!Nagaitsev@{Nagaitsev}}
 \index{Nagaitsev@{Nagaitsev}!Models.hpp@{Models.hpp}}
 \doxysubsubsection{\texorpdfstring{Nagaitsev()}{Nagaitsev()}}
 {\footnotesize\ttfamily double$\ast$ Nagaitsev (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{dponp,  }\item[{map$<$ string, double $>$ \&}]{twissheader,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{twissdata,  }\item[{double}]{r0 }\end{DoxyParamCaption})}
 
+Nagaitsev\textquotesingle{}s high energy approximation element weighted with Coulomb logs calculated element by element.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnumber} & numper of real particles in the bunch \\
+\hline
+{\em ex} & horizontal emittance \\
+\hline
+{\em ey} & vertical emittance \\
+\hline
+{\em sigs} & bunch length \\
+\hline
+{\em dponp} & $ \frac{dp}{p} $ \\
+\hline
+{\em twissheader} & Twiss Header Map \\
+\hline
+{\em twissdata} & Twiss Table Map \\
+\hline
+{\em r0} & Classical particle radius\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IBS amplitude growth rates (longitudinal, horizontal, vertical) 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+PRSTAB 8, 064403 (2005 
+\end{DoxyNote}
 \mbox{\Hypertarget{Models_8hpp_a32f7d2d9f5d5b006811501065a091ba5}\label{Models_8hpp_a32f7d2d9f5d5b006811501065a091ba5}} 
 \index{Models.hpp@{Models.hpp}!Nagaitsevtailcut@{Nagaitsevtailcut}}
 \index{Nagaitsevtailcut@{Nagaitsevtailcut}!Models.hpp@{Models.hpp}}
 \doxysubsubsection{\texorpdfstring{Nagaitsevtailcut()}{Nagaitsevtailcut()}}
 {\footnotesize\ttfamily double$\ast$ Nagaitsevtailcut (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{dponp,  }\item[{map$<$ string, double $>$ \&}]{twissheader,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{twissdata,  }\item[{double}]{r0,  }\item[{double}]{aatom }\end{DoxyParamCaption})}
 
+Nagaitsev\textquotesingle{}s high energy approximation element weighted with Coulomb logs calculated element by element and taking tailcut into account.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnumber} & numper of real particles in the bunch \\
+\hline
+{\em ex} & horizontal emittance \\
+\hline
+{\em ey} & vertical emittance \\
+\hline
+{\em sigs} & bunch length \\
+\hline
+{\em dponp} & $ \frac{dp}{p} $ \\
+\hline
+{\em twissheader} & Twiss Header Map \\
+\hline
+{\em twissdata} & Twiss Table Map \\
+\hline
+{\em r0} & Classical particle radius \\
+\hline
+{\em aatom} & Atomic Mass Number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IBS amplitude growth rates (longitudinal, horizontal, vertical) 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+PRSTAB 8, 064403 (2005) 
+\end{DoxyNote}
 \mbox{\Hypertarget{Models_8hpp_a9cea68959e4213d225114601b330ea31}\label{Models_8hpp_a9cea68959e4213d225114601b330ea31}} 
 \index{Models.hpp@{Models.hpp}!PiwinskiLattice@{PiwinskiLattice}}
 \index{PiwinskiLattice@{PiwinskiLattice}!Models.hpp@{Models.hpp}}
 \doxysubsubsection{\texorpdfstring{PiwinskiLattice()}{PiwinskiLattice()}}
 {\footnotesize\ttfamily double$\ast$ Piwinski\+Lattice (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{dponp,  }\item[{map$<$ string, double $>$ \&}]{twissheader,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{twissdata,  }\item[{double}]{r0 }\end{DoxyParamCaption})}
 
+Piwinski approximation element weighted.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnumber} & numper of real particles in the bunch \\
+\hline
+{\em ex} & horizontal emittance \\
+\hline
+{\em ey} & vertical emittance \\
+\hline
+{\em sigs} & bunch length \\
+\hline
+{\em dponp} & $ \frac{dp}{p} $ \\
+\hline
+{\em twissheader} & Twiss Header Map \\
+\hline
+{\em twissdata} & Twiss Table Map \\
+\hline
+{\em r0} & Classical particle radius\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IBS amplitude growth rates (longitudinal, horizontal, vertical) 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+HANDBOOK FOR ACCELERATOR PHYSICISTS AND ENGINEERS P.\+126.. 
+\end{DoxyNote}
 \mbox{\Hypertarget{Models_8hpp_a8313e6dc3141e0f08ec219f5d2b5088f}\label{Models_8hpp_a8313e6dc3141e0f08ec219f5d2b5088f}} 
 \index{Models.hpp@{Models.hpp}!PiwinskiLatticeModified@{PiwinskiLatticeModified}}
 \index{PiwinskiLatticeModified@{PiwinskiLatticeModified}!Models.hpp@{Models.hpp}}
 \doxysubsubsection{\texorpdfstring{PiwinskiLatticeModified()}{PiwinskiLatticeModified()}}
 {\footnotesize\ttfamily double$\ast$ Piwinski\+Lattice\+Modified (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{dponp,  }\item[{map$<$ string, double $>$ \&}]{twissheader,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{twissdata,  }\item[{double}]{r0 }\end{DoxyParamCaption})}
 
+Piwinski approximation element weighted taking also dispersion derivatives into account.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnumber} & numper of real particles in the bunch \\
+\hline
+{\em ex} & horizontal emittance \\
+\hline
+{\em ey} & vertical emittance \\
+\hline
+{\em sigs} & bunch length \\
+\hline
+{\em dponp} & $ \frac{dp}{p} $ \\
+\hline
+{\em twissheader} & Twiss Header Map \\
+\hline
+{\em twissdata} & Twiss Table Map \\
+\hline
+{\em r0} & Classical particle radius\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IBS amplitude growth rates (longitudinal, horizontal, vertical) 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+HANDBOOK FOR ACCELERATOR PHYSICISTS AND ENGINEERS P.\+126.. 
+\end{DoxyNote}
 \mbox{\Hypertarget{Models_8hpp_a457aba69818a03f83bcdd6b7cbe6a94b}\label{Models_8hpp_a457aba69818a03f83bcdd6b7cbe6a94b}} 
 \index{Models.hpp@{Models.hpp}!PiwinskiSmooth@{PiwinskiSmooth}}
 \index{PiwinskiSmooth@{PiwinskiSmooth}!Models.hpp@{Models.hpp}}
 \doxysubsubsection{\texorpdfstring{PiwinskiSmooth()}{PiwinskiSmooth()}}
 {\footnotesize\ttfamily double$\ast$ Piwinski\+Smooth (\begin{DoxyParamCaption}\item[{double}]{pnumber,  }\item[{double}]{ex,  }\item[{double}]{ey,  }\item[{double}]{sigs,  }\item[{double}]{dponp,  }\item[{map$<$ string, double $>$ \&}]{twiss,  }\item[{double}]{r0 }\end{DoxyParamCaption})}
 
+Piwinski smooth approximation model.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnumber} & numper of real particles in the bunch \\
+\hline
+{\em ex} & horizontal emittance \\
+\hline
+{\em ey} & vertical emittance \\
+\hline
+{\em sigs} & bunch length \\
+\hline
+{\em dponp} & $ \frac{dp}{p} $ \\
+\hline
+{\em twiss} & Twiss Header Map \\
+\hline
+{\em r0} & Classical particle radius\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IBS amplitude growth rates (longitudinal, horizontal, vertical)
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+HANDBOOK FOR ACCELERATOR PHYSICISTS AND ENGINEERS P.\+126.. 
+\end{DoxyNote}
 \mbox{\Hypertarget{Models_8hpp_a5177ff26367b44c7ee61bc623835f282}\label{Models_8hpp_a5177ff26367b44c7ee61bc623835f282}} 
 \index{Models.hpp@{Models.hpp}!printouts@{printouts}}
 \index{printouts@{printouts}!Models.hpp@{Models.hpp}}
 \doxysubsubsection{\texorpdfstring{printouts()}{printouts()}}
 {\footnotesize\ttfamily void printouts (\begin{DoxyParamCaption}\item[{double}]{output\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
 
+Method that prints out IBS growth rates and times from given input array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & IBS growth rates array. \\
+\hline
+\end{DoxyParams}

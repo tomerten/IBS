@@ -8,3 +8,5 @@
 \_form#7=133x14:$ I_1, I_2, I_3, I_{4x}, I_{4y}, I_{5x}, I_{5y} $
 \_form#8=190x16:$ \tau_x, \tau_y, \tau_{dEoE2}, \epsilon_x^\infty, \epsilon_y^\infty, \sigma_E^2, \sigma_s, J_x, J_y $
 \_form#9=173x18:$ \tau_x, \tau_y, \tau_{\sigma_E^2}, \epsilon_x^\infty, \epsilon_y^\infty, \sigma_E^2, \sigma_s, J_x, J_y $
+\_form#10=13x19:$ \frac{dp}{p} $
+\_form#11=15x18:$ \frac{dE}{E} $

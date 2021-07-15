@@ -510,7 +510,10 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_out[1] = ibs[1];
           ptr_out[2] = ibs[2];
         },
-        "Piwinski smooth");
+        "Piwinski smooth", py::arg("pnumber"), py::arg("emitx"),
+        py::arg("emity"), py::arg("bunchLength"), py::arg("dpop"),
+        py::arg("twissHeaderMap"), py::arg("classicalRadius"),
+        py::arg("outputArray"));
 
   m.def("PiwinskiLattice",
         [](double pnumber, double ex, double ey, double sigs, double dponp,
@@ -526,7 +529,10 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_out[1] = ibs[1];
           ptr_out[2] = ibs[2];
         },
-        "Piwinski Lattice");
+        "Piwinski Lattice", py::arg("pnumber"), py::arg("emitx"),
+        py::arg("emity"), py::arg("bunchLength"), py::arg("dpop"),
+        py::arg("twissHeaderMap"), py::arg("twissTableMap"),
+        py::arg("classicalRadius"), py::arg("outputArray"));
 
   m.def("PiwinskiLatticeModified",
         [](double pnumber, double ex, double ey, double sigs, double dponp,
@@ -542,7 +548,10 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_out[1] = ibs[1];
           ptr_out[2] = ibs[2];
         },
-        "Piwinski Lattice Modified");
+        "Piwinski Lattice Modified", py::arg("pnumber"), py::arg("emitx"),
+        py::arg("emity"), py::arg("bunchLength"), py::arg("dpop"),
+        py::arg("twissHeaderMap"), py::arg("twissTableMap"),
+        py::arg("classicalRadius"), py::arg("outputArray"));
 
   m.def("Nagaitsev",
         [](double pnumber, double ex, double ey, double sigs, double dponp,
@@ -557,12 +566,15 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_out[1] = ibs[1];
           ptr_out[2] = ibs[2];
         },
-        "Nagaitsev");
+        "Nagaitsev", py::arg("pnumber"), py::arg("emitx"), py::arg("emity"),
+        py::arg("bunchLength"), py::arg("dpop"), py::arg("twissHeaderMap"),
+        py::arg("twissTableMap"), py::arg("classicalRadius"),
+        py::arg("outputArray"));
 
   m.def("NagaitsevTailcut",
         [](double pnumber, double ex, double ey, double sigs, double dponp,
            map<string, double> &header, map<string, vector<double>> &table,
-           double aatom, double r0, py::array_t<double> out) {
+           double r0, double aatom, py::array_t<double> out) {
           double *ibs;
           ibs = Nagaitsevtailcut(pnumber, ex, ey, sigs, dponp, header, table,
                                  r0, aatom);
@@ -573,7 +585,11 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_out[1] = ibs[1];
           ptr_out[2] = ibs[2];
         },
-        "Nagaitsev Tailcut");
+        "Nagaitsev Tailcut", py::arg("pnumber"), py::arg("emitx"),
+        py::arg("emity"), py::arg("bunchLength"), py::arg("dpop"),
+        py::arg("twissHeaderMap"), py::arg("twissTableMap"),
+        py::arg("classicalRadius"), py::arg("AtomicMassNumber"),
+        py::arg("outputArray"));
 
   m.def("Zimmerman",
         [](double pnumber, double ex, double ey, double sigs, double sige,
@@ -589,12 +605,15 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_out[1] = ibs[1];
           ptr_out[2] = ibs[2];
         },
-        "Zimmerman");
+        "Zimmerman", py::arg("pnumber"), py::arg("emitx"), py::arg("emity"),
+        py::arg("bunchLength"), py::arg("sige"), py::arg("twissHeaderMap"),
+        py::arg("twissTableMap"), py::arg("classicalRadius"),
+        py::arg("printoutflag"), py::arg("outputArray"));
 
   m.def("ZimmermanTailcut",
         [](double pnumber, double ex, double ey, double sigs, double sige,
            map<string, double> &header, map<string, vector<double>> &table,
-           double r0, bool aatom, py::array_t<double> out) {
+           double r0, double aatom, py::array_t<double> out) {
           double *ibs;
           ibs = ibsmadxtailcut(pnumber, ex, ey, sigs, sige, header, table, r0,
                                aatom);
@@ -605,28 +624,35 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_out[1] = ibs[1];
           ptr_out[2] = ibs[2];
         },
-        "Zimmerman Tailcut");
+        "Zimmerman Tailcut", py::arg("pnumber"), py::arg("emitx"),
+        py::arg("emity"), py::arg("bunchLength"), py::arg("sige"),
+        py::arg("twissHeaderMap"), py::arg("twissTableMap"),
+        py::arg("classicalRadius"), py::arg("AtomicMassNumber"),
+        py::arg("outputArray"));
 
-  m.def("BjorkenMtingwaSimpson",
-        [](double pnumber, double ex, double ey, double sigs, double dponp,
-           map<string, double> &header, map<string, vector<double>> &table,
-           double r0, bool aatom, py::array_t<double> out) {
-          double *ibs;
-          ibs =
-              BjorkenMtingwa2(pnumber, ex, ey, sigs, dponp, header, table, r0);
+  m.def(
+      "BjorkenMtingwaSimpson",
+      [](double pnumber, double ex, double ey, double sigs, double dponp,
+         map<string, double> &header, map<string, vector<double>> &table,
+         double r0, py::array_t<double> out) {
+        double *ibs;
+        ibs = BjorkenMtingwa2(pnumber, ex, ey, sigs, dponp, header, table, r0);
 
-          auto buf_out = out.request();
-          double *ptr_out = static_cast<double *>(buf_out.ptr);
-          ptr_out[0] = ibs[0];
-          ptr_out[1] = ibs[1];
-          ptr_out[2] = ibs[2];
-        },
-        "Bjorken-Mtingwa using Standard Simpson integration.");
+        auto buf_out = out.request();
+        double *ptr_out = static_cast<double *>(buf_out.ptr);
+        ptr_out[0] = ibs[0];
+        ptr_out[1] = ibs[1];
+        ptr_out[2] = ibs[2];
+      },
+      "Bjorken-Mtingwa using Standard Simpson integration.", py::arg("pnumber"),
+      py::arg("emitx"), py::arg("emity"), py::arg("bunchLength"),
+      py::arg("dpop"), py::arg("twissHeaderMap"), py::arg("twissTableMap"),
+      py::arg("classicalRadius"), py::arg("outputArray"));
 
   m.def("BjorkenMtingwaSimpsonDecade",
         [](double pnumber, double ex, double ey, double sigs, double sige,
            map<string, double> &header, map<string, vector<double>> &table,
-           double r0, bool aatom, py::array_t<double> out) {
+           double r0, py::array_t<double> out) {
           double *ibs;
           ibs = BjorkenMtingwa(pnumber, ex, ey, sigs, sige, header, table, r0);
 
@@ -636,14 +662,17 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_out[1] = ibs[1];
           ptr_out[2] = ibs[2];
         },
-        "Bjorken-Mtingwa using Simpson Decade integration.");
+        "Bjorken-Mtingwa using Simpson Decade integration.", py::arg("pnumber"),
+        py::arg("emitx"), py::arg("emity"), py::arg("bunchLength"),
+        py::arg("dpop"), py::arg("twissHeaderMap"), py::arg("twissTableMap"),
+        py::arg("classicalRadius"), py::arg("outputArray"));
 
   m.def("BjorkenMtingwaTailcutSimpsonDecade",
-        [](double pnumber, double ex, double ey, double sigs, double sige,
+        [](double pnumber, double ex, double ey, double sigs, double dponp,
            map<string, double> &header, map<string, vector<double>> &table,
-           double r0, bool aatom, py::array_t<double> out) {
+           double r0, double aatom, py::array_t<double> out) {
           double *ibs;
-          ibs = BjorkenMtingwatailcut(pnumber, ex, ey, sigs, sige, header,
+          ibs = BjorkenMtingwatailcut(pnumber, ex, ey, sigs, dponp, header,
                                       table, r0, aatom);
 
           auto buf_out = out.request();
@@ -652,12 +681,16 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_out[1] = ibs[1];
           ptr_out[2] = ibs[2];
         },
-        "Bjorken-Mtingwa using Simpson Decade integration with Tailcut");
+        "Bjorken-Mtingwa using Simpson Decade integration with Tailcut",
+        py::arg("pnumber"), py::arg("emitx"), py::arg("emity"),
+        py::arg("bunchLength"), py::arg("dpop"), py::arg("twissHeaderMap"),
+        py::arg("twissTableMap"), py::arg("classicalRadius"),
+        py::arg("AtomicMassNumber"), py::arg("outputArray"));
 
   m.def("ConteMartiniSimpsonDecade",
         [](double pnumber, double ex, double ey, double sigs, double sige,
            map<string, double> &header, map<string, vector<double>> &table,
-           double r0, bool aatom, py::array_t<double> out) {
+           double r0, py::array_t<double> out) {
           double *ibs;
           ibs = ConteMartini(pnumber, ex, ey, sigs, sige, header, table, r0);
 
@@ -667,12 +700,15 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_out[1] = ibs[1];
           ptr_out[2] = ibs[2];
         },
-        "Conte-Martini using Simpson Decade integration.");
+        "Conte-Martini using Simpson Decade integration.", py::arg("pnumber"),
+        py::arg("emitx"), py::arg("emity"), py::arg("bunchLength"),
+        py::arg("dpop"), py::arg("twissHeaderMap"), py::arg("twissTableMap"),
+        py::arg("classicalRadius"), py::arg("outputArray"));
 
   m.def("ConteMartiniTailcutSimpsonDecade",
         [](double pnumber, double ex, double ey, double sigs, double sige,
            map<string, double> &header, map<string, vector<double>> &table,
-           double r0, bool aatom, py::array_t<double> out) {
+           double r0, double aatom, py::array_t<double> out) {
           double *ibs;
           ibs = ConteMartinitailcut(pnumber, ex, ey, sigs, sige, header, table,
                                     r0, aatom);
@@ -683,15 +719,18 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_out[1] = ibs[1];
           ptr_out[2] = ibs[2];
         },
-        "Conte-Martini using Simpson Decade integration with Tailcut");
+        "Conte-Martini using Simpson Decade integration with Tailcut",
+        py::arg("pnumber"), py::arg("emitx"), py::arg("emity"),
+        py::arg("bunchLength"), py::arg("dpop"), py::arg("twissHeaderMap"),
+        py::arg("twissTableMap"), py::arg("classicalRadius"),
+        py::arg("AtomicMassNumber"), py::arg("outputArray"));
 
   m.def("ZimmermanSimpsonDecade",
-        [](double pnumber, double ex, double ey, double sigs, double sige,
+        [](double pnumber, double ex, double ey, double sigs, double dponp,
            map<string, double> &header, map<string, vector<double>> &table,
-           double r0, bool printout, py::array_t<double> out) {
+           double r0, py::array_t<double> out) {
           double *ibs;
-          ibs =
-              ibsmadx(pnumber, ex, ey, sigs, sige, header, table, r0, printout);
+          ibs = MadxIBS(pnumber, ex, ey, sigs, dponp, header, table, r0);
 
           auto buf_out = out.request();
           double *ptr_out = static_cast<double *>(buf_out.ptr);
@@ -699,7 +738,10 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           ptr_out[1] = ibs[1];
           ptr_out[2] = ibs[2];
         },
-        "Zimmerman using Simpson Decade");
+        "Zimmerman using Simpson Decade", py::arg("pnumber"), py::arg("emitx"),
+        py::arg("emity"), py::arg("bunchLength"), py::arg("dpop"),
+        py::arg("twissHeaderMap"), py::arg("twissTableMap"),
+        py::arg("classicalRadius"), py::arg("outputArray"));
 
   m.def("runODE",
         [](map<string, double> &twiss, map<string, vector<double>> &twissdata,
@@ -716,7 +758,12 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           res["sigs"] = sigs;
           return res;
         },
-        "");
+        "Run ODE simulation using auto time step.", py::arg("twissheader"),
+        py::arg("twisstable"), py::arg("harmonic_rf"), py::arg("voltages_rf"),
+        py::arg("t"), py::arg("ex"), py::arg("ey"), py::arg("sigs"),
+        py::arg("sige"), py::arg("model"), py::arg("pnumber"),
+        py::arg("couplingPercentage"), py::arg("threshold"),
+        py::arg("simulationMethod"));
   m.def("runODE",
         [](map<string, double> &twiss, map<string, vector<double>> &twissdata,
            vector<double> h, vector<double> v, vector<double> &t,
@@ -733,5 +780,10 @@ int n) { return simpson(ibsintegrand, ax, bx, a, b, c, al, bl, n);
           res["sigs"] = sigs;
           return res;
         },
-        "");
+        "Run ODE simulation with fixed number of steps and stepsize.",
+        py::arg("twissheader"), py::arg("twisstable"), py::arg("harmonic_rf"),
+        py::arg("voltages_rf"), py::arg("t"), py::arg("ex"), py::arg("ey"),
+        py::arg("sigs"), py::arg("sige"), py::arg("model"), py::arg("pnumber"),
+        py::arg("nsteps"), py::arg("stepsize"), py::arg("couplingPercentage"),
+        py::arg("simulationMethod"));
 }

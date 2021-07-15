@@ -66,12 +66,87 @@ void \mbox{\hyperlink{OrdDiffEq_8cpp_a761126948136fd8fc3c5017b8d991fde}{ODE\+\_\
 \doxysubsubsection{\texorpdfstring{ODE()}{ODE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void ODE (\begin{DoxyParamCaption}\item[{map$<$ string, double $>$ \&}]{twiss,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{twissdata,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{vector$<$ double $>$ \&}]{t,  }\item[{vector$<$ double $>$ \&}]{ex,  }\item[{vector$<$ double $>$ \&}]{ey,  }\item[{vector$<$ double $>$ \&}]{sigs,  }\item[{vector$<$ double $>$}]{sige,  }\item[{int}]{model,  }\item[{double}]{pnumber,  }\item[{int}]{couplingpercentage,  }\item[{double}]{threshold,  }\item[{string}]{method }\end{DoxyParamCaption})}
 
+Run ODE simulation using auto time step.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em twiss} & Twiss Header Map \\
+\hline
+ & {\em twissdata} & Twiss Table Map \\
+\hline
+ & {\em nrf} & number of rf systems \\
+\hline
+ & {\em harmon} & list of harmonic numbers for the rf systems \\
+\hline
+ & {\em voltages} & list of voltages for the rf systems \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em t} & timesteps \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em ex} & horizontal emittance \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em ey} & vertical emittance \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em sigs} & bunch length \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em sige} & energy spread \\
+\hline
+ & {\em model} & IBS model (1-\/13) \\
+\hline
+ & {\em pnumber} & number of particles per bunch \\
+\hline
+ & {\em couplingpercentage} & hor/ver coupling in percentage \\
+\hline
+ & {\em threshold} & evolution stop threshold \\
+\hline
+ & {\em method} & simulation method (rlx or der) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\+: Relaxation method based on implementation in BMAD 
+\end{DoxyNote}
 \mbox{\Hypertarget{OrdDiffEq_8cpp_aaa1e63178907dcd61097398cc60ef686}\label{OrdDiffEq_8cpp_aaa1e63178907dcd61097398cc60ef686}} 
 \index{OrdDiffEq.cpp@{OrdDiffEq.cpp}!ODE@{ODE}}
 \index{ODE@{ODE}!OrdDiffEq.cpp@{OrdDiffEq.cpp}}
 \doxysubsubsection{\texorpdfstring{ODE()}{ODE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void ODE (\begin{DoxyParamCaption}\item[{map$<$ string, double $>$ \&}]{twiss,  }\item[{map$<$ string, vector$<$ double $>$$>$ \&}]{twissdata,  }\item[{int}]{nrf,  }\item[{double}]{harmon\mbox{[}$\,$\mbox{]},  }\item[{double}]{voltages\mbox{[}$\,$\mbox{]},  }\item[{vector$<$ double $>$ \&}]{t,  }\item[{vector$<$ double $>$ \&}]{ex,  }\item[{vector$<$ double $>$ \&}]{ey,  }\item[{vector$<$ double $>$ \&}]{sigs,  }\item[{vector$<$ double $>$}]{sige,  }\item[{int}]{model,  }\item[{double}]{pnumber,  }\item[{int}]{nsteps,  }\item[{double}]{stepsize,  }\item[{int}]{couplingpercentage,  }\item[{string}]{method }\end{DoxyParamCaption})}
 
+Run ODE simulation using auto time step.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em twiss} & Twiss Header Map \\
+\hline
+ & {\em twissdata} & Twiss Table Map \\
+\hline
+ & {\em nrf} & number of rf systems \\
+\hline
+ & {\em harmon} & list of harmonic numbers for the rf systems \\
+\hline
+ & {\em voltages} & list of voltages for the rf systems \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em t} & timesteps \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em ex} & horizontal emittance \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em ey} & vertical emittance \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em sigs} & bunch length \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em sige} & energy spread \\
+\hline
+ & {\em model} & IBS model (1-\/13) \\
+\hline
+ & {\em pnumber} & number of particles per bunch \\
+\hline
+ & {\em nsteps} & number of simulation steps \\
+\hline
+ & {\em stepsize} & time step size \\
+\hline
+ & {\em couplingpercentage} & hor/ver coupling in percentage \\
+\hline
+ & {\em method} & simulation method (rlx or der) \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{OrdDiffEq_8cpp_a761126948136fd8fc3c5017b8d991fde}\label{OrdDiffEq_8cpp_a761126948136fd8fc3c5017b8d991fde}} 
 \index{OrdDiffEq.cpp@{OrdDiffEq.cpp}!ODE\_BMAD@{ODE\_BMAD}}
 \index{ODE\_BMAD@{ODE\_BMAD}!OrdDiffEq.cpp@{OrdDiffEq.cpp}}
@@ -102,6 +177,21 @@ void \mbox{\hyperlink{OrdDiffEq_8cpp_a761126948136fd8fc3c5017b8d991fde}{ODE\+\_\
 \doxysubsubsection{\texorpdfstring{WriteToFile()}{WriteToFile()}}
 {\footnotesize\ttfamily void Write\+To\+File (\begin{DoxyParamCaption}\item[{string}]{filename,  }\item[{vector$<$ double $>$ \&}]{t,  }\item[{vector$<$ double $>$ \&}]{ex,  }\item[{vector$<$ double $>$ \&}]{ey,  }\item[{vector$<$ double $>$ \&}]{sigs }\end{DoxyParamCaption})}
 
+Method to write simulation output to file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & name of the file to write to \\
+\hline
+{\em t} & timesteps \\
+\hline
+{\em ex} & horizontal emit steps \\
+\hline
+{\em ey} & vertical emit steps \\
+\hline
+{\em sigs} & bunch length steps \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{OrdDiffEq_8cpp_ab0c10e6284be130a7973fa029a690ef7}\label{OrdDiffEq_8cpp_ab0c10e6284be130a7973fa029a690ef7}} 
 \index{OrdDiffEq.cpp@{OrdDiffEq.cpp}!yellow@{yellow}}
 \index{yellow@{yellow}!OrdDiffEq.cpp@{OrdDiffEq.cpp}}
