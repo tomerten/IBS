@@ -14,6 +14,6 @@ runode
 
 .. option:: INFILE
 
-   Required argument.
+   Required argument. JSON File with simulation settings.
 
 
