@@ -3,8 +3,6 @@ import sys
 
 sys.path.insert(0, os.path.abspath(".."))
 
-import ibs
-
 extensions = [
     "matplotlib.sphinxext.mathmpl",
     "matplotlib.sphinxext.plot_directive",
@@ -88,5 +86,8 @@ if read_the_docs_build:
     # input_dir = '../CatCutifier'
     output_dir = ""
     # configureDoxyfile(input_dir, output_dir)
+    subprocess.call("../bash build_all.sh", shell=True)
+    import ibs
+
     subprocess.call("doxygen", shell=True)
     breathe_projects["ibs"] = output_dir + "xml"
