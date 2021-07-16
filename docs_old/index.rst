@@ -6,13 +6,11 @@ Welcome to ibs's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   readme 
-   installation 
+   readme
+   installation
    apps
-   python_api
-   cpp_api
-   notebooks/Tutorial.ipynb
-   authors 
+   api
+   authors
    history
 
 ##################
