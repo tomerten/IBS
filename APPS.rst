@@ -1,7 +1,19 @@
 ************
 Applications
 ************
-.. click:: ibs.cli_runode:main
-   :prog: runode
-   :show-nested:
+
+runode
+*******
+
+.. program:: runode
+.. code-block:: shell
+
+   runode INFILE
+
+.. rubric:: Arguments
+
+.. option:: INFILE
+
+   Required argument.
+
 
