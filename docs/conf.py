@@ -3,6 +3,8 @@ import sys
 
 sys.path.insert(0, os.path.abspath(".."))
 
+import ibs
+
 extensions = [
     "matplotlib.sphinxext.mathmpl",
     "matplotlib.sphinxext.plot_directive",
