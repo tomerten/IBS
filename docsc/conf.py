@@ -4,11 +4,20 @@ import sys
 sys.path.insert(0, os.path.abspath(".."))
 
 extensions = [
+    "matplotlib.sphinxext.mathmpl",
+    "matplotlib.sphinxext.plot_directive",
+    "IPython.sphinxext.ipython_directive",
+    "IPython.sphinxext.ipython_console_highlighting",
+    "sphinx.ext.mathjax",
     "breathe",
     "sphinx_rtd_theme",
     "sphinx.ext.autodoc",
     "sphinx.ext.viewcode",
     "sphinx_click.ext",
+    "sphinx.ext.doctest",
+    "sphinx.ext.inheritance_diagram",
+    "sphinx.ext.napoleon",
+    "nbsphinx",
 ]
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
@@ -26,11 +35,19 @@ breathe_default_project = "IBS"
 project = u"ibs"
 copyright = u"2021, Tom Mertens"
 author = u"Tom Mertens"
+exclude_patterns = ["build", "Thumbs.db", ".DS_Store"]
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = "sphinx"
 
+# If true, `todo` and `todoList` produce output, else they produce nothing.
+todo_include_todos = False
+
+plot_include_source = True
+nofigs = False
+
 # -- Options for HTML output -------------------------------------------
+plot_formats = ["png", "hires.png", "pdf", "svg"]
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
@@ -42,3 +59,32 @@ try:
 except ImportError:
     print("Sphinx html theme 'sphinx_rtd_theme' not found. Using 'classic' instead.")
     html_theme = "classic"
+
+import os
+
+# Runnig Doxygen on readthedocs
+import subprocess
+
+
+def configureDoxyfile(input_dir, output_dir):
+    with open("Doxyfile", "r") as file:
+        filedata = file.read()
+
+    # filedata = filedata.replace('@DOXYGEN_INPUT_DIR@', input_dir)
+    # filedata = filedata.replace('@DOXYGEN_OUTPUT_DIR@', output_dir)
+
+    # with open('Doxyfile', 'w') as file:
+    #     file.write(filedata)
+
+
+# Check if we're running on Read the Docs' servers
+read_the_docs_build = os.environ.get("READTHEDOCS", None) == "True"
+
+breathe_projects = {}
+
+if read_the_docs_build:
+    # input_dir = '../CatCutifier'
+    output_dir = "build"
+    # configureDoxyfile(input_dir, output_dir)
+    subprocess.call("doxygen", shell=True)
+    breathe_projects["ibs"] = output_dir + "/xml"

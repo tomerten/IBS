@@ -11,6 +11,7 @@ Welcome to ibs's documentation!
    apps
    python_api
    cpp_api
+   notebooks/Tutorial.ipynb
    authors 
    history
 
