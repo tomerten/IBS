@@ -1,5 +1,5 @@
 mkdir -p cpp/build
-mkdir -p cpp/build/tests
+mkdir -p cpp/tests/build
 cd cpp/build
 cmake .. -DCMAKE_INSTALL_PREFIX=~/.local
 make
