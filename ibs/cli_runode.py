@@ -259,7 +259,7 @@ def format_axes(ax):
     return ax
 
 
-def plot(df: pd.DataFrame, sim_input: dict, save=True) -> None:
+def plot(df: pd.DataFrame, sim_input: dict, save: bool = True) -> None:
     """Method to plot the ODE simulation results quickly.
 
     Parameters
