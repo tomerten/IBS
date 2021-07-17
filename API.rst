@@ -13,4 +13,3 @@ Package IBSLib
 
 .. automodule:: IBSLib
    :members:
-
