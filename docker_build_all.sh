@@ -12,7 +12,7 @@ mkdir -p cpp/tests/build
 
 # build cpp lib
 cd cpp/build
-cmake .. -DCMAKE_INSTALL_PREFIX=~/.local
+cmake .. #-DCMAKE_INSTALL_PREFIX=~/.local
 make
 make install
 
