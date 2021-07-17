@@ -84,7 +84,6 @@ breathe_projects = {}
 
 if read_the_docs_build:
     subprocess.call("poetry install", shell=True)
-    e
     # input_dir = '../CatCutifier'
     output_dir = ""
     # configureDoxyfile(input_dir, output_dir)
