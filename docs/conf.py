@@ -84,7 +84,7 @@ breathe_projects = {}
 
 if read_the_docs_build:
     subprocess.call("pip install poetry", shell=True)
-    subprocess.call("cd .. && poetry install", shell=True)
+    subprocess.call("cd .. && bash build_all.sh", shell=True)
     import ibs
 
     # input_dir = '../CatCutifier'
