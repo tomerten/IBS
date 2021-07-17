@@ -85,6 +85,8 @@ breathe_projects = {}
 if read_the_docs_build:
     subprocess.call("pip install poetry", shell=True)
     subprocess.call("cd .. && poetry install", shell=True)
+    import ibs
+
     # input_dir = '../CatCutifier'
     output_dir = ""
     # configureDoxyfile(input_dir, output_dir)
