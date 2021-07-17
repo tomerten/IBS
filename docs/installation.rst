@@ -5,24 +5,6 @@ Installation
 ************
 
 
-Stable release
-==============
-
-To install ibs, run this command in your terminal:
-
-.. code-block:: console
-
-    $ pip install ibs
-
-This is the preferred method to install ibs, as it will always install the most recent stable release.
-
-If you don't have `pip`_ installed, this `Python installation guide`_ can guide
-you through the process.
-
-.. _pip: https://pip.pypa.io
-.. _Python installation guide: http://docs.python-guide.org/en/latest/starting/installation/
-
-
 From sources
 ============
 
@@ -34,21 +16,8 @@ You can either clone the public repository:
 
     $ git clone git://github.com/tomerten/ibs
 
-Or download the `tarball`_:
-
-.. code-block:: console
-
-    $ curl  -OL https://github.com/tomerten/ibs/tarball/master
-
-Once you have a copy of the source, you can install it with:
-
-.. code-block:: console
-
-    $ python setup.py install
-
 
 .. _Github repo: https://github.com/tomerten/ibs
-.. _tarball: https://github.com/tomerten/ibs/tarball/master
 
 
 Detailed info about Installation
@@ -110,7 +79,8 @@ Below we show the content of this file for convenience and later reference.
     :literal:
 
 
-We also need to have the main header file find all the actual libraries.
+We also need to have the main header file find all the actual libraries
+(we use the cpp/include/ibs file).
 
 .. include:: ../cpp/include/ibs
     :literal:
@@ -139,7 +109,7 @@ Testing the C++ Library
 -----------------------
 
 .. note:: The tests are not actual proper unit tests, but rather a place
-    where some test code can be place to test the library functions.
+    where some test code can be put to test the library functions.
 
 We again start by creating the directory and adding files to them:
 
@@ -180,6 +150,9 @@ Now we are prepared to build and run the tests.
 Python wrapper
 ==============
 
+PYbind11 and git
+----------------
+
 For the ``Python`` wrapper we rely on  ``pybind11``. There are several
 methods to this package (e.g. using conda install) but here we decided to
 add it in third party folder using ``git submodules``. Therefor
@@ -206,8 +179,7 @@ As git submodules are not updated automatically we need to add some extra code t
 Wrapping the code
 -----------------
 
-In order to wrap the ``C++`` code we need to add the following
- extra code into the `Python` directory.
+In order to wrap the ``C++`` code we need to add the following extra code into the ``Python`` directory.
 
 .. code-block:: console
 

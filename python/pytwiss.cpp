@@ -12,7 +12,7 @@
 namespace py = pybind11;
 
 PYBIND11_MODULE(IBSLib, m) {
-  m.doc() = "IBS library";
+  m.doc() = "Python wrapper around C++ IBSLib.";
   /*
 ================================================================================
                                     TWISS

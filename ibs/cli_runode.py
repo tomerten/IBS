@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
-"""Command line interface runode (no sub-commands)."""
+
+"""Command line interface runode."""
 
 import sys
 from json import load
+from math import sqrt
 from posixpath import abspath
 
 import click
 import IBSLib as ibslib
+import matplotlib
 import pandas as pd
 from matplotlib import pyplot as plt
 
@@ -31,6 +34,18 @@ _MODEL_MAP = {
 
 
 def read_sim_input(infile: str) -> dict:
+    """Read the simulation input file (JSON).
+
+    Parameters
+    ----------
+    infile : str
+        JSON input file with simulation settings.
+
+    Returns
+    -------
+    dict
+        Simulation settings as dict.
+    """
     with open(infile, "r") as f:
         sim_input = load(f)
 
@@ -38,6 +53,18 @@ def read_sim_input(infile: str) -> dict:
 
 
 def check_sim_input(sim_input: dict) -> str:
+    """Check correctness of content of simulation input file.
+
+    Parameters
+    ----------
+    sim_input : dict
+        output for read_sim_input
+
+    Returns
+    -------
+    str
+        man | auto - sets the timesteps in the simulation to man or auto.
+    """
     _REQUIRED_KEYS = [
         "twissfile",
         "harmon",
@@ -46,6 +73,7 @@ def check_sim_input(sim_input: dict) -> str:
         "ey",
         "sigs",
         "model",  # 0 is all
+        "method",
         "pnumber",
         "outfile",
         "plotfile",
@@ -59,6 +87,7 @@ def check_sim_input(sim_input: dict) -> str:
     assert sim_input["model"] in list(range(14))
     assert isinstance(sim_input["outfile"], str)
     assert isinstance(sim_input["plotfile"], str)
+    assert sim_input["method"] in ["rlx", "der"]
 
     if all(k in sim_input for k in _MAN_KEYS):
         return "man"
@@ -67,6 +96,20 @@ def check_sim_input(sim_input: dict) -> str:
 
 
 def run_single(sim_input: dict, sim_type: str) -> dict:
+    """Run simulation for single IBS model.
+
+    Parameters
+    ----------
+    sim_input : dict
+        output of read_sim_input
+    sim_type : str
+        output of check_sim_input
+
+    Returns
+    -------
+    dict
+        Returns a dict with the simultion output (keys: t, ex, ey, sigs, model).
+    """
     twissheader = ibslib.GetTwissHeader(sim_input["twissfile"])
     twisstable = ibslib.GetTwissTable(sim_input["twissfile"])
     twisstable = ibslib.updateTwiss(twisstable)
@@ -92,6 +135,7 @@ def run_single(sim_input: dict, sim_type: str) -> dict:
             sim_input["pnumber"],
             sim_input["coupling"],
             sim_input["threshold"],
+            sim_input["method"],
         )
         return res
     else:
@@ -110,11 +154,27 @@ def run_single(sim_input: dict, sim_type: str) -> dict:
             sim_input["nsteps"],
             sim_input["stepsize"],
             sim_input["coupling"],
+            sim_input["method"],
         )
         return res
 
 
 def run_all(sim_input: dict, sim_type: str) -> dict:
+    """Runs the simulation for all available IBS models.
+
+    Parameters
+    ----------
+    sim_input : dict
+        output of read_sim_input
+    sim_type : str
+        output of check_sim_input
+
+    Returns
+    -------
+    dict
+        Dict with all simulation outputs,
+        model column is used to distinguish the results for the different models.
+    """
     result = {}
     for m in range(1, 14):
         sim_input["model"] = m
@@ -123,7 +183,93 @@ def run_all(sim_input: dict, sim_type: str) -> dict:
     return result
 
 
+SPINE_COLOR = "gray"
+
+
+def latexify(fig_width=None, fig_height=None, columns=1):
+    """Set up matplotlib's RC params for LaTeX plotting.
+    Call this before plotting a figure.
+
+    Parameters
+    ----------
+    fig_width : float, optional, inches
+    fig_height : float,  optional, inches
+    columns : {1, 2}
+    """
+
+    # code adapted from http://www.scipy.org/Cookbook/Matplotlib/LaTeX_Examples
+
+    # Width and max height in inches for IEEE journals taken from
+    # computer.org/cms/Computer.org/Journal%20templates/transactions_art_guide.pdf
+
+    assert columns in [1, 2]
+
+    if fig_width is None:
+        fig_width = 3.39 if columns == 1 else 6.9  # width in inches
+
+    if fig_height is None:
+        golden_mean = (sqrt(5) - 1.0) / 2.0  # Aesthetic ratio
+        fig_height = fig_width * golden_mean  # height in inches
+
+    MAX_HEIGHT_INCHES = 8.0
+    if fig_height > MAX_HEIGHT_INCHES:
+        print(
+            "WARNING: fig_height too large:"
+            + fig_height
+            + "so will reduce to"
+            + MAX_HEIGHT_INCHES
+            + "inches."
+        )
+        fig_height = MAX_HEIGHT_INCHES
+
+    params = {
+        "backend": "ps",
+        "text.latex.preamble": "\\usepackage{gensymb}",
+        "axes.labelsize": 20,  # fontsize for x and y labels (was 10)
+        "axes.titlesize": 20,
+        "font.size": 20,  # was 10
+        "legend.fontsize": 20,  # was 10
+        "xtick.labelsize": 20,
+        "ytick.labelsize": 20,
+        "text.usetex": False,
+        "figure.figsize": [fig_width, fig_height],
+        "font.family": "serif",
+        "axes.formatter.limits": [-3, 3],
+        "axes.formatter.use_mathtext": True,
+    }
+
+    matplotlib.rcParams.update(params)
+
+
+def format_axes(ax):
+
+    for spine in ["top", "right"]:
+        ax.spines[spine].set_visible(False)
+
+    for spine in ["left", "bottom"]:
+        ax.spines[spine].set_color(SPINE_COLOR)
+        ax.spines[spine].set_linewidth(0.5)
+
+    ax.xaxis.set_ticks_position("bottom")
+    ax.yaxis.set_ticks_position("left")
+
+    for axis in [ax.xaxis, ax.yaxis]:
+        axis.set_tick_params(direction="out", color=SPINE_COLOR)
+
+    return ax
+
+
 def plot(df: pd.DataFrame, sim_input: dict) -> None:
+    """Method to plot the ODE simulation results quickly.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        DataFrame containing the simulation results.
+    sim_input : dict
+        output of read_sim_input
+    """
+    # latexify(columns=2)
     if sim_input["model"] == 0:
         fig = plt.figure(constrained_layout=True)
         gs = fig.add_gridspec(ncols=2, nrows=2)

@@ -10,6 +10,7 @@
     "ey": 1e-10,
     "sigs": 0.005,
     "model": 8,
+    "method": "der",
     "pnumber": 1e10,
     "coupling": 0,
     "threshold": 1e-4,

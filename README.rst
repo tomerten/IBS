@@ -2,13 +2,91 @@
 IBS - Intra Beam Scattering
 ===========================
 
+.. image:: https://readthedocs.org/projects/ibs/badge/
+    :alt: Documentation Status
+    :scale: 100%
+    :target: http://ibslib.readthedocs.io
+
 
 C++ Library with PYBIND11 Python wrapper for IBS calculations, including an ODE model simulation.
 
 
 *  Free software: MIT license
-*  Documentation: https://ibs.readthedocs.io.
+*  Documentation: https://ibslib.readthedocs.io.
 
+Requirements
+------------
+
+For the installation:
+
+* CMake >= 3.10.2
+* GCC compiler 
+* Python >= 3.7.1
+* Git - for the submodules
+
+For the docs (see docs/requirements.txt - except doxygen):
+
+* doxygen 
+* breathe
+* sphinx-click
+* click
+* cookiecutter
+* semantic-version
+* matplotlib
+* ipython
+* nbsphinx
+* ipykernel
+* pandoc
+
+
+Source Installation
+-------------------
+
+The sources for ibs can be downloaded from the `Github repo`_.
+
+We recommend to install everything in a dedicated `Conda` environment. 
+
+.. code-block:: console
+
+    $ conda create python=3.8 --name=ibslibenv
+    $ conda activate ibslibenv
+    $ conda install pip
+    $ pip install poetry
+
+Clone the public repository and run the `build_all.sh` script:
+
+.. code-block:: console
+
+    $ git clone git://github.com/tomerten/ibs
+    $ cd ibs
+    $ bash build_all.sh
+
+For more details see the installation guidelines on `Installation documentation`_. 
+
+.. _Installation documentation: https://ibslib.readthedocs.io/en/latest/installation.html
+.. _Github repo: https://github.com/tomerten/ibs
+
+Build Docs
+----------
+
+Building of the documentation is based on `this article`_ making use of Cmake, Doxygen, Breathe and Sphinx. 
+It can be build locally by the following command:
+
+.. code-block:: console
+
+    $ bash build_docs.sh 
+
+.. note:: 
+    Make sure you have `Doxygen`_ installed.
+
+To install `Doxygen` in a Conda environment:
+
+.. code-block:: console
+
+    $ conda install -c conda-forge doxygen
+
+.. _Doxygen: https://www.doxygen.nl/download.html
+.. _this article: https://devblogs.microsoft.com/cppblog/clear-functional-c-documentation-with-sphinx-breathe-doxygen-cmake/
 
 Features
 --------
@@ -30,7 +108,7 @@ Current Supported Models
 -  Nagaitsev's high-energy approximation (standard Coulomb Log and with Tailcut)
 -  Bjorken-Mtingwa (standard Coulomb Log and with Tailcut)
 -  Conte-Martini (standard Coulomb Log and with Tailcut)
--  Madx (CERN note AB-2006-002) using `TWINT` and `SIMPSONDECADE` methods to perform the integration (standard Coulomb Log and with Tailcut).
+-  Zimmerman (Madx - CERN note AB-2006-002) using `TWINT` and `SIMPSONDECADE` methods to perform the integration (standard Coulomb Log and with Tailcut).
 
 Coublomb Log methods
 --------------------
@@ -52,34 +130,22 @@ Radiation Damping
 
 - Radiation Damping using smooth lattice approximation 
 - Radiation Damping element by element
-- Equilibrium from pure radiation damping and exitation (taux, tauy, taus, exinf, eyinf, sigeoe2, jx, jy)
+- Equilibrium from pure radiation damping and exitation (taux, tauy, taus, exinf, eyinf, sigeoe2, sigsinf, jx, jy)
 - Radiation losses per turn
 - Critical omega, theta, photon energy
 
 Numeric Functions
 -----------------
 
-- sigefromsigs
-- eta 
-- fmohl
-- particle_radius
-- BetaRelativisticFromGamma
-- rds 
-- VeffRFeV
-- VeffRFeVPrime
-- synchronuousphase
-- VeffRFeVPotentialWellDistortion
-- VeffRFeVPotentialWellDistortionPrime
-- synchronuousphasewithPWD
-- synchrotronTune
-- synchrotronTunewithPWD
-- csige (calculates sige from RF settings, radiation losses and sigs)
+- Method to calculate standard accelerator quantities.
+- Various methods related to RF calculations to derive longitudinal quantities necessary for the IBS algorithms.
+- Numeric functions used by specific IBS models (fmohl, rds). 
 
 ODE 
 ---
 
-The tables below show examples of the output of the ODE method, with `threshold` 
-set to `1e-3` written to a csv file.
+The tables below show examples of the output of the ODE method, applied to the BESSY II design lattice. 
+For the examples below the `stability threshold` set to `1e-3` written to a csv file.
 
 .. csv-table:: ODE Model using Piwinski Smooth
     :file: cpp/tests/bin/ODE_test_output_piwinski_smooth.csv 
