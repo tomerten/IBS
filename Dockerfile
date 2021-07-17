@@ -8,4 +8,3 @@ RUN git clone https://github.com/tomerten/IBS.git
 RUN apt-get update && apt-get -y install build-essential
 RUN cd IBS && bash docker_build_all.sh
 
-ENTRYPOINT ["runode"]
