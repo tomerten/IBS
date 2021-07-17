@@ -7,12 +7,20 @@ IBS - Intra Beam Scattering
     :scale: 100%
     :target: http://ibslib.readthedocs.io
 
+.. image:: https://mybinder.org/badge_logo.svg
+ :target: https://mybinder.org/v2/gh/tomerten/ibs/main?filepath=IBS%2Fdocs%2Fnotebooks%2FTutorial.ipynb
+
 
 C++ Library with PYBIND11 Python wrapper for IBS calculations, including an ODE model simulation.
 
 
 *  Free software: MIT license
 *  Documentation: https://ibslib.readthedocs.io.
+
+Tutorial on Binder
+------------------
+
+https://mybinder.org/v2/gh/tomerten/ibs/main?filepath=IBS%2Fdocs%2Fnotebooks%2FTutorial.ipynb
 
 Requirements
 ------------

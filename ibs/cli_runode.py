@@ -259,13 +259,15 @@ def format_axes(ax):
     return ax
 
 
-def plot(df: pd.DataFrame, sim_input: dict) -> None:
+def plot(df: pd.DataFrame, sim_input: dict, save=True) -> None:
     """Method to plot the ODE simulation results quickly.
 
     Parameters
     ----------
     df : pd.DataFrame
         DataFrame containing the simulation results.
+    save: bool
+        save plot to file
     sim_input : dict
         output of read_sim_input
     """
@@ -306,7 +308,8 @@ def plot(df: pd.DataFrame, sim_input: dict) -> None:
         )
         # plt.tick_params(axis="y", which="minor")
         # ax2.yaxis.set_minor_formatter(FormatStrFormatter("%.1f"))
-        plt.savefig(sim_input["plotfile"], bbox_inches="tight")
+        if save:
+            plt.savefig(sim_input["plotfile"], bbox_inches="tight")
     else:
         print("plotting")
         fig = plt.figure(constrained_layout=True)
@@ -335,7 +338,8 @@ def plot(df: pd.DataFrame, sim_input: dict) -> None:
         ax2.set_xlabel("t[s]")
         ax3.set_xlabel("t[s]")
 
-        plt.savefig(sim_input["plotfile"])
+        if save:
+            plt.savefig(sim_input["plotfile"])
 
 
 @click.command()
