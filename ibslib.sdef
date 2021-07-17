@@ -1,0 +1,16 @@
+Bootstrap: docker
+
+From: continuumio/miniconda3
+
+
+%post
+  conda install cmake make
+  conda install gcc_linux-64
+
+  git clone https://github.com/tomerten/IBS.git
+
+  apt-get update && apt-get -y install build-essential
+  cd IBS && bash docker_build_all.sh
+
+%runscript
+  runode "$@"
