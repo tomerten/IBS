@@ -83,7 +83,7 @@ read_the_docs_build = os.environ.get("READTHEDOCS", None) == "True"
 breathe_projects = {}
 
 if read_the_docs_build:
-    subprocess.call("bash ../docker_build_all.sh", shell=True)
+    subprocess.call("bash docker_build_all.sh", shell=True)
     # input_dir = '../CatCutifier'
     output_dir = ""
     # configureDoxyfile(input_dir, output_dir)

@@ -16,5 +16,5 @@ runode
 
    Required argument. JSON File with simulation settings.
 
-.. include:: ./t tests/sim_input_test.json 
+.. include:: ../tests/sim_input_test.json 
     :literal:

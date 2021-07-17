@@ -20,6 +20,8 @@ C++ Library with PYBIND11 Python wrapper for IBS calculations, including an ODE 
 Tutorial on Binder
 ------------------
 
+Visit the link below for a live jupyter notebook with the turorial.
+
 https://mybinder.org/v2/gh/tomerten/ibs/main?filepath=IBS%2Fdocs%2Fnotebooks%2FTutorial.ipynb
 
 Requirements
@@ -72,7 +74,7 @@ you direct access to the tutorial notebook.
 
 .. code-block:: console
 
-    $ docker run -it -v DIR_TO_MOUNT:/home -p 8889:8888 ibslib:latest jupyter notebook --ip=0.0.0.0 --no-browser --allow-root
+    $ docker run -it --user 1000 -v DIR_TO_MOUNT:/home -p 8889:8888 ibslib:latest jupyter notebook --ip=0.0.0.0 --no-browser --allow-root
 
 After this, open a browser and go to ``localhost:8889``, copy the token from the terminal window and you
 are good to go. For the turorial navigate to ``IBS/docs/notebooks/Tutorial.ipynb``. In the above case 
