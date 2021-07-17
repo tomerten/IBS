@@ -38,6 +38,42 @@ For the docs (see docs/requirements.txt - except doxygen):
 * ipykernel
 * pandoc
 
+Quick start
+-----------
+
+If you do not want to go through the trouble of installing everything on your local system, 
+you can also use either `Docker`_ or `Singularity`_ containers.
+
+.. code-block:: console
+
+    $ git clone https://github.com/tomerten/IBS.git
+    $ cd IBS
+    $ docker build -t ibslib:latest .
+    $ sudo singularity build ibslib.sim ibslib.sdef
+
+
+For quick access to the ``runode`` simulations (make sure input file and Twiss file are in the run directory):
+
+.. code-block:: console
+
+    $ ./ibslib.sim JSON_SIM_INPUT_FILE
+
+For using docker have a look at the docker documentation on how to mount folders for using files 
+from your local system. One interesting feature is running jupyter from within the container, giving
+you direct access to the tutorial notebook.
+
+.. code-block:: console
+
+    $ docker run -it -v DIR_TO_MOUNT:/home -p 8889:8888 ibslib:latest jupyter notebook --ip=0.0.0.0 --no-browser --allow-root
+
+After this, open a browser and go to ``localhost:8889``, copy the token from the terminal window and you
+are good to go. For the turorial navigate to ``IBS/docs/notebooks/Tutorial.ipynb``. In the above case 
+files from the ``DIR_TO_MOUNT`` directory will be in the home directory in the container. If you create 
+a notebook and save it there it will also appear on your local (host) system.
+
+
+.. _Docker: https://www.docker.com/
+.. _Singularity: https://sylabs.io/guides/3.0/user-guide/quick_start.html
 
 Source Installation
 -------------------
@@ -77,7 +113,7 @@ It can be build locally by the following command:
     $ bash build_docs.sh 
 
 .. note:: 
-    Make sure you have `Doxygen`_ installed.
+    Make sure you have `Doxygen`_ and `Pandoc`_ installed.
 
 To install `Doxygen` in a Conda environment:
 
@@ -85,6 +121,7 @@ To install `Doxygen` in a Conda environment:
 
     $ conda install -c conda-forge doxygen
 
+.. _Pandoc: https://pandoc.org/installing.html
 .. _Doxygen: https://www.doxygen.nl/download.html
 .. _this article: https://devblogs.microsoft.com/cppblog/clear-functional-c-documentation-with-sphinx-breathe-doxygen-cmake/
 
@@ -115,6 +152,7 @@ Coublomb Log methods
 
 - twclog - uses element by element twiss data
 - twclogtail - uses element by element twiss data
+
 - CoublombLog - uses ring averages 
 - TailCutCoulombLog - uses ring averages
 

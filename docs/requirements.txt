@@ -9,3 +9,4 @@ nbsphinx>=0.8.4
 ipykernel
 pandoc
 breathe
+sphinx-rtd-theme

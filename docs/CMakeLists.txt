@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.10.2)
 
+project(IBSLibDocs)
 find_package(Doxygen REQUIRED)
 find_program(SPHINX_EXECUTABLE
              NAMES sphinx-build

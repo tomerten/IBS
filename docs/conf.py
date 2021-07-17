@@ -86,6 +86,6 @@ if read_the_docs_build:
     # input_dir = '../CatCutifier'
     output_dir = ""
     # configureDoxyfile(input_dir, output_dir)
-
+    subprocess.call("pip install pandas", shell=True)
     subprocess.call("doxygen", shell=True)
     breathe_projects["ibs"] = output_dir + "xml"

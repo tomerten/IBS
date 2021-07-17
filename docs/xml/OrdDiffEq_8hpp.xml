@@ -529,7 +529,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/OrdDiffEq.hpp" line="70" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/OrdDiffEq.cpp" bodystart="524" bodyend="863" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/OrdDiffEq.hpp" declline="70" declcolumn="6"/>
+        <location file="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/OrdDiffEq.hpp" line="70" column="6" bodyfile="/home/mti/github-tomerten/ibs/cpp/src/OrdDiffEq.cpp" bodystart="524" bodyend="860" declfile="/home/mti/github-tomerten/ibs/cpp/include/ibs_bits/OrdDiffEq.hpp" declline="70" declcolumn="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
