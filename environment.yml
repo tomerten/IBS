@@ -42,7 +42,6 @@ dependencies:
       - et-micc-build==1.1.8
       - filelock==3.0.12
       - html5lib==1.1
-      - ibslibpy==0.0.0
       - idna==2.10
       - imagesize==1.2.0
       - importlib-resources==5.2.0
