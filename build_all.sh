@@ -2,9 +2,9 @@ mkdir -p build
 mkdir -p cpp/build
 mkdir -p cpp/tests/build
 cd cpp/build
-cmake .. -DCMAKE_INSTALL_PREFIX=~/.local
+cmake .. #-DCMAKE_INSTALL_PREFIX=~/.local
 make
-make install
+sudo make install
 cd ..
 cd tests/build
 cmake ..
@@ -14,5 +14,5 @@ cmake ..
 make
 make install 
 cd ..
-export CPLUS_INCLUDE_PATH=`pwd`/cpp/include/
+#export CPLUS_INCLUDE_PATH=`pwd`/cpp/include/
 poetry install

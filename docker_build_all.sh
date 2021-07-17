@@ -4,6 +4,7 @@
 conda create python=3.8 --name=ibslibenv
 conda activate ibslibenv
 conda install poetry
+poetry config virtualenvs.create false
 
 # create build dirs
 mkdir -p build 
