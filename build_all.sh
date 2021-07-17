@@ -1,3 +1,4 @@
+mkdir -p build 
 mkdir -p cpp/build
 mkdir -p cpp/tests/build
 cd cpp/build
