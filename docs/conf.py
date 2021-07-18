@@ -85,7 +85,8 @@ breathe_projects = {}
 if read_the_docs_build:
     subprocess.call("pip install poetry", shell=True)
     # subprocess.call("conda install cmake make", shell=True)
-    subprocess.call("cd .. && docker_build_all.sh", shell=True)
+    subprocess.call("pwd", shell=True)
+    subprocess.call("cd .. && bash docker_build_all.sh", shell=True)
     import ibs
 
     # input_dir = '../CatCutifier'
