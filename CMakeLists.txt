@@ -110,7 +110,7 @@ target_link_libraries(${PROJECT_NAME}  PUBLIC)
 message(STATUS "PYTHON_LIBARAY_DIR = ${PYTHON_LIBRARY_DIR}")
 message(STATUS "_site_package      = ${_site_packages}")
 
-if(NOT${_site_packages} )
+if(NOT _site_packages )
     set(_site_packages  ${PYTHON_LIBRARY_DIR})
 endif()
 install(TARGETS ${PROJECT_NAME} 
