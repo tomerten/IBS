@@ -66,6 +66,8 @@ import os
 import subprocess
 
 
+# can be used to use more general doxygen input files with auto
+# addition of input and output dirs.
 def configureDoxyfile(input_dir, output_dir):
     with open("Doxyfile", "r") as file:
         filedata = file.read()
@@ -84,12 +86,10 @@ breathe_projects = {}
 
 if read_the_docs_build:
     subprocess.call("pip install poetry", shell=True)
-    # subprocess.call("conda install cmake make", shell=True)
     subprocess.call("pwd", shell=True)
     subprocess.call("cd .. && bash rtd_build_all.sh", shell=True)
     import ibs
 
-    # input_dir = '../CatCutifier'
     output_dir = ""
     # configureDoxyfile(input_dir, output_dir)
     subprocess.call("doxygen", shell=True)
