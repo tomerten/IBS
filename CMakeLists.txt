@@ -106,13 +106,14 @@ ${PYTHON_FILES}
 
 target_link_libraries(${PROJECT_NAME}  PUBLIC)
 
+if(NOT _site_packages )
+    set(_site_packages  ${PYTHON_LIBRARY_DIR})
+endif()
+
 # show the PYTHON_LIBRARY_DIR
 message(STATUS "PYTHON_LIBARAY_DIR = ${PYTHON_LIBRARY_DIR}")
 message(STATUS "_site_package      = ${_site_packages}")
 
-if(NOT _site_packages )
-    set(_site_packages  ${PYTHON_LIBRARY_DIR})
-endif()
 install(TARGETS ${PROJECT_NAME} 
 COMPONENT python
 #LIBRARY DESTINATION "${PYTHON_LIBRARY_DIR}"
