@@ -150,9 +150,9 @@ vector<vector<double>> GetTable(string filename, vector<string> columns) {
 }
 
 map<string, vector<double>> GetTwissTableAsMap(string filename) {
-  vector<string> TWISSCOLS /* */ {"L",    "BETX", "ALFX", "BETY",
-                                  "ALFY", "DX",   "DPX",  "DY",
-                                  "DPY",  "K1L",  "K1SL", "ANGLE"};
+  vector<string> TWISSCOLS /* */ {"L",    "BETX",  "ALFX", "BETY", "ALFY",
+                                  "DX",   "DPX",   "DY",   "DPY",  "K1L",
+                                  "K1SL", "ANGLE", "K2L",  "K2SL"};
   map<string, vector<double>> out;
   map<int, string> columnnames;
 
